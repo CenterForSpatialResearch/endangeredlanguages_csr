@@ -3,7 +3,7 @@
 	<head>
 	 	<meta charset="UTF-8">
 	    <title>testing basic</title>
-	    <link rel="stylesheet" type="text/css" href="../testingbasic.css">
+	    <link rel="stylesheet" type="text/css" href="../css/testingbasic.css">
 	    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	</head>
 
@@ -23,24 +23,57 @@
 
 	<body>
 
-		<div id="vis"></div>
-		<div id="mapVis">
-			 <svg class="mapVis" width = "480" height = "300"> </svg>
+		<div id="vis">
+<!-- 		<div id="mapVis">
+ -->			 <svg class="mapVis" width = "480" height = "300"> </svg>
 		</div>
 
 	</body>
 
    <script src="http://d3js.org/d3.v4.min.js"></script>
-   <script src="http://d3js.org/d3-queue.v3.min.js"></script>      	
+   <script src="http://d3js.org/d3-queue.v3.min.js"></script>  
+   <script src="http://d3js.org/topojson.v1.min.js"></script>      	
     
    <script type="text/javascript">
+	  var div = d3.select("body").append("div")
+	    .attr("class", "tooltip")
+	    .style("opacity", 0);
+	  //using svg element to display the map on 
+	 	 var width = 480;
+	     var height = 300;
+	  var projection = d3.geoMercator()
+	      .center([-73.94, 40.70])
+	      .scale(41000)
+	      .translate([width / 4 - 70, height / 2]); 
+	  var path = d3.geoPath()
+	      .projection(projection);
+	//sets/creates svg window and draws  NYC map  
+	  var svgMapVis = d3.select(".vis").append("svg")
+	      .attr("width", width)
+	      .attr("height", height)
+	  d3.queue()  
+	      .defer(d3.json, "../data/boroughs_NTA.json")
+	      .defer(d3.csv, "../data/Pop_NTA.csv") 
+	      .await(ready); 
+	  function ready(error,nyc,frequency){
+	  		if (error) throw error;
+	  	    console.log(nyc)
+	  	    console.log(frequency)
+
+	  	     d3.select("svg.mapVis")
+			   .selectAll("path")
+			    .data(topojson.feature(nyc, nyc.objects.NY_NTA).features) 
+			   .enter().append("path")
+			    .attr("d", path)
+			    .style("fill", "gold")
+			    .style("fill-opacity", "0.2")
+	  }
 
     // Extract the width and height that was computed by CSS.
       var chartDiv = document.getElementById("vis");
       var width = chartDiv.clientWidth;
       var height = chartDiv.clientHeight;
-
-      // load the external svg from a file
+    // load the external svg from a file
       d3.xml("../svg/typology_mockups-01.svg").mimeType("image/svg+xml").get(function(error, xml) {
       var importedNode = document.importNode(xml.documentElement, true);
       d3.select("div#vis")
