@@ -1,0 +1,27 @@
+body{
+	font-family: 'Roboto', sans-serif;
+}
+
+ellipse.cls-1 {
+	fill: red;
+}
+
+#Layer_1 {
+	background-color: gold;
+}
+
+/*.st140:hover{
+	fill: #000000 !important;
+	color: #000000 ;
+	opacity: 1;
+}*/
+
+.intro{
+	font-size: 20px;
+}
+/*
+#vis{
+	top: 0;
+	left: 0;
+	position: absolute;
+}
