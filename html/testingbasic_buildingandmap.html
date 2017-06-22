@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	 	<meta charset="UTF-8">
+	    <title>testing basic</title>
+	    <link rel="stylesheet" type="text/css" href="../testingbasic.css">
+	    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	</head>
+
+    <style type="text/css">
+   	    /*css styling here */
+
+   	    /* Make the chart container fill the page using CSS. */
+	      #chart {
+	        position: fixed;
+	        left: 0px;
+	        right: 0px;
+	        top: 0px;
+	        bottom: 0px;
+	      }
+
+    </style>
+
+	<body>
+
+		<div id="vis"></div>
+		<div id="mapVis">
+			 <svg class="mapVis" width = "480" height = "300"> </svg>
+		</div>
+
+	</body>
+
+   <script src="http://d3js.org/d3.v4.min.js"></script>
+   <script src="http://d3js.org/d3-queue.v3.min.js"></script>      	
+    
+   <script type="text/javascript">
+
+    // Extract the width and height that was computed by CSS.
+      var chartDiv = document.getElementById("vis");
+      var width = chartDiv.clientWidth;
+      var height = chartDiv.clientHeight;
+
+      // load the external svg from a file
+      d3.xml("../svg/typology_mockups-01.svg").mimeType("image/svg+xml").get(function(error, xml) {
+      var importedNode = document.importNode(xml.documentElement, true);
+      d3.select("div#vis")
+        .each(function() {
+          this.appendChild(importedNode);
+        })
+        styleImportedSVGbasic()
+      }); 
+
+      function styleImportedSVGbasic () {
+      	d3.selectAll("#Labels").attr("visibility", "hidden") //HIDES certain elements 
+      	// d3.selectAll("#Underlay").attr("visibility", "")//SHOWS
+      }
+
+  </script>
+
+</html>
