@@ -24,38 +24,35 @@
 	<body>
 
 		<div id="vis">
-     	   <svg class="mapVis" width = "480" height = "600"> </svg>
+     	   <svg class="mapVis" width = "800" height = "600"> </svg>
 		</div>
 
 	</body>
 
    <script src="http://d3js.org/d3.v4.min.js"></script>
    <script src="http://d3js.org/d3-queue.v3.min.js"></script>  
-   <script src="http://d3js.org/topojson.v1.min.js"></script>      	
-    
+   <script src="http://d3js.org/topojson.v1.min.js"></script>    
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
    <script type="text/javascript">
-	  
-   	 //DRAWING MAP
+
+   //DRAWING MAP
 	 var div = d3.select("body").append("div")
 	    .attr("class", "tooltip")
 	    .style("opacity", 0);
-	  //using svg element to display the map on 
-	 	 // var width = 480;
-	   //   var height = 600;
-	   var margin = {top: 10, left: 10, bottom: 10, right: 10}
-		  , width = parseInt(d3.select('.mapVis').style('width'))
-		  , width = width - margin.left - margin.right
-		  , mapRatio = .5
-		  , height = width * mapRatio;
+	  var viewportWidth = $(window).width();
+		var viewportHeight = $(window).height()/2;
+		var width = viewportWidth * .97;
+		var height = width/1.85;
 	   var projection = d3.geoMercator()
 	      .center([-73.94, 40.70])
 	      .scale(41000)
-	      // .scale(width)
 	      .translate([width / 2, height / 2]); 
 	   var path = d3.geoPath()
 	      .projection(projection);
 	 //sets/creates svg window and draws  NYC map  
-	   var svgMapVis = d3.select(".vis").append("svg")
+	   var svg = d3.select(".vis")
+	      .append("svg")
 	      .attr("width", width)
 	      .attr("height", height)
 
@@ -78,10 +75,33 @@
 	       .style("fill-opacity", "0.2")
 	  }
 
+	d3.select(window).on('resize', resize);
+	function resize() {
+	    width = parseInt(d3.select('svg.mapVis').style('width'));
+	    width = $(window).width() * .97;
+	    height = width/1.85;
+
+	   projection
+	    	.scale([width/3.5])
+	    	.center([-73.94, 40.70])
+	   		.translate([width/2,height/2]); 
+	 		
+	   d3.select(".vis").attr("width",width).attr("height",height);
+	   
+	   d3.select("svg.mapVis")
+	   		.attr("width",width)
+	   		.attr("height",height)
+	   		.selectAll("path")
+		  .enter().append("path")
+		    .attr("d", path)
+	}
+
+
     // Extract the width and height that was computed by CSS.
       var chartDiv = document.getElementById("vis");
       var width = chartDiv.clientWidth;
       var height = chartDiv.clientHeight;
+
     // load the external svg from a file
       d3.xml("../svg/typology_mockups-01.svg").mimeType("image/svg+xml").get(function(error, xml) {
       var importedNode = document.importNode(xml.documentElement, true);
