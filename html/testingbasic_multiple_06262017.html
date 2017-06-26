@@ -40,10 +40,9 @@
 	 var div = d3.select("body").append("div")
 	    .attr("class", "tooltip")
 	    .style("opacity", 0);
-	  var viewportWidth = $(window).width();
-		var viewportHeight = $(window).height()/2;
-		var width = viewportWidth * .97;
-		var height = width/1.85;
+	  
+		var width = 800;
+		var height = 600;
 	   var projection = d3.geoMercator()
 	      .center([-73.94, 40.70])
 	      .scale(41000)
@@ -51,7 +50,7 @@
 	   var path = d3.geoPath()
 	      .projection(projection);
 	 //sets/creates svg window and draws  NYC map  
-	   var svg = d3.select(".vis")
+	   var svgMAP = d3.select(".vis")
 	      .append("svg")
 	      .attr("width", width)
 	      .attr("height", height)
@@ -74,28 +73,6 @@
 		   .style("fill", "gold")
 	       .style("fill-opacity", "0.2")
 	  }
-
-	d3.select(window).on('resize', resize);
-	function resize() {
-	    width = parseInt(d3.select('svg.mapVis').style('width'));
-	    width = $(window).width() * .97;
-	    height = width/1.85;
-
-	   projection
-	    	.scale([width/3.5])
-	    	.center([-73.94, 40.70])
-	   		.translate([width/2,height/2]); 
-	 		
-	   d3.select(".vis").attr("width",width).attr("height",height);
-	   
-	   d3.select("svg.mapVis")
-	   		.attr("width",width)
-	   		.attr("height",height)
-	   		.selectAll("path")
-		  .enter().append("path")
-		    .attr("d", path)
-	}
-
 
     // Extract the width and height that was computed by CSS.
       var chartDiv = document.getElementById("vis");
