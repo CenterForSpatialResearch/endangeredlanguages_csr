@@ -1,28 +1,13 @@
 body{
 	/*font-family: 'Roboto', sans-serif;*/
-	font-family: 'Roboto Mono', monospace;
-	background-color: rgba(0, 0, 0, 0.1);
+	font-family: 'Roboto Mono', monospace !important;
+	/*font-family: 'Roboto Condensed', sans-serif;*/
+	background-color: rgba(0, 0, 0, 0.1) !important;
 }
 
-ellipse.cls-1 {
-	fill: red;
-}
 
-#Layer_1 {
-	background-color: gold;
-}
 
-/*.st140:hover{
-	fill: #000000 !important;
-	color: #000000 ;
-	opacity: 1;
-}*/
-
-.intro{
-	font-size: 20px;
-}
-
-/*NEW*/
+/*INTRO PAGE*/
 p.IntroText {
 	font-size:20px;
 	color: #000000;
@@ -34,14 +19,71 @@ p.IntroText_QNS {
 }
 
 .Intro{
-	width: 75%;
-	padding: 0 10% 0 10%;
-	margin: 10% 10% 0 0;
+	/*width: 75%;*/
+	/*padding: 0 10% 0 10%;*/
+	/*margin: 10% 10% 0 0;*/
 }
 
-/*
-#vis{
-	top: 0;
-	left: 0;
-	position: absolute;
+.container{
+	padding: 0 !important;
+	margin: 5% 0 5% 2% !important;
+}
+
+span.glyphicon.glyphicon-chevron-right{
+	color: #000000 !important;
+	font-size: 3em;
+}
+
+.col-md-2{
+	bottom: 50%;
+    float: right !important;
+    right: 33%;
+    position: fixed !important;
+    text-align: center;
+}
+
+/*other PAGE */
+p#select{
+	/*font-family: 'Poppins', sans-serif;*/
+	float: left;
+}
+
+/*button styling*/
+
+ul.selections{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	padding-top: 1%;
+}
+ul.selections li{
+	display: inline-block;
+	/*float: left;*/
+	margin: 0 0 0 1%;
+}
+ul.selections p{
+	padding: 0;
+	margin: 0;
+}
+p{
+	margin: 0;
+	line-height: 1em;
+}
+
+.updateButton {
+    background-color: #ebebeb;
+    border-radius: .75em;
+    margin-bottom: 1%;
+    border: .2em solid grey;
+    color: #000;
+   	font-family: 'Poppins', sans-serif;
+}
+.updateButton:hover {
+  background: #FAFAD2;
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+.updateButtonSelected{
+  background-color: #D4AF37;
 }
