@@ -5,6 +5,29 @@ body{
 	background-color: rgba(0, 0, 0, 0.1) !important;
 }
 
+polygon.st7{
+    height: 300;
+    margin: 100px;
+    width: 100%; max-width: 100%;
+}
+polygon.st7:hover {
+    position: relative;
+    -webkit-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
+    transform: scale(2);
+    transform: translateX(-25%) translateY(-25%);
+    opacity: 1;
+    z-index: 1000;
+    width: 200%;
+}
+* {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
 
 
 /*INTRO PAGE*/
@@ -84,15 +107,18 @@ ul.selections p{
 	width: 25%;
     padding: 2% 2% 2% 2%;
     margin: 0;
-    overflow: hidden;
+    overflow: auto;
     background-color: rgba(200, 51, 39, 0.3);
     position: fixed !important;
     right: 0;
     top: 0;
     color: rgba(0,0,0,.8); /*textcolor*/
     font-weight: 800;
+    font-family: 'Roboto Mono', monospace !important;
 }
-
+.sidePanel .col-md-3 text{
+	stroke-width: 0;
+}
 .bodyPanel .col-md-9 {
 	position: fixed !important;
 	left: 0;
