@@ -1,5 +1,7 @@
 body{
-	font-family: 'Roboto', sans-serif;
+	/*font-family: 'Roboto', sans-serif;*/
+	font-family: 'Roboto Mono', monospace;
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 ellipse.cls-1 {
@@ -19,6 +21,24 @@ ellipse.cls-1 {
 .intro{
 	font-size: 20px;
 }
+
+/*NEW*/
+p.IntroText {
+	font-size:20px;
+	color: #000000;
+}
+
+p.IntroText_QNS {
+	font-size:48px;
+	color: #2E093D;
+}
+
+.Intro{
+	width: 75%;
+	padding: 0 10% 0 10%;
+	margin: 10% 10% 0 0;
+}
+
 /*
 #vis{
 	top: 0;
