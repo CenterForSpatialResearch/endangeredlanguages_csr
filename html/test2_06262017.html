@@ -51,7 +51,7 @@
       var height = chartDiv.clientHeight;
 
       // load the external svg from a file
-      d3.xml("../svg/typology_mockups-01.svg").mimeType("image/svg+xml").get(function(error, xml) {
+      d3.xml("../svg/170627buildingonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
       var importedNode = document.importNode(xml.documentElement, true);
       d3.select("div#vis")
         .each(function() {
@@ -62,7 +62,7 @@
 
 
       function styleImportedSVGbasic () {
-      	d3.selectAll("#Labels").attr("visibility", "hidden") //HIDES certain elements 
+      	// d3.selectAll("#Labels").attr("visibility", "hidden") //HIDES certain elements 
       	// d3.selectAll("#Underlay").attr("visibility", "")//SHOWS
         d3.select('svg')
           .append('text')
@@ -73,7 +73,7 @@
           // .text("basic info")
       }
 
-      function styleImportedSVG () { //maybe i should have the first one also empty and then people click?
+      function styleImportedSVG () { 
        // third room on left 
        d3.select('#room3')
           .on('mouseover', function() {
@@ -128,7 +128,7 @@
           })
       }
    
-   function styleImportedSVG2 () { //maybe i should have the first one also empty and then people click?
+   function styleImportedSVG2 () {
       d3.selectAll('.st0, .st1, .st2')
           .on('mouseover', function() {
             d3.select(this) //this is for whatever remains highlighted 
@@ -194,7 +194,7 @@
  		d3.select("#unbuilding").on("click", function(){
       d3.selectAll("svg").remove();
  			
-      d3.xml("../svg/typology_mockups-01.svg").mimeType("image/svg+xml").get(function(error, xml) {
+      d3.xml("../svg/170627detail_building-01.svg").mimeType("image/svg+xml").get(function(error, xml) {
       var importedNode = document.importNode(xml.documentElement, true);
       d3.select("div#vis")
         .each(function() {
