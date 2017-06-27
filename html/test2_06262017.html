@@ -5,6 +5,9 @@
 	    <title>testing basic</title>
 	    <link rel="stylesheet" type="text/css" href="../css/testingbasic.css">
 	    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
 
     <style type="text/css">
@@ -22,20 +25,41 @@
     </style>
 
 	<body>
-  
-	<ul class="selections">
-    <p id="select"> Select buildings that are
-      <li><input class="updateButton" id="unbuilding" type="button" value="multilingual"></li>             
-      
-      <li><input class="updateButton" id="twolanguages" type="button" value="bilingual"></li> 
+    
+    <div class="bodyPanel">
+      <div class="container">
+        <div class="row">
+          
+          <div class="col-md-9">
+          	<ul class="selections">
+              <p> 
+                <li>Select buildings that are</li>
+                <li><input class="updateButton" id="unbuilding" type="button" value="multilingual"></li>             
+                
+                <li><input class="updateButton" id="twolanguages" type="button" value="bilingual"></li> 
 
-      <li><input class="updateButton" id="boring" type="button" value="monolingual"></li> 
-    </p>
-  </ul>
-  <br>
-  <p> Select an apartment for more information </p>
+                <li><input class="updateButton" id="boring" type="button" value="monolingual"></li> 
+              </p>
+            </ul>
+              <br>
+            <p> Select an apartment for more information </p>
+        		<div id="vis"></div>
+          </div>
 
-		<div id="vis">
+        </div>
+      </div>
+    </div>
+
+    <div class="sidePanel">
+      <div class="container">
+        <div class="row">
+          
+          <div class="col-md-3">
+            <p> Five languages are spoken in this building, and these are distributed within apartments. Although 12 apartments are shown, there is a lot of diversity in the building’s 30 total apartments. </p>
+          </div>
+
+        </div>
+      </div>
     </div>
 
 	</body>

@@ -43,13 +43,8 @@ span.glyphicon.glyphicon-chevron-right{
 }
 
 /*other PAGE */
-p#select{
-	/*font-family: 'Poppins', sans-serif;*/
-	float: left;
-}
 
 /*button styling*/
-
 ul.selections{
 	list-style-type: none;
 	margin: 0;
@@ -64,14 +59,11 @@ ul.selections li{
 ul.selections p{
 	padding: 0;
 	margin: 0;
+	float: left;
 }
-p{
-	margin: 0;
-	line-height: 1em;
-}
-
+/*actual buttons*/
 .updateButton {
-    background-color: #ebebeb;
+    background-color: #ffffff;
     border-radius: .75em;
     margin-bottom: 1%;
     border: .2em solid grey;
@@ -83,7 +75,28 @@ p{
   opacity: 0.5;
   text-decoration: none;
 }
-
 .updateButtonSelected{
   background-color: #D4AF37;
+}
+
+.sidePanel .col-md-3{
+	height: 100%;
+	width: 25%;
+    padding: 2% 2% 2% 2%;
+    margin: 0;
+    overflow: hidden;
+    background-color: rgba(200, 51, 39, 0.3);
+    position: fixed !important;
+    right: 0;
+    top: 0;
+    color: rgba(0,0,0,.8); /*textcolor*/
+    font-weight: 800;
+}
+
+.bodyPanel .col-md-9 {
+	position: fixed !important;
+	left: 0;
+	top: 0;
+	width: 75%;
+	height: auto;
 }
