@@ -5,32 +5,6 @@ body{
 	background-color: rgba(0, 0, 0, 0.1) !important;
 }
 
-g#right1:hover, g#right2:hover, g#right3:hover, g#right4:hover, g#right5:hover, g#right6:hover, g#right7:hover, g#left1:hover g#left2:hover g#left3:hover g#left4:hover g#left5:hover g#left6:hover g#left7:hover {
-    position: absolute;
-    -webkit-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    -o-transform: scale(1.5);
-    transform: scale(1.5);
-    -webkit-transform-origin: top left;
-    -oz-transform-origin: top left;
-    -ms-transform-origin: top left;
-    -o-transform-origin: top left;
-    transform-origin: top left;
-    opacity: 1 !important;
-    z-index: 1000;
-}
-polygon#wall-r1:hover, polygon#floor-r1:hover, polygon#wall-r2:hover, polygon#floor-r2:hover, polygon#wall-r3:hover, polygon#floor-r3:hover, polygon#wall-r4:hover, polygon#floor-r4:hover, polygon#wall-r5:hover, polygon#floor-r5:hover, polygon#wall-r6:hover, polygon#floor-r6:hover, polygon#wall-r7:hover, polygon#floor-r7:hover{
-    opacity: 1 !important;
-}
-* {
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-}
-
-
 /*INTRO PAGE*/
 p.IntroText {
 	font-size:20px;
@@ -40,12 +14,6 @@ p.IntroText {
 p.IntroText_QNS {
 	font-size:48px;
 	color: #2E093D;
-}
-
-.Intro{
-	/*width: 75%;*/
-	/*padding: 0 10% 0 10%;*/
-	/*margin: 10% 10% 0 0;*/
 }
 
 .container{
@@ -126,4 +94,30 @@ ul.selections p{
 	top: 0;
 	width: 75%;
 	height: auto;
+}
+
+/*hover transitions*/
+g#right1:hover, g#right2:hover, g#right3:hover, g#right4:hover, g#right5:hover, g#right6:hover, g#right7:hover, g#left1:hover, g#left2:hover, g#left3:hover, g#left4:hover, g#left5:hover, g#left6:hover, g#left7:hover {
+    position: absolute;
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.5);
+    -webkit-transform-origin: top left;
+    -oz-transform-origin: top left;
+    -ms-transform-origin: top left;
+    -o-transform-origin: top left;
+    transform-origin: top left;
+    opacity: 1 !important;
+    z-index: 1000;
+}
+polygon#wall-r1:hover, polygon#floor-r1:hover, polygon#wall-r2:hover, polygon#floor-r2:hover, polygon#wall-r3:hover, polygon#floor-r3:hover, polygon#wall-r4:hover, polygon#floor-r4:hover, polygon#wall-r5:hover, polygon#floor-r5:hover, polygon#wall-r6:hover, polygon#floor-r6:hover, polygon#wall-r7:hover, polygon#floor-r7:hover{
+    opacity: 1 !important;
+}
+* {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }

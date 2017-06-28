@@ -57,6 +57,8 @@
           
           <div class="col-md-3">
             <p> Five languages are spoken in this building, and these are distributed within apartments. Although 12 apartments are shown, there is a lot of diversity in the building’s 30 total apartments. </p>
+            <h1 class="extraHeading"> </h1>
+            <p class="extraInfo"> </p>
             <div id="visSide"></div>
           </div>
 
@@ -90,70 +92,188 @@
       function styleImportedSVGbasic () {
       	// d3.selectAll("#Labels").attr("visibility", "hidden") //HIDES certain elements 
       	// d3.selectAll("#Underlay").attr("visibility", "")//SHOWS
-        d3.select('svg')
-          .append('text')
-          .attr("class","intro")
-          .attr("x",10)
-          .attr("y",50)
-          .style("fill", "#000000")
-          // .text("basic info")
       }
 
+    //SWITCHING BTW IMGS   
+    d3.select("#unbuilding").on("click", function(){
+     d3.selectAll("svg").remove();
 
-      // function styleImportedSVG () { 
-      //  // third room on left 
-      //  d3.select('#room3')
-      //     .on('mouseover', function() {
-      //       d3.selectAll('.elements3, .st140, .st141') //this is for whatever remains highlighted 
-      //         .style('fill-opacity', 1)
-      //         .style('stroke-opacity', 1)
-      //       d3.selectAll('#Labels, .st137, .st138, .elements2') //this is for the rest that are hidden
-      //         .style('fill-opacity', 0.1)
-      //         .style('stroke-opacity', 0.3)
-      //     })
-      //     .on('mouseout', function() {
-      //       d3.selectAll('#Labels, .st137, .st138, .elements2')//have to do this again here because 137 and 138 are outside of the room2 div
-      //         .style('fill-opacity', 1)
-      //         .style('stroke-opacity', 1)
-      //     })
-      //     .on('click', function() {
-      //     	d3.select(this)
-      //        .append('text')
-      //       	.attr("class","extraInfo")
-      //       	.attr("x",200)
-      //       	.attr("y",200)
-      //       	.style("stroke", "#000000")
-      //       	.style("fill", "#000000")
-      //       	.text("Info")
-      //     })
+     d3.xml("../svg/170627detail_building_web-01.svg").mimeType("image/svg+xml").get(function(error, xml) {
+      var importedNode = document.importNode(xml.documentElement, true);
+      d3.select("div#vis")
+        .each(function() {
+          this.appendChild(importedNode);
+        })
+        styleImportedSVG1()
+      });
+     });
 
-      //  // second room on left 
-      //  d3.select('#room2')
-      //     .on('mouseover', function() {
-      //       d3.selectAll('.elements2, .st137, .st138') //this is for whatever remains highlighted 
-      //         .style('fill-opacity', 1)
-      //         .style('stroke-opacity', 1)
-      //       d3.selectAll('#Labels, .elements3, .st140, .st141')
-      //         .style('fill-opacity', 0.1)
-      //         .style('stroke-opacity', 0.3)
-      //     })
-      //     .on('mouseout', function() {
-      //       d3.selectAll('#Labels, .st140, .st141, .elements3')
-      //         .style('fill-opacity', 1)
-      //         .style('stroke-opacity', 1)
-      //       d3.select(".extraInfo").remove(); //removes on mouseout. NECESSARY??????
-      //     })
-      //     .on('click', function() {
-      //     	d3.select(this)
-      //        .append('text')
-      //       	.attr("class","extraInfo")
-      //       	.attr("x",200)
-      //       	.attr("y",400)
-      //       	.attr("text-anchor", "middle")
-      //       	.style("fill", "black")
-      //       	.text("Info")
-      //     })
-      // }
+     d3.select("#twolanguages").on("click", function(){
+      d3.selectAll("svg").remove();
+
+      d3.xml("../svg/typology_mockups-02.svg").mimeType("image/svg+xml").get(function(error, xml) {
+      var importedNode = document.importNode(xml.documentElement, true);
+      d3.select("div#vis")
+        .each(function() {
+          this.appendChild(importedNode);
+        })
+        styleImportedSVG2()
+      });
+     });
+
+     d3.select("#boring").on("click", function(){
+      d3.selectAll("svg").remove();
+
+      d3.xml("../typology_mockups-03.svg").mimeType("image/svg+xml").get(function(error, xml) {
+      var importedNode = document.importNode(xml.documentElement, true);
+      d3.select("div#vis")
+        .each(function() {
+          this.appendChild(importedNode);
+        })
+        styleImportedSVG3()
+      });
+     });
+
+    function styleImportedSVG1 () {
+     d3.select('h1.extraHeading')
+      .append('text')
+       .text("Building Composition")
+
+     d3.xml("../svg/170627chartonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+      var importedNode = document.importNode(xml.documentElement, true);
+      d3.select("div#visSide")
+        .each(function() {
+          this.appendChild(importedNode);
+        })
+      });
+     d3.xml("../svg/170627histogramonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+      var importedNode = document.importNode(xml.documentElement, true);
+      d3.select("div#visSide")
+        .each(function() {
+          this.appendChild(importedNode);
+        })
+      });
+     
+
+        d3.selectAll("rect")
+        .attr("clicked", false)
+        //.on("mouseover", mouseover)
+        .on("click", function(){
+          var currentColor = this.style.fill;
+          d3.select(this)
+            .attr("clicked", true)
+            .style("fill", currentColor);
+          d3.selectAll('#right1, text')
+            .style("fill-opacity",0.1)
+        })
+
+     d3.select('#right1')
+        .on('mouseover', function() {
+          // d3.selectAll('#right1') //this is for whatever remains highlighted 
+          //   .style('fill-opacity', 1)
+          //   .style('stroke-opacity', 1)
+          d3.selectAll('#right2, #right3, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.3)
+        })
+        .on('mouseout', function() {
+          d3.selectAll('#right2, #right3, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7')
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+        })
+        .on('click', function() {
+            d3.selectAll("div#visSide svg").remove();
+
+            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSide")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+
+        	d3.select('p.extraInfo')
+           .append('text')
+          	.attr("class","extraInfo")
+          	.text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
+        })
+
+    d3.select('#right2')
+        .on('mouseover', function() {
+          // d3.selectAll('#right1') //this is for whatever remains highlighted 
+          //   .style('fill-opacity', 1)
+          //   .style('stroke-opacity', 1)
+          d3.selectAll('#building_png, #right1, #right3, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.3)
+        })
+        .on('mouseout', function() {
+          d3.selectAll('#right1, #right3, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7')
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+        })
+        .on('click', function() {
+          d3.select(this)
+           .append('text')
+            .attr("class","extraInfo")
+            .attr("x",200)
+            .attr("y",200)
+            .style("stroke", "#000000")
+            .style("fill", "#000000")
+            .text("Info")
+        })
+
+      d3.select('#right3')
+        .on('mouseover', function() {
+          // d3.selectAll('#right3') //this is for whatever remains highlighted 
+          //   .style('fill-opacity', 1)
+          //   .style('stroke-opacity', 1)
+          d3.selectAll('#right2, #right1, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.3)
+        })
+        .on('mouseout', function() {
+          d3.selectAll('#right2, #right1, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7')
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+        })
+        .on('click', function() {
+          d3.select(this)
+           .append('text')
+            .attr("class","extraInfo")
+            .attr("x",200)
+            .attr("y",200)
+            .style("stroke", "#000000")
+            .style("fill", "#000000")
+            .text("Info")
+        })
+
+      d3.select('#right4')
+        .on('mouseover', function() {
+          // d3.selectAll('#right4') //this is for whatever remains highlighted 
+          //   .style('fill-opacity', 1)
+          //   .style('stroke-opacity', 1)
+          d3.selectAll('#right2, #right3, #right1, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.3)
+        })
+        .on('mouseout', function() {
+          d3.selectAll('#right2, #right3, #right1, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7')
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+        })
+        .on('click', function() {
+          d3.select(this)
+           .append('text')
+            .attr("class","extraInfo")
+            .attr("x",200)
+            .attr("y",200)
+            .style("stroke", "#000000")
+            .style("fill", "#000000")
+            .text("Info")
+        })
+
+    }
    
    function styleImportedSVG2 () {
       d3.selectAll('.st0, .st1, .st2')
@@ -217,53 +337,7 @@
           return originalColor;
         });
       }
-   //SWITCHING BTW IMGS   
- 		d3.select("#unbuilding").on("click", function(){
-      d3.selectAll("svg").remove();
- 			
-      d3.xml("../svg/170627detail_building_web-01.svg").mimeType("image/svg+xml").get(function(error, xml) {
-      var importedNode = document.importNode(xml.documentElement, true);
-      d3.select("div#vis")
-        .each(function() {
-          this.appendChild(importedNode);
-        })
-        // styleImportedSVG()
-      });
-      d3.xml("../svg/170627chartonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-      var importedNode = document.importNode(xml.documentElement, true);
-      d3.select("div#visSide")
-        .each(function() {
-          this.appendChild(importedNode);
-        })
-        // styleImportedSVG()
-      });
- 		});
 
- 		d3.select("#twolanguages").on("click", function(){
-      d3.selectAll("svg").remove();
-
-      d3.xml("../svg/typology_mockups-02.svg").mimeType("image/svg+xml").get(function(error, xml) {
-      var importedNode = document.importNode(xml.documentElement, true);
-      d3.select("div#vis")
-        .each(function() {
-          this.appendChild(importedNode);
-        })
-        styleImportedSVG2()
-      });
- 		});
-
-    d3.select("#boring").on("click", function(){
-      d3.selectAll("svg").remove();
-
-      d3.xml("../typology_mockups-03.svg").mimeType("image/svg+xml").get(function(error, xml) {
-      var importedNode = document.importNode(xml.documentElement, true);
-      d3.select("div#vis")
-        .each(function() {
-          this.appendChild(importedNode);
-        })
-        styleImportedSVG3()
-      });
-    });
 
     </script>
 
