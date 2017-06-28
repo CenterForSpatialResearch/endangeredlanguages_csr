@@ -221,7 +221,7 @@
  		d3.select("#unbuilding").on("click", function(){
       d3.selectAll("svg").remove();
  			
-      d3.xml("../svg/170627detail_building-01.svg").mimeType("image/svg+xml").get(function(error, xml) {
+      d3.xml("../svg/170627detail_building_web-01.svg").mimeType("image/svg+xml").get(function(error, xml) {
       var importedNode = document.importNode(xml.documentElement, true);
       d3.select("div#vis")
         .each(function() {
@@ -229,7 +229,7 @@
         })
         // styleImportedSVG()
       });
-      d3.xml("../svg/170627chartonly-04.svg").mimeType("image/svg+xml").get(function(error, xml) {
+      d3.xml("../svg/170627chartonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
       var importedNode = document.importNode(xml.documentElement, true);
       d3.select("div#visSide")
         .each(function() {
