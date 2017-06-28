@@ -3,6 +3,7 @@ body{
 	font-family: 'Roboto Mono', monospace !important;
 	/*font-family: 'Roboto Condensed', sans-serif;*/
 	background-color: rgba(0, 0, 0, 0.1) !important;
+    font-weight: 200;
 }
 
 /*INTRO PAGE*/
@@ -55,12 +56,11 @@ ul.selections p{
 }
 /*actual buttons*/
 .updateButton {
-    background-color: #ffffff;
+    background-color: #CDCFCE;
     border-radius: .75em;
     margin-bottom: 1%;
-    border: .2em solid grey;
-    color: #000;
-   	font-family: 'Poppins', sans-serif;
+    border: .1em solid black;
+    color: #231F20;
 }
 .updateButton:hover {
   background: #FAFAD2;
@@ -68,7 +68,7 @@ ul.selections p{
   text-decoration: none;
 }
 .updateButtonSelected{
-  background-color: #D4AF37;
+  background-color: #ffffff;
 }
 
 .sidePanel .col-md-3{
@@ -94,6 +94,11 @@ ul.selections p{
 	top: 0;
 	width: 75%;
 	height: auto;
+}
+
+
+p.updatedIntroSide{
+    color: #777275;
 }
 
 /*hover transitions*/

@@ -56,10 +56,16 @@
         <div class="row">
           
           <div class="col-md-3">
-            <p> Five languages are spoken in this building, and these are distributed within apartments. Although 12 apartments are shown, there is a lot of diversity in the building’s 30 total apartments. </p>
+            <p class="introSide"> These three buildings all show a range of language/living situations and are ............</p>
             <h1 class="extraHeading"> </h1>
             <p class="extraInfo"> </p>
-            <div id="visSide"></div>
+            <div id="visSide1"></div>
+            <div id="visSide2"></div>
+            <div id="visSideObject1"></div>
+            <p class="extraInfo1"> </p>
+            <div id="visSideObject2"></div>
+            <p class="extraInfo2"> </p>
+            <div id="visSideMap"></div>
           </div>
 
         </div>
@@ -97,6 +103,8 @@
     //SWITCHING BTW IMGS   
     d3.select("#unbuilding").on("click", function(){
      d3.selectAll("svg").remove();
+     d3.selectAll(".updateButton").classed("updateButtonSelected", false);
+     d3.select(this).classed("updateButtonSelected", true);
 
      d3.xml("../svg/170627detail_building_web-01.svg").mimeType("image/svg+xml").get(function(error, xml) {
       var importedNode = document.importNode(xml.documentElement, true);
@@ -135,144 +143,194 @@
      });
 
     function styleImportedSVG1 () {
+     d3.selectAll('text').remove();
+
      d3.select('h1.extraHeading')
       .append('text')
        .text("Building Composition")
+    d3.select('p.extraInfo')
+      .append('text')
+       .text("Five languages are spoken in this building, and these are distributed within apartments. Although 12 apartments are shown, there is a lot of diversity in the building’s 30 total apartments. ")
+     
+     d3.selectAll('p.introSide').classed("updatedIntroSide", true);
 
      d3.xml("../svg/170627chartonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
       var importedNode = document.importNode(xml.documentElement, true);
-      d3.select("div#visSide")
+      d3.select("div#visSide1")
         .each(function() {
           this.appendChild(importedNode);
         })
       });
      d3.xml("../svg/170627histogramonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
       var importedNode = document.importNode(xml.documentElement, true);
-      d3.select("div#visSide")
+      d3.select("div#visSide2")
         .each(function() {
           this.appendChild(importedNode);
         })
       });
-     
-
-        d3.selectAll("rect")
-        .attr("clicked", false)
-        //.on("mouseover", mouseover)
-        .on("click", function(){
-          var currentColor = this.style.fill;
-          d3.select(this)
-            .attr("clicked", true)
-            .style("fill", currentColor);
-          d3.selectAll('#right1, text')
-            .style("fill-opacity",0.1)
-        })
 
      d3.select('#right1')
-        .on('mouseover', function() {
-          // d3.selectAll('#right1') //this is for whatever remains highlighted 
-          //   .style('fill-opacity', 1)
-          //   .style('stroke-opacity', 1)
-          d3.selectAll('#right2, #right3, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
-            .style('fill-opacity', 0.1)
-            .style('stroke-opacity', 0.3)
-        })
-        .on('mouseout', function() {
-          d3.selectAll('#right2, #right3, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7')
-            .style('fill-opacity', 1)
-            .style('stroke-opacity', 1)
-        })
+        // .on('mouseover', function() {
+        //   d3.selectAll('#right1') //this is for whatever remains highlighted 
+        //     .style('fill-opacity', 1)
+        //     .style('stroke-opacity', 1)
+        //   d3.selectAll('#right2, #right3, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
+        //     .style('fill-opacity', 0.5)
+        //     .style('stroke-opacity', 0.5)
+        // })
+        // .on('mouseout', function() {
+        //   d3.selectAll('#right2, #right3, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7')
+        //     .style('fill-opacity', 1)
+        //     .style('stroke-opacity', 1)
+        // })
         .on('click', function() {
-            d3.selectAll("div#visSide svg").remove();
+            d3.selectAll("div#visSide1 svg, text").remove();
+            d3.selectAll("div#visSide2 svg, text").remove();
+            d3.selectAll("div#visSideObject1 svg, text").remove();
+            d3.selectAll("div#visSideObject2 svg").remove();
+            d3.selectAll("div#visSideMap svg, text").remove();
 
-            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
             var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSide")
+            d3.select("div#visSideObject2")
               .each(function() {
                 this.appendChild(importedNode);
               })
             });
-
-        	d3.select('p.extraInfo')
-           .append('text')
-          	.attr("class","extraInfo")
-          	.text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
-        })
-
-    d3.select('#right2')
-        .on('mouseover', function() {
-          // d3.selectAll('#right1') //this is for whatever remains highlighted 
-          //   .style('fill-opacity', 1)
-          //   .style('stroke-opacity', 1)
-          d3.selectAll('#building_png, #right1, #right3, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
+            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideMap")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject1")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.selectAll('image, g#building_png, #right2, #right3, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.3)
+          d3.select('text.extraInfo, text.extraHeading').remove();
+        	d3.select('h1.extraHeading')
+           .append('text')
+            .attr("class","extraHeading")
+            .text("Apartment Composition")
+          d3.select('p.extraInfo1')
+           .append('text')
+          	.attr("class","extraInfo1")
+          	.text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
+          d3.select('p.extraInfo2')
+           .append('text')
+            .attr("class","extraInfo2")
+            .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
         })
-        .on('mouseout', function() {
-          d3.selectAll('#right1, #right3, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7')
+      d3.selectAll("#underlay, g#building_png, image")
+        .on('click', function() {
+          d3.selectAll('#right1, #right2, #right3, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7')
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
         })
-        .on('click', function() {
-          d3.select(this)
-           .append('text')
-            .attr("class","extraInfo")
-            .attr("x",200)
-            .attr("y",200)
-            .style("stroke", "#000000")
-            .style("fill", "#000000")
-            .text("Info")
-        })
 
-      d3.select('#right3')
-        .on('mouseover', function() {
-          // d3.selectAll('#right3') //this is for whatever remains highlighted 
-          //   .style('fill-opacity', 1)
-          //   .style('stroke-opacity', 1)
-          d3.selectAll('#right2, #right1, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
-            .style('fill-opacity', 0.1)
-            .style('stroke-opacity', 0.3)
-        })
-        .on('mouseout', function() {
-          d3.selectAll('#right2, #right1, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7')
-            .style('fill-opacity', 1)
-            .style('stroke-opacity', 1)
-        })
-        .on('click', function() {
-          d3.select(this)
-           .append('text')
-            .attr("class","extraInfo")
-            .attr("x",200)
-            .attr("y",200)
-            .style("stroke", "#000000")
-            .style("fill", "#000000")
-            .text("Info")
-        })
+      d3.selectAll('#rect1, #rect2, #recr3, #rect4')
+          .on('click', function() {
+            d3.selectAll('.st1, .st0, .st2')
+              .style('fill', originalColor)
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+            d3.selectAll('.st1, .st2')
+              .style('fill','black')
+              .style('fill-opacity', 0.3)
+              .style('stroke-opacity', 0.3)
+          })
+      d3.selectAll('#rect5, #rect6')
+          .on('click', function() {
+            d3.selectAll('.st1, .st0, .st2')
+              .style('fill', originalColor)
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+            d3.selectAll('.st2, .st0')
+              .style('fill','black')
+              .style('fill-opacity', 0.3)
+              .style('stroke-opacity', 0.3)
+          })
+      d3.selectAll('#rect7, #rect8')
+          .on('click', function() {
+            d3.selectAll('.st1, .st0, .st2')
+              .style('fill', originalColor)
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+            d3.selectAll('.st0, .st1')
+              .style('fill','black')
+              .style('fill-opacity', 0.3)
+              .style('stroke-opacity', 0.3)
+          })
+      d3.selectAll('#rect9')
+          .on('click', function() {
+            d3.selectAll('.st1, .st0, .st2')
+              .style('fill', originalColor)
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+            d3.selectAll('.st0, .st1')
+              .style('fill','black')
+              .style('fill-opacity', 0.3)
+              .style('stroke-opacity', 0.3)
+          })
+      d3.selectAll('#rect10')
+          .on('click', function() {
+            d3.selectAll('.st1, .st0, .st2')
+              .style('fill', originalColor)
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+            d3.selectAll('.st0, .st1')
+              .style('fill','black')
+              .style('fill-opacity', 0.3)
+              .style('stroke-opacity', 0.3)
+          })
+      d3.selectAll('#rect11')
+          .on('click', function() {
+            d3.selectAll('.st1, .st0, .st2')
+              .style('fill', originalColor)
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+            d3.selectAll('.st0, .st1')
+              .style('fill','black')
+              .style('fill-opacity', 0.3)
+              .style('stroke-opacity', 0.3)
+          })
 
-      d3.select('#right4')
-        .on('mouseover', function() {
-          // d3.selectAll('#right4') //this is for whatever remains highlighted 
-          //   .style('fill-opacity', 1)
-          //   .style('stroke-opacity', 1)
-          d3.selectAll('#right2, #right3, #right1, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
-            .style('fill-opacity', 0.1)
-            .style('stroke-opacity', 0.3)
-        })
-        .on('mouseout', function() {
-          d3.selectAll('#right2, #right3, #right1, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7')
-            .style('fill-opacity', 1)
-            .style('stroke-opacity', 1)
-        })
-        .on('click', function() {
-          d3.select(this)
-           .append('text')
-            .attr("class","extraInfo")
-            .attr("x",200)
-            .attr("y",200)
-            .style("stroke", "#000000")
-            .style("fill", "#000000")
-            .text("Info")
-        })
+      d3.selectAll('rect#rect12, rect#rect13, rect#rect14, rect#rect15')
+          .on('click', function() {
+            d3.selectAll('rect#rect12, rect#rect13, rect#rect14, rect#rect15')
+              .style('fill', originalColor)
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+            d3.selectAll('rect#rect1, rect#rect2, rect#rect3, rect#rect4, rect#rect5, rect#rect6, rect#rect7, rect#rect8, rect#rect9, rect#rect10, rect#rect11')
+              .style('fill','black')
+              .style('fill-opacity', 0.3)
+              .style('stroke-opacity', 0.3)
+          })
 
+      d3.selectAll('#underlay, image, g#building_png')
+        .on('click', function() {
+            d3.selectAll('rect#rect1, rect#rect2, rect#rect3, rect#rect4, rect#rect5, rect#rect6, rect#rect7, rect#rect8, rect#rect9, rect#rect10, rect#rect11, rect#rect12, rect#rect13, rect#rect14, rect#rect15')
+              .style('fill', originalColor)
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+          })
+
+      var originalColor
+      var oldColor
+      d3.selectAll('rect#rect1, rect#rect2, rect#rect3, rect#rect4, rect#rect5, rect#rect6, rect#rect7, rect#rect8, rect#rect9, rect#rect10, rect#rect11, rect#rect12, rect#rect13, rect#rect14, rect#rect15')
+          .attr("fill", function(d) {
+           d.oldColor = d3.select(this).attr("fill");
+          return originalColor;
+        });
+      console.log(originalColor)
+   
     }
    
    function styleImportedSVG2 () {
