@@ -154,7 +154,7 @@
      
      d3.selectAll('p.introSide').classed("updatedIntroSide", true);
 
-     d3.xml("../svg/170627chartonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+     d3.xml("../svg/170627chartonly2_bar2.svg").mimeType("image/svg+xml").get(function(error, xml) {
       var importedNode = document.importNode(xml.documentElement, true);
       d3.select("div#visSide1")
         .each(function() {
@@ -169,7 +169,57 @@
         })
       });
 
-     d3.select('#right1')
+     
+      d3.selectAll('rect#rect15.cls-1')
+          .on('click', function() {
+            d3.selectAll('rect#rect15.cls-1')
+              .style('fill', 'black')
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+            // d3.selectAll('.st0, .st1')
+            //   .style('fill','black')
+            //   .style('fill-opacity', 0.3)
+            //   .style('stroke-opacity', 0.3)
+          })
+
+      d3.selectAll('#rect12, #rect13, #rect14, #rect15')
+          .on('click', function() {
+            d3.selectAll('#rect12, #rect13, #rect14, #rect15').classed("barnotselected", true);
+            d3.selectAll('#rect1, #rect2, #rect3, #rect4, #rect5, #rect6, #rect7, #rect8, #rect9, #rect10, #rect11').classed("barnotselected", true);
+              // .style('fill', '#ffffff')
+              // .style('fill-opacity', 1)
+              // .style('stroke-opacity', 1)
+            // d3.selectAll('#rect1, #rect2, #rect3, #rect4, #rect5, #rect6, #rect7, #rect8, #rect9, #rect10, #rect11')
+            //   .style('fill','black')
+            //   .style('fill-opacity', 0.3)
+            //   .style('stroke-opacity', 0.3)
+          })
+
+      d3.selectAll('#underlay, image, g#building_png')
+        .on('click', function() {
+            d3.selectAll('#rect1, #rect2, #rect3, #rect4, #rect5, #rect6, #rect7, #rect8, #rect9, #rect10, #rect11, #rect12, #rect13, #rect14, #rect15')
+              .style('fill', originalColor)
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+          })
+
+      var originalColor
+      d3.selectAll('#rect1, #rect2, #rect3, #rect4, #rect5, #rect6, #rect7, #rect8, #rect9, #rect10, #rect11, #rect12, #rect13, #rect14, #rect15')
+          .attr("fill", function(d) {
+           d.oldColor = d3.select(this).attr("fill");
+          return originalColor;
+        });
+      console.log(originalColor)
+   
+
+      d3.selectAll("#underlay, g#building_png, image")
+        .on('click', function() {
+          d3.selectAll('#right1, #right2, #right3, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7')
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+        })
+
+      d3.select('#right1')
         // .on('mouseover', function() {
         //   d3.selectAll('#right1') //this is for whatever remains highlighted 
         //     .style('fill-opacity', 1)
@@ -212,125 +262,678 @@
               })
             });
             d3.selectAll('image, g#building_png, #right2, #right3, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
-            .style('fill-opacity', 0.1)
-            .style('stroke-opacity', 0.3)
-          d3.select('text.extraInfo, text.extraHeading').remove();
-        	d3.select('h1.extraHeading')
-           .append('text')
-            .attr("class","extraHeading")
-            .text("Apartment Composition")
-          d3.select('p.extraInfo1')
-           .append('text')
-          	.attr("class","extraInfo1")
-          	.text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
-          d3.select('p.extraInfo2')
-           .append('text')
-            .attr("class","extraInfo2")
-            .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
-        })
-      d3.selectAll("#underlay, g#building_png, image")
-        .on('click', function() {
-          d3.selectAll('#right1, #right2, #right3, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7')
-            .style('fill-opacity', 1)
-            .style('stroke-opacity', 1)
-        })
-
-      d3.selectAll('#rect1, #rect2, #recr3, #rect4')
-          .on('click', function() {
-            d3.selectAll('.st1, .st0, .st2')
-              .style('fill', originalColor)
-              .style('fill-opacity', 1)
-              .style('stroke-opacity', 1)
-            d3.selectAll('.st1, .st2')
-              .style('fill','black')
-              .style('fill-opacity', 0.3)
+              .style('fill-opacity', 0.1)
               .style('stroke-opacity', 0.3)
-          })
-      d3.selectAll('#rect5, #rect6')
-          .on('click', function() {
-            d3.selectAll('.st1, .st0, .st2')
-              .style('fill', originalColor)
+            d3.selectAll('#right1') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
-            d3.selectAll('.st2, .st0')
-              .style('fill','black')
-              .style('fill-opacity', 0.3)
-              .style('stroke-opacity', 0.3)
-          })
-      d3.selectAll('#rect7, #rect8')
-          .on('click', function() {
-            d3.selectAll('.st1, .st0, .st2')
-              .style('fill', originalColor)
-              .style('fill-opacity', 1)
-              .style('stroke-opacity', 1)
-            d3.selectAll('.st0, .st1')
-              .style('fill','black')
-              .style('fill-opacity', 0.3)
-              .style('stroke-opacity', 0.3)
-          })
-      d3.selectAll('#rect9')
-          .on('click', function() {
-            d3.selectAll('.st1, .st0, .st2')
-              .style('fill', originalColor)
-              .style('fill-opacity', 1)
-              .style('stroke-opacity', 1)
-            d3.selectAll('.st0, .st1')
-              .style('fill','black')
-              .style('fill-opacity', 0.3)
-              .style('stroke-opacity', 0.3)
-          })
-      d3.selectAll('#rect10')
-          .on('click', function() {
-            d3.selectAll('.st1, .st0, .st2')
-              .style('fill', originalColor)
-              .style('fill-opacity', 1)
-              .style('stroke-opacity', 1)
-            d3.selectAll('.st0, .st1')
-              .style('fill','black')
-              .style('fill-opacity', 0.3)
-              .style('stroke-opacity', 0.3)
-          })
-      d3.selectAll('#rect11')
-          .on('click', function() {
-            d3.selectAll('.st1, .st0, .st2')
-              .style('fill', originalColor)
-              .style('fill-opacity', 1)
-              .style('stroke-opacity', 1)
-            d3.selectAll('.st0, .st1')
-              .style('fill','black')
-              .style('fill-opacity', 0.3)
-              .style('stroke-opacity', 0.3)
-          })
-
-      d3.selectAll('rect#rect12, rect#rect13, rect#rect14, rect#rect15')
-          .on('click', function() {
-            d3.selectAll('rect#rect12, rect#rect13, rect#rect14, rect#rect15')
-              .style('fill', originalColor)
-              .style('fill-opacity', 1)
-              .style('stroke-opacity', 1)
-            d3.selectAll('rect#rect1, rect#rect2, rect#rect3, rect#rect4, rect#rect5, rect#rect6, rect#rect7, rect#rect8, rect#rect9, rect#rect10, rect#rect11')
-              .style('fill','black')
-              .style('fill-opacity', 0.3)
-              .style('stroke-opacity', 0.3)
-          })
-
-      d3.selectAll('#underlay, image, g#building_png')
-        .on('click', function() {
-            d3.selectAll('rect#rect1, rect#rect2, rect#rect3, rect#rect4, rect#rect5, rect#rect6, rect#rect7, rect#rect8, rect#rect9, rect#rect10, rect#rect11, rect#rect12, rect#rect13, rect#rect14, rect#rect15')
-              .style('fill', originalColor)
-              .style('fill-opacity', 1)
-              .style('stroke-opacity', 1)
-          })
-
-      var originalColor
-      d3.selectAll('rect#rect1, rect#rect2, rect#rect3, rect#rect4, rect#rect5, rect#rect6, rect#rect7, rect#rect8, rect#rect9, rect#rect10, rect#rect11, rect#rect12, rect#rect13, rect#rect14, rect#rect15')
-          .attr("fill", function(d) {
-           d.oldColor = d3.select(this).attr("fill");
-          return originalColor;
-        });
-      console.log(originalColor)
+            d3.select('text.extraInfo, text.extraHeading').remove();
+          	d3.select('h1.extraHeading')
+             .append('text')
+              .attr("class","extraHeading")
+              .text("Apartment Composition")
+            d3.select('p.extraInfo1')
+             .append('text')
+            	.attr("class","extraInfo1")
+            	.text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
+            d3.select('p.extraInfo2')
+             .append('text')
+              .attr("class","extraInfo2")
+              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
+            })
+            
    
-    }
+      d3.select('#right2')
+        .on('click', function() {
+            d3.selectAll("div#visSide1 svg, text").remove();
+            d3.selectAll("div#visSide2 svg, text").remove();
+            d3.selectAll("div#visSideObject1 svg, text").remove();
+            d3.selectAll("div#visSideObject2 svg").remove();
+            d3.selectAll("div#visSideMap svg, text").remove();
+
+            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject2")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideMap")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject1")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.3)
+            d3.selectAll('#right2') 
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+            d3.select('text.extraInfo, text.extraHeading').remove();
+            d3.select('h1.extraHeading')
+             .append('text')
+              .attr("class","extraHeading")
+              .text("Apartment Composition")
+            d3.select('p.extraInfo1')
+             .append('text')
+              .attr("class","extraInfo1")
+              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
+            d3.select('p.extraInfo2')
+             .append('text')
+              .attr("class","extraInfo2")
+              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
+          })
+
+        d3.select('#right3')
+        .on('click', function() {
+            d3.selectAll("div#visSide1 svg, text").remove();
+            d3.selectAll("div#visSide2 svg, text").remove();
+            d3.selectAll("div#visSideObject1 svg, text").remove();
+            d3.selectAll("div#visSideObject2 svg").remove();
+            d3.selectAll("div#visSideMap svg, text").remove();
+
+            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject2")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideMap")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject1")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.selectAll('image, g#building_png, #right1, #right2, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.3)
+            d3.selectAll('#right3') 
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+            d3.select('text.extraInfo, text.extraHeading').remove();
+            d3.select('h1.extraHeading')
+             .append('text')
+              .attr("class","extraHeading")
+              .text("Apartment Composition")
+            d3.select('p.extraInfo1')
+             .append('text')
+              .attr("class","extraInfo1")
+              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
+            d3.select('p.extraInfo2')
+             .append('text')
+              .attr("class","extraInfo2")
+              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
+          })
+
+        d3.select('#right4')
+        .on('click', function() {
+            d3.selectAll("div#visSide1 svg, text").remove();
+            d3.selectAll("div#visSide2 svg, text").remove();
+            d3.selectAll("div#visSideObject1 svg, text").remove();
+            d3.selectAll("div#visSideObject2 svg").remove();
+            d3.selectAll("div#visSideMap svg, text").remove();
+
+            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject2")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideMap")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject1")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.selectAll('image, g#building_png, #right1, #right3, #right2, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.3)
+            d3.selectAll('#right4') 
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+            d3.select('text.extraInfo, text.extraHeading').remove();
+            d3.select('h1.extraHeading')
+             .append('text')
+              .attr("class","extraHeading")
+              .text("Apartment Composition")
+            d3.select('p.extraInfo1')
+             .append('text')
+              .attr("class","extraInfo1")
+              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
+            d3.select('p.extraInfo2')
+             .append('text')
+              .attr("class","extraInfo2")
+              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
+          })
+
+        d3.select('#right5')
+          .on('click', function() {
+            d3.selectAll("div#visSide1 svg, text").remove();
+            d3.selectAll("div#visSide2 svg, text").remove();
+            d3.selectAll("div#visSideObject1 svg, text").remove();
+            d3.selectAll("div#visSideObject2 svg").remove();
+            d3.selectAll("div#visSideMap svg, text").remove();
+
+            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject2")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideMap")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject1")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.3)
+            d3.selectAll('#right5') 
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+            d3.select('text.extraInfo, text.extraHeading').remove();
+            d3.select('h1.extraHeading')
+             .append('text')
+              .attr("class","extraHeading")
+              .text("Apartment Composition")
+            d3.select('p.extraInfo1')
+             .append('text')
+              .attr("class","extraInfo1")
+              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
+            d3.select('p.extraInfo2')
+             .append('text')
+              .attr("class","extraInfo2")
+              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
+          })
+        
+        d3.select('#right6')
+          .on('click', function() {
+            d3.selectAll("div#visSide1 svg, text").remove();
+            d3.selectAll("div#visSide2 svg, text").remove();
+            d3.selectAll("div#visSideObject1 svg, text").remove();
+            d3.selectAll("div#visSideObject2 svg").remove();
+            d3.selectAll("div#visSideMap svg, text").remove();
+
+            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject2")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideMap")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject1")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right5, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.3)
+            d3.selectAll('#right6') 
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+            d3.select('text.extraInfo, text.extraHeading').remove();
+            d3.select('h1.extraHeading')
+             .append('text')
+              .attr("class","extraHeading")
+              .text("Apartment Composition")
+            d3.select('p.extraInfo1')
+             .append('text')
+              .attr("class","extraInfo1")
+              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
+            d3.select('p.extraInfo2')
+             .append('text')
+              .attr("class","extraInfo2")
+              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
+          })
+
+        d3.select('#right7')
+          .on('click', function() {
+            d3.selectAll("div#visSide1 svg, text").remove();
+            d3.selectAll("div#visSide2 svg, text").remove();
+            d3.selectAll("div#visSideObject1 svg, text").remove();
+            d3.selectAll("div#visSideObject2 svg").remove();
+            d3.selectAll("div#visSideMap svg, text").remove();
+
+            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject2")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideMap")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject1")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right5, #right6, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.3)
+            d3.selectAll('#right7') 
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+            d3.select('text.extraInfo, text.extraHeading').remove();
+            d3.select('h1.extraHeading')
+             .append('text')
+              .attr("class","extraHeading")
+              .text("Apartment Composition")
+            d3.select('p.extraInfo1')
+             .append('text')
+              .attr("class","extraInfo1")
+              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
+            d3.select('p.extraInfo2')
+             .append('text')
+              .attr("class","extraInfo2")
+              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
+          })
+
+        d3.select('#left1')
+          .on('click', function() {
+            d3.selectAll("div#visSide1 svg, text").remove();
+            d3.selectAll("div#visSide2 svg, text").remove();
+            d3.selectAll("div#visSideObject1 svg, text").remove();
+            d3.selectAll("div#visSideObject2 svg").remove();
+            d3.selectAll("div#visSideMap svg, text").remove();
+
+            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject2")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideMap")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject1")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right5, #right7, #right6, #left2, #left3, #left4, #left5, #left6, #left7') 
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.3)
+            d3.selectAll('#left1') 
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+            d3.select('text.extraInfo, text.extraHeading').remove();
+            d3.select('h1.extraHeading')
+             .append('text')
+              .attr("class","extraHeading")
+              .text("Apartment Composition")
+            d3.select('p.extraInfo1')
+             .append('text')
+              .attr("class","extraInfo1")
+              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
+            d3.select('p.extraInfo2')
+             .append('text')
+              .attr("class","extraInfo2")
+              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
+          })
+
+        d3.select('#left2')
+          .on('click', function() {
+            d3.selectAll("div#visSide1 svg, text").remove();
+            d3.selectAll("div#visSide2 svg, text").remove();
+            d3.selectAll("div#visSideObject1 svg, text").remove();
+            d3.selectAll("div#visSideObject2 svg").remove();
+            d3.selectAll("div#visSideMap svg, text").remove();
+
+            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject2")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideMap")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject1")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right5, #right7, #left1, #right6, #left3, #left4, #left5, #left6, #left7') 
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.3)
+            d3.selectAll('#left2') 
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+            d3.select('text.extraInfo, text.extraHeading').remove();
+            d3.select('h1.extraHeading')
+             .append('text')
+              .attr("class","extraHeading")
+              .text("Apartment Composition")
+            d3.select('p.extraInfo1')
+             .append('text')
+              .attr("class","extraInfo1")
+              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
+            d3.select('p.extraInfo2')
+             .append('text')
+              .attr("class","extraInfo2")
+              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
+          })
+
+        d3.select('#left3')
+          .on('click', function() {
+            d3.selectAll("div#visSide1 svg, text").remove();
+            d3.selectAll("div#visSide2 svg, text").remove();
+            d3.selectAll("div#visSideObject1 svg, text").remove();
+            d3.selectAll("div#visSideObject2 svg").remove();
+            d3.selectAll("div#visSideMap svg, text").remove();
+
+            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject2")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideMap")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject1")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right5, #right7, #left1, #left2, #right6, #left4, #left5, #left6, #left7') 
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.3)
+            d3.selectAll('#left3') 
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+            d3.select('text.extraInfo, text.extraHeading').remove();
+            d3.select('h1.extraHeading')
+             .append('text')
+              .attr("class","extraHeading")
+              .text("Apartment Composition")
+            d3.select('p.extraInfo1')
+             .append('text')
+              .attr("class","extraInfo1")
+              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
+            d3.select('p.extraInfo2')
+             .append('text')
+              .attr("class","extraInfo2")
+              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
+          })
+
+        d3.select('#left4')
+          .on('click', function() {
+            d3.selectAll("div#visSide1 svg, text").remove();
+            d3.selectAll("div#visSide2 svg, text").remove();
+            d3.selectAll("div#visSideObject1 svg, text").remove();
+            d3.selectAll("div#visSideObject2 svg").remove();
+            d3.selectAll("div#visSideMap svg, text").remove();
+
+            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject2")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideMap")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject1")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right5, #right7, #left1, #left2, #left3, #right6, #left5, #left6, #left7') 
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.3)
+            d3.selectAll('#left4') 
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+            d3.select('text.extraInfo, text.extraHeading').remove();
+            d3.select('h1.extraHeading')
+             .append('text')
+              .attr("class","extraHeading")
+              .text("Apartment Composition")
+            d3.select('p.extraInfo1')
+             .append('text')
+              .attr("class","extraInfo1")
+              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
+            d3.select('p.extraInfo2')
+             .append('text')
+              .attr("class","extraInfo2")
+              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
+          })
+
+        d3.select('#left5')
+          .on('click', function() {
+            d3.selectAll("div#visSide1 svg, text").remove();
+            d3.selectAll("div#visSide2 svg, text").remove();
+            d3.selectAll("div#visSideObject1 svg, text").remove();
+            d3.selectAll("div#visSideObject2 svg").remove();
+            d3.selectAll("div#visSideMap svg, text").remove();
+
+            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject2")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideMap")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject1")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right5, #right7, #left1, #left2, #left3, #left4, #right6, #left6, #left7') 
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.3)
+            d3.selectAll('#left5') 
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+            d3.select('text.extraInfo, text.extraHeading').remove();
+            d3.select('h1.extraHeading')
+             .append('text')
+              .attr("class","extraHeading")
+              .text("Apartment Composition")
+            d3.select('p.extraInfo1')
+             .append('text')
+              .attr("class","extraInfo1")
+              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
+            d3.select('p.extraInfo2')
+             .append('text')
+              .attr("class","extraInfo2")
+              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
+          })
+
+        d3.select('#left6')
+          .on('click', function() {
+            d3.selectAll("div#visSide1 svg, text").remove();
+            d3.selectAll("div#visSide2 svg, text").remove();
+            d3.selectAll("div#visSideObject1 svg, text").remove();
+            d3.selectAll("div#visSideObject2 svg").remove();
+            d3.selectAll("div#visSideMap svg, text").remove();
+
+            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject2")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideMap")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject1")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right5, #right7, #left1, #left2, #left3, #left4, #left5, #right6, #left7') 
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.3)
+            d3.selectAll('#left6') 
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+            d3.select('text.extraInfo, text.extraHeading').remove();
+            d3.select('h1.extraHeading')
+             .append('text')
+              .attr("class","extraHeading")
+              .text("Apartment Composition")
+            d3.select('p.extraInfo1')
+             .append('text')
+              .attr("class","extraInfo1")
+              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
+            d3.select('p.extraInfo2')
+             .append('text')
+              .attr("class","extraInfo2")
+              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
+          })
+
+        d3.select('#left7')
+          .on('click', function() {
+            d3.selectAll("div#visSide1 svg, text").remove();
+            d3.selectAll("div#visSide2 svg, text").remove();
+            d3.selectAll("div#visSideObject1 svg, text").remove();
+            d3.selectAll("div#visSideObject2 svg").remove();
+            d3.selectAll("div#visSideMap svg, text").remove();
+
+            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject2")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideMap")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
+            var importedNode = document.importNode(xml.documentElement, true);
+            d3.select("div#visSideObject1")
+              .each(function() {
+                this.appendChild(importedNode);
+              })
+            });
+            d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right5, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #right6') 
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.3)
+            d3.selectAll('#left7') 
+              .style('fill-opacity', 1)
+              .style('stroke-opacity', 1)
+            d3.select('text.extraInfo, text.extraHeading').remove();
+            d3.select('h1.extraHeading')
+             .append('text')
+              .attr("class","extraHeading")
+              .text("Apartment Composition")
+            d3.select('p.extraInfo1')
+             .append('text')
+              .attr("class","extraInfo1")
+              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
+            d3.select('p.extraInfo2')
+             .append('text')
+              .attr("class","extraInfo2")
+              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
+          })
+
+    } //end of function
    
    function styleImportedSVG2 () {
       d3.selectAll('.st0, .st1, .st2')
@@ -388,6 +991,7 @@
           })
 
       var originalColor
+      var oldColor
       d3.selectAll('.st0, .st1, .st2')
           .attr("fill", function(d) {
            d.oldColor = d3.select(this).attr("fill");
