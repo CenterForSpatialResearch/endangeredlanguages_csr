@@ -462,7 +462,8 @@
                 this.appendChild(importedNode);
               })
             });
-            d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
+            d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7').classed('nothovered',true)
+            d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7')
               .style('fill-opacity', 0.1)
               .style('stroke-opacity', 0.3)
             d3.selectAll('#right5') 
@@ -512,6 +513,7 @@
                 this.appendChild(importedNode);
               })
             });
+            d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right5, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7').classed('nothovered',true)
             d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right5, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
               .style('fill-opacity', 0.1)
               .style('stroke-opacity', 0.3)
