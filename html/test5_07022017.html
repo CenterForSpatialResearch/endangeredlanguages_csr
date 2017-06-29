@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	 	<meta charset="UTF-8">
+	    <title>testing basic</title>
+	    <link rel="stylesheet" type="text/css" href="../css/testingbasic.css">
+	    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	</head>
+
+    <style type="text/css">
+   	    /*css styling here */
+
+   	    /* Make the chart container fill the page using CSS. */
+	      #chart {
+	        position: fixed;
+	        left: 0px;
+	        right: 0px;
+	        top: 0px;
+	        bottom: 0px;
+	      }
+
+    </style>
+
+	<body>
+
+		<div id="vis">
+     	   <svg class="mapVis" width = "800" height = "600"> </svg>
+		</div>
+
+	</body>
+
+   <script src="http://d3js.org/d3.v4.min.js"></script>
+   <script src="http://d3js.org/d3-queue.v3.min.js"></script>  
+   <script src="http://d3js.org/topojson.v1.min.js"></script>    
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+   <script type="text/javascript">
+
+   //DRAWING MAP
+	 var div = d3.select("body").append("div")
+	    .attr("class", "tooltip")
+	    .style("opacity", 0);
+	  
+		var width = 800;
+		var height = 600;
+		
+		var svgMAP = d3.select(".vis")
+	      .append("svg")
+	      .attr("width", width)
+	      .attr("height", height)
+
+	  d3.queue()  
+	      // .defer(d3.json, "../data/boroughs_NTA.json")
+	      .defer(d3.csv, "../data/housingTest.csv") 
+	      .await(drawMap); 
+	  
+	  function drawMap(error, frequency){
+  		if (error) throw error;
+  	    // console.log(nyc)
+  	    console.log(frequency)
+
+  	    var adult={};
+  	    var apt={};
+		
+  	    frequency.forEach(function(d) {
+  	    	adult[d.Apt] = +d.Adult;
+  	    	apt[d.Apt] = d.Apt;
+  	    })
+
+  	    var chart = d3.select(".vis")
+  	     .selectAll("div")
+    		.data(frequency)
+  		.enter().append("div")
+    	.style("width", function(d) { return adult[d.Apt] * 10 + "px"; })
+    	// .text(function(d) { return d; });
+
+	  }
+
+
+  
+
+  </script>
+
+</html>

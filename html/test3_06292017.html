@@ -49,21 +49,32 @@
 	      .translate([width / 2, height / 2]); 
 	   var path = d3.geoPath()
 	      .projection(projection);
-	 //sets/creates svg window and draws  NYC map  
+	 sets/creates svg window and draws  NYC map  
 	   var svgMAP = d3.select(".vis")
 	      .append("svg")
 	      .attr("width", width)
 	      .attr("height", height)
 
 	   d3.queue()  
-	      .defer(d3.json, "../data/boroughs_NTA.json")
-	      .defer(d3.csv, "../data/Pop_NTA.csv") 
+	      // .defer(d3.json, "../data/boroughs_NTA.json")
+	      .defer(d3.csv, "../data/housingTest.csv") 
 	      .await(drawMap); 
 	  
-	  function drawMap(error,nyc,frequency){
+	  function drawMap(error, nyc, frequency){
   		if (error) throw error;
   	    console.log(nyc)
   	    console.log(frequency)
+
+
+         d3.select("svg.mapVis")
+		  .selectAll("path")
+		   .data(topojson.feature(nyc, nyc.objects.NY_NTA).features) 
+		  .enter().append("path")
+		   .attr("d", path)
+		   .style("fill", "gold")
+	       .style("fill-opacity", "0.2")
+
+		}
 
   	    d3.select("svg.mapVis")
 		  .selectAll("path")
