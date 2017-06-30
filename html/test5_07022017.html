@@ -22,7 +22,16 @@
     </style>
 
 	<body>
+		<ul class="selections">
+          <p> 
+            <li>Select buildings that are</li>
+            <li><input class="updateButton" id="unbuilding" type="button" value="multilingual"></li>             
+            
+            <li><input class="updateButton" id="twolanguages" type="button" value="bilingual"></li> 
 
+            <li><input class="updateButton" id="boring" type="button" value="monolingual"></li> 
+          </p>
+        </ul>
 		<div id="barChart">
 		</div>
 
@@ -116,7 +125,76 @@
 
 	});
 
-  
+  	 d3.select("#unbuilding").on("click", function(){
+     	d3.selectAll("svg").remove();
+     	d3.selectAll(".updateButton").classed("updateButtonSelected", false);
+     	d3.select(this).classed("updateButtonSelected", true);
+
+     	//actually drawing the bar chart 
+		var svg = d3.select("#barChart").append("svg")
+		    .attr("width", width + margin.left + margin.right)
+		    .attr("height", height + margin.top + margin.bottom)
+		    .style('background', '#bce8f1')
+		  .append("g") //g element provides reference point for adding our axes
+		    .attr("transform", 
+		          "translate(" + margin.left + "," + margin.top + ")");
+	    
+	  	d3.csv("../data/housingTest2.csv", function(error, data) {
+		  //looping through csv to makesure that the values are recognized properly
+		  data.forEach(function(d) {
+		      d.apt = d.Apt; //for x axis 
+		      d.value = +d.Years; //for y axis
+		  });
+	  
+		  //ensure that the data is scaled to the domains 
+		  x.domain(data.map(function(d) { return d.apt; }));
+		  y.domain([0, d3.max(data, function(d) { return d.value; })]);
+
+		  //appending x axis
+		  svg.append("g")
+		      .attr("class", "x-axis")
+		      .attr("transform", "translate(0," + height + ")") //places it in correct position
+		      .call(xAxis)
+		    .selectAll("text")
+		      .style("text-anchor", "end")
+		      .attr("dx", "-.8em") //rext is positioned using dx and dy
+		      .attr("dy", "-.55em")
+		      .attr("transform", "rotate(-90)" );//rotates so aligns vertically
+		  //appending y axis
+		  svg.append("g")
+		      .attr("class", "y-axis")
+		      .call(yAxis)
+		    .append("text")
+		      .attr("transform", "rotate(-90)")//aligning vertically
+		      .attr("y", 6) //???
+		      .attr("dy", ".71em")
+		      .style("text-anchor", "end")
+		      .text("Value ($)");//appending label
+		  //appending bars
+		  svg.selectAll("bar") //creates the bars 
+		      .data(data) //associates each bar with dataset 
+		    .enter().append("rect") //self-explanatory
+		      .style("fill", "white")
+		      .style("stroke","black")
+		      .attr("x", function(d) { return x(d.apt); })
+		      .attr("width", x.bandwidth())
+		      .attr("y", function(d) { return y(d.value); })
+		      .attr("height", function(d) { return height - y(d.value); })
+
+		      //color change on mouseover + mouseout
+			  .on('mouseover', function(data) {
+			    dynamicColor = this.style.fill;
+			    d3.select(this)
+			      .style('fill', '#3c763d')
+			  })
+			  .on('mouseout', function(data) {
+			    d3.select(this)
+			      .style('fill', dynamicColor)
+			  })
+
+			});  
+
+	 });
 
   </script>
 
