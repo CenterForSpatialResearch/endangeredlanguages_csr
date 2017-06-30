@@ -35,122 +35,86 @@
 
    <script type="text/javascript">
 
-   //DRAWING MAP
-	 // var div = d3.select("body").append("div")
-	 //    .attr("class", "tooltip")
-	 //    .style("opacity", 0);
+	var dynamicColor; //globalvariable
+
+	//setting the size of area + nmargins for the chart 
+	var margin = {top: 20, right: 20, bottom: 70, left: 40},
+	    width = 600 - margin.left - margin.right,
+	    height = 300 - margin.top - margin.bottom;
+
+	//declares functions to determine positioning in the x and y domain
+	var x = d3.scaleBand()
+		.rangeRound([0, width], .05) //can use different types of ranges 
+		.padding(0.1); //padding between the bars 
+	var y = d3.scaleLinear()
+		.range([height, 0]);
+	//declarations for axes 
+	var xAxis = d3.axisBottom(x).ticks(10);
+	var yAxis = d3.axisLeft(y);
+
+	//actually drawing the bar chart 
+	var svg = d3.select("#barChart").append("svg")
+	    .attr("width", width + margin.left + margin.right)
+	    .attr("height", height + margin.top + margin.bottom)
+	    .style('background', '#bce8f1')
+	  .append("g") //g element provides reference point for adding our axes
+	    .attr("transform", 
+	          "translate(" + margin.left + "," + margin.top + ")");
+
+	d3.csv("../data/housingTest.csv", function(error, data) {
+		//looping through csv to makesure that the values are recognized properly
+	    data.forEach(function(d) {
+	        d.apt = d.Apt; //for x axis 
+	        d.value = +d.Adult; //for y axis
+	    });
 	  
-		// var width = 800;
-		// var height = 600;
-		
-		// var svgMAP = d3.select(".vis")
-	 //      .append("svg")
-	 //      .attr("width", width)
-	 //      .attr("height", height)
+	  //ensure that the data is scaled to the domains 
+	  x.domain(data.map(function(d) { return d.apt; }));
+	  y.domain([0, d3.max(data, function(d) { return d.value; })]);
 
-	 //  d3.queue()  
-	 //      // .defer(d3.json, "../data/boroughs_NTA.json")
-	 //      .defer(d3.csv, "../data/housingTest.csv") 
-	 //      .await(drawMap); 
-	  
-	 //  function drawMap(error, frequency){
-  // 		if (error) throw error;
-  // 	    // console.log(nyc)
-  // 	    console.log(frequency)
+	  //appending x axis
+	  svg.append("g")
+	      .attr("class", "x-axis")
+	      .attr("transform", "translate(0," + height + ")") //places it in correct position
+	      .call(xAxis)
+	    .selectAll("text")
+	      .style("text-anchor", "end")
+	      .attr("dx", "-.8em") //rext is positioned using dx and dy
+	      .attr("dy", "-.55em")
+	      .attr("transform", "rotate(-90)" );//rotates so aligns vertically
+	  //appending y axis
+	  svg.append("g")
+	      .attr("class", "y-axis")
+	      .call(yAxis)
+	    .append("text")
+	      .attr("transform", "rotate(-90)")//aligning vertically
+	      .attr("y", 6) //???
+	      .attr("dy", ".71em")
+	      .style("text-anchor", "end")
+	      .text("Value ($)");//appending label
+	  //appending bars
+	  svg.selectAll("bar") //creates the bars 
+	      .data(data) //associates each bar with dataset 
+	    .enter().append("rect") //self-explanatory
+	      .style("fill", "white")
+	      .style("stroke","black")
+	      .attr("x", function(d) { return x(d.apt); })
+	      .attr("width", x.bandwidth())
+	      .attr("y", function(d) { return y(d.value); })
+	      .attr("height", function(d) { return height - y(d.value); })
 
-  // 	    var adult={};
-  // 	    var apt={};
-		
-  // 	    frequency.forEach(function(d) {
-  // 	    	adult[d.Apt] = +d.Adult;
-  // 	    	apt[d.Apt] = d.Apt;
-  // 	    });
+	      //color change on mouseover + mouseout
+		  .on('mouseover', function(data) {
+		    dynamicColor = this.style.fill;
+		    d3.select(this)
+		      .style('fill', '#3c763d')
+		  })
+		  .on('mouseout', function(data) {
+		    d3.select(this)
+		      .style('fill', dynamicColor)
+		  })
 
-  // 	    var chart = d3.select(".vis")
-  // 	     .selectAll("div")
-  //   		.data(frequency)
-  // 		.enter().append("g")
-  //   	// .style("width", function(d) { return adult[d.Apt] * 10 + "px"; })
-  //   	// .text(function(d) { return d; });
-	 //  }
-
-var margin = {top: 20, right: 20, bottom: 70, left: 40},
-    width = 600 - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom;
-
-var dynamicColor;
-
-var x = d3.scaleBand()
-	.rangeRound([0, width], .05)
-	.padding(0.1); //padding between the bars 
-var y = d3.scaleLinear()
-	.range([height, 0]);
-
-var xAxis = d3.axisBottom(x).ticks(10);
-var yAxis = d3.axisLeft(y);
-
-var svg = d3.select("#barChart").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .style('background', '#bce8f1')
-  .append("g")
-    .attr("transform", 
-          "translate(" + margin.left + "," + margin.top + ")");
-
-
-d3.csv("../data/housingTest.csv", function(error, data) {
-
-    data.forEach(function(d) {
-        d.apt = d.Apt; //x axis 
-        d.value = +d.Adult; //y axis
-    });
- 
-  x.domain(data.map(function(d) { return d.apt; }));
-  y.domain([0, d3.max(data, function(d) { return d.value; })]);
-
-
-  svg.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(xAxis)
-    .selectAll("text")
-      .style("text-anchor", "end")
-      .attr("dx", "-.8em")
-      .attr("dy", "-.55em")
-      .attr("transform", "rotate(-90)" );
-
-  svg.append("g")
-      .attr("class", "y axis")
-      .call(yAxis)
-    .append("text")
-      .attr("transform", "rotate(-90)")//aligning vertically
-      .attr("y", 6) //???
-      .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text("Value ($)");//appending label
-
-  svg.selectAll("bar") //creates the bars 
-      .data(data) //associates each bar with a dataset 
-    .enter().append("rect")
-      .style("fill", "white")
-      .style("stroke","black")
-      .attr("x", function(d) { return x(d.apt); })
-      .attr("width", x.bandwidth())
-      .attr("y", function(d) { return y(d.value); })
-      .attr("height", function(d) { return height - y(d.value); })
-
-	  .on('mouseover', function(data) {
-	    dynamicColor = this.style.fill;
-	    d3.select(this)
-	      .style('fill', '#3c763d')
-	  })
-
-	.on('mouseout', function(data) {
-	  d3.select(this)
-	    .style('fill', dynamicColor)
-	})
-
-});
+	});
 
   
 
