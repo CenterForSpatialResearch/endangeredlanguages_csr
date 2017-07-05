@@ -57,6 +57,11 @@
 		.padding(0.1); //padding between the bars 
 	var y = d3.scaleLinear()
 		.range([height, 0]);
+	var z = d3.scaleOrdinal() //for the stacking
+    	.range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+	
+    var stack = d3.stack();
+
 	//declarations for axes 
 	var xAxis = d3.axisBottom(x).ticks(10);
 	var yAxis = d3.axisLeft(y);
@@ -69,30 +74,50 @@
 	  .append("g") //g element provides reference point for adding our axes
 	    .attr("transform", 
 	          "translate(" + margin.left + "," + margin.top + ")");
+    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 	d3.csv("../data/housingTest.csv", function(error, data) {
 		//looping through csv to makesure that the values are recognized properly
 	    data.forEach(function(d) {
 	        d.apt = d.Apt; //for x axis 
 	        d.value = +d.Adult; //for y axis
+	        d.value1 = +d.Years;
+		    d.value2 = +d.Children;
 	    });
 	  
 	  //ensure that the data is scaled to the domains 
 	  x.domain(data.map(function(d) { return d.apt; }));
 	  y.domain([0, d3.max(data, function(d) { return d.value; })]);
+	  z.domain(data.columns.slice(1));
+
+	  g.selectAll(".serie")
+	    .data(stack.keys(data.columns.slice(1))(data))
+	    .enter().append("g")
+	      .attr("class", "serie")
+	      .attr("fill", function(d) { return z(d.key); })
+	    .selectAll("rect")
+	    .data(function(d) { return d; })
+	    .enter().append("rect")
+	      // .attr("x", function(d) { return x(d.data.apt); }) //works for entire series
+	      .attr("x", function(d) { return x(d.apt); }) //this worrks for only the first one
+	      .attr("y", function(d) { return y(d[1]); })
+	      // .attr("y", function(d) { return y(d.data.Adult); })
+	      .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+	      // .attr("height", function(d) { return y(d.data.Adult[0]) - y(d.data.Adult[1]); })
+	      .attr("width", x.bandwidth());
 
 	  //appending x axis
-	  svg.append("g")
+	  g.append("g")
 	      .attr("class", "x-axis")
 	      .attr("transform", "translate(0," + height + ")") //places it in correct position
 	      .call(xAxis)
 	    .selectAll("text")
 	      .style("text-anchor", "end")
-	      .attr("dx", "-.8em") //rext is positioned using dx and dy
+	      .attr("dx", "-.8em") //rect is positioned using dx and dy
 	      .attr("dy", "-.55em")
 	      .attr("transform", "rotate(-90)" );//rotates so aligns vertically
 	  //appending y axis
-	  svg.append("g")
+	  g.append("g")
 	      .attr("class", "y-axis")
 	      .call(yAxis)
 	    .append("text")
@@ -101,27 +126,47 @@
 	      .attr("dy", ".71em")
 	      .style("text-anchor", "end")
 	      .text("Value ($)");//appending label
-	  //appending bars
-	  svg.selectAll("bar") //creates the bars 
-	      .data(data) //associates each bar with dataset 
-	    .enter().append("rect") //self-explanatory
-	      .style("fill", "white")
-	      .style("stroke","black")
-	      .attr("x", function(d) { return x(d.apt); })
-	      .attr("width", x.bandwidth())
-	      .attr("y", function(d) { return y(d.value); })
-	      .attr("height", function(d) { return height - y(d.value); })
+	  // //appending bars
+	  // g.selectAll("bar") //creates the bars 
+	  //     .data(data) //associates each bar with dataset 
+	  //   .enter().append("rect") //self-explanatory
+	  //     .style("fill", "white")
+	  //     .style("stroke","black")
+	  //     .attr("x", function(d) { return x(d.apt); })
+	  //     .attr("width", x.bandwidth())
+	  //     .attr("y", function(d) { return y(d.value); })
+	  //     .attr("height", function(d) { return height - y(d.value); })
 
-	      //color change on mouseover + mouseout
-		  .on('mouseover', function(data) {
-		    dynamicColor = this.style.fill;
-		    d3.select(this)
-		      .style('fill', '#3c763d')
-		  })
-		  .on('mouseout', function(data) {
-		    d3.select(this)
-		      .style('fill', dynamicColor)
-		  })
+	  //     //color change on mouseover + mouseout
+		 //  .on('mouseover', function(data) {
+		 //    dynamicColor = this.style.fill;
+		 //    d3.select(this)
+		 //      .style('fill', '#3c763d')
+		 //  })
+		 //  .on('mouseout', function(data) {
+		 //    d3.select(this)
+		 //      .style('fill', dynamicColor)
+		 //  })
+
+		  var legend = g.selectAll(".legend")
+		    .data(data.columns.slice(1).reverse())
+		    .enter().append("g")
+		      .attr("class", "legend")
+		      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; })
+		      .style("font", "10px sans-serif");
+
+		  legend.append("rect")
+		      .attr("x", width + 18)
+		      .attr("width", 18)
+		      .attr("height", 18)
+		      .attr("fill", z);
+
+		  legend.append("text")
+		      .attr("x", width + 44)
+		      .attr("y", 9)
+		      .attr("dy", ".35em")
+		      .attr("text-anchor", "start")
+		      .text(function(d) { return d; });
 
 	});
 
@@ -144,6 +189,8 @@
 		  data.forEach(function(d) {
 		      d.apt = d.Apt; //for x axis 
 		      d.value = +d.Years; //for y axis
+		      d.value1 = +d.Adult;
+		      d.value2 = +d.Children;
 		  });
 	  
 		  //ensure that the data is scaled to the domains 
