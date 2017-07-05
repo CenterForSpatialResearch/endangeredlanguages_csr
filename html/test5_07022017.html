@@ -47,9 +47,10 @@
 	var dynamicColor; //globalvariable
 
 	//setting the size of area + nmargins for the chart 
-	var margin = {top: 20, right: 20, bottom: 70, left: 40},
-	    width = 600 - margin.left - margin.right,
-	    height = 300 - margin.top - margin.bottom;
+	// var margin = {top: 20, right: 20, bottom: 70, left: 40},
+	var margin = {top: 330, right: 20, bottom: 20, left: 40},
+	    width = 800 - margin.left - margin.right,
+	    height = 600 - margin.top - margin.bottom;
 
 	//declares functions to determine positioning in the x and y domain
 	var x = d3.scaleBand()
@@ -64,17 +65,16 @@
 
 	//declarations for axes 
 	var xAxis = d3.axisBottom(x).ticks(10);
-	var yAxis = d3.axisLeft(y);
+	// var yAxis = d3.axisLeft(y);
+	var yAxis = d3.axisLeft(y).ticks(10,"s");
 
 	//actually drawing the bar chart 
 	var svg = d3.select("#barChart").append("svg")
 	    .attr("width", width + margin.left + margin.right)
 	    .attr("height", height + margin.top + margin.bottom)
 	    .style('background', '#bce8f1')
-	  .append("g") //g element provides reference point for adding our axes
-	    .attr("transform", 
-	          "translate(" + margin.left + "," + margin.top + ")");
-    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    g = svg.append("g") //g element provides reference point for adding our axes
+    	.attr("transform", "translate(" + margin.left + "," + margin.top + ") scale(0.75)");
 
 	d3.csv("../data/housingTest.csv", function(error, data) {
 		//looping through csv to makesure that the values are recognized properly
@@ -98,12 +98,10 @@
 	    .selectAll("rect")
 	    .data(function(d) { return d; })
 	    .enter().append("rect")
-	      // .attr("x", function(d) { return x(d.data.apt); }) //works for entire series
-	      .attr("x", function(d) { return x(d.apt); }) //this worrks for only the first one
-	      .attr("y", function(d) { return y(d[1]); })
-	      // .attr("y", function(d) { return y(d.data.Adult); })
+	      .attr("x", function(d) { return x(d.data.apt); }) //works for entire series
+	      // .attr("x", function(d) { return x(d.apt); }) //this works for only the first one
+	      .attr("y", function(d) { return y(d[1]); }) //this is doing d.value cause thats what i set it as before
 	      .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-	      // .attr("height", function(d) { return y(d.data.Adult[0]) - y(d.data.Adult[1]); })
 	      .attr("width", x.bandwidth());
 
 	  //appending x axis
@@ -121,52 +119,32 @@
 	      .attr("class", "y-axis")
 	      .call(yAxis)
 	    .append("text")
+	    .attr("class", "y-axis")
 	      .attr("transform", "rotate(-90)")//aligning vertically
 	      .attr("y", 6) //???
 	      .attr("dy", ".71em")
 	      .style("text-anchor", "end")
 	      .text("Value ($)");//appending label
-	  // //appending bars
-	  // g.selectAll("bar") //creates the bars 
-	  //     .data(data) //associates each bar with dataset 
-	  //   .enter().append("rect") //self-explanatory
-	  //     .style("fill", "white")
-	  //     .style("stroke","black")
-	  //     .attr("x", function(d) { return x(d.apt); })
-	  //     .attr("width", x.bandwidth())
-	  //     .attr("y", function(d) { return y(d.value); })
-	  //     .attr("height", function(d) { return height - y(d.value); })
 
-	  //     //color change on mouseover + mouseout
-		 //  .on('mouseover', function(data) {
-		 //    dynamicColor = this.style.fill;
-		 //    d3.select(this)
-		 //      .style('fill', '#3c763d')
-		 //  })
-		 //  .on('mouseout', function(data) {
-		 //    d3.select(this)
-		 //      .style('fill', dynamicColor)
-		 //  })
+	  var legend = g.selectAll(".legend")
+	    .data(data.columns.slice(1).reverse())
+	    .enter().append("g")
+	      .attr("class", "legend")
+	      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; })
+	      .style("font", "10px sans-serif");
 
-		  var legend = g.selectAll(".legend")
-		    .data(data.columns.slice(1).reverse())
-		    .enter().append("g")
-		      .attr("class", "legend")
-		      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; })
-		      .style("font", "10px sans-serif");
+	  legend.append("rect")
+	      .attr("x", width + 18)
+	      .attr("width", 18)
+	      .attr("height", 18)
+	      .attr("fill", z);
 
-		  legend.append("rect")
-		      .attr("x", width + 18)
-		      .attr("width", 18)
-		      .attr("height", 18)
-		      .attr("fill", z);
-
-		  legend.append("text")
-		      .attr("x", width + 44)
-		      .attr("y", 9)
-		      .attr("dy", ".35em")
-		      .attr("text-anchor", "start")
-		      .text(function(d) { return d; });
+	  legend.append("text")
+	      .attr("x", width + 44)
+	      .attr("y", 9)
+	      .attr("dy", ".35em")
+	      .attr("text-anchor", "start")
+	      .text(function(d) { return d; });
 
 	});
 
