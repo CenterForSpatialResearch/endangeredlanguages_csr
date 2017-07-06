@@ -30,8 +30,21 @@
       <div class="container">
         <div class="row">
           
-          <div class="col-md-9">
-          	<ul class="selections">
+          <div class="col-md-3" id="sidePanel">
+            <h1 class="extraHeading"> </h1>
+            <div id="barChart"></div>
+            <div id="visSide1"></div>
+            <div id="visSide2"></div>
+            <div id="visSideObject1"></div>
+            <p class="extraInfo1"> </p>
+            <div id="visSideObject2"></div>
+            <p class="extraInfo2"> </p>
+            <div id="visSideMap"></div>
+          </div>
+
+          <div class="col-md-9" id="bodyPanel">
+          	
+            <ul class="selections">
               <p> 
                 <li>Select buildings that are</li>
                 <li><input class="updateButton" id="unbuilding" type="button" value="multilingual"></li>             
@@ -45,26 +58,20 @@
             <p> Select an apartment for more information </p>
         		<div id="vis"></div>
             <p class="extraInfo"> </p>
+
           </div>
 
-        </div>
-      </div>
-    </div>
+          <hr/>
 
-    <div class="sidePanel">
-      <div class="container">
-        <div class="row">
-          
-          <div class="col-md-3">
-            <h1 class="extraHeading"> </h1>
-            <div id="barChart"></div>
-            <div id="visSide1"></div>
-            <div id="visSide2"></div>
-            <div id="visSideObject1"></div>
-            <p class="extraInfo1"> </p>
-            <div id="visSideObject2"></div>
-            <p class="extraInfo2"> </p>
-            <div id="visSideMap"></div>
+          <div class="col-md-12" id="bodyPanel">
+            <div class="col-md-6" id="bodyPanel">
+              <a href="#twolanguages"> <img src="../img/170706_building.png"></a>
+                     <li><input class="updateButton" id="twolanguages" type="button" value="bilingual"></li> 
+         
+            </div>
+            <div class="col-md-6" id="bodyPanel">
+              <a href="#boring"> <img src="../img/170706_building.png"></a>
+            </div>
           </div>
 
         </div>
@@ -84,7 +91,7 @@
       var height = chartDiv.clientHeight;
 
       // load the external svg from a file
-      d3.xml("../svg/170627buildingonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+      d3.xml("../svg/170706_buildingonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
       var importedNode = document.importNode(xml.documentElement, true);
       d3.select("div#vis")
         .each(function() {
@@ -105,7 +112,7 @@
      d3.selectAll(".updateButton").classed("updateButtonSelected", false);
      d3.select(this).classed("updateButtonSelected", true);
 
-     d3.xml("../svg/170627detail_building_web-01.svg").mimeType("image/svg+xml").get(function(error, xml) {
+     d3.xml("../svg/170706_buildingdetail.svg").mimeType("image/svg+xml").get(function(error, xml) {
       var importedNode = document.importNode(xml.documentElement, true);
       d3.select("div#vis")
         .each(function() {
@@ -153,13 +160,6 @@
      
      d3.selectAll('p.introSide').classed("updatedIntroSide", true);
 
-     d3.xml("../svg/170627chartonly2_bar2.svg").mimeType("image/svg+xml").get(function(error, xml) {
-      var importedNode = document.importNode(xml.documentElement, true);
-      d3.select("div#visSide1")
-        .each(function() {
-          this.appendChild(importedNode);
-        })
-      });
      d3.xml("../svg/170627histogramonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
       var importedNode = document.importNode(xml.documentElement, true);
       d3.select("div#visSide2")
@@ -193,45 +193,61 @@
             .style('stroke-opacity', 1)
         })
 
-
+      d3.select('p.extraInfo1')
+         .append('text')
+          .attr("class","extraInfo1")
+          .text("Neighborhood Composition")
+      d3.select('p.extraInfo2')
+       .append('text')
+        .attr("class","extraInfo2")
+        .text("New York City Composition")
+ 
       //setting the size of area + nmargins for the chart 
-  var margin = {top: 20, right: 20, bottom: 70, left: 40},
-      width = 800 - margin.left - margin.right,
-      height = 600 - margin.top - margin.bottom;
+      var margin = {top: 20, right: 20, bottom: 70, left: 40},
+          width = 800 - margin.left - margin.right,
+          height = 600 - margin.top - margin.bottom;
 
-  //declares functions to determine positioning in the x and y domain
-  var x = d3.scaleBand()
-    .rangeRound([0, width], .05) //can use different types of ranges 
-    .padding(0.1); //padding between the bars 
-  var y = d3.scaleLinear()
-    .range([height, 0]);
-  var z = d3.scaleOrdinal() //for the stacking
-      .range(["#ebebeb", "pink", "#red", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
-  
-    var stack = d3.stack();
+      //declares functions to determine positioning in the x and y domain
+      var x = d3.scaleBand()
+        .rangeRound([0, width], .05) //can use different types of ranges 
+        .padding(0.1); //padding between the bars 
+      var y = d3.scaleLinear()
+        .range([height, 0]);
+      var z = d3.scaleOrdinal() //for the stacking
+          .range(["#ebebeb", "pink", "#red", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+      
+      var stack = d3.stack();
 
-  //declarations for axes 
-  var xAxis = d3.axisBottom(x).ticks(10);
-  var yAxis = d3.axisLeft(y);
-  // var yAxis = d3.axisLeft(y).ticks(10,"s");
+      //declarations for axes 
+      var xAxis = d3.axisBottom(x).ticks(10);
+      var yAxis = d3.axisLeft(y);
+      // var yAxis = d3.axisLeft(y).ticks(10,"s");
 
-  //actually drawing the bar chart 
-  var svg = d3.select("#barChart").append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-    g = svg.append("g") //g element provides reference point for adding our axes
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ") scale(0.75)");
+      //actually drawing the bar chart 
+      var svg = d3.select("#barChart").append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+        g = svg.append("g") //g element provides reference point for adding our axes
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ") scale(0.75)");
 
-  d3.csv("../data/housingTest_Language.csv", function(error, data) {
-    //looping through csv to makesure that the values are recognized properly
-      data.forEach(function(d) {
-          d.lang = d.Language; //for x axis 
-          d.num = +d.Total; //for y axis
-      });
-    
+      d3.csv("../data/housingTest_Language.csv", function(error, data) {
+        //looping through csv to makesure that the values are recognized properly
+          data.forEach(function(d) {
+              d.lang = d.Language; //for x axis 
+              d.polish = +d.Polish; //for y axis
+              d.arabic = +d.Arabic;
+              d.english = +d.English;
+              d.chinese = +d.Chinese;
+              d.gad = +d.GAD;
+              d.spanish = +d.Spanish;
+              d.mandarin = +d.Mandarin;
+              d.patois = +d.Patois;
+              d.russian = +d.Russian;
+          });
+        
     //ensure that the data is scaled to the domains 
     x.domain(data.map(function(d) { return d.lang; }));
-    y.domain([0, d3.max(data, function(d) { return d.num; })]);
+    y.domain([0, d3.max(data, function(d) { return d.polish + d.arabic + d.english + d.chinese + d.gad + d.spanish + d.mandarin + d.patois + d.russian; })]);
     z.domain(data.columns.slice(1));
 
     g.selectAll(".serie")
@@ -247,7 +263,6 @@
         .attr("height", function(d) { return y(d[0]) - y(d[1]); })
         // .attr("width", x.bandwidth());
         .attr("width", 50);
-
     //appending y axis
     g.append("g")
         .attr("class", "y-axis")
@@ -258,54 +273,76 @@
         .attr("y", 6) //???
         .attr("dy", ".71em")
         .style("text-anchor", "end")
-        .text("Value ($)");//appending label
+        // .text("Value ($)");//appending label
+    // var legend = svg.selectAll("g.y-axis")
+    //   .data(data.columns.slice(1).reverse())
+    //   .enter().append("g")
+    //     .attr("class", "legend")
+    //     .attr("transform", function(d, i) { 
+    //       return "translate(0," + i * 20 + ")"; 
+    //     })
+    //     .style("font", "10px sans-serif");
 
-    var legend = g.selectAll(".legend")
-      .data(data.columns.slice(1).reverse())
-      .enter().append("g")
-        .attr("class", "legend")
-        .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; })
-        .style("font", "10px sans-serif");
+    // legend.append("text")
+    //     .attr("x", width / 5)
+    //     .attr("y", 9)
+    //     .attr("dy", ".35em")
+    //     .attr("text-anchor", "start")
+    //     .text(function(d) { return d; });
 
-    legend.append("text")
-        .attr("x", width / 6)
-        // .attr("y", 9)
-        .attr("y", function(d) { return y(d[0]) / y(d[1]); })
-        .attr("dy", ".35em")
-        .attr("text-anchor", "start")
-        .text(function(d) { return d; });
+      svg.selectAll("g.y-axis")
+              .data(data.columns.slice(1).reverse()) //for name 
+              .enter()
+          .append("text")
+          .classed('textLegend', true)
+          // .attr("x", function(d, i) {return (i+1)*100})
+          .attr("y", function(d, i) {return (i+1)*100})
+        .attr("transform", function(d, i) { 
+          return "translate(0," + i * 20 + ")"; 
+        })
+        // .attr("x", function(d) { return x(d.data.lang); }) //works for entire series
+        .attr("y", function(d, i) {return (i+1)*10})
+        .attr("transform", function(d, i) { 
+          return "translate(0," + i * 20 + ")"; 
+        })
+        .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+          .style("text.anchor", "start")
+          .style("font-size", "10px")
+          .style("fill", "black")
+          .attr("font-family","monospace")
+          .text(function(d){return d});
 
-  });
+        var dataNumbers = g.selectAll("number")
+            .data(stack.keys(data.columns.slice(1))(data))
+            .enter()
+
+          console.log(dataNumbers)
+
+
+        g.selectAll("textLegend")
+            .data(stack.keys(data.columns.slice(1))(data)) //for numbers 
+            .enter()
+          .append("text")
+          .classed('number', true)
+          // .attr("x", function(d, i) {return (i+1)*100})
+          // .attr("y", function(d) { return d})
+          // .attr("y", function(d) { return y(d[1]); })
+        .attr("transform", function(d, i) { 
+          return "translate(0," + i * 20 + ")"; 
+        })
+        .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+          .style("text.anchor", "start")
+          .style("font-size", "10px")
+          .style("fill", "black")
+          .attr("font-family","monospace")
+          .text(function(d){return d});
+
+
+
+        });
 
       d3.select('#right1')
         .on('click', function() {
-            d3.selectAll("div#visSide1 svg, text").remove();
-            d3.selectAll("div#visSide2 svg, text").remove();
-            d3.selectAll("div#visSideObject1 svg, text").remove();
-            d3.selectAll("div#visSideObject2 svg").remove();
-            d3.selectAll("div#visSideMap svg, text").remove();
-
-            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject2")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideMap")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject1")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
             d3.selectAll('image, g#building_png, #right2, #right3, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
               .style('fill-opacity', 0.1)
               .style('stroke-opacity', 0.3)
@@ -330,33 +367,6 @@
    
       d3.select('#right2')
         .on('click', function() {
-            d3.selectAll("div#visSide1 svg, text").remove();
-            d3.selectAll("div#visSide2 svg, text").remove();
-            d3.selectAll("div#visSideObject1 svg, text").remove();
-            d3.selectAll("div#visSideObject2 svg").remove();
-            d3.selectAll("div#visSideMap svg, text").remove();
-
-            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject2")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideMap")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject1")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
             d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
               .style('fill-opacity', 0.1)
               .style('stroke-opacity', 0.3)
@@ -380,33 +390,6 @@
 
         d3.select('#right3')
         .on('click', function() {
-            d3.selectAll("div#visSide1 svg, text").remove();
-            d3.selectAll("div#visSide2 svg, text").remove();
-            d3.selectAll("div#visSideObject1 svg, text").remove();
-            d3.selectAll("div#visSideObject2 svg").remove();
-            d3.selectAll("div#visSideMap svg, text").remove();
-
-            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject2")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideMap")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject1")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
             d3.selectAll('image, g#building_png, #right1, #right2, #right4, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
               .style('fill-opacity', 0.1)
               .style('stroke-opacity', 0.3)
@@ -430,33 +413,6 @@
 
         d3.select('#right4')
         .on('click', function() {
-            d3.selectAll("div#visSide1 svg, text").remove();
-            d3.selectAll("div#visSide2 svg, text").remove();
-            d3.selectAll("div#visSideObject1 svg, text").remove();
-            d3.selectAll("div#visSideObject2 svg").remove();
-            d3.selectAll("div#visSideMap svg, text").remove();
-
-            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject2")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideMap")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject1")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
             d3.selectAll('image, g#building_png, #right1, #right3, #right2, #right5, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
               .style('fill-opacity', 0.1)
               .style('stroke-opacity', 0.3)
@@ -480,33 +436,6 @@
 
         d3.select('#right5')
           .on('click', function() {
-            d3.selectAll("div#visSide1 svg, text").remove();
-            d3.selectAll("div#visSide2 svg, text").remove();
-            d3.selectAll("div#visSideObject1 svg, text").remove();
-            d3.selectAll("div#visSideObject2 svg").remove();
-            d3.selectAll("div#visSideMap svg, text").remove();
-
-            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject2")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideMap")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject1")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
             d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7').classed('nothovered',true)
             d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right6, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7')
               .style('fill-opacity', 0.1)
@@ -531,33 +460,6 @@
         
         d3.select('#right6')
           .on('click', function() {
-            d3.selectAll("div#visSide1 svg, text").remove();
-            d3.selectAll("div#visSide2 svg, text").remove();
-            d3.selectAll("div#visSideObject1 svg, text").remove();
-            d3.selectAll("div#visSideObject2 svg").remove();
-            d3.selectAll("div#visSideMap svg, text").remove();
-
-            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject2")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideMap")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject1")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
             d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right5, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7').classed('nothovered',true)
             d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right5, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
               .style('fill-opacity', 0.1)
@@ -582,33 +484,6 @@
 
         d3.select('#right7')
           .on('click', function() {
-            d3.selectAll("div#visSide1 svg, text").remove();
-            d3.selectAll("div#visSide2 svg, text").remove();
-            d3.selectAll("div#visSideObject1 svg, text").remove();
-            d3.selectAll("div#visSideObject2 svg").remove();
-            d3.selectAll("div#visSideMap svg, text").remove();
-
-            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject2")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideMap")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject1")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
             d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right5, #right6, #left1, #left2, #left3, #left4, #left5, #left6, #left7') 
               .style('fill-opacity', 0.1)
               .style('stroke-opacity', 0.3)
@@ -632,33 +507,6 @@
 
         d3.select('#left1')
           .on('click', function() {
-            d3.selectAll("div#visSide1 svg, text").remove();
-            d3.selectAll("div#visSide2 svg, text").remove();
-            d3.selectAll("div#visSideObject1 svg, text").remove();
-            d3.selectAll("div#visSideObject2 svg").remove();
-            d3.selectAll("div#visSideMap svg, text").remove();
-
-            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject2")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideMap")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject1")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
             d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right5, #right7, #right6, #left2, #left3, #left4, #left5, #left6, #left7') 
               .style('fill-opacity', 0.1)
               .style('stroke-opacity', 0.3)
@@ -682,34 +530,7 @@
 
         d3.select('#left2')
           .on('click', function() {
-            d3.selectAll("div#visSide1 svg, text").remove();
-            d3.selectAll("div#visSide2 svg, text").remove();
-            d3.selectAll("div#visSideObject1 svg, text").remove();
-            d3.selectAll("div#visSideObject2 svg").remove();
-            d3.selectAll("div#visSideMap svg, text").remove();
-
-            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject2")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideMap")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject1")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right5, #right7, #left1, #right6, #left3, #left4, #left5, #left6, #left7') 
+            selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right5, #right7, #left1, #right6, #left3, #left4, #left5, #left6, #left7') 
               .style('fill-opacity', 0.1)
               .style('stroke-opacity', 0.3)
             d3.selectAll('#left2') 
@@ -732,33 +553,6 @@
 
         d3.select('#left3')
           .on('click', function() {
-            d3.selectAll("div#visSide1 svg, text").remove();
-            d3.selectAll("div#visSide2 svg, text").remove();
-            d3.selectAll("div#visSideObject1 svg, text").remove();
-            d3.selectAll("div#visSideObject2 svg").remove();
-            d3.selectAll("div#visSideMap svg, text").remove();
-
-            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject2")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideMap")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject1")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
             d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right5, #right7, #left1, #left2, #right6, #left4, #left5, #left6, #left7') 
               .style('fill-opacity', 0.1)
               .style('stroke-opacity', 0.3)
@@ -782,33 +576,6 @@
 
         d3.select('#left4')
           .on('click', function() {
-            d3.selectAll("div#visSide1 svg, text").remove();
-            d3.selectAll("div#visSide2 svg, text").remove();
-            d3.selectAll("div#visSideObject1 svg, text").remove();
-            d3.selectAll("div#visSideObject2 svg").remove();
-            d3.selectAll("div#visSideMap svg, text").remove();
-
-            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject2")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideMap")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject1")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
             d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right5, #right7, #left1, #left2, #left3, #right6, #left5, #left6, #left7') 
               .style('fill-opacity', 0.1)
               .style('stroke-opacity', 0.3)
@@ -832,33 +599,6 @@
 
         d3.select('#left5')
           .on('click', function() {
-            d3.selectAll("div#visSide1 svg, text").remove();
-            d3.selectAll("div#visSide2 svg, text").remove();
-            d3.selectAll("div#visSideObject1 svg, text").remove();
-            d3.selectAll("div#visSideObject2 svg").remove();
-            d3.selectAll("div#visSideMap svg, text").remove();
-
-            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject2")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideMap")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject1")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
             d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right5, #right7, #left1, #left2, #left3, #left4, #right6, #left6, #left7') 
               .style('fill-opacity', 0.1)
               .style('stroke-opacity', 0.3)
@@ -882,33 +622,6 @@
 
         d3.select('#left6')
           .on('click', function() {
-            d3.selectAll("div#visSide1 svg, text").remove();
-            d3.selectAll("div#visSide2 svg, text").remove();
-            d3.selectAll("div#visSideObject1 svg, text").remove();
-            d3.selectAll("div#visSideObject2 svg").remove();
-            d3.selectAll("div#visSideMap svg, text").remove();
-
-            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject2")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideMap")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject1")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
             d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right5, #right7, #left1, #left2, #left3, #left4, #left5, #right6, #left7') 
               .style('fill-opacity', 0.1)
               .style('stroke-opacity', 0.3)
@@ -932,33 +645,6 @@
 
         d3.select('#left7')
           .on('click', function() {
-            d3.selectAll("div#visSide1 svg, text").remove();
-            d3.selectAll("div#visSide2 svg, text").remove();
-            d3.selectAll("div#visSideObject1 svg, text").remove();
-            d3.selectAll("div#visSideObject2 svg").remove();
-            d3.selectAll("div#visSideMap svg, text").remove();
-
-            d3.xml("../svg/170627spanish_TV.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject2")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627maponly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideMap")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
-            d3.xml("../svg/170627horizontalbar.svg").mimeType("image/svg+xml").get(function(error, xml) {
-            var importedNode = document.importNode(xml.documentElement, true);
-            d3.select("div#visSideObject1")
-              .each(function() {
-                this.appendChild(importedNode);
-              })
-            });
             d3.selectAll('image, g#building_png, #right1, #right3, #right4, #right2, #right5, #right7, #left1, #left2, #left3, #left4, #left5, #left6, #right6') 
               .style('fill-opacity', 0.1)
               .style('stroke-opacity', 0.3)
