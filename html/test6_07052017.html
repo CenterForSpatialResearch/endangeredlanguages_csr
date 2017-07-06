@@ -2,27 +2,43 @@
 <html>
 	<head>
 	 	<meta charset="UTF-8">
-	    <title>testing basic</title>
-	    <link rel="stylesheet" type="text/css" href="../css/testingbasic_07052017.css">
-	    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	  <title>testing basic</title>
+	  <link rel="stylesheet" type="text/css" href="../css/testingbasic_07052017.css">
+	  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
 	</head>
 
-    <style type="text/css">
-   	    /*css styling here */
+  <style type="text/css">
+	    /*css styling here */
 
-   	    /* Make the chart container fill the page using CSS. */
-	      #chart {
-	        position: fixed;
-	        left: 0px;
-	        right: 0px;
-	        top: 0px;
-	        bottom: 0px;
-	      }
+	    /* Make the chart container fill the page using CSS. */
+    #chart {
+      position: fixed;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      bottom: 0px;
+    }
 
-    </style>
+    /*for map*/
+    body {
+          margin: 0px;
+          border: 0px;
+          padding: 0px;
+      }
+
+    #map {
+        height: 20%;
+        width: 80%;
+        position: absolute;
+        border: 2px solid black;
+    }
+
+  </style>
 
 	<body>
     
@@ -36,6 +52,7 @@
             <div id="visSide1"></div>
             <div id="visSide2"></div>
             <div id="visSideObject1"></div>
+            <div id="map"></div>
             <p class="extraInfo1"> </p>
             <div id="visSideObject2"></div>
             <p class="extraInfo2"> </p>
@@ -79,11 +96,26 @@
     </div>
 
 	</body>
+  
+  <!-- leaflet -->
+  <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+
+  <!-- Main tangram library -->
+  <script src="https://mapzen.com/tangram/0.10/tangram.min.js"></script>
 
 	<script src="http://d3js.org/d3.v4.min.js"></script>
  	<script src="http://d3js.org/d3-queue.v3.min.js"></script>      	
     
  	<script type="text/javascript">
+    // LEAFLET/MAPZEN MAP 
+
+    var map = L.map('map');
+    var layer = Tangram.leafletLayer({
+        scene: '../scenes/sceneTEST.yaml',
+        attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | &copy; OSM contributors | <a href="https://mapzen.com/" target="_blank">Mapzen</a>'
+    });
+    layer.addTo(map);
+    map.setView([40.70531887544228, -74.00976419448853], 15);
 
     // Extract the width and height that was computed by CSS.
       var chartDiv = document.getElementById("vis");
@@ -160,13 +192,13 @@
      
      d3.selectAll('p.introSide').classed("updatedIntroSide", true);
 
-     d3.xml("../svg/170627histogramonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-      var importedNode = document.importNode(xml.documentElement, true);
-      d3.select("div#visSide2")
-        .each(function() {
-          this.appendChild(importedNode);
-        })
-      });
+     // d3.xml("../svg/170627histogramonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+     //  var importedNode = document.importNode(xml.documentElement, true);
+     //  d3.select("div#visSide2")
+     //    .each(function() {
+     //      this.appendChild(importedNode);
+     //    })
+     //  });
 
 
       d3.selectAll('#underlay, image, g#building_png')
@@ -204,7 +236,7 @@
  
       //setting the size of area + nmargins for the chart 
       var margin = {top: 20, right: 20, bottom: 70, left: 40},
-          width = 800 - margin.left - margin.right,
+          width = 100 - margin.left - margin.right,
           height = 600 - margin.top - margin.bottom;
 
       //declares functions to determine positioning in the x and y domain
@@ -266,13 +298,13 @@
     //appending y axis
     g.append("g")
         .attr("class", "y-axis")
-        .call(yAxis)
-      .append("text")
-      .attr("class", "y-axis")
-        .attr("transform", "rotate(-90)")//aligning vertically
-        .attr("y", 6) //???
-        .attr("dy", ".71em")
-        .style("text-anchor", "end")
+      //   .call(yAxis)
+      // .append("text")
+      // .attr("class", "y-axis")
+      //   .attr("transform", "rotate(-90)")//aligning vertically
+      //   .attr("y", 6) //???
+      //   .attr("dy", ".71em")
+      //   .style("text-anchor", "end")
         // .text("Value ($)");//appending label
     // var legend = svg.selectAll("g.y-axis")
     //   .data(data.columns.slice(1).reverse())
@@ -291,32 +323,29 @@
     //     .text(function(d) { return d; });
 
       svg.selectAll("g.y-axis")
-              .data(data.columns.slice(1).reverse()) //for name 
-              .enter()
-          .append("text")
-          .classed('textLegend', true)
-          // .attr("x", function(d, i) {return (i+1)*100})
-          .attr("y", function(d, i) {return (i+1)*100})
-        .attr("transform", function(d, i) { 
-          return "translate(0," + i * 20 + ")"; 
+          .data(data.columns.slice(1).reverse()) //for name 
+          .enter()
+        .append("text")
+        .classed('textLegend', true)
+        // .attr("transform", function(d, i) { 
+        //   return "translate(0," + i * 20 + ")"; 
+        // })
+        .attr("x", function(d, i) {
+          return i * (width / data.length) + 10;
         })
-        // .attr("x", function(d) { return x(d.data.lang); }) //works for entire series
-        .attr("y", function(d, i) {return (i+1)*10})
-        .attr("transform", function(d, i) { 
-          return "translate(0," + i * 20 + ")"; 
+        .attr("y", function(d) { 
+          return data.length - 3; 
         })
-        .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-          .style("text.anchor", "start")
+        // .attr("transform", function(d, i) { 
+        //   return "translate(0," + i * 20 + ")"; 
+        // })
+        // .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+        .attr("transform", "rotate(90)")
+          .style("text.anchor", "middle")
           .style("font-size", "10px")
-          .style("fill", "black")
+          .style("fill", "yellow")
           .attr("font-family","monospace")
           .text(function(d){return d});
-
-        var dataNumbers = g.selectAll("number")
-            .data(stack.keys(data.columns.slice(1))(data))
-            .enter()
-
-          console.log(dataNumbers)
 
 
         g.selectAll("textLegend")
@@ -327,13 +356,14 @@
           // .attr("x", function(d, i) {return (i+1)*100})
           // .attr("y", function(d) { return d})
           // .attr("y", function(d) { return y(d[1]); })
+          .attr("y", function(d) { return y(d.value) + 3; })
         .attr("transform", function(d, i) { 
           return "translate(0," + i * 20 + ")"; 
         })
         .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-          .style("text.anchor", "start")
+          .style("text.anchor", "middle")
           .style("font-size", "10px")
-          .style("fill", "black")
+          .style("fill", "red")
           .attr("font-family","monospace")
           .text(function(d){return d});
 
