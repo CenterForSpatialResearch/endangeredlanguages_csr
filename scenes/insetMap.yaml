@@ -13,32 +13,83 @@ sources:
     mapzen:
         type: TopoJSON
         url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson?api_key=mapzen-LJDo7JL
-        # url_params:
-        #     api_key: mapzen-LJDo7JL
         min_zoom: 6
         max_zoom: 16
+    scene:
+        background:
+            color: black
+
 
 layers:
-    earth:
+    
+    boundaries:
         data: { source: mapzen }
+        boroughBoundaries:
+            filter:
+                kind: [borough]
+                not: {kind: [neighborhood, country, state,locality, county, region]}
+                $zoom: {min:2, max 10;}
         draw:
-            polygons:
-                order: function() { return feature.sort_rank; }
-                color: '#ebebeb'
+            lines:
+                order: 490
+                color: black 
+                width: 100
+    boundaries2:            
+        data: { source: mapzen }
+        neighborhoodBoundaries:
+            filter:
+                not: {kind: [borough, country, state,locality, county, region]}
+                kind: [borough]
+                $zoom: {min:10, max 15;}
+        draw:
+            lines:
+                order: 490
+                color: red 
+                width: 100
+    # places:
+    #     data: { source: mapzen }
+    #     naighborhoodNames:
+    #         filter:
+    #             all:
+    #                 not: {kind: [borough, country, state, neighborhood], locality, county, region}
+    #                 # locality: New York
+    #                 # $zoom: {min:2, max 10;}
+    #     draw:
+    #         text:
+    #             font:
+    #                 order: 490
+    #                 transform: uppercase
+    #                 size: function() {return 35 - feature.scalerank * 2 - (20 - $zoom) }
+    #                 family: Roboto, helvetica, sans-serif
+    #                 weight: 600
+    #                 fill: red
+    #                 stroke:
+    #                     color: '#E5E5E5'
+    #                     width: 0
 
-    landuse:
+                
+    
+    # default 
+    earth: #for most of the land stuff
         data: { source: mapzen }
         draw:
             polygons:
                 order: function() { return feature.sort_rank; }
-                color: '#f9f9f9'
+                color: '#e6e6e6'
+
+    landuse: #also land
+        data: { source: mapzen }
+        draw:
+            polygons:
+                order: function() { return feature.sort_rank; }
+                color: '#e6e6e6'
 
     water:
         data: { source: mapzen }
         draw:
             polygons:
                 order: function() { return feature.sort_rank; }
-                color: '#88bbee'
+                color: '#D8EEFF'
 
     roads:
         data: { source: mapzen }
