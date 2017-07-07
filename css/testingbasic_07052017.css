@@ -57,6 +57,18 @@ span.glyphicon.glyphicon-chevron-right{
 h1 {
 	font-size: 24px !important;   
 }
+#barChart{
+	overflow-x: hidden;
+}
+/*#map{
+	border: 3px dotted #ebebeb;
+}*/
+p#fakeText{
+	left:130px;
+	top: 100px;
+	position: absolute;
+	color: #696969;
+}
 /*button styling*/
 ul.selections{
 	list-style-type: none;

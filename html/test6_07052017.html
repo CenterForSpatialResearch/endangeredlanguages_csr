@@ -49,8 +49,31 @@
           <div class="col-md-3" id="sidePanel">
             <h1 class="extraHeading"> </h1>
             <div id="barChart"></div>
+
+            <p id = "fakeText">
+              <br><br>
+              10 Polish speakers
+              <br><br><br><br>
+              10 Russian speakers
+              <br><br>
+              1 Patois speaker
+              <br>
+              2 Mandarin speakers
+              <br>
+              4 Spanish speakers
+              <br>
+              2 English speakers
+              <br>
+              2 Chinese speakers
+              <br><br><br>
+              10 General American Dialect speakers 
+              <br><br>
+              2 Arabic speakers
+            </p>
+
             <div id="visSide1"></div>
             <div id="visSide2"></div>
+
             <div id="map"></div>
             <p class="extraInfo1"> </p>
             <p class="extraInfo2"> </p>
@@ -102,23 +125,6 @@
  	<script src="http://d3js.org/d3-queue.v3.min.js"></script>      	
     
  	<script type="text/javascript">
-    
-    // LEAFLET/MAPZEN MAP 
-    var map = L.map('map', {
-        "keyboardZoomOffset" : 1.,
-        "minZoom" : 10,
-        "maxZoom" : 16,
-        "zoomControl" : true,
-        "zoomSnap" : 0.5,
-        "zoomDelta" : 1,
-        "wheelPxPerZoomLevel" : 1
-      }
-    );
-    var layer = Tangram.leafletLayer({
-        scene: '../scenes/insetMap.yaml',
-    });
-    layer.addTo(map);
-    map.setView([40.7666561, -73.9036319], 10.5); //coordinates, scale
 
     //BUILDING VIS
     //Extract the width and height that was computed by CSS.
@@ -138,12 +144,13 @@
 
 
       function styleImportedSVGbasic () {
-      	d3.selectAll("div#map").attr("visibility", "hidden") //HIDES certain elements 
-      	// d3.selectAll("#Underlay").attr("visibility", "")//SHOWS
+      	d3.selectAll("p#fakeText, div#map").style("visibility", "hidden") //HIDES certain elements 
+      	// d3.selectAll("#Underlay").style("visibility", "")//SHOWS
       }
 
     //SWITCHING BTW IMGS   
     d3.select("#unbuilding").on("click", function(){
+     d3.selectAll("p#fakeText, div#map").style("visibility", "") 
      d3.selectAll("svg").remove();
      d3.selectAll(".updateButton").classed("updateButtonSelected", false);
      d3.select(this).classed("updateButtonSelected", true);
@@ -159,6 +166,7 @@
      });
 
      d3.select("#twolanguages").on("click", function(){
+      d3.selectAll("p#fakeText, div#map").style("visibility", "") 
       d3.selectAll("svg").remove();
 
       d3.xml("../svg/typology_mockups-02.svg").mimeType("image/svg+xml").get(function(error, xml) {
@@ -170,7 +178,7 @@
         styleImportedSVG2()
       });
      });
-
+     d3.selectAll("p#fakeText, div#map").style("visibility", "") 
      d3.select("#boring").on("click", function(){
       d3.selectAll("svg").remove();
 
@@ -185,8 +193,25 @@
      });
 
     function styleImportedSVG1 () {
+
+    // LEAFLET/MAPZEN MAP 
+    var map = L.map('map', {
+        "keyboardZoomOffset" : 1.,
+        "minZoom" : 10,
+        "maxZoom" : 16,
+        "zoomControl" : true,
+        "zoomSnap" : 0.5,
+        "zoomDelta" : 1,
+        "wheelPxPerZoomLevel" : 1
+      }
+    );
+    var layer = Tangram.leafletLayer({
+        scene: '../scenes/insetMapDark.yaml',
+    });
+    layer.addTo(map);
+    map.setView([40.7666561, -73.9036319], 10.5); //coordinates, scale
+
      d3.selectAll('text').remove();
-     d3.selectAll('div#map').attr("visibility", "")
      d3.select('h1.extraHeading')
       .append('text')
         .attr("class", "extraHeading")
@@ -241,7 +266,7 @@
  
       //setting the size of area + nmargins for the chart 
       var margin = {top: 20, right: 20, bottom: 70, left: 40},
-          width = 100 - margin.left - margin.right,
+          width = 300 - margin.left - margin.right,
           height = 600 - margin.top - margin.bottom;
 
       //declares functions to determine positioning in the x and y domain
@@ -335,49 +360,49 @@
     // }
     // console.log(value)
 
-      svg.selectAll("g.y-axis")
-          .data(data.columns.slice(1).reverse()) //for name 
-          .enter()
-          // console.log (data[0])
-        .append("text")
-        .classed('textLegend', true)
-        // .attr("x", function(d, i) {
-        //   return i * (width / data.length) + 10;
-        // })
-        .attr("x", 80)
-        .attr("y", function(d) { 
-          return data.length; 
-          // return data[0] - data[1]; 
-        })
-        .attr("transform", function(d, i) { 
-          return "translate(0," + i * 20 + ")"; 
-        })
-        // .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-        // .attr("transform", "rotate(90)")
-          .style("text.anchor", "end")
-          .style("font-size", "10px")
-          .style("fill", "yellow")
-          .attr("font-family","monospace")
-          .text(function(d){return d});
+      // svg.selectAll("g.y-axis")
+      //     .data(data.columns.slice(1).reverse()) //for name 
+      //     .enter()
+      //     // console.log (data[0])
+      //   .append("text")
+      //   .classed('textLegend', true)
+      //   // .attr("x", function(d, i) {
+      //   //   return i * (width / data.length) + 10;
+      //   // })
+      //   .attr("x", 80)
+      //   .attr("y", function(d) { 
+      //     return data.length; 
+      //     // return data[0] - data[1]; 
+      //   })
+      //   .attr("transform", function(d, i) { 
+      //     return "translate(0," + i * 20 + ")"; 
+      //   })
+      //   // .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+      //   // .attr("transform", "rotate(90)")
+      //     .style("text.anchor", "end")
+      //     .style("font-size", "10px")
+      //     .style("fill", "yellow")
+      //     .attr("font-family","monospace")
+      //     .text(function(d){return d});
 
-        g.selectAll("textLegend")
-            .data(stack.keys(data.columns.slice(1))(data)) //for numbers 
-            .enter()
-          .append("text")
-          .classed('number', true)
-          // .attr("x", function(d, i) {return (i+1)*100})
-          // .attr("y", function(d) { return d})
-          // .attr("y", function(d) { return y(d[1]); })
-          .attr("y", function(d) { return y(d[0]) - y(d[1]) * 20 + 3; })
-        .attr("transform", function(d, i) { 
-          return "translate(0," + i * 20 + ")"; 
-        })
-        .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-          .style("text.anchor", "middle")
-          .style("font-size", "10px")
-          .style("fill", "red")
-          .attr("font-family","monospace")
-          .text(function(d){return d});
+        // g.selectAll("textLegend")
+        //     .data(stack.keys(data.columns.slice(1))(data)) //for numbers 
+        //     .enter()
+        //   .append("text")
+        //   .classed('number', true)
+        //   // .attr("x", function(d, i) {return (i+1)*100})
+        //   // .attr("y", function(d) { return d})
+        //   // .attr("y", function(d) { return y(d[1]); })
+        //   .attr("y", function(d) { return y(d[0]) - y(d[1]) * 20 + 3; })
+        // .attr("transform", function(d, i) { 
+        //   return "translate(0," + i * 20 + ")"; 
+        // })
+        // .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+        //   .style("text.anchor", "middle")
+        //   .style("font-size", "10px")
+        //   .style("fill", "red")
+        //   .attr("font-family","monospace")
+        //   .text(function(d){return d});
 
 
 
@@ -529,6 +554,109 @@
     } //end of function
    
    function styleImportedSVG2 () {
+    // LEAFLET/MAPZEN MAP 
+    // var map = L.map('map', {
+    //     "keyboardZoomOffset" : 1.,
+    //     "minZoom" : 10,
+    //     "maxZoom" : 16,
+    //     "zoomControl" : true,
+    //     "zoomSnap" : 0.5,
+    //     "zoomDelta" : 1,
+    //     "wheelPxPerZoomLevel" : 1
+    //   }
+    // );
+    // var layer = Tangram.leafletLayer({
+    //     scene: '../scenes/insetMapLight.yaml',
+    // });
+    // layer.addTo(map);
+    // map.setView([40.7666561, -73.9036319], 10.5); //coordinates, scale
+
+     //setting the size of area + nmargins for the chart 
+      var margin = {top: 20, right: 20, bottom: 70, left: 40},
+          width = 300 - margin.left - margin.right,
+          height = 600 - margin.top - margin.bottom;
+
+      //declares functions to determine positioning in the x and y domain
+      var x = d3.scaleBand()
+        .rangeRound([0, width], .05) //can use different types of ranges 
+        .padding(0.1); //padding between the bars 
+      var y = d3.scaleLinear()
+        .range([height, 0]);
+      var z = d3.scaleOrdinal() //for the stacking
+          .range(["#ebebeb", "pink", "#red", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+      
+      var stack = d3.stack();
+
+      //declarations for axes 
+      var xAxis = d3.axisBottom(x).ticks(10);
+      var yAxis = d3.axisLeft(y);
+      // var yAxis = d3.axisLeft(y).ticks(10,"s");
+
+      //actually drawing the bar chart 
+      var svg = d3.select("#barChart").append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+        g = svg.append("g") //g element provides reference point for adding our axes
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ") scale(0.75)");
+
+      d3.csv("../data/housingTest_Language.csv", function(error, data) {
+        //looping through csv to makesure that the values are recognized properly
+          data.forEach(function(d) {
+              d.lang = d.Language; //for x axis 
+              d.polish = +d.Polish; //for y axis
+              d.arabic = +d.Arabic;
+              d.english = +d.English;
+              d.chinese = +d.Chinese;
+              d.gad = +d.GAD;
+              d.spanish = +d.Spanish;
+              d.mandarin = +d.Mandarin;
+              d.patois = +d.Patois;
+              d.russian = +d.Russian;
+          });
+        
+    //ensure that the data is scaled to the domains 
+    x.domain(data.map(function(d) { return d.lang; }));
+    y.domain([0, d3.max(data, function(d) { return d.polish + d.arabic + d.english + d.chinese + d.gad + d.spanish + d.mandarin + d.patois + d.russian; })]);
+    z.domain(data.columns.slice(1));
+
+    g.selectAll(".serie")
+      .data(stack.keys(data.columns.slice(1))(data))
+      .enter().append("g")
+        .attr("class", "serie")
+        .attr("fill", function(d) { return z(d.key); })
+      .selectAll("rect")
+      .data(function(d) { return d; })
+      .enter().append("rect")
+        .attr("x", function(d) { return x(d.data.lang); }) //works for entire series
+        .attr("y", function(d) { return y(d[1]); }) //this is doing d.value cause thats what i set it as before
+        .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+        // .attr("width", x.bandwidth());
+        .attr("width", 50);
+
+
+        g.selectAll("textLegend")
+            .data(stack.keys(data.columns.slice(1))(data)) //for numbers 
+            .enter()
+          .append("text")
+          .classed('number', true)
+          // .attr("x", function(d, i) {return (i+1)*100})
+          // .attr("y", function(d) { return d})
+          // .attr("y", function(d) { return y(d[1]); })
+          .attr("y", function(d) { return y(d[0]) - y(d[1]) * 20 + 3; })
+        .attr("transform", function(d, i) { 
+          return "translate(0," + i * 20 + ")"; 
+        })
+        .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+          .style("text.anchor", "middle")
+          .style("font-size", "10px")
+          .style("fill", "red")
+          .attr("font-family","monospace")
+          .text(function(d){return d});
+
+        });
+
+
+
       d3.selectAll('.st0, .st1, .st2')
           .on('mouseover', function() {
             d3.select(this) //this is for whatever remains highlighted 
