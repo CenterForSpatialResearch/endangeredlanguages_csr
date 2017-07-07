@@ -6,6 +6,9 @@ body{
     font-weight: 200;
 }
 
+.leaflet-container .leaflet-control-attribution, .leaflet-container .leaflet-control-scale{
+	visibility: hidden !important;
+}
 .y-axis path, .y-axis line {
 	fill: none;
 	stroke: red;
@@ -51,7 +54,9 @@ span.glyphicon.glyphicon-chevron-right{
 }
 
 /*other PAGE */
-
+h1 {
+	font-size: 24px !important;   
+}
 /*button styling*/
 ul.selections{
 	list-style-type: none;

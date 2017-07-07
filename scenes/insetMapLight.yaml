@@ -75,21 +75,21 @@ layers:
         draw:
             polygons:
                 order: function() { return feature.sort_rank; }
-                color: '#68808A'
+                color: '#E5E8E3'
 
     landuse: #also land
         data: { source: mapzen }
         draw:
             polygons:
                 order: function() { return feature.sort_rank; }
-                color: '#68808A'
+                color: '#E5E8E3'
 
     water:
         data: { source: mapzen }
         draw:
             polygons:
                 order: function() { return feature.sort_rank; }
-                color: '#34474F'
+                color: '#A6A6A6'
 
     roads:
         data: { source: mapzen }
@@ -98,8 +98,8 @@ layers:
         draw:
             lines:
                 order: function() { return feature.sort_rank; }
-                color: '#161E21'
-                width: 8
+                color: '#BABABA'
+                width: 9
                 cap: round
         highway:
             filter:
@@ -107,18 +107,18 @@ layers:
             draw:
                 lines:
                     order: function() { return feature.sort_rank; }
-                    color: '#767875'
-                    width: 12
+                    color: '#ebebeb'
+                    width: 10
                     outline:
-                        color: '#0b434f'
-                        width: 15
+                        color: '#C7C7C7'
+                        width: 13
         minor_road:
             filter:
                 kind: minor_road
             draw:
                 lines:
                     order: function() { return feature.sort_rank; }
-                    color: '#D1D4CF'
+                    color: '#b4b4b4'
                     width: 5
 
     buildings:
@@ -129,8 +129,8 @@ layers:
                 color: |
                     function () {
                         var h = feature.height || 20;
-                        h = Math.min((h + 50)/ 255, 1); // max brightness: 1
-                        h = Math.max(h, .75); // min brightness: .75
+                        h = Math.min((h + 50)/ 255, .9); // max brightness: .9
+                        h = Math.max(h, .7); // min brightness: .7
                         return [h, h, h];
                     }
         3d-buildings:

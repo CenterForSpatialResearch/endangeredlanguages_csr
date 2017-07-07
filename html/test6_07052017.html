@@ -35,7 +35,7 @@
         height: 20%;
         width: 80%;
         position: absolute;
-        border: 2px solid black;
+        border: 3px dotted #ebebeb;
     }
 
   </style>
@@ -51,12 +51,9 @@
             <div id="barChart"></div>
             <div id="visSide1"></div>
             <div id="visSide2"></div>
-            <div id="visSideObject1"></div>
             <div id="map"></div>
             <p class="extraInfo1"> </p>
-            <div id="visSideObject2"></div>
             <p class="extraInfo2"> </p>
-            <div id="visSideMap"></div>
           </div>
 
           <div class="col-md-9" id="bodyPanel">
@@ -71,8 +68,6 @@
                 <li><input class="updateButton" id="boring" type="button" value="monolingual"></li> 
               </p>
             </ul>
-              <br>
-            <p> Select an apartment for more information </p>
         		<div id="vis"></div>
             <p class="extraInfo"> </p>
 
@@ -143,7 +138,7 @@
 
 
       function styleImportedSVGbasic () {
-      	// d3.selectAll("#Labels").attr("visibility", "hidden") //HIDES certain elements 
+      	d3.selectAll("div#map").attr("visibility", "hidden") //HIDES certain elements 
       	// d3.selectAll("#Underlay").attr("visibility", "")//SHOWS
       }
 
@@ -191,9 +186,10 @@
 
     function styleImportedSVG1 () {
      d3.selectAll('text').remove();
-
+     d3.selectAll('div#map').attr("visibility", "")
      d3.select('h1.extraHeading')
       .append('text')
+        .attr("class", "extraHeading")
        .text("Building Composition")
     d3.select('p.extraInfo')
       .append('text')
@@ -331,31 +327,30 @@
     //     .attr("dy", ".35em")
     //     .attr("text-anchor", "start")
     //     .text(function(d) { return d; });
-    value = {};
-    for (var i = 0; i < data.length; i++) {
-      var value=g.selectAll("textLegend")
-            .data(stack.keys(data.columns.slice(1))(data)) //for numbers 
-            .enter()
-          .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-    }
+    // value = {};
+    // for (var i = 0; i < data.length; i++) {
+    //   var value=g.selectAll("textLegend")
+    //         .data(stack.keys(data.columns.slice(1))(data)) //for numbers 
+    //         return y(data[0]) - y(data[1])
+    // }
+    // console.log(value)
 
       svg.selectAll("g.y-axis")
           .data(data.columns.slice(1).reverse()) //for name 
           .enter()
+          // console.log (data[0])
         .append("text")
         .classed('textLegend', true)
-        // .attr("transform", function(d, i) { 
-        //   return "translate(0," + i * 20 + ")"; 
-        // })
         // .attr("x", function(d, i) {
         //   return i * (width / data.length) + 10;
         // })
         .attr("x", 80)
-        // .attr("y", function(d) { 
-        //   return data.length; 
-        // })
+        .attr("y", function(d) { 
+          return data.length; 
+          // return data[0] - data[1]; 
+        })
         .attr("transform", function(d, i) { 
-          return "translate(0," + i * 20 + value + ")"; 
+          return "translate(0," + i * 20 + ")"; 
         })
         // .attr("height", function(d) { return y(d[0]) - y(d[1]); })
         // .attr("transform", "rotate(90)")
@@ -373,7 +368,7 @@
           // .attr("x", function(d, i) {return (i+1)*100})
           // .attr("y", function(d) { return d})
           // .attr("y", function(d) { return y(d[1]); })
-          .attr("y", function(d) { return y(d.value) * 20 + 3; })
+          .attr("y", function(d) { return y(d[0]) - y(d[1]) * 20 + 3; })
         .attr("transform", function(d, i) { 
           return "translate(0," + i * 20 + ")"; 
         })
@@ -396,19 +391,6 @@
             d3.selectAll('#right1') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
-            d3.select('text.extraInfo, text.extraHeading').remove();
-          	d3.select('h1.extraHeading')
-             .append('text')
-              .attr("class","extraHeading")
-              .text("Apartment Composition")
-            d3.select('p.extraInfo1')
-             .append('text')
-            	.attr("class","extraInfo1")
-            	.text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
-            d3.select('p.extraInfo2')
-             .append('text')
-              .attr("class","extraInfo2")
-              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
             })
             
    
@@ -420,19 +402,6 @@
             d3.selectAll('#right2') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
-            d3.select('text.extraInfo, text.extraHeading').remove();
-            d3.select('h1.extraHeading')
-             .append('text')
-              .attr("class","extraHeading")
-              .text("Apartment Composition")
-            d3.select('p.extraInfo1')
-             .append('text')
-              .attr("class","extraInfo1")
-              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
-            d3.select('p.extraInfo2')
-             .append('text')
-              .attr("class","extraInfo2")
-              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
           })
 
         d3.select('#right3')
@@ -443,19 +412,6 @@
             d3.selectAll('#right3') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
-            d3.select('text.extraInfo, text.extraHeading').remove();
-            d3.select('h1.extraHeading')
-             .append('text')
-              .attr("class","extraHeading")
-              .text("Apartment Composition")
-            d3.select('p.extraInfo1')
-             .append('text')
-              .attr("class","extraInfo1")
-              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
-            d3.select('p.extraInfo2')
-             .append('text')
-              .attr("class","extraInfo2")
-              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
           })
 
         d3.select('#right4')
@@ -466,19 +422,6 @@
             d3.selectAll('#right4') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
-            d3.select('text.extraInfo, text.extraHeading').remove();
-            d3.select('h1.extraHeading')
-             .append('text')
-              .attr("class","extraHeading")
-              .text("Apartment Composition")
-            d3.select('p.extraInfo1')
-             .append('text')
-              .attr("class","extraInfo1")
-              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
-            d3.select('p.extraInfo2')
-             .append('text')
-              .attr("class","extraInfo2")
-              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
           })
 
         d3.select('#right5')
@@ -490,19 +433,6 @@
             d3.selectAll('#right5') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
-            d3.select('text.extraInfo, text.extraHeading').remove();
-            d3.select('h1.extraHeading')
-             .append('text')
-              .attr("class","extraHeading")
-              .text("Apartment Composition")
-            d3.select('p.extraInfo1')
-             .append('text')
-              .attr("class","extraInfo1")
-              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
-            d3.select('p.extraInfo2')
-             .append('text')
-              .attr("class","extraInfo2")
-              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
           })
         
         d3.select('#right6')
@@ -514,19 +444,6 @@
             d3.selectAll('#right6') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
-            d3.select('text.extraInfo, text.extraHeading').remove();
-            d3.select('h1.extraHeading')
-             .append('text')
-              .attr("class","extraHeading")
-              .text("Apartment Composition")
-            d3.select('p.extraInfo1')
-             .append('text')
-              .attr("class","extraInfo1")
-              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
-            d3.select('p.extraInfo2')
-             .append('text')
-              .attr("class","extraInfo2")
-              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
           })
 
         d3.select('#right7')
@@ -537,19 +454,6 @@
             d3.selectAll('#right7') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
-            d3.select('text.extraInfo, text.extraHeading').remove();
-            d3.select('h1.extraHeading')
-             .append('text')
-              .attr("class","extraHeading")
-              .text("Apartment Composition")
-            d3.select('p.extraInfo1')
-             .append('text')
-              .attr("class","extraInfo1")
-              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
-            d3.select('p.extraInfo2')
-             .append('text')
-              .attr("class","extraInfo2")
-              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
           })
 
         d3.select('#left1')
@@ -560,19 +464,6 @@
             d3.selectAll('#left1') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
-            d3.select('text.extraInfo, text.extraHeading').remove();
-            d3.select('h1.extraHeading')
-             .append('text')
-              .attr("class","extraHeading")
-              .text("Apartment Composition")
-            d3.select('p.extraInfo1')
-             .append('text')
-              .attr("class","extraInfo1")
-              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
-            d3.select('p.extraInfo2')
-             .append('text')
-              .attr("class","extraInfo2")
-              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
           })
 
         d3.select('#left2')
@@ -583,19 +474,6 @@
             d3.selectAll('#left2') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
-            d3.select('text.extraInfo, text.extraHeading').remove();
-            d3.select('h1.extraHeading')
-             .append('text')
-              .attr("class","extraHeading")
-              .text("Apartment Composition")
-            d3.select('p.extraInfo1')
-             .append('text')
-              .attr("class","extraInfo1")
-              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
-            d3.select('p.extraInfo2')
-             .append('text')
-              .attr("class","extraInfo2")
-              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
           })
 
         d3.select('#left3')
@@ -606,19 +484,6 @@
             d3.selectAll('#left3') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
-            d3.select('text.extraInfo, text.extraHeading').remove();
-            d3.select('h1.extraHeading')
-             .append('text')
-              .attr("class","extraHeading")
-              .text("Apartment Composition")
-            d3.select('p.extraInfo1')
-             .append('text')
-              .attr("class","extraInfo1")
-              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
-            d3.select('p.extraInfo2')
-             .append('text')
-              .attr("class","extraInfo2")
-              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
           })
 
         d3.select('#left4')
@@ -629,19 +494,6 @@
             d3.selectAll('#left4') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
-            d3.select('text.extraInfo, text.extraHeading').remove();
-            d3.select('h1.extraHeading')
-             .append('text')
-              .attr("class","extraHeading")
-              .text("Apartment Composition")
-            d3.select('p.extraInfo1')
-             .append('text')
-              .attr("class","extraInfo1")
-              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
-            d3.select('p.extraInfo2')
-             .append('text')
-              .attr("class","extraInfo2")
-              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
           })
 
         d3.select('#left5')
@@ -652,19 +504,6 @@
             d3.selectAll('#left5') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
-            d3.select('text.extraInfo, text.extraHeading').remove();
-            d3.select('h1.extraHeading')
-             .append('text')
-              .attr("class","extraHeading")
-              .text("Apartment Composition")
-            d3.select('p.extraInfo1')
-             .append('text')
-              .attr("class","extraInfo1")
-              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
-            d3.select('p.extraInfo2')
-             .append('text')
-              .attr("class","extraInfo2")
-              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
           })
 
         d3.select('#left6')
@@ -675,19 +514,6 @@
             d3.selectAll('#left6') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
-            d3.select('text.extraInfo, text.extraHeading').remove();
-            d3.select('h1.extraHeading')
-             .append('text')
-              .attr("class","extraHeading")
-              .text("Apartment Composition")
-            d3.select('p.extraInfo1')
-             .append('text')
-              .attr("class","extraInfo1")
-              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
-            d3.select('p.extraInfo2')
-             .append('text')
-              .attr("class","extraInfo2")
-              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
           })
 
         d3.select('#left7')
@@ -698,19 +524,6 @@
             d3.selectAll('#left7') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
-            d3.select('text.extraInfo, text.extraHeading').remove();
-            d3.select('h1.extraHeading')
-             .append('text')
-              .attr("class","extraHeading")
-              .text("Apartment Composition")
-            d3.select('p.extraInfo1')
-             .append('text')
-              .attr("class","extraInfo1")
-              .text("This family speaks Arabic and Spanish, and shops at the halal market. They go to the halal market and do bla bla bla and their lives are bla bla bla ")
-            d3.select('p.extraInfo2')
-             .append('text')
-              .attr("class","extraInfo2")
-              .text("The institutions in this neighborhood supporting this language are grocery stores, mosques and ...")
           })
 
     } //end of function

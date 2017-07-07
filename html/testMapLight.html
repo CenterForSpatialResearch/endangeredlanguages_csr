@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	 	<meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	  <title>lightmap</title>
+	  <link rel="stylesheet" type="text/css" href="../css/testingbasic_07052017.css">
+	  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+	</head>
+
+  <style type="text/css">
+	    /*css styling here */
+
+	    /* Make the chart container fill the page using CSS. */
+    #chart {
+      position: fixed;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      bottom: 0px;
+    }
+
+    /*for map*/
+    body {
+          margin: 0px;
+          border: 0px;
+          padding: 0px;
+      }
+
+    #map {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+
+  </style>
+
+	<body>
+
+    <div id="map"></div>
+
+  </body>
+  <!-- leaflet -->
+  <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+
+  <!-- Main tangram library -->
+  <script src="https://mapzen.com/tangram/0.10/tangram.min.js"></script>
+
+  <script src="http://d3js.org/d3.v4.min.js"></script>
+  <script src="http://d3js.org/d3-queue.v3.min.js"></script>        
+    
+  <script type="text/javascript">
+    
+    // LEAFLET/MAPZEN MAP 
+    var map = L.map('map'
+      // , {
+      //   "keyboardZoomOffset" : 1.,
+      //   "minZoom" : 10,
+      //   "maxZoom" : 16,
+      //   "zoomControl" : true,
+      //   "zoomSnap" : 0.5,
+      //   "zoomDelta" : 1,
+      //   "wheelPxPerZoomLevel" : 1
+      // }
+    );
+    var layer = Tangram.leafletLayer({
+        scene: '../scenes/insetMapLight.yaml',
+    });
+    layer.addTo(map);
+    map.setView([40.7666561, -73.9036319], 10.5); //coordinates, scale
+
+      function onMapHover(selection) {
+        document.getElementById('map').style.cursor = selection.feature ? 'pointer' : '';
+      }
+
+      // ADD TANGRAMLOADED LISTENER
+      var scene;
+      map.on('tangramloaded', function(e) {
+        var tangramLayer = e.tangramLayer;
+        scene = tangramLayer.scene;
+
+        tangramLayer.setSelectionEvents({
+          click: onMapClick,
+          hover: onMapHover
+        });
+
+      });
+
+// ADD SELECTION EVENTS
+      function onMapClick(selection) {
+        if (selection.feature) {
+          var latlng = selection.leaflet_event.latlng;
+          var label = selection.feature.properties.GLG_SYM;
+          showPopup(latlng, label);
+        }
+      }
+
+      function showPopup(latlng, label) {
+        popup
+          .setLatLng(latlng)
+          .setContent('<p>' + label + '</p>')
+          .openOn(map);        
+      }
+
+
+        </script>
+
+</html>
