@@ -107,17 +107,18 @@
  	<script src="http://d3js.org/d3-queue.v3.min.js"></script>      	
     
  	<script type="text/javascript">
+    
     // LEAFLET/MAPZEN MAP 
-
     var map = L.map('map');
     var layer = Tangram.leafletLayer({
-        scene: '../scenes/sceneTEST.yaml',
+        scene: '../scenes/insetMap.yaml',
         attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | &copy; OSM contributors | <a href="https://mapzen.com/" target="_blank">Mapzen</a>'
     });
     layer.addTo(map);
-    map.setView([40.70531887544228, -74.00976419448853], 15);
+    map.setView([40.7666561, -73.9036319], 10.5); //coordinates, scale
 
-    // Extract the width and height that was computed by CSS.
+    //BUILDING VIS
+    //Extract the width and height that was computed by CSS.
       var chartDiv = document.getElementById("vis");
       var width = chartDiv.clientWidth;
       var height = chartDiv.clientHeight;
