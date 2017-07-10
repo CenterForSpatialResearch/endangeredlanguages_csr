@@ -43,23 +43,6 @@
             <h1 class="extraHeading"> </h1>
             <div id="barChart"></div>
 
-            <p id = "fakeText">
-              <br><br><br>
-              10 Polish speakers
-              <br><br><br><br>
-              10 Russian speakers
-              <br><br>
-              1 Patois speaker
-              <br>
-              4 Spanish speakers
-              <br>
-              12 English speakers
-              <br>
-              4 Chinese speakers
-              <br><br><br>
-              2 Arabic speakers
-            </p>
-
             <div id="visSide1"></div>
             <div id="visSide2"></div>
 
@@ -132,13 +115,12 @@
 
 
       function styleImportedSVGbasic () {
-      	d3.selectAll("p#fakeText, div#map").style("visibility", "hidden") //HIDES certain elements 
+      	// d3.selectAll("p#fakeText, div#map").style("visibility", "hidden") //HIDES certain elements 
       	// d3.selectAll("#Underlay").style("visibility", "")//SHOWS
       }
 
     //SWITCHING BTW IMGS   
     d3.select("#unbuilding").on("click", function(){
-     d3.selectAll("p#fakeText, div#map").style("visibility", "") 
      d3.selectAll("svg").remove();
      d3.selectAll(".updateButton").classed("updateButtonSelected", false);
      d3.select(this).classed("updateButtonSelected", true);
@@ -154,7 +136,6 @@
      });
 
      d3.select("#twolanguages").on("click", function(){
-      d3.selectAll("p#fakeText, div#map").style("visibility", "") 
       d3.selectAll("svg").remove();
 
       d3.xml("../svg/typology_mockups-02.svg").mimeType("image/svg+xml").get(function(error, xml) {
@@ -166,7 +147,6 @@
         styleImportedSVG2()
       });
      });
-     d3.selectAll("p#fakeText, div#map").style("visibility", "") 
      d3.select("#boring").on("click", function(){
       d3.selectAll("svg").remove();
 
@@ -193,13 +173,13 @@
      
      d3.selectAll('p.introSide').classed("updatedIntroSide", true);
 
-     // d3.xml("../svg/170627histogramonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-     //  var importedNode = document.importNode(xml.documentElement, true);
-     //  d3.select("div#visSide2")
-     //    .each(function() {
-     //      this.appendChild(importedNode);
-     //    })
-     //  });
+     d3.xml("../svg/170710_bar.svg").mimeType("image/svg+xml").get(function(error, xml) {
+      var importedNode = document.importNode(xml.documentElement, true);
+      d3.select("div#barChart")
+        .each(function() {
+          this.appendChild(importedNode);
+        })
+      });
    
       d3.select('p.extraInfo1')
          .append('text')
@@ -209,210 +189,81 @@
        .append('text')
         .attr("class","extraInfo2")
         .text("New York City Composition")
- 
-      //setting the size of area + nmargins for the chart 
-      var margin = {top: 20, right: 20, bottom: 70, left: 40},
-          width = 300 - margin.left - margin.right,
-          height = 600 - margin.top - margin.bottom;
 
-      var spanishColor = "#FF0606"
-      var englishColor = "#808080"
-      var russianColor = "#446682"
-      var chineseColor = "#17A200"
-      var polishColor = "#540063"
-      var patoisColor = "#FDFF00"
-      var arabicColor = "#F9086A"
-      //declares functions to determine positioning in the x and y domain
-      var x = d3.scaleBand()
-        .rangeRound([0, width], .05) //can use different types of ranges 
-        .padding(0.1); //padding between the bars 
-      var y = d3.scaleLinear()
-        .range([height, 0]);
-      var z = d3.scaleOrdinal() //for the stacking
-          .range([polishColor, russianColor, patoisColor, spanishColor, englishColor, chineseColor, arabicColor]);
-      
-      var stack = d3.stack();
 
-      //declarations for axes 
-      var xAxis = d3.axisBottom(x).ticks(10);
-      var yAxis = d3.axisLeft(y);
-      // var yAxis = d3.axisLeft(y).ticks(10,"s");
-
-      //actually drawing the bar chart 
-      var svg = d3.select("#barChart").append("svg")
-          .attr("width", width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom)
-        g = svg.append("g") //g element provides reference point for adding our axes
-          .attr("transform", "translate(" + margin.left + "," + margin.top + ") scale(0.75)");
-
-      d3.csv("../data/housingTest_Language2.csv", function(error, data) {
-        //looping through csv to makesure that the values are recognized properly
-          data.forEach(function(d) {
-              d.polish = +d.Polish; //for y axis
-              d.arabic = +d.Arabic;
-              d.english = +d.English;
-              d.chinese = +d.Chinese;
-              d.spanish = +d.Spanish;
-              d.patois = +d.Patois;
-              d.russian = +d.Russian;
-          });
-        
-    //ensure that the data is scaled to the domains 
-    y.domain([0, d3.max(data, function(d) { return d.polish + d.arabic + d.english + d.chinese + d.spanish + d.patois + d.russian; })]);
-    z.domain(data.columns.slice(1));
-
-    g.selectAll(".serie")
-      .data(stack.keys(data.columns.slice(1))(data))
-      .enter().append("g")
-        .attr("class", "serie")
-        .attr("fill", function(d) { return z(d.key); })
-      .selectAll("rect")
-      .data(function(d) { return d; })
-      .enter().append("rect")
-        .attr("y", function(d) { return y(d[1]); }) //this is doing d.value cause thats what i set it as before
-        .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-        // .attr("width", x.bandwidth());
-        .style('fill-opacity', 0.55)
-        .attr("width", 50);
-    //appending y axis
-    g.append("g")
-        .attr("class", "y-axis")
-    
-      svg.selectAll("g.y-axis")
-          // .data(data.columns.slice(1).reverse()) //for name 
-          .enter()
-        .append("text")
-        .classed('textLegend', true)
-          .attr("x", 80)
-          .attr("y", 80)
-          .attr("transform", function(d, i) { 
-            return "translate(0," + i * 20 + ")"; 
-          })
-          .style("text.anchor", "end")
-          .style("font-size", "10px")
-          .style("fill", "blue")
-          .attr("font-family","monospace")
-          .text(function(d){return data[0].Polish});
-          console.log (data[0].Polish)
-
-        g.selectAll("textLegend")
-            // .data(stack.keys(data.columns.slice(1))(data)) //for numbers 
-            .enter()
-          .append("text")
-          .classed('number', true)
-          .attr("y", function(d) { return y(d[0]) - y(d[1]) * 20 + 3; })
-        .attr("transform", function(d, i) { 
-          return "translate(0," + i * 20 + ")"; 
-        })
-        .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-          .style("text.anchor", "middle")
-          .style("font-size", "10px")
-          .style("fill", "red")
-          .attr("font-family","monospace")
-          .text(function(d){return d});
-
-      d3.select('g.serie rect')
-        .attr("fill", function(d) {
-           d.oldColor = d3.select(this).attr("fill");
-          if (d.oldColor = '#540063') {
-            g.selectAll("g.serie rect")
-            .classed("spanishBar", "true")
-          }
-          // if (d.oldColor = '#808080') {
-          //   g.selectAll("g.serie rect")
-          //   .classed("polishBar", "true")
-          // }
-          // if (d.oldColor = '#FF0606') {
-          //   g.selectAll("g.serie rect")
-          //   .classed("russianBar", "true")
-          // }
-          // if (d.oldColor = '#446682') {
-          //   g.selectAll("g.serie rect")
-          //   .classed("arabicBar", "true")
-          // }
-          // if (d.oldColor = '#FDFF00') {
-          //   g.selectAll("g.serie rect")
-          //   .classed("patoisBar", "true")
-          // }
-        });
-   
-
-        });
-      
-
-      d3.selectAll('image#building')
+      d3.selectAll('image#building, g#underlay')
         .on('click', function() {
-            d3.selectAll('#Polish, #Arabic, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian') 
+            d3.selectAll('#Polish, #Arabic, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect#russian, rect#patois, rect#polish, rect#arabic, rect#spanish, rect#chinese, rect#english') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
             })
 
-      d3.selectAll('#Polish')
+      d3.selectAll('#Polish, rect#polish')
         .on('click', function() {
-            d3.selectAll('#Arabic, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian') 
+            d3.selectAll('#Arabic, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect#russian, rect#patois, rect#arabic, rect#spanish, rect#chinese, rect#english') 
               .style('fill-opacity', 0.1)
               .style('stroke-opacity', 0.3)
-            d3.selectAll('#Polish') 
+            d3.selectAll('#Polish, rect#polish') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
             })
             
-      d3.selectAll('#Arabic')
+      d3.selectAll('#Arabic, rect#arabic')
         .on('click', function() {
-            d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian') 
+            d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect#russian, rect#patois, rect#polish, rect#spanish, rect#chinese, rect#english') 
               .style('fill-opacity', 0.1)
               .style('stroke-opacity', 0.3)
-            d3.selectAll('#Arabic') 
+            d3.selectAll('#Arabic, rect#arabic') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
           })
 
-        d3.selectAll('#Spanish, #Chinese_Spanish_English')
+        d3.selectAll('#Spanish, #Chinese_Spanish_English, rect#spanish')
         .on('click', function() {
-            d3.selectAll('#Polish, #Arabic, #Chinese_English, #English, #Patois, #Russian') 
+            d3.selectAll('#Polish, #Arabic, #Chinese_English, #English, #Patois, #Russian, rect#russian, rect#patois, rect#polish, rect#arabic, rect#chinese, rect#english') 
               .style('fill-opacity', 0.1)
               .style('stroke-opacity', 0.3)
-            d3.selectAll('#Chinese_Spanish_English, #Spanish') 
+            d3.selectAll('#Chinese_Spanish_English, #Spanish, #rect#spanish') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
           })
 
-        d3.selectAll('#Chinese_English, #Chinese_Spanish_English')
+        d3.selectAll('#Chinese_English, #Chinese_Spanish_English, rect#chinese')
         .on('click', function() {
-            d3.selectAll('#Polish, #Arabic, #Spanish, #English, #Patois, #Russian') 
+            d3.selectAll('#Polish, #Arabic, #Spanish, #English, #Patois, #Russian, rect#russian, rect#patois, rect#polish, rect#arabic, rect#spanish, rect#english') 
               .style('fill-opacity', 0.1)
               .style('stroke-opacity', 0.3)
-            d3.selectAll('#Chinese_English, #Chinese_Spanish_English') 
+            d3.selectAll('#Chinese_English, #Chinese_Spanish_English, rect#chinese') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
           })
 
-        d3.selectAll('#Chinese_English, #Chinese_Spanish_English, #English')
+        d3.selectAll('#Chinese_English, #Chinese_Spanish_English, #English, rect#english')
           .on('click', function() {
-            d3.selectAll('#Polish, #Arabic, #Spanish, #Patois, #Russian') 
+            d3.selectAll('#Polish, #Arabic, #Spanish, #Patois, #Russian, rect#russian, rect#patois, rect#polish, rect#arabic, rect#spanish, rect#chinese') 
               .style('fill-opacity', 0.1)
               .style('stroke-opacity', 0.3)
-            d3.selectAll('#Chinese_English, #Chinese_Spanish_English, #English') 
+            d3.selectAll('#Chinese_English, #Chinese_Spanish_English, #English, rect#english') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
           })
 
-        d3.selectAll('#Patois')
+        d3.selectAll('#Patois, rect#patois')
           .on('click', function() {
-            d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Arabic, #Russian') 
+            d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Arabic, #Russian, rect#russian, rect#patois, rect#polish, rect#arabic, rect#spanish, rect#chinese, rect#english') 
               .style('fill-opacity', 0.1)
               .style('stroke-opacity', 0.3)
-            d3.selectAll('#Patois') 
+            d3.selectAll('#Patois , rect#patois') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
           })
 
-        d3.selectAll('#Russian')
+        d3.selectAll('#Russian, rect#russian')
           .on('click', function() {
-            d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Arabic, #Patois') 
+            d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Arabic, #Patois, rect#patois, rect#polish, rect#arabic, rect#spanish, rect#chinese, rect#english') 
               .style('fill-opacity', 0.1)
               .style('stroke-opacity', 0.3)
-            d3.selectAll('#Russian') 
+            d3.selectAll('#Russian, rect#russian') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
           })
