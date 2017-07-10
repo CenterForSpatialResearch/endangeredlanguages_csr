@@ -114,8 +114,8 @@ hr{
     padding: 2% 2% 2% 2%;
     margin: 0;
     overflow: auto;
-    background-color: rgba(200, 51, 39, 0.3);
-    position: fixed !important;
+/*    background-color: rgba(200, 51, 39, 0.3);
+*/    position: fixed !important;
     right: 0;
     top: 0;
     color: rgba(0,0,0,.8); /*textcolor*/
