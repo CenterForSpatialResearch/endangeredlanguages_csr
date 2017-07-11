@@ -72,6 +72,22 @@ body{
 		    display: block;
 		}
 
+	/*toggle images at bottom*/
+		ul.overlayImg{
+			top:0;
+			list-style-type: none;
+			margin: 0;
+			padding: 1% 5% 0 5%;
+		}
+		ul.overlayImg li{
+			display: inline-block;
+			margin: 0 0 0 1%;
+		}
+		ul.overlayImg p{
+			padding: 0;
+			margin: 0;
+		}
+
 
 	/*button styling*/
 		ul.selections{
@@ -96,8 +112,8 @@ body{
 		    border-radius: .75em;
 		    margin-bottom: 1%;
 		    border: .1em solid black;
-		    color: #CDCFCE;
-		    background-color: #231F20;
+		    color: #000000;
+		    background-color: #ffffff;
 		}
 		.updateButton:hover {
 		  background-color: #FAFAD2;
@@ -105,8 +121,8 @@ body{
 		  text-decoration: none;
 		}
 		.updateButtonSelected{
-		  background-color: #ffffff;
-		  color: #000000;
+		  background-color: #231F20;
+		  color: #CDCFCE;
 		}
 
 	/*dividing line*/

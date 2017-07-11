@@ -74,22 +74,28 @@
           <hr/>
 
           <p id="basicText"></p>
-          
-          <ul class="selections">
-            <li>
-              <div id="visSmallMono" style = "width:350px; height:auto"></div>  
-            </li> 
-            <li>
-              <div id="visSmallBi" style = "width:350px; height:auto"></div>
-            </li> 
-            <li>
-              <div id="visSmallMulti" style = "width:350px; height:auto"></div>
-            </li>
-          </ul>
 
         </div>
       </div>
     </div>
+
+    <ul class="overlayImg">
+      <li>
+        <div id="visSmallMono" style = "width:300px; height:auto">    
+          <div class="overlayTextMono"></div>
+        </div>  
+      </li> 
+      <li>
+        <div id="visSmallBi" style = "width:300px; height:auto">
+          <div class="overlayTextBi"></div>
+        </div>
+      </li> 
+      <li>
+        <div id="visSmallMulti" style = "width:300px; height:auto">
+          <div class="overlayTextMulti"></div>
+        </div>
+      </li>
+    </ul>
 
 	</body>
   
@@ -160,10 +166,9 @@
             .each(function() {
               this.appendChild(importedNode);
             })
-          addOverlay()
         }); 
 
-        d3.xml("../svg/170710_buildingonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+        d3.xml("../svg/170710_buildingdetail.svg").mimeType("image/svg+xml").get(function(error, xml) {
         var importedNode = document.importNode(xml.documentElement, true);
           d3.select("div#visSmallMulti")
             .each(function() {
@@ -173,8 +178,7 @@
 
        });
 
-       d3.selectAll("#twolanguages, #visSmallBi").on("click", function(){
-        
+       d3.selectAll("#twolanguages, #visSmallBi").on("click", function(){ 
         d3.selectAll("svg").remove();
         d3.selectAll(".updateButton").classed("updateButtonSelected", false);
         d3.select(this).classed("updateButtonSelected", true);
@@ -197,10 +201,9 @@
           addOverlay()
         }); 
 
-        d3.xml("../svg/170710_buildingonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+        d3.xml("../svg/170710_buildingdetail.svg").mimeType("image/svg+xml").get(function(error, xml) {
         var importedNode = document.importNode(xml.documentElement, true);
           d3.select("div#visSmallMulti")
-            .attr("class","visSmall")
             .each(function() {
               this.appendChild(importedNode);
             })
@@ -215,8 +218,8 @@
         }); 
 
        });
-       d3.selectAll("#boring, #visSmallMono").on("click", function(){
-        
+
+       d3.selectAll("#boring, #visSmallMono").on("click", function(){       
         d3.selectAll("svg").remove();
         d3.selectAll(".updateButton").classed("updateButtonSelected", false);
         d3.select(this).classed("updateButtonSelected", true);
@@ -239,7 +242,7 @@
           addOverlay()
         }); 
 
-        d3.xml("../svg/170710_buildingonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+        d3.xml("../svg/170710_buildingdetail.svg").mimeType("image/svg+xml").get(function(error, xml) {
         var importedNode = document.importNode(xml.documentElement, true);
           d3.select("div#visSmallMulti")
             .each(function() {
@@ -266,14 +269,13 @@
             .attr("class", "extraHeading")
            .text("Building Composition")
 
-         d3.xml("../svg/170710_bar.svg").mimeType("image/svg+xml").get(function(error, xml) {
+         d3.xml("../svg/170710_bar_bar.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
           d3.select("div#barChart")
             .each(function() {
               this.appendChild(importedNode);
             })
           });
-        
           styleBuildings()
 
       } //end of function
@@ -285,11 +287,12 @@
 
 
       //SORTING OUT TEXT 
-        var overlayMultiText = "more than two languages"
-        var overlayMonoText = "one language"
-        var overlayBiText = "two languages"
+        var multiText = "more than two languages"
+        var monoText = "one language"
+        var biText = "two languages"
 
         var spanishDescription = "hi"
+        var arabicDescription = "say something"
         var englishDescription = "hello"
         var chineseDescription = "[Information about the language, including how spoken it is in New York City. Also info about the number of people in the apartment and family relationships]"
         var chineseEnglishDescription = "[Information about the language, including how spoken it is in New York City. Also info about the number of people in the apartment and family relationships]"
@@ -298,14 +301,13 @@
         var patoisDescription = "[Information about the language, including how spoken it is in New York City. Also info about the number of people in the apartment and family relationships]"
         var russianDescription = "[Information about the language, including how spoken it is in New York City. Also info about the number of people in the apartment and family relationships]"
 
-
       function addOverlay(){
         d3.selectAll('text.overlayText').remove();
 
-        d3.selectAll('div#visSmallMulti')
+        d3.selectAll('.overlayTextMulti')
             .append('text')
               .attr("class", "overlayText")
-              .text(overlayMultiText)
+              .text(multiText)
         d3.selectAll('div#visSmallMulti')
           .on('mouseover', function () {
             d3.selectAll('div#visSmallMono, div#visSmallBi') 
@@ -313,15 +315,11 @@
             d3.selectAll('div#visSmallMulti') 
               .style("opacity", 1)
           })
-          .on('mouseout', function () {
-            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMulti')
-              .style("opacity", 0.7)
-          })
-        
-        d3.selectAll('div#visSmallMono')
+
+        d3.selectAll('.overlayTextMono')
             .append('text')
               .attr("class", "overlayText")
-              .text(overlayMonoText)
+              .text(monoText)
         d3.selectAll('div#visSmallMono')
           .on('mouseover', function () {
             d3.selectAll('div#visSmallMulti, div#visSmallBi') 
@@ -329,15 +327,11 @@
             d3.selectAll('div#visSmallMono') 
               .style("opacity", 1)
           })
-          .on('mouseout', function () {
-            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMulti')
-              .style("opacity", 0.7)
-          })
 
-        d3.selectAll('div#visSmallBi')
+        d3.selectAll('.overlayTextBi')
             .append('text')
               .attr("class", "overlayText")
-              .text(overlayBiText)
+              .text(biText)
         d3.selectAll('div#visSmallBi')
           .on('mouseover', function () {
             d3.selectAll('div#visSmallMono, div#visSmallMulti') 
@@ -345,17 +339,22 @@
             d3.selectAll('div#visSmallBi') 
               .style("opacity", 1)
           })
+          
+
+        d3.selectAll('div#visSmallBi, div#visSmallMulti, div#visSmallMono')
           .on('mouseout', function () {
             d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMulti')
               .style("opacity", 0.7)
           })
 
-          
-      }
+       }
 
       function styleBuildings () {
-        d3.selectAll('image#building, g#verticalsection, g#Layer_127')
-          .style("opacity", 0.65)
+        console.log('did function ')
+        // d3.selectAll('image#building, g#verticalsection, g#Layer_127')
+        //   .style("opacity", 0.65)
+        d3.selectAll('#russian_1_')
+          .style('fill', 'red')
 
         d3.selectAll('image#building, g#underlay')
           .on('click', function() {
@@ -367,6 +366,7 @@
 
         d3.selectAll('#Polish, rect.polish, text.polish')
           .on('click', function() {
+            console.log("clicked")
             d3.selectAll('text.extraInfo').remove()
             d3.selectAll('#Arabic, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect.russian, rect.patois, rect.arabic, rect.spanish, rect.chinese, rect.english, text.patois, text.russian, text.arabic, text.spanish, text.chinese, tspan.english') 
               .style('fill-opacity', 0.1)
@@ -374,7 +374,6 @@
             d3.selectAll('#Polish, rect.polish, text.polish') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
-            d3.selectAll('text.extraInfo').remove();
             d3.select('p.extraInfo')
                .append('text')
                 .attr("class","extraInfo")

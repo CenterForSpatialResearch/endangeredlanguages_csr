@@ -11993,7 +11993,7 @@
 	.st11986{clip-path:url(#SVGID_11739_);fill:#AEB0B3;}
 	.st11987{fill:#00A551;}
 	.st11988{fill:#4D4D4F;}
-	#txt{fill:#231F20;}
+	.st11989{fill:#231F20;}
 	.st11990{clip-path:url(#SVGID_11739_);fill:#CDCED0;}
 	.st11991{fill:#AD9A86;}
 	.st11992{fill:#92795E;}
@@ -12331,15 +12331,15 @@
 	.st12323{opacity:0.3;fill:#E6E7E8;}
 	.st12324{fill:none;stroke:#A6A8AB;stroke-miterlimit:10;}
 	.st12325{fill:none;stroke:#231F20;stroke-miterlimit:10;}
-	rect.polish {opacity:0.75;fill:#540063;}
-	rect.russian {opacity:0.75;fill:#446682;}
-	rect.patois {opacity:0.75;fill:#FDFF00;}
-	rect.spanish {opacity:0.75;fill:#FF0606;}
-	rect.english {opacity:0.75;fill:#808080;}
-	rect.chinese {opacity:0.75;fill:#17A200;}
-	rect.arabic {opacity:0.75;fill:#F9086A;}
-	#txt{font-family:'LetterGothicStd-Slanted';}
-	#txt{font-size:8px;}
+	.st12326{opacity:0.75;fill:#540063;}
+	.st12327{opacity:0.75;fill:#446682;}
+	.st12328{opacity:0.75;fill:#FDFF00;}
+	.st12329{opacity:0.75;fill:#FF0606;}
+	.st12330{opacity:0.75;fill:#808080;}
+	.st12331{opacity:0.75;fill:#17A200;}
+	.st12332{opacity:0.75;fill:#F9086A;}
+	.st12333{font-family:'LetterGothicStd-Slanted';}
+	.st12334{font-size:8px;}
 	.st12335{fill:#009BA9;}
 	.st12336{fill:#FAF18E;}
 </style>
@@ -12596,28 +12596,28 @@
 <g id="barchart">
 	<g id="rectangles_1_">
 		
-			<rect id="hi" x="5.7" y="83.3" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -66.3439 128.0734)" width="50.2" height="27.9"/>
+			<rect id="polish_1_" x="5.7" y="83.3" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -66.3439 128.0734)" class="st12326" width="50.2" height="27.9"/>
 		
-			<rect class="russian" x="5.7" y="18.1" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -1.1674 62.8969)" width="50.2" height="27.9"/>
+			<rect id="russian_1_" x="5.7" y="18.1" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -1.1674 62.8969)" class="st12327" width="50.2" height="27.9"/>
 		
-			<rect class="patois" x="23.5" y="50.6" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -33.6968 95.4263)" width="14.8" height="27.9"/>
+			<rect id="patois" x="23.5" y="50.6" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -33.6968 95.4263)" class="st12328" width="14.8" height="27.9"/>
 		
-			<rect class="spanish" x="20.8" y="128.6" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -111.638 173.3675)" width="20.1" height="27.9"/>
+			<rect id="spanish_1_" x="20.8" y="128.6" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -111.638 173.3675)" class="st12329" width="20.1" height="27.9"/>
 		
-			<rect class="english" x="0.7" y="188.8" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -171.9321 233.6616)" width="60.2" height="27.9"/>
+			<rect id="english" x="0.7" y="188.8" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -171.9321 233.6616)" class="st12330" width="60.2" height="27.9"/>
 		
-			<rect class="chinese" x="20.8" y="148.7" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -131.7556 193.4851)" width="20.1" height="27.9"/>
+			<rect id="chinese" x="20.8" y="148.7" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -131.7556 193.4851)" class="st12331" width="20.1" height="27.9"/>
 		
-			<rect class="arabic" x="25.8" y="113.4" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -96.5204 158.2498)" width="10.1" height="27.9"/>
+			<rect id="arabic_1_" x="25.8" y="113.4" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -96.5204 158.2498)" class="st12332" width="10.1" height="27.9"/>
 	</g>
 	<g id="txt">
-		<text transform="matrix(1 0 0 1 48.4153 36.0325)" class="russian">10 Russian Speakers</text>
-		<text transform="matrix(1 0 0 1 48.4153 68.5482)" class="patois">3 Patois Speakers</text>
-		<text transform="matrix(1 0 0 1 48.415 97.2081)" class="polish">10 Polish Speakers</text>
-		<text transform="matrix(1 0 0 1 48.4153 130.0089)" class="arabic">2 Arabic Speakers</text>
-		<text transform="matrix(1 0 0 1 48.4153 144.5031)" class="spanish">4 Spanish Speakers</text>
-		<text transform="matrix(1 0 0 1 48.4153 164.6206)" class="chinese">4 Chinese Speakers</text>
-		<text transform="matrix(1 0 0 1 48.4153 202.7972)"><tspan x="0" y="0" class="english">12 English (General </tspan><tspan x="0" y="9.6" class="english">American Dialect) </tspan><tspan x="0" y="19.2" class="english">Speakers</tspan></text>
+		<text id="russian_2_" transform="matrix(1 0 0 1 48.4153 36.0325)" class="st11989 st12333 st12334">10 Russian Speakers</text>
+		<text id="patois_1_" transform="matrix(1 0 0 1 48.4153 68.5482)" class="st11989 st12333 st12334">3 Patois Speakers</text>
+		<text id="polish_2_" transform="matrix(1 0 0 1 48.415 97.2081)" class="st11989 st12333 st12334">10 Polish Speakers</text>
+		<text id="arabic_2_" transform="matrix(1 0 0 1 48.4153 130.0089)" class="st11989 st12333 st12334">2 Arabic Speakers</text>
+		<text id="spanish_2_" transform="matrix(1 0 0 1 48.4153 144.5031)" class="st11989 st12333 st12334">4 Spanish Speakers</text>
+		<text id="chinese_1_" transform="matrix(1 0 0 1 48.4153 164.6206)" class="st11989 st12333 st12334">4 Chinese Speakers</text>
+		<text id="english_1_" transform="matrix(1 0 0 1 48.4153 202.7972)"><tspan x="0" y="0" class="st11989 st12333 st12334">12 English (General </tspan><tspan x="0" y="9.6" class="st11989 st12333 st12334">American Dialect) </tspan><tspan x="0" y="19.2" class="st11989 st12333 st12334">Speakers</tspan></text>
 	</g>
 	<g id="lines">
 		<line class="st12321" x1="16.9" y1="57.1" x2="53.6" y2="57.1"/>
