@@ -1,9 +1,33 @@
 body{
-	/*font-family: 'Roboto', sans-serif;*/
-	font-family: 'Roboto Mono', monospace !important;
-	/*font-family: 'Roboto Condensed', sans-serif;*/
-	/*background-color: rgba(0, 0, 0, 0.1) !important;*/
+	font-family: 'Cousine', monospace !important;
     font-weight: 200;
+    font-size: 0.7em;
+  	padding: 0px;
+  	margin: 0px;
+}
+#bodyPanel {
+  float: right;
+  width: 30vw;
+  margin: 0px;
+  padding: 0px;
+}
+/*.extraHeading{
+  margin: 10px 10px 0 10px;
+  padding: 10px 0 10px 0;
+  background: black;
+}*/
+text.extraHeading {
+  color: white;
+  text-align: left;
+  margin: 10px 10px 0 10px;
+  padding: 10px;
+  background: black;
+}
+#barChart{
+	padding-top: 10px;
+}
+p#basicText{
+
 }
 
 .leaflet-container .leaflet-control-attribution, .leaflet-container .leaflet-control-scale{
@@ -120,7 +144,6 @@ hr{
     top: 0;
     color: rgba(0,0,0,.8); /*textcolor*/
     font-weight: 800;
-    font-family: 'Roboto Mono', monospace !important;
 }
 #sidePanel.col-md-3 text{
 	stroke-width: 0;
