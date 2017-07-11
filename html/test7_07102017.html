@@ -77,7 +77,7 @@
           
           <ul class="selections">
             <li>
-              <div id="visSmallMono" style = "width:350px; height:auto"></div>
+              <div id="visSmallMono" style = "width:350px; height:auto"></div>  
             </li> 
             <li>
               <div id="visSmallBi" style = "width:350px; height:auto"></div>
@@ -105,7 +105,7 @@
  	<script type="text/javascript">
 
     //BUILDING VIS
-    //Extract the width and height that was computed by CSS.
+     //Extract the width and height that was computed by CSS.
       var chartDiv = document.getElementById("vis");
       var width = chartDiv.clientWidth;
       var height = chartDiv.clientHeight;
@@ -163,6 +163,14 @@
           addOverlay()
         }); 
 
+        d3.xml("../svg/170710_buildingonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+        var importedNode = document.importNode(xml.documentElement, true);
+          d3.select("div#visSmallMulti")
+            .each(function() {
+              this.appendChild(importedNode);
+            })
+        }); 
+
        });
 
        d3.selectAll("#twolanguages, #visSmallBi").on("click", function(){
@@ -196,7 +204,14 @@
             .each(function() {
               this.appendChild(importedNode);
             })
-          addOverlay()
+        }); 
+
+        d3.xml("../svg/170710_buildingonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+        var importedNode = document.importNode(xml.documentElement, true);
+          d3.select("div#visSmallBi")
+            .each(function() {
+              this.appendChild(importedNode);
+            })
         }); 
 
        });
@@ -232,6 +247,15 @@
             })
         }); 
 
+        d3.xml("../svg/170710_buildingonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
+        var importedNode = document.importNode(xml.documentElement, true);
+          d3.select("div#visSmallMono")
+            .each(function() {
+              this.appendChild(importedNode);
+            })
+        }); 
+
+
        });
 
       function importMultilingual () {
@@ -261,9 +285,9 @@
 
 
       //SORTING OUT TEXT 
-        var overlayMultiText = "More than two languages"
-        var overlayMonoText = "One language"
-        var overlayBiText = "Two languages"
+        var overlayMultiText = "more than two languages"
+        var overlayMonoText = "one language"
+        var overlayBiText = "two languages"
 
         var spanishDescription = "hi"
         var englishDescription = "hello"
@@ -276,44 +300,56 @@
 
 
       function addOverlay(){
+        d3.selectAll('text.overlayText').remove();
+
         d3.selectAll('div#visSmallMulti')
-          .on('mouseover', function () {
-            d3.selectAll('div#visSmallMulti')
-            .append('rect')
-              .attr("class", "overlay")
             .append('text')
               .attr("class", "overlayText")
               .text(overlayMultiText)
+        d3.selectAll('div#visSmallMulti')
+          .on('mouseover', function () {
+            d3.selectAll('div#visSmallMono, div#visSmallBi') 
+              .style("opacity", 0.2)
+            d3.selectAll('div#visSmallMulti') 
+              .style("opacity", 1)
           })
           .on('mouseout', function () {
-            d3.selectAll("text.overlayText, .overlay").style("visibility", "hidden")
+            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMulti')
+              .style("opacity", 0.7)
           })
-          
-        d3.selectAll('div#visSmallBi')
-          .on('mouseover', function () {
-            d3.selectAll('div#visSmallBi')
-            .append('rect')
-              .attr("class", "overlay")
+        
+        d3.selectAll('div#visSmallMono')
             .append('text')
               .attr("class", "overlayText")
               .text(overlayMonoText)
-          })
-          .on('mouseout', function () {
-            d3.selectAll("text.overlayText, .overlay").style("visibility", "hidden")
-          })
-
         d3.selectAll('div#visSmallMono')
           .on('mouseover', function () {
-            d3.selectAll('div#visSmallMono')
-            .append('rect')
-              .attr("class", "overlay")
+            d3.selectAll('div#visSmallMulti, div#visSmallBi') 
+              .style("opacity", 0.2)
+            d3.selectAll('div#visSmallMono') 
+              .style("opacity", 1)
+          })
+          .on('mouseout', function () {
+            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMulti')
+              .style("opacity", 0.7)
+          })
+
+        d3.selectAll('div#visSmallBi')
             .append('text')
               .attr("class", "overlayText")
               .text(overlayBiText)
+        d3.selectAll('div#visSmallBi')
+          .on('mouseover', function () {
+            d3.selectAll('div#visSmallMono, div#visSmallMulti') 
+              .style("opacity", 0.2)
+            d3.selectAll('div#visSmallBi') 
+              .style("opacity", 1)
           })
           .on('mouseout', function () {
-            d3.selectAll("text.overlayText, .overlay").style("visibility", "hidden")
+            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMulti')
+              .style("opacity", 0.7)
           })
+
           
       }
 
