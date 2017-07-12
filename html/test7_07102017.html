@@ -97,8 +97,8 @@
       </li>
     </ul>
 
-	</body>
-  
+<!-- 	</body>
+ -->  
   <!-- leaflet -->
   <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
 
@@ -115,6 +115,19 @@
       var chartDiv = document.getElementById("vis");
       var width = chartDiv.clientWidth;
       var height = chartDiv.clientHeight;
+
+
+      d3.queue()
+        .defer(d3.xml, "../svg/170710_bar.svg", "image/svg+xml")
+        .defer(d3.xml, "../svg/170710_buildingonly.svg","image/svg+xml")
+        .defer(d3.xml, "../svg/170710_buildingdetail.svg","image/svg+xml")
+        .await(basic)
+        console.log('loaded');
+
+      function basic (){
+        d3.selectAll('svg').remove()
+        console.log('loadedZ')
+      }
 
       // load the external svg from a file
       d3.xml("../svg/170710_buildingonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
@@ -178,7 +191,7 @@
 
        });
 
-       d3.selectAll("#twolanguages, #visSmallBi").on("click", function(){ 
+      d3.selectAll("#twolanguages, #visSmallBi").on("click", function(){ 
         d3.selectAll("svg").remove();
         d3.selectAll(".updateButton").classed("updateButtonSelected", false);
         d3.select(this).classed("updateButtonSelected", true);
@@ -219,7 +232,7 @@
 
        });
 
-       d3.selectAll("#boring, #visSmallMono").on("click", function(){       
+      d3.selectAll("#boring, #visSmallMono").on("click", function(){       
         d3.selectAll("svg").remove();
         d3.selectAll(".updateButton").classed("updateButtonSelected", false);
         d3.select(this).classed("updateButtonSelected", true);
@@ -276,7 +289,7 @@
               this.appendChild(importedNode);
             })
           });
-          styleBuildings()
+          styleBuildings();
 
       } //end of function
      
@@ -351,10 +364,8 @@
 
       function styleBuildings () {
         console.log('did function ')
-        // d3.selectAll('image#building, g#verticalsection, g#Layer_127')
-        //   .style("opacity", 0.65)
-        d3.selectAll('rect#hi')
-          .style('fill', 'red')
+        d3.selectAll('image#building, g#verticalsection, g#Layer_127')
+          .style("opacity", 0.65)
 
         d3.selectAll('image#building, g#underlay')
           .on('click', function() {
@@ -390,7 +401,6 @@
             d3.selectAll('#Arabic, rect.arabic, text.arabic') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
-              .style('fill', 'white')
             d3.select('p.extraInfo')
                .append('text')
                 .attr("class","extraInfo")
@@ -507,5 +517,5 @@
 
 
     </script>
-
+    </body>
 </html>
