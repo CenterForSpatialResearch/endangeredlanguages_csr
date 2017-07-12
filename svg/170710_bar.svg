@@ -12596,7 +12596,7 @@
 <g id="barchart">
 	<g id="rectangles_1_">
 		
-			<rect id="hi" x="5.7" y="83.3" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -66.3439 128.0734)" width="50.2" height="27.9"/>
+			<rect class="polish" x="5.7" y="83.3" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -66.3439 128.0734)" width="50.2" height="27.9"/>
 		
 			<rect class="russian" x="5.7" y="18.1" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -1.1674 62.8969)" width="50.2" height="27.9"/>
 		

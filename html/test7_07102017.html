@@ -269,7 +269,7 @@
             .attr("class", "extraHeading")
            .text("Building Composition")
 
-         d3.xml("../svg/170710_bar_bar.svg").mimeType("image/svg+xml").get(function(error, xml) {
+         d3.xml("../svg/170710_bar.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
           d3.select("div#barChart")
             .each(function() {
@@ -353,7 +353,7 @@
         console.log('did function ')
         // d3.selectAll('image#building, g#verticalsection, g#Layer_127')
         //   .style("opacity", 0.65)
-        d3.selectAll('#russian_1_')
+        d3.selectAll('rect#hi')
           .style('fill', 'red')
 
         d3.selectAll('image#building, g#underlay')
@@ -382,6 +382,7 @@
               
         d3.selectAll('#Arabic, rect.arabic, text.arabic')
           .on('click', function() {
+            console.log('hi')
             d3.selectAll('text.extraInfo').remove()
             d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect.russian, rect.patois, rect.polish, rect.spanish, rect.chinese, rect.english, text.patois, text.polish, text.russian, text.spanish, text.chinese, tspan.english') 
               .style('fill-opacity', 0.1)
@@ -389,6 +390,7 @@
             d3.selectAll('#Arabic, rect.arabic, text.arabic') 
               .style('fill-opacity', 1)
               .style('stroke-opacity', 1)
+              .style('fill', 'white')
             d3.select('p.extraInfo')
                .append('text')
                 .attr("class","extraInfo")
