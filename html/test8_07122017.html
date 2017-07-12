@@ -4,7 +4,7 @@
 	 	<meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	  <title>testing basic</title>
-	  <link rel="stylesheet" type="text/css" href="../css/testingbasic_07102017.css">
+	  <link rel="stylesheet" type="text/css" href="../css/testingbasic_07122017.css">
 	  <link href="https://fonts.googleapis.com/css?family=Cousine" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -71,35 +71,45 @@
         		<div id="vis"></div>
           </div>
 
+          <br>
+          &nbsp
+          <p id="basicText">
+            "[Some introductory text].<br><br> [Some introductory text].<br><br> [Some introductory text].<br><br> [Some introductory text].<br><br> [Some introductory text].<br><br> [Some introductory text].<br><br> [Some introductory text].<br><br> [Some introductory text].<br><br> Selecting any building below toggles between different types of language distribution in buildings.<br><br>[Some introductory text]."
+          </p>
+
           <hr/>
 
-          <p id="basicText"></p>
+
+          <ul class="overlayImg">
+      
+            <li>
+              <div id="visSmallMono">    
+                <p class = "overlayText">"one language" </p> 
+                <img src="../img/lowrisebuilding.png">
+              </div>  
+            </li> 
+
+            <li>
+              <div id="visSmallBi">
+                <p class = "overlayText">"two languages" </p> 
+                <img src="../img/highrisebuilding.png">
+              </div>
+            </li> 
+
+            <li>
+              <div id="visSmallMulti">
+                <p class = "overlayText">"more than two languages" </p> 
+                <img src="../img/midrisebuilding.png">
+              </div>
+            </li>
+
+          </ul>
 
         </div>
       </div>
     </div>
 
-    <ul class="overlayImg">
-      <li>
-                <img src="../img/lowrisebuilding.png">
 
-        <div id="visSmallMono" style = "width:300px; height:auto">    
-          <div class="overlayTextMono"></div>
-        </div>  
-      </li> 
-      <li>
-                <img src="../img/highrisebuilding.png">
-
-        <div id="visSmallBi" style = "width:300px; height:auto">
-          <div class="overlayTextBi"></div>
-        </div>
-      </li> 
-      <li>
-        <div id="visSmallMulti" style = "width:300px; height:auto">
-          <div class="overlayTextMulti"></div>
-        </div>
-      </li>
-    </ul>
 
 <!-- 	</body>
  -->  
@@ -120,24 +130,16 @@
       var width = chartDiv.clientWidth;
       var height = chartDiv.clientHeight;
 
-      // load the external svg from a file
-      d3.xml("../svg/170710_buildingonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-      var importedNode = document.importNode(xml.documentElement, true);
-      d3.select("div#vis")
-        .each(function() {
-          this.appendChild(importedNode);
-        })
-        styleImportedSVGbasic()
-      }); 
 
-      function styleImportedSVGbasic () {
-      	// d3.selectAll("p#fakeText, div#map").style("visibility", "hidden") //HIDES certain elements 
-      	// d3.selectAll("#Underlay").style("visibility", "")//SHOWS
-        d3.select('p#basicText')
-          .append('text')
-          .text("[Some explanatory text]. Selecting any building below toggles between different types of language distribution in buildings.")
+      // function styleImportedSVGbasic () {
+      // 	// d3.selectAll("#line").style("visibility", "hidden") //HIDES certain elements 
+      // 	// d3.selectAll("#Underlay").style("visibility", "")//SHOWS
+      //   d3.select('p#basicText')
+      //     .append('text')
+      //     .text("[Some explanatory text]. Selecting any building below toggles between different types of language distribution in buildings.")
       
-      }
+      // }
+      addOverlay()
 
       //SWITCHING BTW IMGS   
       d3.selectAll("#unbuilding, #visSmallMulti").on("click", function(){
@@ -145,6 +147,7 @@
         d3.selectAll("svg").remove();
         d3.selectAll(".updateButton").classed("updateButtonSelected", false);
         d3.select(this).classed("updateButtonSelected", true);
+        d3.selectAll("#visSmallMulti").classed("updateButtonSelected", false);
 
         d3.xml("../svg/170710_buildingdetail.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
@@ -153,32 +156,8 @@
               this.appendChild(importedNode);
             })
           importMultilingual()
+          removeTxt()
         });
-
-        d3.xml("../svg/170710_buildingonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-        var importedNode = document.importNode(xml.documentElement, true);
-          d3.select("div#visSmallMono")
-            .each(function() {
-              this.appendChild(importedNode);
-            })
-          addOverlay()
-        }); 
-
-        d3.xml("../svg/170710_buildingonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-        var importedNode = document.importNode(xml.documentElement, true);
-          d3.select("div#visSmallBi")
-            .each(function() {
-              this.appendChild(importedNode);
-            })
-        }); 
-
-        d3.xml("../svg/170710_buildingdetail.svg").mimeType("image/svg+xml").get(function(error, xml) {
-        var importedNode = document.importNode(xml.documentElement, true);
-          d3.select("div#visSmallMulti")
-            .each(function() {
-              this.appendChild(importedNode);
-            })
-        }); 
 
        });
 
@@ -186,40 +165,17 @@
         d3.selectAll("svg").remove();
         d3.selectAll(".updateButton").classed("updateButtonSelected", false);
         d3.select(this).classed("updateButtonSelected", true);
+        d3.selectAll("#visSmallBi").classed("updateButtonSelected", false);
 
-        d3.xml("../svg/typology_mockups-02.svg").mimeType("image/svg+xml").get(function(error, xml) {
+        d3.xml("../svg/highrisebuilding.svg").mimeType("image/svg+xml").get(function(error, xml) {
         var importedNode = document.importNode(xml.documentElement, true);
           d3.select("div#vis")
             .each(function() {
               this.appendChild(importedNode);
             })
           importBilingual()
+          removeTxt()
         });
-
-        d3.xml("../svg/170710_buildingonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-        var importedNode = document.importNode(xml.documentElement, true);
-          d3.select("div#visSmallMono")
-            .each(function() {
-              this.appendChild(importedNode);
-            })
-          addOverlay()
-        }); 
-
-        d3.xml("../svg/170710_buildingdetail.svg").mimeType("image/svg+xml").get(function(error, xml) {
-        var importedNode = document.importNode(xml.documentElement, true);
-          d3.select("div#visSmallMulti")
-            .each(function() {
-              this.appendChild(importedNode);
-            })
-        }); 
-
-        d3.xml("../svg/170710_buildingonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-        var importedNode = document.importNode(xml.documentElement, true);
-          d3.select("div#visSmallBi")
-            .each(function() {
-              this.appendChild(importedNode);
-            })
-        }); 
 
        });
 
@@ -227,41 +183,17 @@
         d3.selectAll("svg").remove();
         d3.selectAll(".updateButton").classed("updateButtonSelected", false);
         d3.select(this).classed("updateButtonSelected", true);
+        d3.selectAll("#visSmallMono").classed("updateButtonSelected", false);
 
-        d3.xml("../typology_mockups-03.svg").mimeType("image/svg+xml").get(function(error, xml) {
+        d3.xml("../svg/lowrisebuilding.svg").mimeType("image/svg+xml").get(function(error, xml) {
         var importedNode = document.importNode(xml.documentElement, true);
           d3.select("div#vis")
             .each(function() {
               this.appendChild(importedNode);
             })
           styleImportedSVG3()
+          removeTxt()
         });
-
-        d3.xml("../svg/170710_buildingonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-        var importedNode = document.importNode(xml.documentElement, true);
-          d3.select("div#visSmallBi")
-            .each(function() {
-              this.appendChild(importedNode);
-            })
-          addOverlay()
-        }); 
-
-        d3.xml("../svg/170710_buildingdetail.svg").mimeType("image/svg+xml").get(function(error, xml) {
-        var importedNode = document.importNode(xml.documentElement, true);
-          d3.select("div#visSmallMulti")
-            .each(function() {
-              this.appendChild(importedNode);
-            })
-        }); 
-
-        d3.xml("../svg/170710_buildingonly.svg").mimeType("image/svg+xml").get(function(error, xml) {
-        var importedNode = document.importNode(xml.documentElement, true);
-          d3.select("div#visSmallMono")
-            .each(function() {
-              this.appendChild(importedNode);
-            })
-        }); 
-
 
        });
 
@@ -305,13 +237,11 @@
         var patoisDescription = "[Information about the language, including how spoken it is in New York City. Also info about the number of people in the apartment and family relationships]"
         var russianDescription = "[Information about the language, including how spoken it is in New York City. Also info about the number of people in the apartment and family relationships]"
 
-      function addOverlay(){
-        d3.selectAll('text.overlayText').remove();
+      function removeTxt(){
+        d3.selectAll('text.overlayText, p#basicText').remove();
+      }
 
-        d3.selectAll('.overlayTextMulti')
-            .append('text')
-              .attr("class", "overlayText")
-              .text(multiText)
+      function addOverlay(){
         d3.selectAll('div#visSmallMulti')
           .on('mouseover', function () {
             d3.selectAll('div#visSmallMono, div#visSmallBi') 
@@ -320,10 +250,6 @@
               .style("opacity", 1)
           })
 
-        d3.selectAll('.overlayTextMono')
-            .append('text')
-              .attr("class", "overlayText")
-              .text(monoText)
         d3.selectAll('div#visSmallMono')
           .on('mouseover', function () {
             d3.selectAll('div#visSmallMulti, div#visSmallBi') 
@@ -332,10 +258,6 @@
               .style("opacity", 1)
           })
 
-        d3.selectAll('.overlayTextBi')
-            .append('text')
-              .attr("class", "overlayText")
-              .text(biText)
         d3.selectAll('div#visSmallBi')
           .on('mouseover', function () {
             d3.selectAll('div#visSmallMono, div#visSmallMulti') 

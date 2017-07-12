@@ -6,9 +6,8 @@ body{
   	margin: 0px;
 }
 
-ul.overlayImg img{
-	width:100% !important;
-	height:auto;
+#vis, #barChart, .overlayImg {
+  cursor: pointer;
 }
 
 /*INTRO PAGE*/
@@ -66,15 +65,6 @@ ul.overlayImg img{
 		}
 
 		/*overlay on those extra imgs on buttom that link to other pages*/
-		text.overlayText{
-			background-color: rgba(0,0,0,.7); 
-		    text-align: center;
-		    text-transform: uppercase;
-		    color: white;
-		    font-weight: 600;
-		    padding: 20px;
-		    display: block;
-		}
 		p.overlayText{
 			background-color: rgba(0,0,0,.7); 
 		    text-align: center;
@@ -90,17 +80,21 @@ ul.overlayImg img{
 			top:0;
 			list-style-type: none;
 			margin: 0;
-			padding: 1% 5% 0 5%;
+			padding: 0;
 		}
 		ul.overlayImg li{
 			display: inline-block;
 			margin: 0 0 0 1%;
+			width: 30%;
 		}
 		ul.overlayImg p{
-			padding: 0;
-			margin: 0;
-		}
 
+		}
+		ul.overlayImg img{
+			width:100% !important;
+			height:auto;
+			vertical-align: top;
+		}
 
 	/*button styling*/
 		ul.selections{
