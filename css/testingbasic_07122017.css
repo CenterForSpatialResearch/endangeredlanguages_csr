@@ -9,7 +9,10 @@ body{
 #vis, #barChart, .overlayImg {
   cursor: pointer;
 }
-
+a{
+	color: inherit !important;
+	text-decoration: none !important;
+}
 /*INTRO PAGE*/
 	p.IntroText {
 		font-size:20px;
