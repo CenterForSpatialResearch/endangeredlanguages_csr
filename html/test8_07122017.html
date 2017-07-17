@@ -210,8 +210,159 @@
             .each(function() {
               this.appendChild(importedNode);
             })
-          });
-          styleBuildings();
+
+          //CLICK EVENTS 
+            console.log('did function ')
+            d3.selectAll('image#building, g#verticalsection, g#Layer_127')
+              .style("opacity", 0.65)
+
+            d3.selectAll('image#building, g#underlay')
+              .on('click', function() {
+                  d3.selectAll('#Polish, #Arabic, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect.russian, rect.patois, rect.polish, rect.arabic, rect.spanish, rect.chinese, rect.english, text.patois, text.polish, text.arabic, text.spanish, text.chinese, text.russian, tspan.english') 
+                    .style('fill-opacity', 1)
+                    .style('stroke-opacity', 1)
+                  d3.selectAll('text.extraInfo').remove()
+                  })
+
+            d3.selectAll('#Polish, rect.polish, text.polish')
+              .on('click', function() {
+                console.log("clicked")
+                d3.selectAll('text.extraInfo').remove()
+                d3.selectAll('#Arabic, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect.russian, rect.patois, rect.arabic, rect.spanish, rect.chinese, rect.english, text.patois, text.russian, text.arabic, text.spanish, text.chinese, tspan.english') 
+                  .style('fill-opacity', 0.1)
+                  .style('stroke-opacity', 0.3)
+                d3.selectAll('#Polish, rect.polish, text.polish') 
+                  .style('fill-opacity', 1)
+                  .style('stroke-opacity', 1)
+                d3.select('p.extraInfo')
+                   .append('text')
+                    .attr("class","extraInfo")
+                    .text(polishDescription)
+                })
+
+            d3.selectAll('#Arabic, rect.arabic, text.arabic')
+              .on('click', function() {
+                console.log('hi')
+                d3.selectAll('text.extraInfo').remove()
+                d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect.russian, rect.patois, rect.polish, rect.spanish, rect.chinese, rect.english, text.patois, text.polish, text.russian, text.spanish, text.chinese, tspan.english') 
+                  .style('fill-opacity', 0.1)
+                  .style('stroke-opacity', 0.3)
+                d3.selectAll('#Arabic, rect.arabic, text.arabic') 
+                  .style('fill-opacity', 1)
+                  .style('stroke-opacity', 1)
+                d3.select('p.extraInfo')
+                   .append('text')
+                    .attr("class","extraInfo")
+                    .text(arabicDescription)
+                })
+
+              d3.selectAll('#Spanish, rect.spanish, text.spanish')
+              .on('click', function() {
+                d3.selectAll('text.extraInfo').remove()
+                d3.selectAll('#Polish, #Arabic, #Chinese_English, #English, #Patois, #Russian, rect.russian, rect.patois, rect.polish, rect.arabic, rect.chinese, rect.english, text.patois, text.polish, text.arabic, text.russian, text.chinese, tspan.english') 
+                  .style('fill-opacity', 0.1)
+                  .style('stroke-opacity', 0.3)
+                d3.selectAll('#Chinese_Spanish_English, #Spanish, rect.spanish, text.spanish') 
+                  .style('fill-opacity', 1)
+                  .style('stroke-opacity', 1)
+                d3.select('p.extraInfo')
+                   .append('text')
+                    .attr("class","extraInfo")
+                    .text(spanishDescription)
+                })
+
+              d3.selectAll('rect.chinese, text.chinese')
+              .on('click', function() {
+                d3.selectAll('text.extraInfo').remove()
+                d3.selectAll('#Polish, #Arabic, #Spanish, #English, #Patois, #Russian, rect.russian, rect.patois, rect.polish, rect.arabic, rect.spanish, rect.english, text.patois, text.polish, text.arabic, text.spanish, text.russian, tspan.english') 
+                  .style('fill-opacity', 0.1)
+                  .style('stroke-opacity', 0.3)
+                d3.selectAll('#Chinese_English, #Chinese_Spanish_English, rect.chinese, text.chinese') 
+                  .style('fill-opacity', 1)
+                  .style('stroke-opacity', 1)
+                d3.select('p.extraInfo')
+                   .append('text')
+                    .attr("class","extraInfo")
+                    .text(chineseDescription)
+                })
+
+              d3.selectAll('#English, rect.english, tspan.english')
+                .on('click', function() {
+                  d3.selectAll('text.extraInfo').remove()
+                  d3.selectAll('#Polish, #Arabic, #Spanish, #Patois, #Russian, rect.russian, rect.patois, rect.polish, rect.arabic, rect.spanish, rect.chinese, text.patois, text.polish, text.arabic, text.spanish, text.chinese, text.russian') 
+                    .style('fill-opacity', 0.1)
+                    .style('stroke-opacity', 0.3)
+                  d3.selectAll('#Chinese_English, #Chinese_Spanish_English, #English, rect.english, tspan.english') 
+                    .style('fill-opacity', 1)
+                    .style('stroke-opacity', 1)
+                  d3.select('p.extraInfo')
+                     .append('text')
+                      .attr("class","extraInfo")
+                      .text(englishDescription)
+                })
+
+              d3.selectAll('#Patois, rect.patois, text.patois')
+                .on('click', function() {
+                  d3.selectAll('text.extraInfo').remove()
+                  d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Arabic, #Russian, rect.russian, rect.patois, rect.polish, rect.arabic, rect.spanish, rect.chinese, rect.english, text.russian, text.polish, text.arabic, text.spanish, text.chinese, tspan.english') 
+                    .style('fill-opacity', 0.1)
+                    .style('stroke-opacity', 0.3)
+                  d3.selectAll('#Patois , rect.patois, text.patois') 
+                    .style('fill-opacity', 1)
+                    .style('stroke-opacity', 1)
+                  d3.select('p.extraInfo')
+                     .append('text')
+                      .attr("class","extraInfo")
+                      .text(patoisDescription)
+                })
+
+              d3.selectAll('#Russian, rect.russian, text.russian')
+                .on('click', function() {
+                  d3.selectAll('text.extraInfo').remove()
+                  d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Arabic, #Patois, rect.patois, rect.polish, rect.arabic, rect.spanish, rect.chinese, rect.english, text.patois, text.polish, text.arabic, text.spanish, text.chinese, tspan.english') 
+                    .style('fill-opacity', 0.1)
+                    .style('stroke-opacity', 0.3)
+                  d3.selectAll('#Russian, rect.russian, text.russian') 
+                    .style('fill-opacity', 1)
+                    .style('stroke-opacity', 1)
+                  d3.select('p.extraInfo')
+                     .append('text')
+                      .attr("class","extraInfo")
+                      .text(russianDescription)              
+                })
+
+
+              d3.selectAll('#Chinese_Spanish_English')
+              .on('click', function() {
+                d3.selectAll('text.extraInfo').remove()
+                d3.selectAll('#Polish, #Arabic, #Patois, #Russian, rect.russian, rect.patois, rect.polish, rect.arabic, text.patois, text.polish, text.arabic, text.russian') 
+                  .style('fill-opacity', 0.1)
+                  .style('stroke-opacity', 0.3)
+                d3.selectAll('#Chinese_Spanish_English, #Chinese_English, #Spanish, #English, rect.spanish, rect.chinese, rect.english, text.spanish, text.chinese, tspan.english') 
+                  .style('fill-opacity', 1)
+                  .style('stroke-opacity', 1)
+                d3.select('p.extraInfo')
+                   .append('text')
+                    .attr("class","extraInfo")
+                    .text(chineseSpanishEnglishDescription)
+                })
+
+              d3.selectAll('#Chinese_English')
+              .on('click', function() {
+                d3.selectAll('text.extraInfo').remove()
+                d3.selectAll('#Polish, #Arabic, #Spanish, #Patois, #Russian, rect.russian, rect.patois, rect.polish, rect.arabic, rect.chinese, rect.spanish, text.patois, text.polish, text.arabic, text.russian, text.spanish') 
+                  .style('fill-opacity', 0.1)
+                  .style('stroke-opacity', 0.3)
+                d3.selectAll('#Chinese_English, rect.chinese, rect.english, text.chinese, tspan.english') 
+                  .style('fill-opacity', 1)
+                  .style('stroke-opacity', 1)
+                d3.select('p.extraInfo')
+                   .append('text')
+                    .attr("class","extraInfo")
+                    .text(chineseEnglishDescription)
+                })
+
+          }); //end of import 
 
       } //end of function
      
@@ -229,8 +380,77 @@
             .each(function() {
               this.appendChild(importedNode);
             })
-          });
-          styleBuildings2();    
+          
+          //CLICK EVENTS 
+            d3.selectAll('image, g#building')
+            .style("opacity", 0.8)
+
+            d3.selectAll('image, g#building, g#underlay')
+              .on('click', function() {
+                d3.selectAll('#Polish, #Polish_English, #English, rect.polish, rect.english,  text.polish, text.english') 
+                  .style('fill-opacity', 1)
+                  .style('stroke-opacity', 1)
+                  .style("visibility", "")
+                d3.selectAll('text.extraInfo').remove()
+                removeTxt()
+                })
+
+            d3.selectAll('#Polish_English, rect.polish, rect.english, text.spanish, text.english')
+            .on('click', function() {
+              console.log("clicked")
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#Polish, #English, #Polish_English') 
+                .style("visibility", "")
+              d3.selectAll('rect.polish, text.polish, rect.english, text.english') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(polishDescription + englishDescription)
+              })
+          
+            d3.selectAll('#English, rect.english, text.english')
+            .on('click', function() {
+              console.log("clicked")
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#Polish') 
+                .style("visibility", "hidden")
+              d3.selectAll('#Polish_English, #English') 
+                .style("visibility", "")
+              d3.selectAll('rect.polish, text.polish') 
+                .style('fill-opacity', 0.1)
+                .style('stroke-opacity', 0.1)
+              d3.selectAll('rect.english, text.english') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(englishDescription)
+              })
+
+            d3.selectAll('#Polish, rect.polish, text.polish')
+            .on('click', function() {
+              console.log("clicked")
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll(' #English') 
+                .style("visibility", "hidden")
+              d3.selectAll('#Polish, #Polish_English') 
+                .style("visibility", "")
+              d3.selectAll('rect.english, text.english') 
+                .style('fill-opacity', 0.1)
+                .style('stroke-opacity', 0.1)
+              d3.selectAll('rect.polish, text.polish') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)            
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(polishDescription)
+              })       
+
+          }); //end of import 
 
       } //end of function 
 
@@ -242,10 +462,10 @@
 
         var spanishDescription = "Spanish is the most commonly spoken language after English in New York City, and over 25% of NYC households speak Spanish at home. Of course, Spanish speakers are not evenly spread across the city, while 47% of Bronx households speak Spanish, only 10% of Staten Island ones do. Additionally, many Spanish speakers also speak a smaller, regional language such as Mixtec (Mexico), K’iche (Guatemala), or Garifuna (COUNTRY). Since there are few records as to how many people speak Spanish as a second language, and English as a third, the number of Spanish speakers may obscure the true diversity of languages spoken in New York City."
         var arabicDescription = "Though only 1% of New Yorkers speak Arabic at home, there has been a 30% increase in speakers from 2010-2015. Most of these speakers are settling in Brooklyn, particularly in and around the Bay Ridge area (over half of all Arabic speakers live in Brooklyn). Similar to other languages such as Chinese, there are a variety of different types of Arabic united by a writing system. Though most Arabic speaker can speak and understand Modern Standard Arabic, most people use a particular variety such as Masri (Egyptian Arabic) or North Levantine (spoken in Lebanon, Syria, and Palestine)."
-        var englishDescription = "[SOMETHING ABOUT ENGLISH]"
+        var englishDescription = "English is spoken by almost everyone in the building as either a first, second, or additional language. Just under half of all households in New York City are English monolinguals, and English monolinguals accounted for 32% of all new arrivals from 2010-2015. Though there is no 'official' language in New York, or the United States, it is clear that English is New York's lingua franca."
         var chineseDescription = "Chinese is the 3rd most commonly spoken language in New York City, and over 10% of Queens households speak Chinese, though there are many different varieties of “Chinese.” The variety spoken in this building is Mandarin, which is spoken by many newer immigrants. However, there are also significant Fujianese and Wu speaking communities in NYC, many of whom arrived at least a generation ago. Though popular imagination thinks of Chinese as being centered around ethnic enclaves, the reality is that those enclaves (to the extent they exist) contain a wealth of linguistic and cultural diversity."
-        var chineseEnglishDescription = "Chinese is the 3rd most commonly spoken language in New York City, and over 10% of Queens households speak Chinese, though there are many different varieties of “Chinese.” The variety spoken in this building is Mandarin, which is spoken by many newer immigrants. However, there are also significant Fujianese and Wu speaking communities in NYC, many of whom arrived at least a generation ago. Though popular imagination thinks of Chinese as being centered around ethnic enclaves, the reality is that those enclaves (to the extent they exist) contain a wealth of linguistic and cultural diversity. [SOMETHING ABOUT ENGLISH TOO]"
-        var chineseSpanishEnglishDescription = "Chinese is the 3rd most commonly spoken language in New York City, and over 10% of Queens households speak Chinese, though there are many different varieties of “Chinese.” The variety spoken in this building is Mandarin, which is spoken by many newer immigrants. However, there are also significant Fujianese and Wu speaking communities in NYC, many of whom arrived at least a generation ago. Though popular imagination thinks of Chinese as being centered around ethnic enclaves, the reality is that those enclaves (to the extent they exist) contain a wealth of linguistic and cultural diversity. Spanish is the most commonly spoken language after English in New York City, and over 25% of NYC households speak Spanish at home. Of course, Spanish speakers are not evenly spread across the city, while 47% of Bronx households speak Spanish, only 10% of Staten Island ones do. Additionally, many Spanish speakers also speak a smaller, regional language such as Mixtec (Mexico), K’iche (Guatemala), or Garifuna (COUNTRY). Since there are few records as to how many people speak Spanish as a second language, and English as a third, the number of Spanish speakers may obscure the true diversity of languages spoken in New York City.[SOMETHING ABOUT ENGLISH TOO]"
+        var chineseEnglishDescription = "Chinese is the 3rd most commonly spoken language in New York City, and over 10% of Queens households speak Chinese, though there are many different varieties of “Chinese.” The variety spoken in this building is Mandarin, which is spoken by many newer immigrants. However, there are also significant Fujianese and Wu speaking communities in NYC, many of whom arrived at least a generation ago. Though popular imagination thinks of Chinese as being centered around ethnic enclaves, the reality is that those enclaves (to the extent they exist) contain a wealth of linguistic and cultural diversity. English is spoken by almost everyone in the building as either a first, second, or additional language. Just under half of all households in New York City are English monolinguals, and English monolinguals accounted for 32% of all new arrivals from 2010-2015. Though there is no 'official' language in New York, or the United States, it is clear that English is New York's lingua franca."
+        var chineseSpanishEnglishDescription = "Chinese is the 3rd most commonly spoken language in New York City, and over 10% of Queens households speak Chinese, though there are many different varieties of “Chinese.” The variety spoken in this building is Mandarin, which is spoken by many newer immigrants. However, there are also significant Fujianese and Wu speaking communities in NYC, many of whom arrived at least a generation ago. Though popular imagination thinks of Chinese as being centered around ethnic enclaves, the reality is that those enclaves (to the extent they exist) contain a wealth of linguistic and cultural diversity. Spanish is the most commonly spoken language after English in New York City, and over 25% of NYC households speak Spanish at home. Of course, Spanish speakers are not evenly spread across the city, while 47% of Bronx households speak Spanish, only 10% of Staten Island ones do. Additionally, many Spanish speakers also speak a smaller, regional language such as Mixtec (Mexico), K’iche (Guatemala), or Garifuna (COUNTRY). Since there are few records as to how many people speak Spanish as a second language, and English as a third, the number of Spanish speakers may obscure the true diversity of languages spoken in New York City.English is spoken by almost everyone in the building as either a first, second, or additional language. Just under half of all households in New York City are English monolinguals, and English monolinguals accounted for 32% of all new arrivals from 2010-2015. Though there is no 'official' language in New York, or the United States, it is clear that English is New York's lingua franca."
         var polishDescription = "In this building, similar to many buildings in New York City, the majority of Polish speakers are related to each other through familial or social networks. In this case, the Super moved in first and his family members slowly followed. This type of pattern is replicated in cities, neighborhoods, and buildings across the country and the world. So, while the majority of Polish speakers in New York City are spread across Queens and Brooklyn, and represent 1% of New York City’s population overall, most speakers are concentrated in Ridgewood, Greenpoint, and Maspeth. Though there are speakers in every borough."
         var patoisDescription = "This variety of Patois originates in Jamaica, though it is found throughout New York City and is sometimes referred to as ‘Jamaican Creole.’ Though it is distinct from Trinidadian Patois, government records tend to lump them all together as ‘Creoles.’ Like the Polish speakers and Russian speakers, the Patois speakers are related, and one moved in after the other was already settled in the building. Patois speakers tend to be concentrated in Brooklyn, particularly in Flatbush and the surrounding neighborhoods. Like speakers of many other languages, Patois speakers can be found in all five boroughs."
         var russianDescription = "Over 2% of New Yorkers speak Russian at home, and 65% of those speakers are located in Brooklyn. There are significant enclaves of Russian speakers in Sheepshead Bay, Coney Island, Dyker Heights, and more area, though Russian speakers live in every borough. Though Russian speakers have lived in New York since the 1800's, there was an influx of Russian Jews in the 1970's, and ethnic Russians after the collapse of the Soviet Union in 1991. Like Spanish speakers, many Russian speakers may speak another language such as Tatar (Siberia), Uzbek (Uzbekistan), Hebrew, or Yiddish."
@@ -288,220 +508,6 @@
 
        }
 
-      function styleBuildings () {
-        console.log('did function ')
-        d3.selectAll('image#building, g#verticalsection, g#Layer_127')
-          .style("opacity", 0.65)
-
-        d3.selectAll('image#building, g#underlay')
-          .on('click', function() {
-              d3.selectAll('#Polish, #Arabic, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect.russian, rect.patois, rect.polish, rect.arabic, rect.spanish, rect.chinese, rect.english, text.patois, text.polish, text.arabic, text.spanish, text.chinese, text.russian, tspan.english') 
-                .style('fill-opacity', 1)
-                .style('stroke-opacity', 1)
-              d3.selectAll('text.extraInfo').remove()
-              })
-
-        d3.selectAll('#Polish, rect.polish, text.polish')
-          .on('click', function() {
-            console.log("clicked")
-            d3.selectAll('text.extraInfo').remove()
-            d3.selectAll('#Arabic, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect.russian, rect.patois, rect.arabic, rect.spanish, rect.chinese, rect.english, text.patois, text.russian, text.arabic, text.spanish, text.chinese, tspan.english') 
-              .style('fill-opacity', 0.1)
-              .style('stroke-opacity', 0.3)
-            d3.selectAll('#Polish, rect.polish, text.polish') 
-              .style('fill-opacity', 1)
-              .style('stroke-opacity', 1)
-            d3.select('p.extraInfo')
-               .append('text')
-                .attr("class","extraInfo")
-                .text(polishDescription)
-            })
-
-        d3.selectAll('#Arabic, rect.arabic, text.arabic')
-          .on('click', function() {
-            console.log('hi')
-            d3.selectAll('text.extraInfo').remove()
-            d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect.russian, rect.patois, rect.polish, rect.spanish, rect.chinese, rect.english, text.patois, text.polish, text.russian, text.spanish, text.chinese, tspan.english') 
-              .style('fill-opacity', 0.1)
-              .style('stroke-opacity', 0.3)
-            d3.selectAll('#Arabic, rect.arabic, text.arabic') 
-              .style('fill-opacity', 1)
-              .style('stroke-opacity', 1)
-            d3.select('p.extraInfo')
-               .append('text')
-                .attr("class","extraInfo")
-                .text(arabicDescription)
-            })
-
-          d3.selectAll('#Spanish, rect.spanish, text.spanish')
-          .on('click', function() {
-            d3.selectAll('text.extraInfo').remove()
-            d3.selectAll('#Polish, #Arabic, #Chinese_English, #English, #Patois, #Russian, rect.russian, rect.patois, rect.polish, rect.arabic, rect.chinese, rect.english, text.patois, text.polish, text.arabic, text.russian, text.chinese, tspan.english') 
-              .style('fill-opacity', 0.1)
-              .style('stroke-opacity', 0.3)
-            d3.selectAll('#Chinese_Spanish_English, #Spanish, rect.spanish, text.spanish') 
-              .style('fill-opacity', 1)
-              .style('stroke-opacity', 1)
-            d3.select('p.extraInfo')
-               .append('text')
-                .attr("class","extraInfo")
-                .text(spanishDescription)
-            })
-
-          d3.selectAll('rect.chinese, text.chinese')
-          .on('click', function() {
-            d3.selectAll('text.extraInfo').remove()
-            d3.selectAll('#Polish, #Arabic, #Spanish, #English, #Patois, #Russian, rect.russian, rect.patois, rect.polish, rect.arabic, rect.spanish, rect.english, text.patois, text.polish, text.arabic, text.spanish, text.russian, tspan.english') 
-              .style('fill-opacity', 0.1)
-              .style('stroke-opacity', 0.3)
-            d3.selectAll('#Chinese_English, #Chinese_Spanish_English, rect.chinese, text.chinese') 
-              .style('fill-opacity', 1)
-              .style('stroke-opacity', 1)
-            d3.select('p.extraInfo')
-               .append('text')
-                .attr("class","extraInfo")
-                .text(chineseDescription)
-            })
-
-          d3.selectAll('#English, rect.english, tspan.english')
-            .on('click', function() {
-              d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Polish, #Arabic, #Spanish, #Patois, #Russian, rect.russian, rect.patois, rect.polish, rect.arabic, rect.spanish, rect.chinese, text.patois, text.polish, text.arabic, text.spanish, text.chinese, text.russian') 
-                .style('fill-opacity', 0.1)
-                .style('stroke-opacity', 0.3)
-              d3.selectAll('#Chinese_English, #Chinese_Spanish_English, #English, rect.english, tspan.english') 
-                .style('fill-opacity', 1)
-                .style('stroke-opacity', 1)
-              d3.select('p.extraInfo')
-                 .append('text')
-                  .attr("class","extraInfo")
-                  .text(englishDescription)
-            })
-
-          d3.selectAll('#Patois, rect.patois, text.patois')
-            .on('click', function() {
-              d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Arabic, #Russian, rect.russian, rect.patois, rect.polish, rect.arabic, rect.spanish, rect.chinese, rect.english, text.russian, text.polish, text.arabic, text.spanish, text.chinese, tspan.english') 
-                .style('fill-opacity', 0.1)
-                .style('stroke-opacity', 0.3)
-              d3.selectAll('#Patois , rect.patois, text.patois') 
-                .style('fill-opacity', 1)
-                .style('stroke-opacity', 1)
-              d3.select('p.extraInfo')
-                 .append('text')
-                  .attr("class","extraInfo")
-                  .text(patoisDescription)
-            })
-
-          d3.selectAll('#Russian, rect.russian, text.russian')
-            .on('click', function() {
-              d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Arabic, #Patois, rect.patois, rect.polish, rect.arabic, rect.spanish, rect.chinese, rect.english, text.patois, text.polish, text.arabic, text.spanish, text.chinese, tspan.english') 
-                .style('fill-opacity', 0.1)
-                .style('stroke-opacity', 0.3)
-              d3.selectAll('#Russian, rect.russian, text.russian') 
-                .style('fill-opacity', 1)
-                .style('stroke-opacity', 1)
-              d3.select('p.extraInfo')
-                 .append('text')
-                  .attr("class","extraInfo")
-                  .text(russianDescription)              
-            })
-
-
-          d3.selectAll('#Chinese_Spanish_English')
-          .on('click', function() {
-            d3.selectAll('text.extraInfo').remove()
-            d3.selectAll('#Polish, #Arabic, #Patois, #Russian, rect.russian, rect.patois, rect.polish, rect.arabic, text.patois, text.polish, text.arabic, text.russian') 
-              .style('fill-opacity', 0.1)
-              .style('stroke-opacity', 0.3)
-            d3.selectAll('#Chinese_Spanish_English, #Chinese_English, #Spanish, #English, rect.spanish, rect.chinese, rect.english, text.spanish, text.chinese, tspan.english') 
-              .style('fill-opacity', 1)
-              .style('stroke-opacity', 1)
-            d3.select('p.extraInfo')
-               .append('text')
-                .attr("class","extraInfo")
-                .text(chineseSpanishEnglishDescription)
-            })
-
-          d3.selectAll('#Chinese_English')
-          .on('click', function() {
-            d3.selectAll('text.extraInfo').remove()
-            d3.selectAll('#Polish, #Arabic, #Spanish, #Patois, #Russian, rect.russian, rect.patois, rect.polish, rect.arabic, rect.chinese, rect.spanish, text.patois, text.polish, text.arabic, text.russian, text.spanish') 
-              .style('fill-opacity', 0.1)
-              .style('stroke-opacity', 0.3)
-            d3.selectAll('#Chinese_English, rect.chinese, rect.english, text.chinese, tspan.english') 
-              .style('fill-opacity', 1)
-              .style('stroke-opacity', 1)
-            d3.select('p.extraInfo')
-               .append('text')
-                .attr("class","extraInfo")
-                .text(chineseEnglishDescription)
-            })
-
-          } //end of function
-
-        
-      function styleBuildings2(){
-        d3.selectAll('image#building')
-          .style("opacity", 0.65)
-
-        d3.selectAll('image#building, g#underlay')
-          .on('click', function() {
-            d3.selectAll('#Polish, #Polish_English, #English, rect.polish, rect.english,  text.polish, tspan.english') 
-              .style('fill-opacity', 1)
-              .style('stroke-opacity', 1)
-            d3.selectAll('text.extraInfo').remove()
-            })
-
-        d3.selectAll('#Polish_English')
-        .on('click', function() {
-          console.log("clicked")
-          d3.selectAll('text.extraInfo').remove()
-          d3.selectAll('#Polish, #Polish_English, #English, rect.polish, text.polish, rect.english tspan.english') 
-            .style('fill-opacity', 0.1)
-            .style('stroke-opacity', 0.3)
-          d3.selectAll('#Polish, #Polish_English, #English, rect.polish, text.polish, rect.english, tspan.english') 
-            .style('fill-opacity', 1)
-            .style('stroke-opacity', 1)
-          d3.select('p.extraInfo')
-             .append('text')
-              .attr("class","extraInfo")
-              .text(polishDescription + englishDescription)
-          })
-      
-        d3.selectAll('#English')
-        .on('click', function() {
-          console.log("clicked")
-          d3.selectAll('text.extraInfo').remove()
-          d3.selectAll('#Polish, rect.polish, text.polish') 
-            .style('fill-opacity', 0.1)
-            .style('stroke-opacity', 0.3)
-          d3.selectAll('#Polish_English, #English, rect.english, tspan.english') 
-            .style('fill-opacity', 1)
-            .style('stroke-opacity', 1)
-          d3.select('p.extraInfo')
-             .append('text')
-              .attr("class","extraInfo")
-              .text(polishDescription + englishDescription)
-          })
-
-        d3.selectAll('#Polish')
-        .on('click', function() {
-          console.log("clicked")
-          d3.selectAll('text.extraInfo').remove()
-          d3.selectAll('#Polish_English, #English, rect.english tspan.english') 
-            .style('fill-opacity', 0.1)
-            .style('stroke-opacity', 0.3)
-          d3.selectAll('#Polish, #Polish_English, rect.polish, text.polish') 
-            .style('fill-opacity', 1)
-            .style('stroke-opacity', 1)
-          d3.select('p.extraInfo')
-             .append('text')
-              .attr("class","extraInfo")
-              .text(polishDescription + englishDescription)
-          })       
-      }//end of function
 
 
 
