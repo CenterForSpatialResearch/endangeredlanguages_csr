@@ -18249,7 +18249,7 @@
 	rect.polish{opacity:0.75;fill:#540063;}
 	.st18244{fill:none;stroke:#929497;stroke-width:0.5;stroke-miterlimit:10;}
 	text.polish, text.english, tspan.english {fill:#231F20;}
-	text.polish, text.english, tspan.english{font-family:'LetterGothicStd-Slanted';}
+	<!-- text.polish, text.english, tspan.english{font-family:'LetterGothicStd-Slanted';} -->
 	text.polish, text.english, tspan.english{font-size:8px;}
 	.st18248{fill:#540063;stroke:#540063;stroke-width:0.25;stroke-miterlimit:10;}
 	.st18249{opacity:0.58;fill:#540063;fill-opacity:0.75;stroke:#540063;stroke-width:0.25;stroke-miterlimit:10;}

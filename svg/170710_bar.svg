@@ -12338,7 +12338,7 @@
 	rect.english {opacity:0.75;fill:#808080;}
 	rect.chinese {opacity:0.75;fill:#17A200;}
 	rect.arabic {opacity:0.75;fill:#F9086A;}
-	#txt{font-family:'LetterGothicStd-Slanted';}
+	<!-- #txt{font-family:'LetterGothicStd-Slanted';} -->
 	#txt{font-size:8px;}
 	.st12335{fill:#009BA9;}
 	.st12336{fill:#FAF18E;}
