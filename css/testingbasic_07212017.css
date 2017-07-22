@@ -112,7 +112,7 @@ a{
 		}
 		.thumbnailSelected{
 			width:100%;
-			border: 2.5px solid black;
+			border: 2.2px solid grey;
 			opacity: 1 !important;
 		}
 	/*side boxes*/
