@@ -4,7 +4,7 @@
 	 	<meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	  <title>test language</title>
-	  <link rel="stylesheet" type="text/css" href="../css/testingbasic_07202017.css">
+	  <link rel="stylesheet" type="text/css" href="../css/testingbasic_07212017.css">
 	  <link href="https://fonts.googleapis.com/css?family=Cousine" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -26,53 +26,9 @@
 
     /*for map*/
     body {
-          margin: 0px;
-          border: 0px;
-          padding: 0px;
-      }
-
-    body {
-      margin: 40px;
-    }
-    
-    /*FOR GRID*/
-    /*FOR WHOLE THING */
-    .wrapper {
-      display: grid;
-      grid-gap: 10px;
-      grid-template-columns: [col] 100px [col] 100px [col] 100px [col] 100px  ;
-      grid-template-rows: [row] auto [row] auto [row] ;
-      background-color: #fff;
-      color: #444;
-    }
-    /*FOR BOXES */
-    .box {
-      background-color: #444;
-      color: #fff;
-      border-radius: 5px;
-      padding: 20px;
-      font-size: 150%;
-    }
-    .a {
-        grid-column: col / span 2;
-        grid-row: row ;
-    }
-    .b {
-        grid-column: col 3 / span 2 ;
-        grid-row: row ;
-    }
-    .c {
-        grid-column: col ;
-        grid-row: row 2 ;
-    }
-    .d {
-        grid-column: col 2 / span 3 ;
-        grid-row: row 2 ;
-    }
-
-    .e {
-        grid-column: col / span 4;
-        grid-row: row 3;
+      margin: 0px;
+      border: 0px;
+      padding: 0px;
     }
 
   </style>
@@ -80,102 +36,88 @@
 	<body>
     
     <h1 class="title">
-      <a href="test9_07202017.html"> linguistic diversity in buildings </a>
+      <a href="test10_07212017.html"> linguistic diversity in buildings </a>
     </h1>
 
-     <div class="wrapper">
-    <div class="box a">A</div>
-    <div class="box b">Bgasbogbsui
-      lbgilsgkbt 
-     shbtstib sipb;wg </div>
-    <div class="box c">C</div>
-    <div class="box d">D</div>
-    <div class="box e">E</div>
-    <div class="box f">F</div>
-  </div>
-    <div class="body">
-      <div class="container">
-        <div class="row">
+    <div class="grid">
           
-          <!-- SIDE -->
-          <div class="col-md-2" id="sidePanel">
-
-            <div id="extraHeadingBox">
-              <div class="extraHeading"> </div>
+      <!-- LEFT SIDE PANEL -->
+      <div class="col-1-4" id="leftPanel"> 
+        <ul class="thumbnail">
+          <li>
+            <div id="visSmallMulti">
+              <p class = "overlayText">"more than two languages" </p> 
+              <img src="../img/midrisebuilding.png">
             </div>
+            <div id="visSmallMulti">
+              <img src="../img/streetfair_streetfair.png">
+            </div>
+            <div id="visSmallMulti">
+              <img src="../img/foodtrucks_trucks.png">
+            </div>
+          </li>
 
-            <div id="barChart"></div>
-            <p class="extraInfo"> </p>
+          <li>
+            <div id="visSmallBi">
+              <p class = "overlayText">"two languages" </p> 
+              <img src="../img/highrisebuilding.png">
+            </div>
+          </li> 
 
-          </div> <!-- sidepanel -->
+          <li>
+            <div id="visSmallMono">    
+              <p class = "overlayText">"one language" </p> 
+              <img src="../img/lowrisebuilding.png">
+            </div>  
+          </li> 
 
-          <!-- BODY -->
-          <div class="col-md-8" id="bodyPanel">
+        </ul>
 
-            <ul class="selections">
-              <p> 
-                <li>Select buildings that are</li>
-                <li><input class="updateButton" id="unbuilding" type="button" value="multilingual"></li>             
-                
-                <li><input class="updateButton" id="twolanguages" type="button" value="bilingual"></li> 
+      </div> <!-- left side panel ends-->
 
-                <li><input class="updateButton" id="boring" type="button" value="monolingual"></li> 
-              </p>
-            </ul>
-        		<div id="vis"></div>
+      <!-- MAIN CONTENT -->
+      <div class="col-2-4" id="bodyPanel">
 
-            <br>
-              &nbsp
-              <p id="basicText">
-                New York City is one of the most linguistically diverse places in the world; estimates show anywhere from 200-800 different languages represented across the five boroughs. Nowhere is this more apparent than in Queens, where many of these languages are spoken in schools, restaurants, community centers, and homes across the area.
-                <br><br>
-                This project takes a snapshot of this linguistic diversity and highlights the ways that language connects New York City and the rest of the world. By visualizing the languages that are represented and casting them against stories of migration, language, and identity, we come to see the ways that language ties us together, and give life to the many languages of Queens, NY.
-              </p>
+        <ul class="selections">
+          <p> 
+            <li>Select buildings that are</li>
+            <li><input class="updateButton" id="unbuilding" type="button" value="multilingual"></li>             
+            
+            <li><input class="updateButton" id="twolanguages" type="button" value="bilingual"></li> 
 
-            <hr/>
+            <li><input class="updateButton" id="boring" type="button" value="monolingual"></li> 
+          </p>
+        </ul>
+    		<div id="vis"></div>
 
-          </div> <!-- body panel -->
+        <br>
+          &nbsp
+          <p id="basicText">
+            New York City is one of the most linguistically diverse places in the world; estimates show anywhere from 200-800 different languages represented across the five boroughs. Nowhere is this more apparent than in Queens, where many of these languages are spoken in schools, restaurants, community centers, and homes across the area.
+            <br><br>
+            This project takes a snapshot of this linguistic diversity and highlights the ways that language connects New York City and the rest of the world. By visualizing the languages that are represented and casting them against stories of migration, language, and identity, we come to see the ways that language ties us together, and give life to the many languages of Queens, NY.
+          </p>
 
+        <hr/>
 
-          <div class="col-md-2"> <ul class="overlayImg">
+      </div> <!-- body panel ends -->
 
-            <li>
-              <div id="visSmallMulti">
-                <p class = "overlayText">"more than two languages" </p> 
-                <img src="../img/midrisebuilding.png">
-              </div>
-              <div id="visSmallMulti">
-                <img src="../img/streetfair_streetfair.png">
-              </div>
-              <div id="visSmallMulti">
-                <img src="../img/foodtrucks_trucks.png">
-              </div>
-            </li>
+      <!-- RIGHT SIDE PANEL -->
+      <div class="col-1-4" id="rightPanel">
 
-            <li>
-              <div id="visSmallBi">
-                <p class = "overlayText">"two languages" </p> 
-                <img src="../img/highrisebuilding.png">
-              </div>
-            </li> 
+        <div id="extraHeadingBox">
+          <div class="extraHeading"> </div>
+        </div>
 
-            <li>
-              <div id="visSmallMono">    
-                <p class = "overlayText">"one language" </p> 
-                <img src="../img/lowrisebuilding.png">
-              </div>  
-            </li> 
+        <div id="barChart"></div>
+        <p class="extraInfo"> </p>
 
-          </ul></div>
+      </div> <!-- right side panel ends  -->
 
+    </div> <!-- entire thing  -->
 
-
-        </div> <!-- row -->
-      </div> <!-- container -->
-    </div> <!-- bodypanel -->
-
-<!-- 	</body>
- -->  
+	</body>
+  
   <!-- leaflet -->
   <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
 
@@ -573,9 +515,6 @@
 
        }
 
-
-
-
     </script>
-    </body>
+
 </html>
