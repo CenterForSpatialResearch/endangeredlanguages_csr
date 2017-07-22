@@ -67,7 +67,8 @@ a{
 
 		text.extraHeading {
 		    color: white;
-		    text-align: left;
+		    display: list-item;
+		    text-align: center;
 		    line-height: 2;
 		}
 		#extraHeadingBox{
@@ -85,7 +86,7 @@ a{
 		    text-transform: uppercase;
 		    color: white;
 		    font-weight: 600;
-		    padding: 20px;
+		    padding: 10px;
 		    display: block;
 		}
 
@@ -102,10 +103,17 @@ a{
 			/*width: 30%;*/
 		}
 		ul.thumbnail p{
-
+			margin: 0;
 		}
 		ul.thumbnail img{
 			width:100%;
+			border: 1px solid #ebebeb;
+			padding: 10px;
+		}
+		.thumbnailSelected{
+			width:100%;
+			border: 2.5px solid black;
+			opacity: 1 !important;
 		}
 	/*side boxes*/
 		.thumbnail.col-1-4{

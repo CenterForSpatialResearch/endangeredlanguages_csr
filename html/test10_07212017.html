@@ -46,7 +46,7 @@
         <ul class="thumbnail">
           <li>
             <div id="visSmallMulti">
-              <p class = "overlayText">"more than two languages" </p> 
+              <p class = "overlayText">more than two languages</p> 
               <img src="../img/midrisebuilding.png">
             </div>
             <div id="visSmallMulti">
@@ -59,14 +59,14 @@
 
           <li>
             <div id="visSmallBi">
-              <p class = "overlayText">"two languages" </p> 
+              <p class = "overlayText">two languages</p> 
               <img src="../img/highrisebuilding.png">
             </div>
           </li> 
 
           <li>
             <div id="visSmallMono">    
-              <p class = "overlayText">"one language" </p> 
+              <p class = "overlayText">one language</p> 
               <img src="../img/lowrisebuilding.png">
             </div>  
           </li> 
@@ -152,6 +152,8 @@
         d3.selectAll("svg").remove();
         d3.selectAll(".updateButton").classed("updateButtonSelected", false);
         d3.select(this).classed("updateButtonSelected", true);
+        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
+        d3.select(this).classed("thumbnailSelected", true);
         d3.selectAll("#visSmallMulti").classed("updateButtonSelected", false);
 
         d3.xml("../svg/170710_buildingdetail.svg").mimeType("image/svg+xml").get(function(error, xml) {
@@ -170,6 +172,8 @@
         d3.selectAll("svg").remove();
         d3.selectAll(".updateButton").classed("updateButtonSelected", false);
         d3.select(this).classed("updateButtonSelected", true);
+        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
+        d3.select(this).classed("thumbnailSelected", true);
         d3.selectAll("#visSmallBi").classed("updateButtonSelected", false);
 
         d3.xml("../svg/highrisebuilding_building.svg").mimeType("image/svg+xml").get(function(error, xml) {
@@ -188,6 +192,8 @@
         d3.selectAll("svg").remove();
         d3.selectAll(".updateButton").classed("updateButtonSelected", false);
         d3.select(this).classed("updateButtonSelected", true);
+        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
+        d3.select(this).classed("thumbnailSelected", true);
         d3.selectAll("#visSmallMono").classed("updateButtonSelected", false);
 
         d3.xml("../svg/lowrisebuilding.svg").mimeType("image/svg+xml").get(function(error, xml) {
