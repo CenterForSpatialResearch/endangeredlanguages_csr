@@ -1,1 +1,92 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 242.85 106.16"><title>streetfair</title><g id="circles"><text transform="translate(44.79 44.8)" style="font-size:14px;fill:#ff0606;stroke:#5a5a5a;stroke-miterlimit:10;stroke-width:0.25px;font-family:PTMono-Regular, PT Mono">Spanish <tspan x="67.2" y="0" style="fill:#5a5a5a;stroke:#ff0606">+ </tspan><tspan x="83.99" y="0" style="fill:gray">English</tspan></text><circle cx="32" cy="39.68" r="2.89" style="fill:#ff0606;stroke:#5a5a5a;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.5"/><text transform="translate(44.79 65.42)" style="opacity:0.75;font-size:14px;fill:#f3ff18;stroke:#5a5a5a;stroke-miterlimit:10;stroke-width:0.25px;font-family:PTMono-Regular, PT Mono">Greek <tspan x="50.4" y="0" style="fill:#5a5a5a;stroke:#f3ff18">+ </tspan><tspan x="67.2" y="0" style="fill:gray">English</tspan></text><circle cx="32" cy="61.38" r="2.89" style="fill:#f3ff18;stroke:#5a5a5a;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 161 158.1" style="enable-background:new 0 0 161 158.1;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{fill:#9D9D9D;stroke:#4F4F4F;stroke-width:0.25;stroke-miterlimit:10;}
+	.st2{fill:#CECECE;stroke:#767676;stroke-width:0.25;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#0A003D;stroke-width:0.35;stroke-linecap:round;stroke-linejoin:round;}
+	.st4{fill:#FFFFFF;stroke:#0A003D;stroke-width:0.35;stroke-linecap:round;stroke-linejoin:round;}
+	.st5{fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;}
+	.st6{fill:#FFFFFF;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;}
+	.st7{display:inline;fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;}
+	.st8{fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;}
+	.st9{opacity:0.75;fill-rule:evenodd;clip-rule:evenodd;fill:#71B8D1;stroke:#5A5A5A;stroke-width:0.25;stroke-miterlimit:10;}
+	.st10{opacity:0.75;fill-rule:evenodd;clip-rule:evenodd;fill:#FF0606;stroke:#5A5A5A;stroke-width:0.25;stroke-miterlimit:10;}
+	.st11{opacity:0.49;fill-rule:evenodd;clip-rule:evenodd;}
+	.st12{fill:#898989;}
+	.st13{fill:#B7B6B6;stroke:#FFFFFF;stroke-width:0.1;stroke-miterlimit:10;}
+	.st14{opacity:0.75;fill:#71B8D1;stroke:#5A5A5A;stroke-width:0.1;stroke-miterlimit:10;}
+	.st15{opacity:0.75;fill:#FF0606;stroke:#5A5A5A;stroke-width:0.1;stroke-miterlimit:10;}
+	.st16{opacity:0.75;fill:#FDFF00;}
+	.st17{opacity:0.75;fill:#FF971A;stroke:#5A5A5A;stroke-width:0.1;stroke-miterlimit:10;}
+	.st18{opacity:0.75;fill:#71B8D1;}
+	.st19{fill:#231F20;}
+	.st20{font-family:'LetterGothicStd-Slanted';}
+	.st21{font-size:8px;}
+	.st22{fill:none;stroke:#929497;stroke-width:0.5;stroke-miterlimit:10;}
+</style>
+<g id="render" class="st0">
+</g>
+<g id="road">
+</g>
+<g id="sidewalk">
+</g>
+<g id="red">
+</g>
+<g id="tables">
+</g>
+<g id="hidden_tables" class="st0">
+</g>
+<g id="tables_1_">
+	<g id="legs">
+	</g>
+	<g id="top_1_">
+	</g>
+	<g id="sidecover">
+	</g>
+	<g id="frontcover">
+	</g>
+	<g id="side">
+	</g>
+	<g id="front">
+	</g>
+</g>
+<g id="circles">
+</g>
+<g id="people">
+</g>
+<g id="tents_1_">
+	<g id="stands">
+	</g>
+	<g id="side-cover">
+	</g>
+	<g id="top">
+	</g>
+</g>
+<g id="barchart">
+	<g id="rectangles_1_">
+		
+			<rect id="polish_1_" x="3.7" y="90.5" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -75.6313 133.2655)" class="st18" width="50.2" height="27.9"/>
+		
+			<rect id="russian_1_" x="3.7" y="25.3" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -10.4549 68.089)" class="st15" width="50.2" height="27.9"/>
+		
+			<rect id="patois" x="21.4" y="57.9" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -42.9843 100.6184)" class="st17" width="14.8" height="27.9"/>
+		
+			<rect id="arabic_1_" x="23.8" y="120.7" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -105.8078 163.4419)" class="st16" width="10.1" height="27.9"/>
+	</g>
+	<g id="txt">
+		<text id="russian_2_" transform="matrix(1 0 0 1 46.3677 43.2723)" class="st19 st20 st21">10 Spanish Speakers</text>
+		<text id="patois_1_" transform="matrix(1 0 0 1 46.3677 75.788)" class="st19 st20 st21">3 Italian Speakers</text>
+		<text id="polish_2_" transform="matrix(1 0 0 1 46.3674 104.4479)" class="st19 st20 st21">10 Greek Speakers</text>
+		<text id="arabic_2_" transform="matrix(1 0 0 1 46.3677 137.2487)" class="st19 st20 st21">2 Patois Speakers</text>
+	</g>
+	<g id="lines">
+		<line class="st22" x1="14.9" y1="64.4" x2="51.5" y2="64.4"/>
+		<line class="st22" x1="14.9" y1="79.3" x2="51.5" y2="79.3"/>
+		<line class="st22" x1="14.9" y1="129.6" x2="51.5" y2="129.6"/>
+		<line class="st22" x1="14.9" y1="139.7" x2="51.5" y2="139.7"/>
+	</g>
+</g>
+</svg>

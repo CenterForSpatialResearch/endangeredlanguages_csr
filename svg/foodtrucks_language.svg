@@ -1,1 +1,97 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137.52 168.91"><title>foodtrucks</title><g id="circles"><text transform="translate(40.12 47.02)" style="font-size:14px;fill:gray;font-family:PTMono-Regular, PT Mono">English</text><text transform="translate(40.18 68.82)" style="font-size:14px;fill:#ff0606;font-family:PTMono-Regular, PT Mono">Spanish</text><text transform="translate(40.18 89.45)" style="font-size:14px;fill:#17a200;font-family:PTMono-Regular, PT Mono">Chinese</text><text transform="translate(40.18 110.93)" style="font-size:14px;fill:#f9086a;font-family:PTMono-Regular, PT Mono">Arabic</text><text transform="translate(40.12 133.42)" style="font-size:14px;fill:#540063;font-family:PTMono-Regular, PT Mono">Polish</text><circle cx="27.39" cy="42.01" r="2.89" style="fill:gray;opacity:0.5"/><circle cx="27.39" cy="63.71" r="2.89" style="fill:#ff0606;opacity:0.5"/><circle cx="27.39" cy="85.41" r="2.89" style="fill:#17a200;opacity:0.5"/><circle cx="27.39" cy="107.11" r="2.89" style="fill:#f9086a;opacity:0.5"/><circle cx="27.39" cy="128.81" r="2.89" style="fill:#540063;opacity:0.5"/></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 140.9 169" style="enable-background:new 0 0 140.9 169;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0.1;}
+	.st1{clip-path:url(#SVGID_2_);fill:#F2F2F2;}
+	.st2{clip-path:url(#SVGID_4_);fill:#F2F2F2;}
+	.st3{fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;}
+	.st4{fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;}
+	.st5{opacity:0.75;fill:#FF0606;}
+	.st6{fill:#FF0606;}
+	.st7{opacity:0.5;fill:#540063;stroke:#530463;stroke-miterlimit:10;}
+	.st8{fill:#540063;stroke:#530463;stroke-miterlimit:10;}
+	.st9{opacity:0.2;}
+	.st10{display:none;}
+	.st11{display:inline;fill:#FFFFFF;}
+	.st12{opacity:0.75;fill-rule:evenodd;clip-rule:evenodd;fill:#808080;}
+	.st13{opacity:0.75;fill-rule:evenodd;clip-rule:evenodd;fill:#17A200;}
+	.st14{opacity:0.75;fill-rule:evenodd;clip-rule:evenodd;fill:#FF0606;}
+	.st15{opacity:0.75;fill-rule:evenodd;clip-rule:evenodd;fill:#F9086A;}
+	.st16{fill-rule:evenodd;clip-rule:evenodd;}
+	.st17{opacity:0.75;fill:#540063;}
+	.st18{opacity:0.75;fill:#808080;}
+	.st19{opacity:0.75;fill:#17A200;}
+	.st20{opacity:0.75;fill:#F9086A;}
+	.st21{fill:#231F20;}
+	.st22{font-family:'LetterGothicStd-Slanted';}
+	.st23{font-size:8px;}
+	.st24{fill:none;stroke:#929497;stroke-width:0.5;stroke-miterlimit:10;}
+</style>
+<g id="trucks">
+	<g id="floor_1_">
+	</g>
+	<g id="FILL">
+		<g id="left">
+		</g>
+		<g id="right">
+		</g>
+	</g>
+	<g id="shell">
+	</g>
+	<g id="door">
+	</g>
+	<g id="windows">
+	</g>
+	<g id="wheels">
+	</g>
+	<g id="roof">
+	</g>
+	<g id="SHADOW">
+		<g id="shadow">
+		</g>
+		<g id="shadow_white" class="st10">
+		</g>
+	</g>
+</g>
+<g id="circles">
+</g>
+<g id="spanish">
+</g>
+<g id="english">
+</g>
+<g id="arabic">
+</g>
+<g id="people">
+</g>
+<g id="barchart">
+	<g id="rectangles_1_">
+		
+			<rect id="polish_1_" x="11.8" y="19.9" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -5.6156 62.0318)" class="st17" width="32.7" height="27.9"/>
+		
+			<rect id="spanish_1_" x="18.1" y="56.4" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -42.1571 98.5732)" class="st5" width="20.1" height="27.9"/>
+		
+			<rect id="english_2_" x="12.5" y="102.3" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -88.0261 144.4423)" class="st18" width="31.4" height="27.9"/>
+		
+			<rect id="chinese" x="18.1" y="76.5" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -62.2747 118.6909)" class="st19" width="20.1" height="27.9"/>
+		
+			<rect id="arabic_1_" x="23.1" y="41.3" transform="matrix(6.123234e-17 -1 1 6.123234e-17 -27.0394 83.4556)" class="st20" width="10.1" height="27.9"/>
+	</g>
+	<g id="txt">
+		<text id="polish_2_" transform="matrix(1 0 0 1 45.7584 37.0705)" class="st21 st22 st23">3 Polish Speakers</text>
+		<text id="arabic_2_" transform="matrix(1 0 0 1 45.7587 57.8713)" class="st21 st22 st23">1 Arabic Speakers</text>
+		<text id="spanish_2_" transform="matrix(1 0 0 1 45.7587 72.3654)" class="st21 st22 st23">2 Spanish Speakers</text>
+		<text id="chinese_1_" transform="matrix(1 0 0 1 45.7587 92.483)" class="st21 st22 st23">2 Chinese Speakers</text>
+		<text id="english_1_" transform="matrix(1 0 0 1 45.7587 110.6589)"><tspan x="0" y="0" class="st21 st22 st23">2 English (General </tspan><tspan x="0" y="9.6" class="st21 st22 st23">American Dialect) </tspan><tspan x="0" y="19.2" class="st21 st22 st23">Speakers</tspan></text>
+	</g>
+	<g id="lines">
+		<line class="st24" x1="14.3" y1="17.5" x2="50.9" y2="17.5"/>
+		<line class="st24" x1="14.3" y1="50.2" x2="50.9" y2="50.2"/>
+		<line class="st24" x1="14.3" y1="60.3" x2="50.9" y2="60.3"/>
+		<line class="st24" x1="14.3" y1="100.5" x2="50.9" y2="100.5"/>
+		<line class="st24" x1="14.3" y1="131.9" x2="50.9" y2="131.9"/>
+		<line class="st24" x1="14.3" y1="80.4" x2="50.9" y2="80.4"/>
+	</g>
+</g>
+</svg>

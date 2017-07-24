@@ -81,7 +81,7 @@
           </p>
 
         <hr/>
-
+        <p id="basicText2"></p>
       </div> <!-- body panel ends -->
 
       <!-- RIGHT SIDE PANEL -->
@@ -178,7 +178,7 @@
 
        });
 
-      d3.selectAll("#twolanguages, #visSmallBi").on("click", function(){ 
+      d3.selectAll("#visSmallBi").on("click", function(){ 
         d3.selectAll("svg").remove();
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
@@ -195,7 +195,7 @@
 
        });
 
-      d3.selectAll("#boring, #visSmallMono").on("click", function(){       
+      d3.selectAll("#visSmallMono").on("click", function(){       
         d3.selectAll("svg").remove();
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
@@ -401,6 +401,11 @@
           .append('text')
             .attr("class","extraInfo")
            .text("SAY SOMETHING ABOUT THE SCENARIO HERE") 
+
+         d3.selectAll('p#extraText2')
+          .append('text')
+            .attr("class","extraInfo")
+           .text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.") 
 
         })
       }; //end of import
