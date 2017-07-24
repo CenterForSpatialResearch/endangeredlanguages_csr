@@ -40,30 +40,25 @@
       <div class="col-1-4" id="leftPanel"> 
         <ul class="thumbnail">
           <li>
-            <div id="visSmallMulti">
-              <div id="visSmallMultiBuilding">
-                <p class = "overlayText">more than two languages</p> 
-                <img src="../img/midrisebuilding.png">
-              </div>
-              <div id="visSmallMultiStreetFair">
-                <img src="../img/streetfair.png">
-              </div>
-              <div id="visSmallMultiFoodTrucks">
-                <img src="../img/foodtrucks.png">
-              </div>
+            <div id="visSmallMultiBuilding">
+              <img src="../img/midrisebuilding.png">
+            </div>
+            <div id="visSmallMultiStreetFair">
+              <img src="../img/streetfair.png">
+            </div>
+            <div id="visSmallMultiFoodTrucks">
+              <img src="../img/foodtrucks.png">
             </div>
           </li>
 
           <li>
             <div id="visSmallBi">
-              <p class = "overlayText">two languages</p> 
               <img src="../img/highrisebuilding.png">
             </div>
           </li> 
 
           <li>
             <div id="visSmallMono">    
-              <p class = "overlayText">one language</p> 
               <img src="../img/lowrisebuilding.png">
             </div>  
           </li> 
@@ -75,20 +70,6 @@
       <!-- MAIN CONTENT -->
       <div class="col-2-4" id="bodyPanel">
 
-        <ul class="selections">
-          <p> 
-            <li>Select buildings that are</li>
-            <li><input class="updateButton" id="unbuilding" type="button" value="multilingual"></li>             
-            
-            <li><input class="updateButton" id="twolanguages" type="button" value="bilingual"></li> 
-
-            <li><input class="updateButton" id="boring" type="button" value="monolingual"></li> 
-            <br>
-            <li>Select situations that are</li>
-            <li><input class="updateButton" id="foodtrucks" type="button" value="multilingual"></li>
-            <li><input class="updateButton" id="streetfair" type="button" value="bilingual"></li>
-          </p>
-        </ul>
     		<div id="vis"></div>
 
         <br>
@@ -99,7 +80,7 @@
             This project takes a snapshot of this linguistic diversity and highlights the ways that language connects New York City and the rest of the world. By visualizing the languages that are represented and casting them against stories of migration, language, and identity, we come to see the ways that language ties us together, and give life to the many languages of Queens, NY.
           </p>
 
-        <!-- <hr/> -->
+        <hr/>
 
       </div> <!-- body panel ends -->
 
@@ -143,14 +124,11 @@
       addOverlay()
 
       //SWITCHING BTW IMGS   
-      d3.selectAll("#unbuilding, #visSmallMultiBuilding").on("click", function(){
+      d3.selectAll("#visSmallMultiBuilding").on("click", function(){
         
         d3.selectAll("svg").remove();
-        d3.selectAll(".updateButton").classed("updateButtonSelected", false);
-        d3.select(this).classed("updateButtonSelected", true);
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
-        d3.selectAll("#visSmallMultiBuilding").classed("updateButtonSelected", false);
 
         d3.xml("../svg/170710_buildingdetail.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
@@ -164,14 +142,11 @@
 
        });
 
-      d3.selectAll("#foodtrucks, #visSmallMultiFoodTrucks").on("click", function(){
+      d3.selectAll("#visSmallMultiFoodTrucks").on("click", function(){
         
         d3.selectAll("svg").remove();
-        d3.selectAll(".updateButton").classed("updateButtonSelected", false);
-        d3.select(this).classed("updateButtonSelected", true);
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
-        d3.selectAll("#visSmallMultiFoodTrucks").classed("updateButtonSelected", false);
 
         d3.xml("../svg/foodtrucks_trucks.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
@@ -185,14 +160,11 @@
 
        });
 
-      d3.selectAll("#streetfair, #visSmallMultiStreetFair").on("click", function(){
+      d3.selectAll("#visSmallMultiStreetFair").on("click", function(){
         
         d3.selectAll("svg").remove();
-        d3.selectAll(".updateButton").classed("updateButtonSelected", false);
-        d3.select(this).classed("updateButtonSelected", true);
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
-        d3.selectAll("#visSmallMultiStreetFair").classed("updateButtonSelected", false);
 
         d3.xml("../svg/streetfair_streetfair.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
@@ -208,11 +180,8 @@
 
       d3.selectAll("#twolanguages, #visSmallBi").on("click", function(){ 
         d3.selectAll("svg").remove();
-        d3.selectAll(".updateButton").classed("updateButtonSelected", false);
-        d3.select(this).classed("updateButtonSelected", true);
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
-        d3.selectAll("#visSmallBi").classed("updateButtonSelected", false);
 
         d3.xml("../svg/highrisebuilding_building.svg").mimeType("image/svg+xml").get(function(error, xml) {
         var importedNode = document.importNode(xml.documentElement, true);
@@ -228,11 +197,8 @@
 
       d3.selectAll("#boring, #visSmallMono").on("click", function(){       
         d3.selectAll("svg").remove();
-        d3.selectAll(".updateButton").classed("updateButtonSelected", false);
-        d3.select(this).classed("updateButtonSelected", true);
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
-        d3.selectAll("#visSmallMono").classed("updateButtonSelected", false);
 
         d3.xml("../svg/lowrisebuilding.svg").mimeType("image/svg+xml").get(function(error, xml) {
         var importedNode = document.importNode(xml.documentElement, true);
@@ -571,9 +537,25 @@
       }
 
       function addOverlay(){
-        d3.selectAll('div#visSmallMulti')
+        d3.selectAll('div#visSmallMultiStreetFair')
           .on('mouseover', function () {
-            d3.selectAll('div#visSmallMono, div#visSmallBi') 
+            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks') 
+              .style("opacity", 0.2)
+            d3.selectAll('div#visSmallMulti') 
+              .style("opacity", 1)
+          })
+
+        d3.selectAll('div#visSmallMultiFoodTrucks')
+          .on('mouseover', function () {
+            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair') 
+              .style("opacity", 0.2)
+            d3.selectAll('div#visSmallMulti') 
+              .style("opacity", 1)
+          })
+
+        d3.selectAll('div#visSmallMultiBuilding')
+          .on('mouseover', function () {
+            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks') 
               .style("opacity", 0.2)
             d3.selectAll('div#visSmallMulti') 
               .style("opacity", 1)
@@ -581,7 +563,7 @@
 
         d3.selectAll('div#visSmallMono')
           .on('mouseover', function () {
-            d3.selectAll('div#visSmallMulti, div#visSmallBi') 
+            d3.selectAll('div#visSmallMultiStreetFair, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks') 
               .style("opacity", 0.2)
             d3.selectAll('div#visSmallMono') 
               .style("opacity", 1)
@@ -589,16 +571,16 @@
 
         d3.selectAll('div#visSmallBi')
           .on('mouseover', function () {
-            d3.selectAll('div#visSmallMono, div#visSmallMulti') 
+            d3.selectAll('div#visSmallMono, div#visSmallMultiStreetFair, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks') 
               .style("opacity", 0.2)
             d3.selectAll('div#visSmallBi') 
               .style("opacity", 1)
           })
           
 
-        d3.selectAll('div#visSmallBi, div#visSmallMulti, div#visSmallMono')
+        d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks')
           .on('mouseout', function () {
-            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMulti')
+            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks')
               .style("opacity", 0.7)
           })
 
