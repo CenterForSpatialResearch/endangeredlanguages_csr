@@ -76,10 +76,12 @@ a{
 			background-color:black;
 		}
 
-		p#basicText{
-
+		p#basicText, text.basicText{
+			font-size: 12px;
 		}
-
+		p#introText{
+			font-size: 12px;
+		}
 	/*toggle images at bottom*/
 		ul.thumbnail{
 			top:0;

@@ -119,6 +119,7 @@
         d3.selectAll("svg").remove();
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
+        window.scrollTo(0, 0);
 
         d3.xml("../svg/midrisebuilding_building.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
@@ -137,6 +138,7 @@
         d3.selectAll("svg").remove();
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
+        window.scrollTo(0, 0);
 
         d3.xml("../svg/foodtrucks_trucks.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
@@ -155,6 +157,7 @@
         d3.selectAll("svg").remove();
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
+        window.scrollTo(0, 0);
 
         d3.xml("../svg/streetfair_streetfair.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
@@ -172,6 +175,7 @@
         d3.selectAll("svg").remove();
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
+        window.scrollTo(0, 0);
 
         d3.xml("../svg/highrisebuilding_building.svg").mimeType("image/svg+xml").get(function(error, xml) {
         var importedNode = document.importNode(xml.documentElement, true);
@@ -189,6 +193,7 @@
         d3.selectAll("svg").remove();
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
+        window.scrollTo(0, 0);
 
         d3.xml("../svg/lowrisebuilding.svg").mimeType("image/svg+xml").get(function(error, xml) {
         var importedNode = document.importNode(xml.documentElement, true);
@@ -544,7 +549,7 @@
       }; //end of import
 
 
-      
+
       //SORTING OUT TEXT 
         var multiText = "more than two languages"
         var monoText = "one language"
