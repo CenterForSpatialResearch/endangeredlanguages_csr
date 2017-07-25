@@ -73,15 +73,14 @@
     		<div id="vis"></div>
 
         <br>
-          &nbsp
-          <p id="basicText">
+          <p id="introText">
             New York City is one of the most linguistically diverse places in the world; estimates show anywhere from 200-800 different languages represented across the five boroughs. Nowhere is this more apparent than in Queens, where many of these languages are spoken in schools, restaurants, community centers, and homes across the area.
             <br><br>
             This project takes a snapshot of this linguistic diversity and highlights the ways that language connects New York City and the rest of the world. By visualizing the languages that are represented and casting them against stories of migration, language, and identity, we come to see the ways that language ties us together, and give life to the many languages of Queens, NY.
           </p>
 
         <hr/>
-        <p id="basicText2"></p>
+        <p id="basicText"></p>
       </div> <!-- body panel ends -->
 
       <!-- RIGHT SIDE PANEL -->
@@ -112,15 +111,6 @@
       var width = chartDiv.clientWidth;
       var height = chartDiv.clientHeight;
 
-
-      // function styleImportedSVGbasic () {
-      // 	// d3.selectAll("#line").style("visibility", "hidden") //HIDES certain elements 
-      // 	// d3.selectAll("#Underlay").style("visibility", "")//SHOWS
-      //   d3.select('p#basicText')
-      //     .append('text')
-      //     .text("[Some explanatory text]. Selecting any building below toggles between different types of language distribution in buildings.")
-      
-      // }
       addOverlay()
 
       //SWITCHING BTW IMGS   
@@ -206,6 +196,7 @@
             .each(function() {
               this.appendChild(importedNode);
             })
+          importMonolingual()
           removeTxt()
 
 
@@ -215,11 +206,16 @@
 
       function importMultilingual () {
 
-         d3.selectAll('text.extraHeading').remove();
+         d3.selectAll('text.extraHeading, text.basicText').remove();
          d3.select('div.extraHeading')
           .append('text')
             .attr("class", "extraHeading")
            .text("Building Composition")
+
+         d3.selectAll('p#basicText')
+          .append('text')
+            .attr("class","basicText")
+           .text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.") 
 
          d3.xml("../svg/170710_bar.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
@@ -239,7 +235,6 @@
 
             d3.selectAll('#Polish, rect.polish, text.polish')
               .on('click', function() {
-                console.log("clicked")
                 d3.selectAll('text.extraInfo').remove()
                 d3.selectAll('#Arabic, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect.russian, rect.patois, rect.arabic, rect.spanish, rect.chinese, rect.english, text.patois, text.russian, text.arabic, text.spanish, text.chinese, tspan.english') 
                   .style('fill-opacity', 0.1)
@@ -255,7 +250,6 @@
 
             d3.selectAll('#Arabic, rect.arabic, text.arabic')
               .on('click', function() {
-                console.log('hi')
                 d3.selectAll('text.extraInfo').remove()
                 d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect.russian, rect.patois, rect.polish, rect.spanish, rect.chinese, rect.english, text.patois, text.polish, text.russian, text.spanish, text.chinese, tspan.english') 
                   .style('fill-opacity', 0.1)
@@ -381,11 +375,16 @@
 
       function importMultilingualStreetFair() {
 
-         d3.selectAll('text.extraHeading').remove();
+         d3.selectAll('text.extraHeading, text.basicText').remove();
          d3.select('div.extraHeading')
           .append('text')
             .attr("class", "extraHeading")
            .text("Composition")
+
+         d3.selectAll('p#basicText')
+          .append('text')
+            .attr("class","basicText")
+           .text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.") 
 
          d3.xml("../svg/streetfair_language.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
@@ -399,21 +398,21 @@
             .attr("class","extraInfo")
            .text("SAY SOMETHING ABOUT THE SCENARIO HERE") 
 
-         d3.selectAll('p#extraText2')
-          .append('text')
-            .attr("class","extraInfo")
-           .text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.") 
-
         })
       }; //end of import
 
       function importMultilingualFoodTrucks() {
 
-         d3.selectAll('text.extraHeading').remove();
+         d3.selectAll('text.extraHeading, text.basicText').remove();
          d3.select('div.extraHeading')
           .append('text')
             .attr("class", "extraHeading")
            .text("Composition")
+
+         d3.selectAll('p#basicText')
+          .append('text')
+            .attr("class","basicText")
+           .text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.") 
 
          d3.xml("../svg/foodtrucks_language.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
@@ -432,11 +431,16 @@
      
       function importBilingual () {
 
-         d3.selectAll('text.extraHeading').remove();
+         d3.selectAll('text.extraHeading, text.basicText').remove();
          d3.select('div.extraHeading')
           .append('text')
             .attr("class", "extraHeading")
            .text("Building Composition")
+
+         d3.selectAll('p#basicText')
+          .append('text')
+            .attr("class","basicText")
+           .text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.") 
 
          d3.xml("../svg/highrisebuilding_bar.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
@@ -446,22 +450,16 @@
             })
           
           //CLICK EVENTS 
-            d3.selectAll('image, g#building')
-            .style("opacity", 0.8)
-
             d3.selectAll('image, g#building, g#underlay')
               .on('click', function() {
                 d3.selectAll('#Polish, #Polish_English, #English, rect.polish, rect.english,  text.polish, text.english') 
                   .style('fill-opacity', 1)
                   .style('stroke-opacity', 1)
                   .style("visibility", "")
-                d3.selectAll('text.extraInfo').remove()
-                removeTxt()
                 })
 
             d3.selectAll('#Polish_English, rect.polish, rect.english, text.spanish, text.english')
             .on('click', function() {
-              console.log("clicked")
               d3.selectAll('text.extraInfo').remove()
               d3.selectAll('#Polish, #English, #Polish_English') 
                 .style("visibility", "")
@@ -476,7 +474,6 @@
           
             d3.selectAll('#English, rect.english, text.english')
             .on('click', function() {
-              console.log("clicked")
               d3.selectAll('text.extraInfo').remove()
               d3.selectAll('#Polish') 
                 .style("visibility", "hidden")
@@ -496,7 +493,6 @@
 
             d3.selectAll('#Polish, rect.polish, text.polish')
             .on('click', function() {
-              console.log("clicked")
               d3.selectAll('text.extraInfo').remove()
               d3.selectAll(' #English') 
                 .style("visibility", "hidden")
@@ -518,7 +514,37 @@
 
       } //end of function 
 
+      
+      function importMonolingual() {
 
+         d3.selectAll('text.extraHeading, text.basicText').remove();
+         d3.select('div.extraHeading')
+          .append('text')
+            .attr("class", "extraHeading")
+           .text("Composition")
+
+         d3.selectAll('p#basicText')
+          .append('text')
+            .attr("class","basicText")
+           .text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.") 
+
+         d3.xml("../svg/streetfair_language.svg").mimeType("image/svg+xml").get(function(error, xml) {
+          var importedNode = document.importNode(xml.documentElement, true);
+          d3.select("div#barChart")
+            .each(function() {
+              this.appendChild(importedNode);
+            })
+
+         d3.selectAll('p.extraInfo')
+          .append('text')
+            .attr("class","extraInfo")
+           .text("SAY SOMETHING ABOUT THE SCENARIO HERE") 
+
+        })
+      }; //end of import
+
+
+      
       //SORTING OUT TEXT 
         var multiText = "more than two languages"
         var monoText = "one language"
@@ -535,7 +561,7 @@
         var russianDescription = "Over 2% of New Yorkers speak Russian at home, and 65% of those speakers are located in Brooklyn. There are significant enclaves of Russian speakers in Sheepshead Bay, Coney Island, Dyker Heights, and more area, though Russian speakers live in every borough. Though Russian speakers have lived in New York since the 1800's, there was an influx of Russian Jews in the 1970's, and ethnic Russians after the collapse of the Soviet Union in 1991. Like Spanish speakers, many Russian speakers may speak another language such as Tatar (Siberia), Uzbek (Uzbekistan), Hebrew, or Yiddish."
 
       function removeTxt(){
-        d3.selectAll('text.overlayText, p#basicText, text.extraInfo').remove();
+        d3.selectAll('text.overlayText, p#introText, text.extraInfo').remove();
       }
 
       function addOverlay(){
