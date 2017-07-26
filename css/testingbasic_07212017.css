@@ -75,7 +75,6 @@ a{
 		}
 		p#introText{
 			font-size: 12px;
-			border: 1px solid black;
 		}
 	/*toggle images at bottom*/
 		ul.thumbnail{
@@ -93,6 +92,8 @@ a{
 		}
 		ul.thumbnail p{
 			margin: 0;
+			border: 1px solid #ebebeb;
+			padding: 10px;
 		}
 		ul.thumbnail img{
 			width:100%;
