@@ -1,7 +1,7 @@
 body{
 	font-family: 'Cousine', monospace !important;
     font-weight: 200;
-    font-size: 0.7em;
+    font-size: 14px;
   	padding: 0px;
   	margin: 0px;
   	color: rgba(35, 31, 32, 0.8)
@@ -62,16 +62,17 @@ a{
 		    background-color: rgba(0,0,0,1);
 		    color: white;
 		    padding: 10px;
-		    text-align: center;
+		    text-align: left;
 		    margin: 10px;
 		}
 
 		p#basicText, text.basicText{
-			font-size: 12px;
+			font-size: 24px;
 			color: black;
 		}
 		p#introText{
 			font-size: 12px;
+			border: 1px solid black;
 		}
 	/*toggle images at bottom*/
 		ul.thumbnail{
@@ -83,7 +84,8 @@ a{
 		ul.thumbnail li{
 			display: inline-block;
 			margin: 0 0 0 1%;
-			/*width: 30%;*/
+			width: 30%;
+			height: 10%;
 		}
 		ul.thumbnail p{
 			margin: 0;
@@ -127,7 +129,7 @@ a{
 		}
 		#barChart{
 			overflow-x: hidden;
-			padding: 80% 20% 20% 20%;
+			padding: 0 20% 20% 20%;
 		}
 
 	/*body*/

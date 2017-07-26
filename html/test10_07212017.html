@@ -31,9 +31,46 @@
 	<body>
     
     <h1 class="title">
-      <a href="test10_07212017.html"> linguistic diversity</a>
+      <a href="test10_07212017.html">  microcosms of language </a>
     </h1>
+    <ul class="thumbnail">
+          <li>
+            <div id="visSmallMultiBuilding">
+              <img src="../img/midrisebuilding.png">
+            </div>
+          </li>
 
+          <li>
+            <div id="visSmallMultiStreetFair">
+              <img src="../img/streetfair.png">
+            </div>
+          </li>
+
+          <li>
+            <div id="visSmallBi">
+              <img src="../img/highrisebuilding.png">
+            </div>
+          </li> 
+
+          <li>
+            <div id="visSmallMultiFoodTrucks">
+              <img src="../img/foodtrucks.png">
+            </div>
+          </li>
+
+          <li>
+            <div id="visSmallMono">    
+              <img src="../img/lowrisebuilding.png">
+            </div>  
+          </li> 
+          <li>
+            <p id="introText">
+              New York City is one of the most linguistically diverse places in the world; estimates show anywhere from 200-800 different languages represented across the five boroughs. Nowhere is this more apparent than in Queens, where many of these languages are spoken in schools, restaurants, community centers, and homes across the area.
+              <br><br>
+              We often think of language in a city the size of New York as centered around “ethnic enclaves,” neighborhoods where minority language speakers tend to cluster. While that model may contain some degree of truth, it obscures how deeply integrated multilingualism is into the fabric of New York City. Through these models, we invite you to explore some of the ways language is organized in daily life. Both in the home, and on the street, the linguistic diversity of New York City is more than a population count, and tangibly affects city life. Though the models are based on real places and events, the details have been altered to protect individual’s privacy. 
+            </p>
+          </li>
+        </ul>
     <div class="grid">
           
       <!-- LEFT SIDE PANEL -->
@@ -78,24 +115,15 @@
 
     		<div id="vis"></div>
 
-        <br>
-          <p id="introText">
-            New York City is one of the most linguistically diverse places in the world; estimates show anywhere from 200-800 different languages represented across the five boroughs. Nowhere is this more apparent than in Queens, where many of these languages are spoken in schools, restaurants, community centers, and homes across the area.
-            <br><br>
-            We often think of language in a city the size of New York as centered around “ethnic enclaves,” neighborhoods where minority language speakers tend to cluster. While that model may contain some degree of truth, it obscures how deeply integrated multilingualism is into the fabric of New York City. Through these models, we invite you to explore some of the ways language is organized in daily life. Both in the home, and on the street, the linguistic diversity of New York City is more than a population count, and tangibly affects city life. Though the models are based on real places and events, the details have been altered to protect individual’s privacy. 
-            <br><br>
-            This project takes a snapshot of this linguistic diversity and highlights the ways that language connects New York City and the rest of the world. By visualizing the languages that are represented and casting them against stories of migration, language, and identity, we come to see the ways that language ties us together, and give life to the many languages of Queens, NY.
-          </p>
-
         <hr/>
         <p id="basicText"></p>
       </div> <!-- body panel ends -->
 
       <!-- RIGHT SIDE PANEL -->
       <div class="col-1-4" id="rightPanel">
-
-        <div id="barChart"></div>
         <p class="extraInfo"> </p>
+        <div id="barChart"></div>
+        
 
       </div> <!-- right side panel ends  -->
 
@@ -391,13 +419,21 @@
             .each(function() {
               this.appendChild(importedNode);
             })
-          
+        
+         d3.selectAll('image#underlay')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#Turkish, #Arabic, #Spanish, #Albanian, #Greek, #English, rect#turkish, rect#arabic, rect#spanish, rect#albanian, rect#greek, rect#english, text.turkish, text.arabic, text.spanish, text.russian, text.spanish, text.english, text.greek, text.albanian,  #Italian-greek, rect#italian, text.italian, #Albanian-greek, #Spanish-greek, #Italian-greek') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              })
+
          d3.selectAll('#Italian, #Italian-greek, rect#italian, text.italian')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Turkish, #Arabic, #Spanish, #Albanian, #Greek, rect#turkish, rect#arabic, rect#spanish, rect#albanian, rect#greek, text.turkish, text.arabic, text.spanish, text.russian, text.spanish') 
+              d3.selectAll('#Turkish, #Arabic, #Spanish, #Albanian, #Greek, #English, rect#turkish, rect#arabic, rect#spanish, rect#albanian, rect#greek, rect#english, text.turkish, text.arabic, text.spanish, text.russian, text.spanish, text.english, text.greek, text.albanian, #Albanian-greek, #Spanish-greek') 
                 .style('fill-opacity', 0.1)
-                .style('stroke-opacity', 0.3)
+                .style('stroke-opacity', 0.1)
               d3.selectAll('#Italian, #Italian-greek, rect#italian, text.italian') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
@@ -410,9 +446,9 @@
          d3.selectAll('#Spanish, #Spanish-greek, rect#spanish, text.spanish')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Turkish, #Arabic, #Italian, #Albanian, #Greek, rect#turkish, rect#arabic, rect#italian, rect#albanian, rect#greek, text.turkish, text.arabic, text.italian, text.albanian, text.greek') 
+              d3.selectAll('#Turkish, #Arabic, #Italian, #Albanian, #Greek, #English, rect#turkish, rect#arabic, rect#italian, rect#albanian, rect#greek, rect#english, text.turkish, text.arabic, text.italian, text.albanian, text.greek, text.english, #Albanian-greek,  #Italian-greek') 
                 .style('fill-opacity', 0.1)
-                .style('stroke-opacity', 0.3)
+                .style('stroke-opacity', 0.1)
               d3.selectAll('#Spanish, #Spanish-greek, rect#spanish, text.spanish') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
@@ -425,9 +461,9 @@
          d3.selectAll('#Albanian, #Albanian-greek, rect#albanian, text.albanian')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Turkish, #Arabic, #Spanish, #Italian, #Greek, rect#turkish, rect#arabic, rect#spanish, rect#italian, rect#greek, text.turkish, text.arabic, text.spanish, text.italian, text.greek, text.albanian') 
+              d3.selectAll('#Turkish, #Arabic, #Spanish, #Italian, #Greek, #English, rect#turkish, rect#arabic, rect#spanish, rect#italian, rect#greek, rect#english, text.turkish, text.arabic, text.spanish, text.italian, text.greek, text.english, #Spanish-greek, #Italian-greek') 
                 .style('fill-opacity', 0.1)
-                .style('stroke-opacity', 0.3)
+                .style('stroke-opacity', 0.1)
               d3.selectAll('#Albanian, #Albanian-greek, rect#albanian, text.albanian') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
@@ -435,6 +471,48 @@
                  .append('text')
                   .attr("class","extraInfo")
                   .text(albanianDescription)
+              })
+         d3.selectAll('#English, #Albanian-greek, #Spanish-greek, #Italian-greek, rect#english, text.english')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#Turkish, #Arabic, #Spanish, #Italian, #Greek, #Albanian, rect#turkish, rect#arabic, rect#spanish, rect#italian, rect#greek, rect#albanian, text.turkish, text.arabic, text.spanish, text.italian, text.greek, text.albanian') 
+                .style('fill-opacity', 0.1)
+                .style('stroke-opacity', 0.1)
+              d3.selectAll('#English, #Albanian-greek, #Spanish-greek, #Italian-greek, rect#english, text.english') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(englishDescription)
+              })
+         d3.selectAll('#Turkish, rect#turkish, text.turkish')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#Albanian, #Arabic, #Spanish, #Italian, #Greek, #English, rect#albanian, rect#arabic, rect#spanish, rect#italian, rect#greek, rect#english, text.albanian, text.arabic, text.spanish, text.italian, text.greek, text.english, #Spanish-greek, #Italian-greek') 
+                .style('fill-opacity', 0.1)
+                .style('stroke-opacity', 0.1)
+              d3.selectAll('#Turkish, rect#turkish, text.turkish') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(turkishDescription)
+              })
+         d3.selectAll('#Greek, #Albanian-greek, #Spanish-greek, #Italian-greek, rect#greek, text.greek')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#Turkish, #Arabic, #Spanish, #Italian, #Albanian, #English, rect#turkish, rect#arabic, rect#spanish, rect#italian, rect#albanian, rect#english, text.turkish, text.arabic, text.spanish, text.italian, text.greek, text.english') 
+                .style('fill-opacity', 0.1)
+                .style('stroke-opacity', 0.1)
+              d3.selectAll('#Greek, #Albanian-greek, #Spanish-greek, #Italian-greek, rect#greek, text.greek') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(greekDescription)
               })
 
         })
