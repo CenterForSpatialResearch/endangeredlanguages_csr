@@ -94,10 +94,6 @@
       <!-- RIGHT SIDE PANEL -->
       <div class="col-1-4" id="rightPanel">
 
-        <div id="extraHeadingBox">
-          <div class="extraHeading"> </div>
-        </div>
-
         <div id="barChart"></div>
         <p class="extraInfo"> </p>
 
@@ -219,12 +215,7 @@
 
       function importMultilingual () {
 
-         d3.selectAll('text.extraHeading, text.basicText').remove();
-         d3.select('div.extraHeading')
-          .append('text')
-            .attr("class", "extraHeading")
-           .text("Building Composition")
-
+         d3.selectAll('text.basicText').remove();
          d3.selectAll('p#basicText')
           .append('text')
             .attr("class","basicText")
@@ -388,12 +379,7 @@
 
       function importMultilingualStreetFair() {
 
-         d3.selectAll('text.extraHeading, text.basicText').remove();
-         d3.select('div.extraHeading')
-          .append('text')
-            .attr("class", "extraHeading")
-           .text("Composition")
-
+         d3.selectAll('text.basicText').remove();
          d3.selectAll('p#basicText')
           .append('text')
             .attr("class","basicText")
@@ -405,17 +391,58 @@
             .each(function() {
               this.appendChild(importedNode);
             })
+          
+         d3.selectAll('#Italian, #Italian-greek, rect#italian, text.italian')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#Turkish, #Arabic, #Spanish, #Albanian, #Greek, rect#turkish, rect#arabic, rect#spanish, rect#albanian, rect#greek, text.turkish, text.arabic, text.spanish, text.russian, text.spanish') 
+                .style('fill-opacity', 0.1)
+                .style('stroke-opacity', 0.3)
+              d3.selectAll('#Italian, #Italian-greek, rect#italian, text.italian') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(italianDescription)
+              })
+
+         d3.selectAll('#Spanish, #Spanish-greek, rect#spanish, text.spanish')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#Turkish, #Arabic, #Italian, #Albanian, #Greek, rect#turkish, rect#arabic, rect#italian, rect#albanian, rect#greek, text.turkish, text.arabic, text.italian, text.albanian, text.greek') 
+                .style('fill-opacity', 0.1)
+                .style('stroke-opacity', 0.3)
+              d3.selectAll('#Spanish, #Spanish-greek, rect#spanish, text.spanish') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(spanishDescription)
+              })
+
+         d3.selectAll('#Albanian, #Albanian-greek, rect#albanian, text.albanian')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#Turkish, #Arabic, #Spanish, #Italian, #Greek, rect#turkish, rect#arabic, rect#spanish, rect#italian, rect#greek, text.turkish, text.arabic, text.spanish, text.italian, text.greek, text.albanian') 
+                .style('fill-opacity', 0.1)
+                .style('stroke-opacity', 0.3)
+              d3.selectAll('#Albanian, #Albanian-greek, rect#albanian, text.albanian') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(albanianDescription)
+              })
 
         })
       }; //end of import
 
       function importMultilingualFoodTrucks() {
 
-         d3.selectAll('text.extraHeading, text.basicText').remove();
-         d3.select('div.extraHeading')
-          .append('text')
-            .attr("class", "extraHeading")
-           .text("Composition")
+         d3.selectAll('text.basicText').remove();
 
          d3.selectAll('p#basicText')
           .append('text')
@@ -434,12 +461,7 @@
      
       function importBilingual () {
 
-         d3.selectAll('text.extraHeading, text.basicText').remove();
-         d3.select('div.extraHeading')
-          .append('text')
-            .attr("class", "extraHeading")
-           .text("Building Composition")
-
+         d3.selectAll('text.basicText').remove();
          d3.selectAll('p#basicText')
           .append('text')
             .attr("class","basicText")
@@ -520,12 +542,7 @@
       
       function importMonolingual() {
 
-         d3.selectAll('text.extraHeading, text.basicText').remove();
-         d3.select('div.extraHeading')
-          .append('text')
-            .attr("class", "extraHeading")
-           .text("Composition")
-
+         d3.selectAll('text.basicText').remove();
          d3.selectAll('p#basicText')
           .append('text')
             .attr("class","basicText")
@@ -555,7 +572,10 @@
         var biBuildingStory = "Though this building on its own would never register as an enclave in the Census, for the residents, it is an oasis. In a quickly changing and gentrifying city, buildings such as this one form micro-communities that have the power to sustain familial, linguistic, and social ties. Most of the Polish speaking residents are related by blood, marriage, or friendship, and all have at least one connection to family or friends in Poland."
         var monoBuildingStory = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         
-
+        var italianDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. "
+        var greekDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. "
+        var turkishDescription = " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var albanianDescription = " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         var spanishDescription = "Spanish is the most commonly spoken language after English in New York City, and over 25% of NYC households speak Spanish at home. Of course, Spanish speakers are not evenly spread across the city, while 47% of Bronx households speak Spanish, only 10% of Staten Island ones do. Additionally, many Spanish speakers also speak a smaller, regional language such as Mixtec (Mexico), K’iche (Guatemala), or Garifuna (Honduras & Belize). Since there are few records as to how many people speak Spanish as a second language, and English as a third, the number of Spanish speakers may obscure the true diversity of languages spoken in New York City."
         var arabicDescription = "Though only 1% of New Yorkers speak Arabic at home, there has been a 30% increase in speakers from 2010-2015. Most of these speakers are settling in Brooklyn, particularly in and around the Bay Ridge area (over half of all Arabic speakers live in Brooklyn). There are a variety of different types of Arabic united by both Modern Standard Arabic and the Arabic writing system. Though most Arabic speakers can speak and understand Modern Standard Arabic, most people use a particular variety such as Masri (Egyptian Arabic) or North Levantine (spoken in Lebanon, Syria, and Palestine) for daily communication."
         var englishDescription = "English is spoken by almost everyone in the building as either a first, second, or additional language. Just under half of all households in New York City are English monolingual, and English speakers accounted only for 32% of all new arrivals to New York City from 2010-2015. Though there is no 'official' language in New York, or the United States, it is clear that English is New York's lingua franca."
