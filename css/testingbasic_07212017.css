@@ -65,10 +65,13 @@ a{
 		    text-align: left;
 		    margin: 10px;
 		}
-
+		#basicText{
+			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+		}
 		p#basicText, text.basicText{
 			font-size: 24px;
 			color: black;
+			padding: 10px;
 		}
 		p#introText{
 			font-size: 12px;
@@ -86,6 +89,7 @@ a{
 			margin: 0 0 0 1%;
 			width: 30%;
 			height: 10%;
+  			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 		}
 		ul.thumbnail p{
 			margin: 0;
@@ -124,12 +128,12 @@ a{
 		}
 
 	/*side*/
-		#sidePanel.col-md-2 text{
-			stroke-width: 0;
-		}
 		#barChart{
 			overflow-x: hidden;
-			padding: 0 20% 20% 20%;
+			/*padding: 0 20% 20% 20%;*/
+		}
+		#rightPanel{
+			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 		}
 
 	/*body*/
