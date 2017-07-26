@@ -43,11 +43,11 @@
             <div id="visSmallMultiBuilding">
               <img src="../img/midrisebuilding.png">
             </div>
+          </li>
+
+          <li>
             <div id="visSmallMultiStreetFair">
               <img src="../img/streetfair.png">
-            </div>
-            <div id="visSmallMultiFoodTrucks">
-              <img src="../img/foodtrucks.png">
             </div>
           </li>
 
@@ -56,6 +56,12 @@
               <img src="../img/highrisebuilding.png">
             </div>
           </li> 
+
+          <li>
+            <div id="visSmallMultiFoodTrucks">
+              <img src="../img/foodtrucks.png">
+            </div>
+          </li>
 
           <li>
             <div id="visSmallMono">    
@@ -400,11 +406,6 @@
               this.appendChild(importedNode);
             })
 
-         d3.selectAll('p.extraInfo')
-          .append('text')
-            .attr("class","extraInfo")
-           .text("SAY SOMETHING ABOUT THE SCENARIO HERE") 
-
         })
       }; //end of import
 
@@ -427,11 +428,6 @@
             .each(function() {
               this.appendChild(importedNode);
             })
-
-         d3.selectAll('p.extraInfo')
-          .append('text')
-            .attr("class","extraInfo")
-           .text("SAY SOMETHING ABOUT THE SCENARIO HERE") 
 
         })
       }; //end of import
