@@ -101,7 +101,6 @@ a{
 			height: auto;
 			max-width: 400px;
 			max-height: 400px;
-			vertical-align: middle;
 		}
 		ul.thumbnailIntroPage img, ul.thumbnail img {
 		   -webkit-filter: grayscale(100%);
@@ -125,6 +124,7 @@ a{
 		.thumbnailSelected{
 			opacity: 1 !important;
 		}
+
 	/*side boxes*/
 		.thumbnail.col-1-4{
 			height: 100%;
