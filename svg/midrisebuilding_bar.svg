@@ -1,23 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170.99 253.7"><title>midrisebuilding</title><g id="underlay"><rect x="-595.09" y="-222.8" width="792" height="504" style="fill:none"/></g><g id="barchart">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 252.5 300"><title>midrisebuilding</title><g id="underlay"><rect x="-576" y="-204" width="792" height="504" style="fill:none"/></g>
+<g id="barchart">
 	<g id="rectangles">
-		<rect class="polish" data-name="polish" x="5.75" y="84.2" width="50.24" height="27.9" transform="translate(-67.29 129.02) rotate(-90)" style="fill:#7a1859;stroke:#17183b;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
-		<rect class="russian" data-name="russian" x="5.75" y="19.03" width="50.24" height="27.9" transform="translate(-2.11 63.84) rotate(-90)" style="fill:#ff4f79;stroke:#93324e;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
-		<rect class="patois" data-name="patois" x="23.45" y="51.56" width="14.82" height="27.9" transform="translate(-34.64 96.37) rotate(-90)" style="fill:#384e77;stroke:#1f2f47;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
-		<rect class="spanish" data-name="spanish" x="20.81" y="129.5" width="20.12" height="27.9" transform="translate(-112.58 174.31) rotate(-90)" style="fill:#ff0606;stroke:#c90505;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
-		<rect class="english" data-name="english" x="0.75" y="189.79" width="60.24" height="27.9" transform="translate(-172.88 234.6) rotate(-90)" style="fill:#d1d1d1;stroke:#959692;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
-		<rect class="chinese" x="20.81" y="149.61" width="20.12" height="27.9" transform="translate(-132.7 194.43) rotate(-90)" style="fill:#f28f3b;stroke:#ad5e23;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
-		<rect class="arabic" data-name="arabic" x="25.81" y="114.38" width="10.12" height="27.9" transform="translate(-97.46 159.19) rotate(-90)" style="fill:#f3fc7e;fill-opacity:0.75;stroke:#b1b280;stroke-miterlimit:10;stroke-width:0.25px"/>
-	</g>
-	<g id="txt">
-		<text class="russian" transform="translate(48.42 36.98)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">10 Russian Speakers</text>
-		<text class="patois" transform="translate(48.42 69.49)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">3 Patois Speakers</text>
-		<text class="polish" transform="translate(48.42 98.15)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">10 Polish Speakers</text>
-		<text class="arabic" transform="translate(48.42 130.95)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">2 Arabic Speakers</text>
-		<text class="spanish" transform="translate(48.42 145.45)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">4 Spanish Speakers</text>
-		<text class="chinese" transform="translate(48.42 165.56)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">4 Chinese Speakers</text>
-		<text class="english" transform="translate(48.42 203.74)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">12 English (General <tspan x="0" y="9.6">American Dialect) </tspan><tspan x="0" y="19.2">Speakers</tspan></text>
-	</g>
-	<g id="lines"><line x1="16.92" y1="58.09" x2="53.57" y2="58.09" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/><line x1="16.92" y1="73.03" x2="53.57" y2="73.03" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/><line x1="16.92" y1="123.27" x2="53.57" y2="123.27" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/><line x1="16.92" y1="133.39" x2="53.57" y2="133.39" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/><line x1="16.92" y1="173.62" x2="53.57" y2="173.62" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/><line x1="16.92" y1="233.86" x2="53.57" y2="233.86" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/><line x1="16.92" y1="153.5" x2="53.57" y2="153.5" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
-	</g>
-	</g>
-</svg>
+		<rect id="polish" data-name="polish" x="70.5" y="122.75" width="50.24" height="27.9" transform="translate(-41.08 232.32) rotate(-90)" style="fill:#7a1859;stroke:#17183b;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
+		<rect id="russian" data-name="russian" x="70.5" y="57.57" width="50.24" height="27.9" transform="translate(24.1 167.14) rotate(-90)" style="fill:#ff4f79;stroke:#93324e;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
+		<rect id="patois" data-name="patois" x="88.21" y="90.1" width="14.82" height="27.9" transform="translate(-8.43 199.67) rotate(-90)" style="fill:#384e77;stroke:#1f2f47;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
+		<rect id="spanish" data-name="spanish" x="85.56" y="168.04" width="20.12" height="27.9" transform="translate(-86.37 277.61) rotate(-90)" style="fill:#ff0606;stroke:#c90505;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
+		<rect id="english" data-name="english" x="65.5" y="228.33" width="60.24" height="27.9" transform="translate(-146.66 337.9) rotate(-90)" style="fill:#d1d1d1;stroke:#959692;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
+		<rect id="chinese" x="85.56" y="188.16" width="20.12" height="27.9" transform="translate(-106.49 297.73) rotate(-90)" style="fill:#f28f3b;stroke:#ad5e23;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
+		<rect id="arabic" data-name="arabic" x="90.56" y="152.92" width="10.12" height="27.9" transform="translate(-71.25 262.49) rotate(-90)" style="fill:#f3fc7e;stroke:#b1b280;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/></g>
+<g id="txt">
+	<text id="russian" transform="translate(113.17 75.52)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">10 Russian Speakers</text>
+	<text id = "patois" transform="translate(113.17 108.04)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">3 Patois Speakers</text>
+	<text id="polish"  transform="translate(113.17 136.7)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">10 Polish Speakers</text>
+	<text id="arabic"  transform="translate(113.17 169.5)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">2 Arabic Speakers</text>
+	<text id="spanish"  transform="translate(113.17 183.99)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">4 Spanish Speakers</text>
+	<text id="chinese"  transform="translate(113.17 204.11)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">4 Chinese Speakers</text>
+	<text id="english"  transform="translate(112.92 245.78)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">12 English Speakers</text>
+</g>
+<g id="lines"><line x1="81.67" y1="96.64" x2="118.33" y2="96.64" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/><line x1="81.67" y1="111.58" x2="118.33" y2="111.58" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/><line x1="81.67" y1="161.81" x2="118.33" y2="161.81" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/><line x1="81.67" y1="171.93" x2="118.33" y2="171.93" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/><line x1="81.67" y1="212.17" x2="118.33" y2="212.17" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/><line x1="81.67" y1="272.4" x2="118.33" y2="272.4" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/><line x1="81.67" y1="192.05" x2="118.33" y2="192.05" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/></g></g></svg>

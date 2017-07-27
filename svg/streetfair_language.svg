@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185 252.92"><title>streetfair</title><g id="barchart">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 263.99 264.1"><title>streetfairr</title><g id="barchart">
 <g id="txt">
-	<text class="spanish" transform="translate(53.37 129.48)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">5 Spanish Speakers</text>
-	<text class="greek" transform="translate(53.37 54.3)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">15 Greek Speakers</text>
-	<text class="italian" transform="translate(53.37 104.42)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">5 Italian Speakers</text>
-	<text class="turkish" transform="translate(53.37 151.58)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">4 Turkish Speakers</text>
-	<text class="albanian" transform="translate(53.37 168.92)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">3 Albanian (Tosk) Speakers</text>
-	<text class="english" transform="translate(53.37 187.74)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">4 English Speakers</text></g>
-	<g id="rectangles">
-		<rect id="greek" data-name="greek" x="22" y="14.28" width="27.77" height="75.29" style="fill:#384e77;stroke:#1f2f47;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
-		<rect id="spanish" data-name="spanish" x="21.87" y="114.66" width="27.9" height="25.06" style="fill:#ff0606;stroke:#c90505;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
-		<rect id="italian" data-name="italian" x="21.87" y="89.6" width="27.9" height="25.06" style="fill:#f3fc7e;stroke:#b1b280;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
-		<rect id="english" data-name="english" x="21.87" y="174.77" width="27.9" height="19.88" style="fill:#d1d1d1;stroke:#959692;stroke-miterlimit:10;stroke-width:0.25px"/><rect id="turkish" data-name="turkish" x="21.87" y="139.71" width="27.9" height="19.88" style="fill:#f28f3b;stroke:#ad5e23;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
-		<rect id="albanian" data-name="albanian" x="28.47" y="153.41" width="14.82" height="27.9" transform="translate(-131.48 203.24) rotate(-90)" style="fill:#7a1859;stroke:#17183b;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/></g>
-		<g id="lines"><line x1="21.87" y1="89.6" x2="58.53" y2="89.6" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/><line x1="21.87" y1="114.66" x2="58.53" y2="114.66" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/><line x1="21.87" y1="159.6" x2="58.53" y2="159.6" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/><line x1="22.14" y1="174.86" x2="58.8" y2="174.86" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/><line x1="21.87" y1="194.66" x2="58.53" y2="194.66" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/><line x1="21.87" y1="139.71" x2="58.53" y2="139.71" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/></g></g></svg>
+	<text id="spanish" transform="translate(78.3 153.72)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">5 Spanish Speakers</text>
+	<text id="greek"  transform="translate(78.3 78.54)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">15 Greek Speakers</text>
+	<text id="italian" transform="translate(78.3 128.66)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">5 Italian Speakers</text>
+	<text id="turkish" transform="translate(78.3 175.82)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">4 Turkish Speakers</text>
+	<text id="albanian" transform="translate(78.3 193.16)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">3 Albanian (Tosk) Speakers</text>
+	<text id="english" transform="translate(78.3 211.98)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">4 English Speakers</text>
+</g>
+<g id="rectangles">
+	<rect id="greek" data-name="greek" x="46.93" y="38.52" width="27.77" height="75.29" style="fill:#384e77;stroke:#1f2f47;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
+	<rect id="spanish" data-name="spanish" x="46.8" y="138.89" width="27.9" height="25.06" style="fill:#ff0606;stroke:#c90505;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
+	<rect id="italian" data-name="italian" x="46.8" y="113.84" width="27.9" height="25.06" style="fill:#f3fc7e;stroke:#b1b280;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
+	<rect id="english" data-name="english" x="46.8" y="199.01" width="27.9" height="19.88" style="fill:#d1d1d1;stroke:#959692;stroke-miterlimit:10;stroke-width:0.25px"/>
+	<rect id="turkish" data-name="turkish" x="46.8" y="163.95" width="27.9" height="19.88" style="fill:#f28f3b;stroke:#ad5e23;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
+	<rect id="albanian" data-name="albanian" x="53.41" y="177.65" width="14.82" height="27.9" transform="translate(-130.78 252.42) rotate(-90)" style="fill:#7a1859;stroke:#17183b;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
+</g><g id="lines"><line x1="46.8" y1="113.84" x2="83.46" y2="113.84" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/><line x1="46.8" y1="138.89" x2="83.46" y2="138.89" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/><line x1="46.8" y1="183.84" x2="83.46" y2="183.84" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/><line x1="47.07" y1="199.09" x2="83.73" y2="199.09" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/><line x1="46.8" y1="218.89" x2="83.46" y2="218.89" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/><line x1="46.8" y1="163.95" x2="83.46" y2="163.95" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/></g></g></svg>
