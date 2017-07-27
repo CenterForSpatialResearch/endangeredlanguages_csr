@@ -33,7 +33,7 @@
     <h1 class="title">
       <a href="test10_07212017.html">  microcosms of language </a>
     </h1>
-    <ul class="thumbnail">
+    <ul class="thumbnailIntroPage">
           <li>
             <div id="visSmallMultiBuilding">
               <img src="../img/midrisebuilding.png">
@@ -145,6 +145,7 @@
       var height = chartDiv.clientHeight;
 
       addOverlay()
+      removeExtra()
 
       //SWITCHING BTW IMGS   
       d3.selectAll("#visSmallMultiBuilding").on("click", function(){
@@ -243,8 +244,9 @@
        });
 
       function importMultilingual () {
-
-         d3.selectAll('text.basicText').remove();
+         d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
+          .style("visibility", "")
+         d3.selectAll('text.basicText, ul.thumbnailIntroPage').remove();
          d3.selectAll('p#basicText')
           .append('text')
             .attr("class","basicText")
@@ -407,8 +409,9 @@
       } //end of function
 
       function importMultilingualStreetFair() {
-
-         d3.selectAll('text.basicText').remove();
+         d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
+          .style("visibility", "")        
+         d3.selectAll('text.basicText, ul.thumbnailIntroPage').remove();
          d3.selectAll('p#basicText')
           .append('text')
             .attr("class","basicText")
@@ -520,8 +523,9 @@
       }; //end of import
 
       function importMultilingualFoodTrucks() {
-
-         d3.selectAll('text.basicText').remove();
+         d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
+          .style("visibility", "")
+         d3.selectAll('text.basicText, ul.thumbnailIntroPage').remove();
 
          d3.selectAll('p#basicText')
           .append('text')
@@ -539,8 +543,9 @@
       }; //end of import
      
       function importBilingual () {
-
-         d3.selectAll('text.basicText').remove();
+         d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
+          .style("visibility", "")
+         d3.selectAll('text.basicText, ul.thumbnailIntroPage').remove();
          d3.selectAll('p#basicText')
           .append('text')
             .attr("class","basicText")
@@ -562,12 +567,10 @@
                   .style("visibility", "")
                 })
 
-            d3.selectAll('#Polish_English, rect.polish, rect.english, text.spanish, text.english')
+            d3.selectAll('#Polish_English, rect.polish, rect.english, text.polish, text.english')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Polish, #English, #Polish_English') 
-                .style("visibility", "")
-              d3.selectAll('rect.polish, text.polish, rect.english, text.english') 
+              d3.selectAll('rect.polish, text.polish, rect.english, text.english, #Polish, #English, #Polish_English') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p.extraInfo')
@@ -579,14 +582,10 @@
             d3.selectAll('#English, rect.english, text.english')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Polish') 
-                .style("visibility", "hidden")
-              d3.selectAll('#Polish_English, #English') 
-                .style("visibility", "")
-              d3.selectAll('rect.polish, text.polish') 
+              d3.selectAll('rect.polish, text.polish, #Polish') 
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('rect.english, text.english') 
+              d3.selectAll('rect.english, text.english, #English, #Polish_English') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p.extraInfo')
@@ -598,14 +597,10 @@
             d3.selectAll('#Polish, rect.polish, text.polish')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll(' #English') 
-                .style("visibility", "hidden")
-              d3.selectAll('#Polish, #Polish_English') 
-                .style("visibility", "")
-              d3.selectAll('rect.english, text.english') 
+              d3.selectAll('rect.english, text.english, #English') 
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('rect.polish, text.polish') 
+              d3.selectAll('rect.polish, text.polish, #Polish, #Polish_English') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)            
               d3.select('p.extraInfo')
@@ -620,8 +615,9 @@
 
       
       function importMonolingual() {
-
-         d3.selectAll('text.basicText').remove();
+         d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
+          .style("visibility", "")
+         d3.selectAll('text.basicText,ul.thumbnailIntroPage').remove();
          d3.selectAll('p#basicText')
           .append('text')
             .attr("class","basicText")
@@ -665,6 +661,11 @@
 
       function removeTxt(){
         d3.selectAll('text.overlayText, p#introText, text.extraInfo').remove();
+      }
+
+      function removeExtra(){
+        d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
+          .style("visibility", "hidden")
       }
 
       function addOverlay(){

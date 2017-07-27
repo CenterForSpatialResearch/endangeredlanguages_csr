@@ -8,8 +8,8 @@
 			<line x1="18.1" y1="120.49" x2="54.76" y2="120.49" style="fill:none;stroke:#929497;stroke-miterlimit:10;stroke-width:0.25px;opacity:0.75"/>
 		</g>
 		<g id="txt">
-			<text class="english" transform="translate(49.6 53.2)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">16 Polish Speakers</text>
-			<text class="polish" transform="translate(49.6 97.99)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">6 English (General <tspan x="0" y="9.6">American Dialect) </tspan><tspan x="0" y="19.2">Speakers</tspan></text>
+			<text class="polish" transform="translate(49.6 53.2)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">16 Polish Speakers</text>
+			<text class="english" transform="translate(49.6 97.99)" style="font-size:8px;fill:#231f20;font-family:LetterGothicStd, Letter Gothic Std">6 English (General <tspan x="0" y="9.6">American Dialect) </tspan><tspan x="0" y="19.2">Speakers</tspan></text>
 		</g>
 	</g>
 </svg>
