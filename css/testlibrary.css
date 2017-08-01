@@ -1,0 +1,39 @@
+
+#vis {
+    position: relative;
+    display: inline;
+    float: left;
+    height: 2740px;
+    width: 1470px;
+    margin: 20px;
+    margin-left: 0px;
+    -webkit-perspective: 450;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+#to_open, g#bookends, rect.st0 {
+    position: absolute;
+    box-sizing: border-box;
+    border-radius: 3px;
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, .0) inset;
+    transition: 1s transform linear;
+    transform-origin: left;
+    cursor: pointer;
+}
+              
+
+.thumbOpened
+{
+    transform: rotateY(-90deg);
+    transform-origin: 8px;
+    transition: .5s linear;
+    background-color: black;
+    color: black;
+}
+
+@keyframes go {
+  100%{
+    opacity:1;
+    transform:rotateY(0deg);
+  }
+}
