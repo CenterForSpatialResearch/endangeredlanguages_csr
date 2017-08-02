@@ -84,12 +84,16 @@
         d3.selectAll("g#bookends").classed("bookShifted", false)
       });
       //when books are showing
-      d3.selectAll("g#Layer_1, g#interior1").on("click", function(){
+      d3.selectAll("g#middle, g#interior1").on("click", function(){
         d3.selectAll('g#interior1').classed("bookOpened", true)
           .attr('visibility','');
         d3.selectAll('g#bookends').classed("bookShifted", true)
       });
-
+      //select individual books
+      // d3.selectAll("rect.st0").on("click", function(){
+      //   d3.selectAll('rect.st0').classed("bookSelected", false)
+      //   d3.selectAll(this).classed("bookSelected", true);
+      // });
     }
 
   </script>

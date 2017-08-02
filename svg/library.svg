@@ -4,17 +4,8 @@
 	 viewBox="0 0 1366 768" style="enable-background:new 0 0 1366 768;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#FFFFFF;}
-	.st1{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
+	.st1{fill:#FFFFFF;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
 </style>
-<g id="Layer_1">
-	<g>
-		<rect x="162.5" y="106.5" class="st0" width="60" height="387"/>
-		<path d="M222,107v386h-59V107H222 M223,106h-61v388h61V106L223,106z"/>
-	</g>
-	<line class="st1" x1="173.5" y1="138.5" x2="211.5" y2="138.5"/>
-	<line class="st1" x1="173" y1="130.5" x2="211" y2="130.5"/>
-	<line class="st1" x1="173.5" y1="146.5" x2="211.5" y2="146.5"/>
-</g>
 <g id="interior1">
 	<g>
 		<rect x="467.5" y="106.5" class="st0" width="60" height="387"/>
@@ -37,14 +28,103 @@
 		<path d="M283,107v386h-59V107H283 M284,106h-61v388h61V106L284,106z"/>
 	</g>
 </g>
-<g id="bookends">
+<g id="middle">
 	<g>
-		<rect x="85.5" y="93.5" class="st0" width="76" height="413"/>
-		<path d="M161,94v412H86V94H161 M162,93H85v414h77V93L162,93z"/>
+		<g>
+			<rect x="162.2" y="106.2" class="st0" width="60.5" height="387.5"/>
+			<path d="M222.5,106.5v387h-60v-387H222.5 M223,106h-61v388h61V106L223,106z"/>
+		</g>
+		<line class="st1" x1="173.5" y1="138.5" x2="211.5" y2="138.5"/>
+		<line class="st1" x1="173" y1="130.5" x2="211" y2="130.5"/>
+		<line class="st1" x1="173.5" y1="146.5" x2="211.5" y2="146.5"/>
 	</g>
 	<g>
-		<rect x="223.5" y="93.5" class="st0" width="76" height="413"/>
-		<path d="M299,94v412h-75V94H299 M300,93h-77v414h77V93L300,93z"/>
+		<g>
+			<rect x="990.2" y="106.2" class="st0" width="60.5" height="387.5"/>
+			<path d="M1050.5,106.5v387h-60v-387H1050.5 M1051,106h-61v388h61V106L1051,106z"/>
+		</g>
+		<line class="st1" x1="1001.5" y1="138.5" x2="1039.5" y2="138.5"/>
+		<line class="st1" x1="1001" y1="130.5" x2="1039" y2="130.5"/>
+		<line class="st1" x1="1001.5" y1="146.5" x2="1039.5" y2="146.5"/>
+	</g>
+	<g>
+		<g>
+			<rect x="852.2" y="106.2" class="st0" width="60.5" height="387.5"/>
+			<path d="M912.5,106.5v387h-60v-387H912.5 M913,106h-61v388h61V106L913,106z"/>
+		</g>
+		<line class="st1" x1="863.5" y1="138.5" x2="901.5" y2="138.5"/>
+		<line class="st1" x1="863" y1="130.5" x2="901" y2="130.5"/>
+		<line class="st1" x1="863.5" y1="146.5" x2="901.5" y2="146.5"/>
+	</g>
+	<g>
+		<g>
+			<rect x="714.2" y="106.2" class="st0" width="60.5" height="387.5"/>
+			<path d="M774.5,106.5v387h-60v-387H774.5 M775,106h-61v388h61V106L775,106z"/>
+		</g>
+		<line class="st1" x1="725.5" y1="138.5" x2="763.5" y2="138.5"/>
+		<line class="st1" x1="725" y1="130.5" x2="763" y2="130.5"/>
+		<line class="st1" x1="725.5" y1="146.5" x2="763.5" y2="146.5"/>
+	</g>
+	<g>
+		<g>
+			<rect x="576.2" y="106.2" class="st0" width="60.5" height="387.5"/>
+			<path d="M636.5,106.5v387h-60v-387H636.5 M637,106h-61v388h61V106L637,106z"/>
+		</g>
+		<line class="st1" x1="587.5" y1="138.5" x2="625.5" y2="138.5"/>
+		<line class="st1" x1="587" y1="130.5" x2="625" y2="130.5"/>
+		<line class="st1" x1="587.5" y1="146.5" x2="625.5" y2="146.5"/>
+	</g>
+	<g>
+		<g>
+			<rect x="438.2" y="106.2" class="st0" width="60.5" height="387.5"/>
+			<path d="M498.5,106.5v387h-60v-387H498.5 M499,106h-61v388h61V106L499,106z"/>
+		</g>
+		<line class="st1" x1="449.5" y1="138.5" x2="487.5" y2="138.5"/>
+		<line class="st1" x1="449" y1="130.5" x2="487" y2="130.5"/>
+		<line class="st1" x1="449.5" y1="146.5" x2="487.5" y2="146.5"/>
+	</g>
+	<g>
+		<g>
+			<rect x="300.2" y="106.2" class="st0" width="60.5" height="387.5"/>
+			<path d="M360.5,106.5v387h-60v-387H360.5 M361,106h-61v388h61V106L361,106z"/>
+		</g>
+		<line class="st1" x1="311.5" y1="138.5" x2="349.5" y2="138.5"/>
+		<line class="st1" x1="311" y1="130.5" x2="349" y2="130.5"/>
+		<line class="st1" x1="311.5" y1="146.5" x2="349.5" y2="146.5"/>
+	</g>
+</g>
+<g id="bookends">
+	<g>
+		<rect x="85.2" y="93.2" class="st0" width="76.5" height="413.5"/>
+		<path d="M161.5,93.5v413h-76v-413H161.5 M162,93H85v414h77V93L162,93z"/>
+	</g>
+	<g>
+		<rect x="223.2" y="93.2" class="st0" width="76.5" height="413.5"/>
+		<path d="M299.5,93.5v413h-76v-413H299.5 M300,93h-77v414h77V93L300,93z"/>
+	</g>
+	<g>
+		<rect x="361.2" y="93.2" class="st0" width="76.5" height="413.5"/>
+		<path d="M437.5,93.5v413h-76v-413H437.5 M438,93h-77v414h77V93L438,93z"/>
+	</g>
+	<g>
+		<rect x="499.2" y="93.2" class="st0" width="76.5" height="413.5"/>
+		<path d="M575.5,93.5v413h-76v-413H575.5 M576,93h-77v414h77V93L576,93z"/>
+	</g>
+	<g>
+		<rect x="637.2" y="93.2" class="st0" width="76.5" height="413.5"/>
+		<path d="M713.5,93.5v413h-76v-413H713.5 M714,93h-77v414h77V93L714,93z"/>
+	</g>
+	<g>
+		<rect x="775.2" y="93.2" class="st0" width="76.5" height="413.5"/>
+		<path d="M851.5,93.5v413h-76v-413H851.5 M852,93h-77v414h77V93L852,93z"/>
+	</g>
+	<g>
+		<rect x="913.2" y="93.2" class="st0" width="76.5" height="413.5"/>
+		<path d="M989.5,93.5v413h-76v-413H989.5 M990,93h-77v414h77V93L990,93z"/>
+	</g>
+	<g>
+		<rect x="1051.2" y="93.2" class="st0" width="76.5" height="413.5"/>
+		<path d="M1127.5,93.5v413h-76v-413H1127.5 M1128,93h-77v414h77V93L1128,93z"/>
 	</g>
 </g>
 </svg>

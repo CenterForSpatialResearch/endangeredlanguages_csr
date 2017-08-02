@@ -3,5 +3,9 @@
     transition: .5s linear;
 }
 .bookOpened{
+
+}
+.bookSelected{
+    transform: translate(0px, -50px);
     transition: .5s linear;
 }
