@@ -6,7 +6,6 @@
 	  <title>library</title>
 	  <link rel="stylesheet" type="text/css" href="../css/testlibrary.css">
 	  <link href="https://fonts.googleapis.com/css?family=Cousine" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	</head>
 
   <style type="text/css">
@@ -49,7 +48,7 @@
     <div id="vis"></div> -->
 
 
-    <div id="vis" onclick="openDoor(this)"></div>
+    <div id="vis"></div>
 
   </body>
 
@@ -65,27 +64,33 @@
     var height = chartDiv.clientHeight;
 
 
-    d3.xml("../svg/library-01.svg").mimeType("image/svg+xml").get(function(error, xml) {
+    d3.xml("../svg/library.svg").mimeType("image/svg+xml").get(function(error, xml) {
       var importedNode = document.importNode(xml.documentElement, true);
       d3.select("div#vis")
         .each(function() {
           this.appendChild(importedNode);
         })
+      events()
     });
 
 
- function openDoor(field) {
-            var y = $(field).find("g#to_open, g#bookends, rect.st0");
-            var x = y.attr("class");
-            if (y.hasClass("thumbOpened")) {
-                y.removeClass("thumbOpened");
-            }
-            else {
-                $("g#to_open, g#bookends, rect.st0").removeClass("thumbOpened");
-                y.addClass("thumbOpened");
-            }
-        }
+    function events(){
+      d3.selectAll('g#interior1')
+        .attr('visibility','hidden')
+      //when books are hidden
+      d3.selectAll("g#bookends").on("click", function(){
+        d3.selectAll('g#interior1').classed("bookOpened", false)
+          .attr('visibility','hidden');
+        d3.selectAll("g#bookends").classed("bookShifted", false)
+      });
+      //when books are showing
+      d3.selectAll("g#Layer_1, g#interior1").on("click", function(){
+        d3.selectAll('g#interior1').classed("bookOpened", true)
+          .attr('visibility','');
+        d3.selectAll('g#bookends').classed("bookShifted", true)
+      });
 
+    }
 
   </script>
 
