@@ -63,6 +63,13 @@
               <img src="../img/lowrisebuilding.png">
             </div>  
           </li> 
+
+          <li>
+            <div id="visLibrary">    
+              <img src="../img/library.png">
+            </div>  
+          </li> 
+
           <li>
             <p id="introText">
               New York City is one of the most linguistically diverse places in the world; estimates show anywhere from 200-800 different languages represented across the five boroughs. Nowhere is this more apparent than in Queens, where many of these languages are spoken in schools, restaurants, community centers, and homes across the area.
@@ -103,6 +110,12 @@
           <li>
             <div id="visSmallMono">    
               <img src="../img/lowrisebuilding.png">
+            </div>  
+          </li> 
+
+          <li>
+            <div id="visLibrary">    
+              <img src="../img/library.png">
             </div>  
           </li> 
 
@@ -237,8 +250,25 @@
             })
           importMonolingual()
           removeTxt()
+        });
 
+       });
 
+      d3.selectAll("#visLibrary").on("click", function(){
+        
+        d3.selectAll("svg").remove();
+        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
+        d3.select(this).classed("thumbnailSelected", true);
+        window.scrollTo(0, 0);
+
+        d3.xml("../svg/library.svg").mimeType("image/svg+xml").get(function(error, xml) {
+          var importedNode = document.importNode(xml.documentElement, true);
+          d3.select("div#vis")
+            .each(function() {
+              this.appendChild(importedNode);
+            })
+          importLibrary()
+          removeTxt()
         });
 
        });
@@ -731,20 +761,51 @@
          d3.selectAll('image#underlay')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-
             })
 
          d3.selectAll('#Italian, text#italian, rect#italian')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
               d3.select('p.extraInfo')
-                 .append('text')
-                  .attr("class","extraInfo")
-                  .text(monoBuildingStory)
-              })
+               .append('text')
+                .attr("class","extraInfo")
+                .text(monoBuildingStory)
+            })
           
+        }) //end of function 
 
-        })
+      function importLibrary() {
+         d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
+          .style("visibility", "")
+         d3.selectAll('text.basicText,ul.thumbnailIntroPage').remove();
+         d3.selectAll('p#basicText')
+          .append('text')
+            .attr("class","basicText")
+           .text(libraryStory) 
+        
+         d3.xml("../svg/lowrisebuilding_language.svg").mimeType("image/svg+xml").get(function(error, xml) {
+          var importedNode = document.importNode(xml.documentElement, true);
+          d3.select("div#barChart")
+            .each(function() {
+              this.appendChild(importedNode);
+            })
+
+         d3.selectAll('#underlay')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+            })
+
+         d3.selectAll('#clipping')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.select('p.extraInfo')
+               .append('text')
+                .attr("class","extraInfo")
+                .text(libraryStory)
+            })
+          
+        }) //end of function 
+
       }; //end of import
 
 
@@ -755,6 +816,7 @@
         var multiFoodTrucksStory = "Across the globe, food is deeply connected to language, and in diaspora communities, culinary traditions often outlast linguistic ones. Yet mealtimes often provide an opportunity for speakers to meaningfully use a language. In this setting, we see that though workers may not always speak the language associated with the food they are serving, consumers don’t always speak it either. Though individuals bring their languages with them everywhere, an onlooker may never know without talking to them."
         var biBuildingStory = "Though this building on its own would never register as an enclave in the Census, for the residents, it is an oasis. In a quickly changing and gentrifying city, buildings such as this one form micro-communities that have the power to sustain familial, linguistic, and social ties. Most of the Polish speaking residents are related by blood, marriage, or friendship, and all have at least one connection to family or friends in Poland."
         var monoBuildingStory = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var libraryStory = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         
         var greekDescription = "As of today, only 1% of New York City's population speaks Greek at home. That number has been consistently falling over the past 20 years, and from 2010-2015, there are 10% fewer Greek speakers in New York. More than 2/3 of NYC Greek speakers live in Queens, primarily in Astoria/Steinway, but also in the outer neighborhoods such as Whitestone and Auburndale."
         var italianDescription = "Italian speakers have settled in New York City since 1820, and historically, along with German, formed the largest non-English speaking group in the city at that time. Since then, Italian is being lost, with a nearly 20% decline in speakers since 2007. Yet, many ethnic Italians send their children to Italian classes in an attempt to resurrect the language before it disappears from the city altogether. "
