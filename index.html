@@ -1,43 +1,1310 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
+<html>
+	<head>
+	 	<meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	  <title>microcosms of language</title>
+	  <link rel="stylesheet" type="text/css" href="css/site-specific.css">
+	  <link href="https://fonts.googleapis.com/css?family=Cousine" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</head>
 
-<head>
-	
-	<meta charset="UTF-8">
-    <title> test 2 </title>
-    <link rel="stylesheet" type="text/css" href="css/testingbasic.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Condensed|Poppins" rel="stylesheet">
-    <!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style type="text/css">
+	  /* Make the chart container fill the page using CSS. */
+    #chart {
+      position: fixed;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      bottom: 0px;
+    }
 
-</head>
+    /*for map*/
+    body {
+      margin: 0px;
+      border: 0px;
+      padding: 0px;
+    }
 
-<body>
-	<div class="Intro">
-		<div class="container">
-		  <div class="row">
-		    <div class="col-md-10">
-				<p class = "IntroText">
-					New York City is one of the most linguistically diverse places in the world; estimates show anywhere from 200-800 different languages represented across the five boroughs. Nowhere is this more apparent than in Queens, where many of these languages are spoken in schools, restaurants, community centers, and homes across the area. 
-				</p>
-			</div>
-			<div class="col-md-10">
-				<p class="IntroText_QNS">
-					This project takes a snapshot of this linguistic diversity and highlights the ways that language connects New York City and the rest of the world. By visualizing the languages that are represented and casting them against stories of migration, language, and identity, we come to see the ways that language ties us together, and give life to the many languages of Queens, NY.
-				</p>
-			</div>
-			<div class="col-md-2">
-			</div>
-			<div class="col-md-2">
-			</div>
-			<div class="col-md-2">
-			</div>
-			<div class="col-md-2">
-				<a href="html/test2_06262017.html">
-		          <span class="glyphicon glyphicon-chevron-right"></span>
-		        </a>
-		    </div>
+  </style>
 
-	</div>
-</body>
+	<body>
+    
+    <h1 class="title">
+      <a href="#">  microcosms of language </a>
+    </h1>
+    <ul class="thumbnailIntroPage">
+          <li>
+            <div id="visSmallMultiBuilding">
+              <img src="img/midrisebuilding.png">
+            </div>
+          </li>
+
+          <li>
+            <div id="visSmallMultiStreetFair">
+              <img src="img/streetfair.png">
+            </div>
+          </li>
+
+          <li>
+            <div id="visSmallBi">
+              <img src="img/highrisebuilding.png">
+            </div>
+          </li> 
+
+          <li>
+            <div id="visSmallMultiFoodTrucks">
+              <img src="img/foodtrucks.png">
+            </div>
+          </li>
+
+          <li>
+            <div id="visSmallMono">    
+              <img src="img/lowrisebuilding.png">
+            </div>  
+          </li> 
+
+          <li>
+            <div id="visLibrary">    
+              <img src="img/library.png">
+            </div>  
+          </li> 
+
+          <li>
+            <p id="introText">
+              New York City is one of the most linguistically diverse places in the world; estimates show anywhere from 200-800 different languages represented across the five boroughs. Nowhere is this more apparent than in Queens, where many of these languages are spoken in schools, restaurants, community centers, and homes across the area.
+              <br><br>
+              We often think of language in a city the size of New York as centered around “ethnic enclaves,” neighborhoods where minority language speakers tend to cluster. While that model may contain some degree of truth, it obscures how deeply integrated multilingualism is into the fabric of New York City. Through these models, we invite you to explore some of the ways language is organized in daily life. Both in the home, and on the street, the linguistic diversity of New York City is more than a population count, and tangibly affects city life. Though the models are based on real places and events, the details have been altered to protect individual’s privacy. 
+            </p>
+          </li>
+        </ul>
+    <div class="grid">
+          
+      <!-- LEFT SIDE PANEL -->
+      <div class="col-1-4" id="leftPanel"> 
+        <ul class="thumbnail">
+          <li>
+            <div id="visSmallMultiBuilding">
+              <img src="img/midrisebuilding.png">
+            </div>
+          </li>
+
+          <li>
+            <div id="visSmallMultiStreetFair">
+              <img src="img/streetfair.png">
+            </div>
+          </li>
+
+          <li>
+            <div id="visSmallBi">
+              <img src="img/highrisebuilding.png">
+            </div>
+          </li> 
+
+          <li>
+            <div id="visSmallMultiFoodTrucks">
+              <img src="img/foodtrucks.png">
+            </div>
+          </li>
+
+          <li>
+            <div id="visSmallMono">    
+              <img src="img/lowrisebuilding.png">
+            </div>  
+          </li> 
+
+          <li>
+            <div id="visLibrary">    
+              <img src="img/library.png">
+            </div>  
+          </li> 
+
+        </ul>
+
+      </div> <!-- left side panel ends-->
+
+      <!-- MAIN CONTENT -->
+      <div class="col-2-4" id="bodyPanel">
+
+    		<div id="vis"></div>
+
+        <hr/>
+        <div id="basicText"> 
+          <p id="basicText"></p>
+        </div>
+
+      </div> <!-- body panel ends -->
+
+      <!-- RIGHT SIDE PANEL -->
+      <div class="col-1-4" id="rightPanel">
+        <p class="extraInfo"> </p>
+        <div id="barChart"></div>
+      </div> <!-- right side panel ends  -->
+
+    </div> <!-- entire thing  -->
+
+	</body>
+
+
+	<script src="http://d3js.org/d3.v4.min.js"></script>
+ 	<script src="http://d3js.org/d3-queue.v3.min.js"></script>      	
+    
+ 	<script type="text/javascript">
+
+    //BUILDING VIS
+     //Extract the width and height that was computed by CSS.
+      var chartDiv = document.getElementById("vis");
+      var width = chartDiv.clientWidth;
+      var height = chartDiv.clientHeight;
+
+      addOverlay()
+      removeExtra()
+
+      //SWITCHING BTW IMGS   
+      d3.selectAll("#visSmallMultiBuilding").on("click", function(){
+        
+        d3.selectAll("svg").remove();
+        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
+        d3.select(this).classed("thumbnailSelected", true);
+        window.scrollTo(0, 0);
+
+        d3.xml("svg/midrisebuilding_building.svg").mimeType("image/svg+xml").get(function(error, xml) {
+          var importedNode = document.importNode(xml.documentElement, true);
+          d3.select("div#vis")
+            .each(function() {
+              this.appendChild(importedNode);
+            })
+          importMultilingual()
+          removeTxt()
+        });
+
+       });
+
+      d3.selectAll("#visSmallMultiFoodTrucks").on("click", function(){
+        
+        d3.selectAll("svg").remove();
+        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
+        d3.select(this).classed("thumbnailSelected", true);
+        window.scrollTo(0, 0);
+
+        d3.xml("svg/foodtrucks_trucks.svg").mimeType("image/svg+xml").get(function(error, xml) {
+          var importedNode = document.importNode(xml.documentElement, true);
+          d3.select("div#vis")
+            .each(function() {
+              this.appendChild(importedNode);
+            })
+          importMultilingualFoodTrucks()
+          removeTxt()
+        });
+
+       });
+
+      d3.selectAll("#visSmallMultiStreetFair").on("click", function(){
+        
+        d3.selectAll("svg").remove();
+        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
+        d3.select(this).classed("thumbnailSelected", true);
+        window.scrollTo(0, 0);
+
+        d3.xml("svg/streetfair_streetfair.svg").mimeType("image/svg+xml").get(function(error, xml) {
+          var importedNode = document.importNode(xml.documentElement, true);
+          d3.select("div#vis")
+            .each(function() {
+              this.appendChild(importedNode);
+            })
+          importMultilingualStreetFair()
+          removeTxt()
+        });
+
+       });
+
+      d3.selectAll("#visSmallBi").on("click", function(){ 
+        d3.selectAll("svg").remove();
+        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
+        d3.select(this).classed("thumbnailSelected", true);
+        window.scrollTo(0, 0);
+
+        d3.xml("svg/highrisebuilding_building.svg").mimeType("image/svg+xml").get(function(error, xml) {
+        var importedNode = document.importNode(xml.documentElement, true);
+          d3.select("div#vis")
+            .each(function() {
+              this.appendChild(importedNode);
+            })
+          importBilingual()
+          removeTxt()
+        });
+
+       });
+
+      d3.selectAll("#visSmallMono").on("click", function(){       
+        d3.selectAll("svg").remove();
+        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
+        d3.select(this).classed("thumbnailSelected", true);
+        window.scrollTo(0, 0);
+
+        d3.xml("svg/lowrisebuilding_building.svg").mimeType("image/svg+xml").get(function(error, xml) {
+        var importedNode = document.importNode(xml.documentElement, true);
+          d3.select("div#vis")
+            .each(function() {
+              this.appendChild(importedNode);
+            })
+          importMonolingual()
+          removeTxt()
+        });
+
+       });
+
+      d3.selectAll("#visLibrary").on("click", function(){
+        
+        d3.selectAll("svg").remove();
+        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
+        d3.select(this).classed("thumbnailSelected", true);
+        window.scrollTo(0, 0);
+
+        d3.xml("svg/library_vis.svg").mimeType("image/svg+xml").get(function(error, xml) {
+          var importedNode = document.importNode(xml.documentElement, true);
+          d3.select("div#vis")
+            .each(function() {
+              this.appendChild(importedNode);
+            })
+          importLibrary()
+          removeTxt()
+        });
+
+       });
+
+      function importMultilingual () {
+         d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
+          .style("visibility", "")
+         d3.selectAll('text.basicText, ul.thumbnailIntroPage').remove();
+         d3.selectAll('p#basicText')
+          .append('text')
+            .attr("class","basicText")
+           .text(multiBuildingStory) 
+
+         d3.xml("svg/midrisebuilding_bar.svg").mimeType("image/svg+xml").get(function(error, xml) {
+          var importedNode = document.importNode(xml.documentElement, true);
+          d3.select("div#barChart")
+            .each(function() {
+              this.appendChild(importedNode);
+            })
+
+          //CLICK EVENTS 
+            d3.selectAll('image#building, g#underlay')
+              .on('click', function() {
+                  d3.selectAll('#Polish, #Arabic, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect#russian, rect#patois, rect#polish, rect#arabic, rect#spanish, rect#chinese, rect#english, text#patois, text#polish, text#arabic, text#spanish, text#chinese, text#russian, text#english') 
+                    .style('fill-opacity', 1)
+                    .style('stroke-opacity', 1)
+                  d3.selectAll('text.extraInfo').remove()
+                  })
+
+            d3.selectAll('#Polish, rect#polish, text#polish')
+              .on('click', function() {
+                d3.selectAll('text.extraInfo').remove()
+                d3.selectAll('#Arabic, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect#russian, rect#patois, rect#arabic, rect#spanish, rect#chinese, rect#english, text#patois, text#russian, text#arabic, text#spanish, text#chinese, text#english') 
+                  .style('fill-opacity', 0.1)
+                  .style('stroke-opacity', 0.3)
+                d3.selectAll('#Polish, rect#polish, text#polish') 
+                  .style('fill-opacity', 1)
+                  .style('stroke-opacity', 1)
+                d3.select('p.extraInfo')
+                   .append('text')
+                    .attr("class","extraInfo")
+                    .text(polishDescription)
+                })
+
+            d3.selectAll('#Arabic, rect#arabic, text#arabic')
+              .on('click', function() {
+                d3.selectAll('text.extraInfo').remove()
+                d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect#russian, rect#patois, rect#polish, rect#spanish, rect#chinese, rect#english, text#patois, text#polish, text#russian, text#spanish, text#chinese, text#english') 
+                  .style('fill-opacity', 0.1)
+                  .style('stroke-opacity', 0.3)
+                d3.selectAll('#Arabic, rect#arabic, text#arabic') 
+                  .style('fill-opacity', 1)
+                  .style('stroke-opacity', 1)
+                d3.select('p.extraInfo')
+                   .append('text')
+                    .attr("class","extraInfo")
+                    .text(arabicDescription)
+                })
+
+              d3.selectAll('#Spanish, rect#spanish, text#spanish')
+              .on('click', function() {
+                d3.selectAll('text.extraInfo').remove()
+                d3.selectAll('#Polish, g#Arabic, #Chinese_English, #English, #Patois, #Russian, rect#russian, rect#patois, rect#polish, rect#arabic, rect#chinese, rect#english, text#patois, text#polish, text#arabic, text#russian, text#chinese, text#english') 
+                  .style('fill-opacity', 0.1)
+                  .style('stroke-opacity', 0.3)
+                d3.selectAll('#Chinese_Spanish_English, #Spanish, rect#spanish, text#spanish') 
+                  .style('fill-opacity', 1)
+                  .style('stroke-opacity', 1)
+                d3.select('p.extraInfo')
+                   .append('text')
+                    .attr("class","extraInfo")
+                    .text(spanishDescription)
+                })
+
+              d3.selectAll('rect#chinese, text#chinese')
+              .on('click', function() {
+                d3.selectAll('text.extraInfo').remove()
+                d3.selectAll('#Polish, #Arabic, #Spanish, #English, #Patois, #Russian, rect#russian, rect#patois, rect#polish, rect#arabic, rect#spanish, rect#english, text#patois, text#polish, text#arabic, text#spanish, text#russian, text#english') 
+                  .style('fill-opacity', 0.1)
+                  .style('stroke-opacity', 0.3)
+                d3.selectAll('#Chinese_English, #Chinese_Spanish_English, rect#chinese, text#chinese') 
+                  .style('fill-opacity', 1)
+                  .style('stroke-opacity', 1)
+                d3.select('p.extraInfo')
+                   .append('text')
+                    .attr("class","extraInfo")
+                    .text(chineseDescription)
+                })
+
+              d3.selectAll('#English, rect#english, text#english')
+                .on('click', function() {
+                  d3.selectAll('text.extraInfo').remove()
+                  d3.selectAll('#Polish, #Arabic, #Spanish, #Patois, #Russian, rect#russian, rect#patois, rect#polish, rect#arabic, rect#spanish, rect#chinese, text#patois, text#polish, text#arabic, text#spanish, text#chinese, text#russian') 
+                    .style('fill-opacity', 0.1)
+                    .style('stroke-opacity', 0.3)
+                  d3.selectAll('#Chinese_English, #Chinese_Spanish_English, #English, rect#english, text#english') 
+                    .style('fill-opacity', 1)
+                    .style('stroke-opacity', 1)
+                  d3.select('p.extraInfo')
+                     .append('text')
+                      .attr("class","extraInfo")
+                      .text(englishDescription)
+                })
+
+              d3.selectAll('#Patois, rect#patois, text#patois')
+                .on('click', function() {
+                  d3.selectAll('text.extraInfo').remove()
+                  d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Arabic, #Russian, rect#russian, rect#patois, rect#polish, rect#arabic, rect#spanish, rect#chinese, rect#english, text#russian, text#polish, text#arabic, text#spanish, text#chinese, text#english') 
+                    .style('fill-opacity', 0.1)
+                    .style('stroke-opacity', 0.3)
+                  d3.selectAll('#Patois , rect#patois, text#patois') 
+                    .style('fill-opacity', 1)
+                    .style('stroke-opacity', 1)
+                  d3.select('p.extraInfo')
+                     .append('text')
+                      .attr("class","extraInfo")
+                      .text(patoisDescription)
+                })
+
+              d3.selectAll('#Russian, rect#russian, text#russian')
+                .on('click', function() {
+                  d3.selectAll('text.extraInfo').remove()
+                  d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Arabic, #Patois, rect#patois, rect#polish, rect#arabic, rect#spanish, rect#chinese, rect#english, text#patois, text#polish, text#arabic, text#spanish, text#chinese, text#english') 
+                    .style('fill-opacity', 0.1)
+                    .style('stroke-opacity', 0.3)
+                  d3.selectAll('#Russian, rect#russian, text#russian') 
+                    .style('fill-opacity', 1)
+                    .style('stroke-opacity', 1)
+                  d3.select('p.extraInfo')
+                     .append('text')
+                      .attr("class","extraInfo")
+                      .text(russianDescription)              
+                })
+
+
+              d3.selectAll('#Chinese_Spanish_English')
+              .on('click', function() {
+                d3.selectAll('text.extraInfo').remove()
+                d3.selectAll('#Polish, #Arabic, #Patois, #Russian, rect#russian, rect#patois, rect#polish, rect#arabic, text#patois, text#polish, text#arabic, text#russian') 
+                  .style('fill-opacity', 0.1)
+                  .style('stroke-opacity', 0.3)
+                d3.selectAll('#Chinese_Spanish_English, #Chinese_English, #Spanish, #English, rect#spanish, rect#chinese, rect#english, text#spanish, text#chinese, text#english') 
+                  .style('fill-opacity', 1)
+                  .style('stroke-opacity', 1)
+                d3.select('p.extraInfo')
+                   .append('text')
+                    .attr("class","extraInfo")
+                    .text(chineseDescription + "  " + spanishDescription)
+                })
+
+              d3.selectAll('#Chinese_English')
+              .on('click', function() {
+                d3.selectAll('text.extraInfo').remove()
+                d3.selectAll('#Polish, #Arabic, #Spanish, #Patois, #Russian, rect#russian, rect#patois, rect#polish, rect#arabic, rect#chinese, rect#spanish, text#patois, text#polish, text#arabic, text#russian, text#spanish') 
+                  .style('fill-opacity', 0.1)
+                  .style('stroke-opacity', 0.3)
+                d3.selectAll('#Chinese_English, rect#chinese, rect#english, text#chinese, text#english') 
+                  .style('fill-opacity', 1)
+                  .style('stroke-opacity', 1)
+                d3.select('p.extraInfo')
+                   .append('text')
+                    .attr("class","extraInfo")
+                    .text(chineseDescription + "  " + spanishDescription + "  " + englishDescription)
+                })
+
+          }) //end of import 
+
+      }; //end of function
+
+      function importMultilingualStreetFair() {
+         d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
+          .style("visibility", "")        
+         d3.selectAll('text.basicText, ul.thumbnailIntroPage').remove();
+         d3.selectAll('p#basicText')
+          .append('text')
+            .attr("class","basicText")
+           .text(multiStreetFairStory) 
+
+         d3.xml("svg/streetfair_language.svg").mimeType("image/svg+xml").get(function(error, xml) {
+          var importedNode = document.importNode(xml.documentElement, true);
+          d3.select("div#barChart")
+            .each(function() {
+              this.appendChild(importedNode);
+            })
+        
+         d3.selectAll('image#underlay')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#Turkish, #Arabic, #Spanish, #Albanian, #Greek, #English, rect#turkish, rect#arabic, rect#spanish, rect#albanian, rect#greek, rect#english, text#turkish, text#arabic, text#spanish, text#russian, text#spanish, text#english, text#greek, text#albanian,  #Italian-greek, rect#italian, text#italian, #Albanian-greek, #Spanish-greek, #Italian-greek') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              })
+
+         d3.selectAll('#Italian, #Italian-greek, rect#italian, text#italian')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#Turkish, #Arabic, #Spanish, #Albanian, #Greek, #English, rect#turkish, rect#arabic, rect#spanish, rect#albanian, rect#greek, rect#english, text#turkish, text#arabic, text#spanish, text#russian, text#spanish, text#english, text#greek, text#albanian, #Albanian-greek, #Spanish-greek') 
+                .style('fill-opacity', 0.1)
+                .style('stroke-opacity', 0.1)
+              d3.selectAll('#Italian, #Italian-greek, rect#italian, text#italian') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(italianDescription)
+              })
+
+         d3.selectAll('#Spanish, #Spanish-greek, rect#spanish, text#spanish')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#Turkish, #Arabic, #Italian, #Albanian, #Greek, #English, rect#turkish, rect#arabic, rect#italian, rect#albanian, rect#greek, rect#english, text#turkish, text#arabic, text#italian, text#albanian, text#greek, text#english, #Albanian-greek,  #Italian-greek') 
+                .style('fill-opacity', 0.1)
+                .style('stroke-opacity', 0.1)
+              d3.selectAll('#Spanish, #Spanish-greek, rect#spanish, text#spanish') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(spanishDescription)
+              })
+
+         d3.selectAll('#Albanian, #Albanian-greek, rect#albanian, text#albanian')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#Turkish, #Arabic, #Spanish, #Italian, #Greek, #English, rect#turkish, rect#arabic, rect#spanish, rect#italian, rect#greek, rect#english, text#turkish, text#arabic, text#spanish, text#italian, text#greek, text#english, #Spanish-greek, #Italian-greek') 
+                .style('fill-opacity', 0.1)
+                .style('stroke-opacity', 0.1)
+              d3.selectAll('#Albanian, #Albanian-greek, rect#albanian, text#albanian') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(albanianDescription)
+              })
+         d3.selectAll('#English, #Albanian-greek, #Spanish-greek, #Italian-greek, rect#english, text#english')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#Turkish, #Arabic, #Spanish, #Italian, #Greek, #Albanian, rect#turkish, rect#arabic, rect#spanish, rect#italian, rect#greek, rect#albanian, text#turkish, text#arabic, text#spanish, text#italian, text#greek, text#albanian') 
+                .style('fill-opacity', 0.1)
+                .style('stroke-opacity', 0.1)
+              d3.selectAll('#English, #Albanian-greek, #Spanish-greek, #Italian-greek, rect#english, text#english') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(englishDescription)
+              })
+         d3.selectAll('#Turkish, rect#turkish, text#turkish')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#Albanian, #Arabic, #Spanish, #Italian, #Greek, #English, rect#albanian, rect#arabic, rect#spanish, rect#italian, rect#greek, rect#english, text#albanian, text#arabic, text#spanish, text#italian, text#greek, text#english, #Spanish-greek, #Italian-greek') 
+                .style('fill-opacity', 0.1)
+                .style('stroke-opacity', 0.1)
+              d3.selectAll('#Turkish, rect#turkish, text#turkish') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(turkishDescription)
+              })
+         d3.selectAll('#Greek, #Albanian-greek, #Spanish-greek, #Italian-greek, rect#greek, text#greek')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#Turkish, #Arabic, #Spanish, #Italian, #Albanian, #English, rect#turkish, rect#arabic, rect#spanish, rect#italian, rect#albanian, rect#english, text#turkish, text#arabic, text#spanish, text#italian, text#greek, text#english') 
+                .style('fill-opacity', 0.1)
+                .style('stroke-opacity', 0.1)
+              d3.selectAll('#Greek, #Albanian-greek, #Spanish-greek, #Italian-greek, rect#greek, text#greek') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(greekDescription)
+              })
+
+        })
+      }; //end of import
+
+      function importMultilingualFoodTrucks() {
+         d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
+          .style("visibility", "")
+         d3.selectAll('text.basicText, ul.thumbnailIntroPage').remove();
+
+         d3.selectAll('p#basicText')
+          .append('text')
+            .attr("class","basicText")
+           .text(multiFoodTrucksStory) 
+
+         d3.xml("svg/foodtrucks_language.svg").mimeType("image/svg+xml").get(function(error, xml) {
+          var importedNode = document.importNode(xml.documentElement, true);
+          d3.select("div#barChart")
+            .each(function() {
+              this.appendChild(importedNode);
+            })
+
+         d3.selectAll('image#underlay')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#Spanish-french, #Spanish-wolof, #Spanish-english, #French-arabic, #French, #Urdu, #Arabic, #Spanish, #English, #Wolof, text#french, text#urdu, text#arabic, text#spanish, text#english, text#wolof, rect#spanish, rect#french, rect#urdu, rect#arabic, rect#spanish, rect#wolof') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              })
+
+         d3.selectAll('#Spanish-english, #Spanish-french, #Spanish-wolof, #Spanish, text#spanish, rect#spanish')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#French-arabic, #French, #Urdu, #Arabic, #English, #Wolof, text#french, text#urdu, text#arabic, text#english, text#wolof,  rect#french, rect#urdu, rect#arabic, rect#spanish, rect#wolof') 
+                .style('fill-opacity', 0.1)
+                .style('stroke-opacity', 0.1)
+              d3.selectAll('#Spanish-english, #Spanish-french, #Spanish-wolof, #Spanish, text#spanish, rect#spanish') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(spanishDescription)
+              })
+
+         d3.selectAll('#French-arabic, #Spanish-french, #French, text#french, rect#french')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#Spanish-wolof, #Spanish-english, #Urdu, #Arabic, #Spanish, #English, #Wolof, text#urdu, text#arabic, text#spanish, text#english, text#wolof, rect#spanish, rect#urdu, rect#arabic, rect#spanish, rect#wolof') 
+                .style('fill-opacity', 0.1)
+                .style('stroke-opacity', 0.1)
+              d3.selectAll('#French-arabic, #French, text#french, rect#french') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(frenchDescription)
+              })
+
+         d3.selectAll('#Urdu, text#urdu, rect#urdu')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#Spanish-french, #Spanish-wolof, #Spanish-english, #French-arabic, #French, #Arabic, #Spanish, #English, #Wolof, text#french, text#arabic, text#spanish, text#english, text#wolof, rect#spanish, rect#french, rect#arabic, rect#spanish, rect#wolof') 
+                .style('fill-opacity', 0.1)
+                .style('stroke-opacity', 0.1)
+              d3.selectAll('#Urdu, text#urdu, rect#urdu') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(urduDescription)
+              })
+
+         d3.selectAll('#Arabic, #French-arabic, text#arabic, rect#arabic')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#Spanish-french, #Spanish-wolof, #Spanish-english, #French, #Urdu, #Spanish, #English, #Wolof, text#french, text#urdu, text#spanish, text#english, text#wolof, rect#spanish, rect#french, rect#urdu, rect#spanish, rect#wolof') 
+                .style('fill-opacity', 0.1)
+                .style('stroke-opacity', 0.1)
+              d3.selectAll('#Arabic, #French-arabic, text#arabic, rect#arabic') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(arabicDescription)
+              })
+
+         d3.selectAll('#Wolof, #Spanish-wolof, text#wolof, rect#wolof')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#Spanish-french, #Spanish-english, #French-arabic, #French, #Urdu, #Arabic, #Spanish, #English, text#french, text#urdu, text#arabic, text#spanish, text#english, rect#spanish, rect#french, rect#urdu, rect#arabic, rect#spanish') 
+                .style('fill-opacity', 0.1)
+                .style('stroke-opacity', 0.1)
+              d3.selectAll('#Wolof, #Spanish-wolof, text#wolof, rect#wolof') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(wolofDescription)
+              })
+
+         d3.selectAll('#Spanish-english, #English, text#english, rect#english')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('#Spanish-french, #Spanish-wolof, #French-arabic, #French, #Urdu, #Arabic, #Spanish, #Wolof, text#french, text#urdu, text#arabic, text#spanish, text#wolof, rect#french, rect#urdu, rect#arabic, rect#spanish, rect#wolof') 
+                .style('fill-opacity', 0.1)
+                .style('stroke-opacity', 0.1)
+              d3.selectAll('#Spanish-english, #English, text#english, rect#english') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(englishDescription)
+              })
+
+        })
+      }; //end of import
+     
+      function importBilingual () {
+         d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
+          .style("visibility", "")
+         d3.selectAll('text.basicText, ul.thumbnailIntroPage').remove();
+         d3.selectAll('p#basicText')
+          .append('text')
+            .attr("class","basicText")
+           .text(biBuildingStory) 
+
+         d3.xml("svg/highrisebuilding_bar.svg").mimeType("image/svg+xml").get(function(error, xml) {
+          var importedNode = document.importNode(xml.documentElement, true);
+          d3.select("div#barChart")
+            .each(function() {
+              this.appendChild(importedNode);
+            })
+          
+          //CLICK EVENTS 
+            d3.selectAll('image, g#building, g#underlay')
+              .on('click', function() {
+                d3.selectAll('#Polish, #Polish_English, #English, rect#polish, rect#english,  text#polish, text#english') 
+                  .style('fill-opacity', 1)
+                  .style('stroke-opacity', 1)
+                  .style("visibility", "")
+                })
+
+            d3.selectAll('#Polish_English, rect#polish, rect#english, text#polish, text#english')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('rect#polish, text#polish, rect#english, text#english, #Polish, #English, #Polish_English') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(polishDescription + englishDescription)
+              })
+          
+            d3.selectAll('#English, rect#english, text#english')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('rect#polish, text#polish, #Polish') 
+                .style('fill-opacity', 0.1)
+                .style('stroke-opacity', 0.1)
+              d3.selectAll('rect#english, text#english, #English, #Polish_English') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(englishDescription)
+              })
+
+            d3.selectAll('#Polish, rect#polish, text#polish')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('rect#english, text#english, #English') 
+                .style('fill-opacity', 0.1)
+                .style('stroke-opacity', 0.1)
+              d3.selectAll('rect#polish, text#polish, #Polish, #Polish_English') 
+                .style('fill-opacity', 1)
+                .style('stroke-opacity', 1)            
+              d3.select('p.extraInfo')
+                 .append('text')
+                  .attr("class","extraInfo")
+                  .text(polishDescription)
+              })       
+
+          }); //end of import 
+
+      } //end of function 
+
+      
+      function importMonolingual() {
+         d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
+          .style("visibility", "")
+         d3.selectAll('text.basicText,ul.thumbnailIntroPage').remove();
+         d3.selectAll('p#basicText')
+          .append('text')
+            .attr("class","basicText")
+           .text(monoBuildingStory) 
+        
+         d3.xml("svg/lowrisebuilding_language.svg").mimeType("image/svg+xml").get(function(error, xml) {
+          var importedNode = document.importNode(xml.documentElement, true);
+          d3.select("div#barChart")
+            .each(function() {
+              this.appendChild(importedNode);
+            })
+
+         d3.selectAll('image#underlay')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+            })
+
+         d3.selectAll('#Italian, text#italian, rect#italian')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.select('p.extraInfo')
+               .append('text')
+                .attr("class","extraInfo")
+                .text(monoBuildingStory)
+            })
+          
+        }) //end of function 
+      }; //end of import
+
+      function importLibrary() {
+         d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
+          .style("visibility", "")
+         d3.selectAll('text.basicText,ul.thumbnailIntroPage').remove();
+         d3.selectAll('p#basicText')
+          .append('text')
+            .attr("class","basicText")
+           .text(libraryStory) 
+        
+         d3.xml("svg/library_language.svg").mimeType("image/svg+xml").get(function(error, xml) {
+          var importedNode = document.importNode(xml.documentElement, true);
+          d3.select("div#barChart")
+            .each(function() {
+              this.appendChild(importedNode);
+            })
+
+         d3.selectAll('#underlay, #bookshelf')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.selectAll('g.otherLanguages, g#Arabic, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Gujarati, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#Yiddish, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+            })
+
+         d3.selectAll('#Languages')
+            .on('click', function() {
+              d3.selectAll('text.extraInfo').remove()
+              d3.select('p.extraInfo')
+               .append('text')
+                .attr("class","extraInfo")
+                .text(libraryStory)
+            })
+
+         d3.selectAll("g#Albanian, g#Armenian, g#Belarusian, g#Bosnian, g#Bulgarian, g#Danish, g#Dutch, g#Estonian, g#Finnish, g#Georgian, g#Indonesian, g#Kurdish, g#Marathi, g#Mongolian, g#Nepali, g#Slovak, g#Slovenian, g#Swahili, g#Tamil, g#Telugu, g#Tibetan, g#Zulu")
+            .attr("class", "otherLanguages")
+          
+         d3.selectAll("g.otherLanguages").on("click", function(){
+          d3.selectAll('g#Arabic, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Gujarati, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g.otherLanguages")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#Arabic").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Gujarati, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Arabic")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+
+         d3.selectAll("g#BengaliTop, g#BengaliMid, g#BengaliBottom").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#Arabic, g#Croatian, g#Czech,  g#Gujarati, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#BengaliTop, g#BengaliMid, g#BengaliBottom")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#Croatian").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Arabic, g#Czech,  g#Gujarati, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Croatian")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#Czech").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Arabic,  g#Gujarati, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Czech")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function    
+
+         d3.selectAll("g#Gujarati").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Gujarati")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#HaitianTop, g#HaitianBottom").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#Gujarati, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#HaitianTop, g#HaitianBottom")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#HebrewTop, g#HebrewBottom").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#Gujarati, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#HebrewTop, g#HebrewBottom")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#HindiTop, g#HindiBottom").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#Gujarati, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#HindiTop, g#HindiBottom")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#Hungarian").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Gujarati, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Hungarian")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#Indonesian").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Gujarati, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Indonesian")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#ItalianTop, g#ItalianMid, g#ItalianBottom").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#Gujarati, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#ItalianTop, g#ItalianMid, g#ItalianBottom")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#Japanese").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Japanese")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#Latvian").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Japanese, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Latvian")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#Lithuanian").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Japanese, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Lithuanian")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#Malayalam").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Japanese, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Malayalam")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#Norwegian").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Japanese, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Norwegian")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#Punjabi").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Japanese, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Punjabi")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#Persian").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Japanese, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Persian")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#PolishTop, g#PolishBottom").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#Japanese, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#PolishTop, g#PolishBottom")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#PortugueseTop, g#PortugueseBottom").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#Japanese, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#PortugueseTop, g#PortugueseBottom")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#Romanian").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Japanese, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Romanian")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#Serbian").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Japanese, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Serbian")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#Swedish").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Japanese, g#Serbian, g#Romanian, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Swedish")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#Tagalog").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Japanese, g#Serbian, g#Swedish, g#Romanian, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Tagalog")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#Thai").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Japanese, g#Serbian, g#Swedish, g#Tagalog, g#Romanian, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Thai")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#Turkish").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Japanese, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Romanian, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Romanian")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#Ukranian").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Japanese, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Romanian, g#Turkish, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Ukranian")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#Urdu").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Japanese, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Romanian, g#Ukranian, g#Turkish, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Romanian")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#YiddishTop, g#YiddishBottom").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Japanese, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Romanian, g#Ukranian, g#Urdu, g#Vietnamese, g#Turkish, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#YiddishTop, g#YiddishBottom")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+         d3.selectAll("g#Vietnamese").on("click", function(){
+          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Japanese, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Romanian, g#Ukranian, g#Urdu, g#Turkish, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+              .classed("bookSelected", false)
+              .classed("bookNotSelected", true)
+            .style('fill-opacity', 0.1)
+            .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Vietnamese")
+              .classed("bookSelected", true)
+              .classed("bookNotSelected", false)
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+         });//end of click function
+
+        }) //end of function 
+      }; //end of import
+
+
+
+      //SORTING OUT TEXT 
+        var multiBuildingStory = "Many buildings in New York City can be thought of as a type of miniature United Nations, were speakers of a multitude of different and unrelated languages live next door to each other. In this building, some apartments are connected through family relationships where one family moved in and then relatives began to follow (i.e., Polish, Patois, and Russian speakers). But many are not, instead connected only through the walls they share and the lingua franca they use to bridge the communicative and cultural divide."
+        var multiStreetFairStory = "Almost every weekend in the summer, a street festival can be found in the city. Though many of these events are centered around one ethnographic-linguistic group or geographic region, they take on a multilingual identity through the attendees. Individuals bring their languages with them to every interaction, sometimes in the lingua franca, sometimes in a language they speak at home, sometimes in yet another language, but always as members of multilingual society."
+        var multiFoodTrucksStory = "Across the globe, food is deeply connected to language, and in diaspora communities, culinary traditions often outlast linguistic ones. Yet mealtimes often provide an opportunity for speakers to meaningfully use a language. In this setting, we see that though workers may not always speak the language associated with the food they are serving, consumers don’t always speak it either. Though individuals bring their languages with them everywhere, an onlooker may never know without talking to them."
+        var biBuildingStory = "Though this building on its own would never register as an enclave in the Census, for the residents, it is an oasis. In a quickly changing and gentrifying city, buildings such as this one form micro-communities that have the power to sustain familial, linguistic, and social ties. Most of the Polish speaking residents are related by blood, marriage, or friendship, and all have at least one connection to family or friends in Poland."
+        var monoBuildingStory = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var libraryStory = " anything above 1% gets a place on the shelf (That's 21 languages, or 22 categories). Total languages (link to a list). Top 5 omitted for clarity (link to a list with % of total non-English collection). Next 21 represented on shelf. Next 30 classified as other but on the shelf. Remaining 170ish do not appear, except in master list."
+        
+        var greekDescription = "As of today, only 1% of New York City's population speaks Greek at home. That number has been consistently falling over the past 20 years, and from 2010-2015, there are 10% fewer Greek speakers in New York. More than 2/3 of NYC Greek speakers live in Queens, primarily in Astoria/Steinway, but also in the outer neighborhoods such as Whitestone and Auburndale."
+        var italianDescription = "Italian speakers have settled in New York City since 1820, and historically, along with German, formed the largest non-English speaking group in the city at that time. Since then, Italian is being lost, with a nearly 20% decline in speakers since 2007. Yet, many ethnic Italians send their children to Italian classes in an attempt to resurrect the language before it disappears from the city altogether. "
+        var turkishDescription = "Though there is little data on exactly how many people speak Turkish in New York City, Turkish people have been settling in the city since 1820, and there is a large and thriving community across the five boroughs. The Turkish Community Center offers Turkish language courses, culture nights, film screenings, and helps organize the annual Turkish Day Parade in Manhattan. Many families send their children to Turkish language classes in an attempt to maintain, and even resurrect the language in the city."
+        var albanianDescription = "After World War II, many Albanian speakers came to New York City after passing through Italy first. These multilingual refugees found their home in the Bronx and Staten Island (both with large Italian speaking populations at the time). Since then, Albanians have laid down roots, now owning 1/3 of the homes around Pelham Parkway, and maintaining the use of Albanian in churches and community centers across the city."
+        var spanishDescription = "Spanish is the most commonly spoken language after English in New York City, and over 25% of NYC households speak Spanish at home. Of course, Spanish speakers are not evenly spread across the city, while 47% of Bronx households speak Spanish, only 10% of Staten Island ones do. Additionally, many Spanish speakers also speak a smaller, regional language such as Mixtec (Mexico), K’iche (Guatemala), or Garifuna (Honduras & Belize). Since there are few records as to how many people speak Spanish as a second language, and English as a third, the number of Spanish speakers may obscure the true diversity of languages spoken in New York City."
+        var arabicDescription = "Though only 1% of New Yorkers speak Arabic at home, there has been a 30% increase in speakers from 2010-2015. Most of these speakers are settling in Brooklyn, particularly in and around the Bay Ridge area (over half of all Arabic speakers live in Brooklyn). There are a variety of different types of Arabic united by both Modern Standard Arabic and the Arabic writing system. Though most Arabic speakers can speak and understand Modern Standard Arabic, most people use a particular variety such as Masri (Egyptian Arabic) or North Levantine (spoken in Lebanon, Syria, and Palestine) for daily communication."
+        var englishDescription = "English is spoken by almost everyone in the building as either a first, second, or additional language. Just under half of all households in New York City are English monolingual, and English speakers accounted only for 32% of all new arrivals to New York City from 2010-2015. Though there is no 'official' language in New York, or the United States, it is clear that English is New York's lingua franca."
+        var chineseDescription = "Chinese is the 3rd most commonly spoken language in New York City, and over 10% of Queens households speak Chinese, though there are many different varieties of “Chinese.” The variety spoken in this building is Mandarin, which is spoken by many newer immigrants. However, there are also significant Fujianese and Wu speaking communities in NYC, many of whom arrived at least a generation ago. Though popular imagination thinks of Chinese as being centered around ethnic enclaves, the reality is that those enclaves (to the extent they exist) contain a wealth of linguistic and cultural diversity."
+        var polishDescription = "In this building, similar to many buildings in New York City, the majority of Polish speakers are related to each other through familial or social networks. In this case, the Super moved in first and his family members slowly followed. This type of pattern is replicated in cities, neighborhoods, and buildings across the country and the world. So, while the majority of Polish speakers in New York City are spread across Queens and Brooklyn, and represent only 1% of the city’s population overall, most speakers are concentrated in Ridgewood, Greenpoint, and Maspeth (though there are speakers in every borough)."
+        var patoisDescription = "This variety of Patois originates in Jamaica, though it is found throughout New York City and is sometimes referred to as ‘Jamaican Creole.’ Though it is distinct from Trinidadian Patois, government records tend to lump them all together as ‘Creoles.’ Like the Polish speakers and Russian speakers, the Patois speakers are related, and one moved in after the other was already settled in the building. Patois speakers tend to be concentrated in Brooklyn, particularly in Flatbush and the surrounding neighborhoods. Like speakers of many other languages, Patois speakers can be found in all five boroughs."
+        var russianDescription = "Over 2% of New Yorkers speak Russian at home, and 65% of those speakers are located in Brooklyn. There are significant enclaves of Russian speakers in Sheepshead Bay, Coney Island, Dyker Heights, and more area, though Russian speakers live in every borough. Though Russian speakers have lived in New York since the 1800's, there was an influx of Russian Jews in the 1970's, and ethnic Russians after the collapse of the Soviet Union in 1991. Many Russian speakers may speak another language such as Tatar (Siberia), Uzbek (Uzbekistan),   Hebrew, or Yiddish."
+        var wolofDescription = "Estimates show that there are approximately 20,000 Wolof speakers in New York City, the majority of whom arrived between the 1980's and 2001. Historically centered around 'Little Senegal' on 116th street in Harlem, rising rents of both storefronts and apartments have pushed many speakers to spread across the city. Through many Wolof speakers also speak French and English, Wolof is still actively used in religious services in Harlem and Brooklyn."
+        var urduDescription = "Just under 1% of New York City's population speaks Urdu, though that number has fluctuated dramatically, since 2007, the number of Urdu speakers has increased by 11%, though is still lower than the number of speakers in the late 1990's. The majority of these speakers are centered around Jackson Heights, Queens, but in reality, as many speakers live in Brooklyn (especially around Coney Island Avenue) as in Queens."
+        var frenchDescription = "Approximately 1% of all New Yorkers speak French, though 2% of Manhattanites do. Though this obscures greater linguistic diversity as even though French is the 3rd most common language in the EU, the majority of French speakers in the world live in West Africa. As a result, many French speakers in New York City are highly multilingual, speaking not only French and English, but African Languages as well."
+
+      function removeTxt(){
+        d3.selectAll('text.overlayText, p#introText, text.extraInfo').remove();
+      } //end of function 
+
+      function removeExtra(){
+        d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
+          .style("visibility", "hidden")
+      } //end of function
+
+      function addOverlay(){
+        d3.selectAll('div#visSmallMultiStreetFair')
+          .on('mouseover', function () {
+            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks') 
+              .style("opacity", 0.2)
+            d3.selectAll('div#visSmallMulti') 
+              .style("opacity", 1)
+          })
+
+        d3.selectAll('div#visSmallMultiFoodTrucks')
+          .on('mouseover', function () {
+            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair') 
+              .style("opacity", 0.2)
+            d3.selectAll('div#visSmallMulti') 
+              .style("opacity", 1)
+          })
+
+        d3.selectAll('div#visSmallMultiBuilding')
+          .on('mouseover', function () {
+            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks') 
+              .style("opacity", 0.2)
+            d3.selectAll('div#visSmallMulti') 
+              .style("opacity", 1)
+          })
+
+        d3.selectAll('div#visSmallMono')
+          .on('mouseover', function () {
+            d3.selectAll('div#visSmallMultiStreetFair, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks') 
+              .style("opacity", 0.2)
+            d3.selectAll('div#visSmallMono') 
+              .style("opacity", 1)
+          })
+
+        d3.selectAll('div#visSmallBi')
+          .on('mouseover', function () {
+            d3.selectAll('div#visSmallMono, div#visSmallMultiStreetFair, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks') 
+              .style("opacity", 0.2)
+            d3.selectAll('div#visSmallBi') 
+              .style("opacity", 1)
+          })
+          
+
+        d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks')
+          .on('mouseout', function () {
+            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks')
+              .style("opacity", 0.85)
+          })
+
+       }; //end of function
+
+
+    </script>
+
+</html>
