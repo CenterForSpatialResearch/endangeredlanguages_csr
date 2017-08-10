@@ -276,11 +276,15 @@
       function importMultilingual () {
          d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
           .style("visibility", "")
-         d3.selectAll('text.basicText, ul.thumbnailIntroPage').remove();
+         d3.selectAll('text.basicText, ul.thumbnailIntroPage, text.illustrationTitle').remove();
          d3.selectAll('p#basicText')
           .append('text')
             .attr("class","basicText")
            .text(multiBuildingStory) 
+         d3.selectAll('h1.title')
+          .append('text')
+            .attr("class","illustrationTitle")
+           .text(multiBuildingTitle) 
 
          d3.xml("../svg/midrisebuilding_bar.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
@@ -1223,6 +1227,8 @@
 
 
       //SORTING OUT TEXT 
+        var multiBuildingTitle = "Multilingual (U.N.) Building"
+        
         var multiBuildingStory = "Many buildings in New York City can be thought of as a type of miniature United Nations, were speakers of a multitude of different and unrelated languages live next door to each other. In this building, some apartments are connected through family relationships where one family moved in and then relatives began to follow (i.e., Polish, Patois, and Russian speakers). But many are not, instead connected only through the walls they share and the lingua franca they use to bridge the communicative and cultural divide."
         var multiStreetFairStory = "Almost every weekend in the summer, a street festival can be found in the city. Though many of these events are centered around one ethnographic-linguistic group or geographic region, they take on a multilingual identity through the attendees. Individuals bring their languages with them to every interaction, sometimes in the lingua franca, sometimes in a language they speak at home, sometimes in yet another language, but always as members of multilingual society."
         var multiFoodTrucksStory = "Across the globe, food is deeply connected to language, and in diaspora communities, culinary traditions often outlast linguistic ones. Yet mealtimes often provide an opportunity for speakers to meaningfully use a language. In this setting, we see that though workers may not always speak the language associated with the food they are serving, consumers don’t always speak it either. Though individuals bring their languages with them everywhere, an onlooker may never know without talking to them."
@@ -1244,6 +1250,7 @@
         var wolofDescription = "Estimates show that there are approximately 20,000 Wolof speakers in New York City, the majority of whom arrived between the 1980's and 2001. Historically centered around 'Little Senegal' on 116th street in Harlem, rising rents of both storefronts and apartments have pushed many speakers to spread across the city. Through many Wolof speakers also speak French and English, Wolof is still actively used in religious services in Harlem and Brooklyn."
         var urduDescription = "Just under 1% of New York City's population speaks Urdu, though that number has fluctuated dramatically, since 2007, the number of Urdu speakers has increased by 11%, though is still lower than the number of speakers in the late 1990's. The majority of these speakers are centered around Jackson Heights, Queens, but in reality, as many speakers live in Brooklyn (especially around Coney Island Avenue) as in Queens."
         var frenchDescription = "Approximately 1% of all New Yorkers speak French, though 2% of Manhattanites do. Though this obscures greater linguistic diversity as even though French is the 3rd most common language in the EU, the majority of French speakers in the world live in West Africa. As a result, many French speakers in New York City are highly multilingual, speaking not only French and English, but African Languages as well."
+
 
       function removeTxt(){
         d3.selectAll('text.overlayText, p#introText, text.extraInfo').remove();

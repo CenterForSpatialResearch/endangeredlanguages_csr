@@ -31,7 +31,7 @@
 	<body>
     
     <h1 class="title">
-      <a href="#">  microcosms of language </a>
+      <a href="test10_07212017.html">  microcosms of language </a>
     </h1>
     <ul class="thumbnailIntroPage">
           <li>
@@ -276,11 +276,15 @@
       function importMultilingual () {
          d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
           .style("visibility", "")
-         d3.selectAll('text.basicText, ul.thumbnailIntroPage').remove();
+         d3.selectAll('text.basicText, ul.thumbnailIntroPage, text.illustrationTitle').remove();
          d3.selectAll('p#basicText')
           .append('text')
             .attr("class","basicText")
            .text(multiBuildingStory) 
+          d3.select("h1.title")
+          	.append("text")
+          	  .attr("class", "illustrationTitle")
+          	 .text(multiBuildingTitle)
 
          d3.xml("svg/midrisebuilding_bar.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
@@ -310,7 +314,7 @@
                 d3.select('p.extraInfo')
                    .append('text')
                     .attr("class","extraInfo")
-                    .text(polishDescription)
+                    .text(polishMultiDescription)
                 })
 
             d3.selectAll('#Arabic, rect#arabic, text#arabic')
@@ -441,11 +445,15 @@
       function importMultilingualStreetFair() {
          d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
           .style("visibility", "")        
-         d3.selectAll('text.basicText, ul.thumbnailIntroPage').remove();
+         d3.selectAll('text.basicText, ul.thumbnailIntroPage, text.illustrationTitle').remove();
          d3.selectAll('p#basicText')
           .append('text')
             .attr("class","basicText")
            .text(multiStreetFairStory) 
+          d3.select("h1.title")
+          	.append("text")
+          	  .attr("class", "illustrationTitle")
+          	 .text(multiStreetFairTitle)
 
          d3.xml("svg/streetfair_language.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
@@ -555,12 +563,16 @@
       function importMultilingualFoodTrucks() {
          d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
           .style("visibility", "")
-         d3.selectAll('text.basicText, ul.thumbnailIntroPage').remove();
+         d3.selectAll('text.basicText, ul.thumbnailIntroPage, text.illustrationTitle').remove();
 
          d3.selectAll('p#basicText')
           .append('text')
             .attr("class","basicText")
            .text(multiFoodTrucksStory) 
+          d3.select("h1.title")
+          	.append("text")
+          	  .attr("class", "illustrationTitle")
+          	 .text(multiFoodTrucksTitle)
 
          d3.xml("svg/foodtrucks_language.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
@@ -673,11 +685,15 @@
       function importBilingual () {
          d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
           .style("visibility", "")
-         d3.selectAll('text.basicText, ul.thumbnailIntroPage').remove();
+         d3.selectAll('text.basicText, ul.thumbnailIntroPage, text.illustrationTitle').remove();
          d3.selectAll('p#basicText')
           .append('text')
             .attr("class","basicText")
            .text(biBuildingStory) 
+          d3.select("h1.title")
+          	.append("text")
+          	  .attr("class", "illustrationTitle")
+          	 .text(biBuildingTitle)
 
          d3.xml("svg/highrisebuilding_bar.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
@@ -745,12 +761,16 @@
       function importMonolingual() {
          d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
           .style("visibility", "")
-         d3.selectAll('text.basicText,ul.thumbnailIntroPage').remove();
+         d3.selectAll('text.basicText,ul.thumbnailIntroPage, text.illustrationTitle').remove();
          d3.selectAll('p#basicText')
           .append('text')
             .attr("class","basicText")
            .text(monoBuildingStory) 
-        
+          d3.select("h1.title")
+          	.append("text")
+          	  .attr("class", "illustrationTitle")
+          	 .text(monoBuildingTitle)
+
          d3.xml("svg/lowrisebuilding_language.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
           d3.select("div#barChart")
@@ -778,12 +798,16 @@
       function importLibrary() {
          d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
           .style("visibility", "")
-         d3.selectAll('text.basicText,ul.thumbnailIntroPage').remove();
+         d3.selectAll('text.basicText,ul.thumbnailIntroPage, text.illustrationTitle').remove();
          d3.selectAll('p#basicText')
           .append('text')
             .attr("class","basicText")
            .text(libraryStory) 
-        
+          d3.select("h1.title")
+          	.append("text")
+          	  .attr("class", "illustrationTitle")
+          	 .text(libraryTitle)
+
          d3.xml("svg/library_language.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
           d3.select("div#barChart")
@@ -1223,6 +1247,14 @@
 
 
       //SORTING OUT TEXT 
+      	var multiBuildingTitle = "Multilingual (UN) Building"
+        var multiStreetFairTitle = "Street Fair"
+        var multiFoodTrucksTitle = "Food Trucks"
+        var biBuildingTitle = "Bilingual Building"
+        var monoBuildingTitle = "Monolingual Building"
+        var libraryTitle = "Queens Library Collection"
+
+
         var multiBuildingStory = "Many buildings in New York City can be thought of as a type of miniature United Nations, were speakers of a multitude of different and unrelated languages live next door to each other. In this building, some apartments are connected through family relationships where one family moved in and then relatives began to follow (i.e., Polish, Patois, and Russian speakers). But many are not, instead connected only through the walls they share and the lingua franca they use to bridge the communicative and cultural divide."
         var multiStreetFairStory = "Almost every weekend in the summer, a street festival can be found in the city. Though many of these events are centered around one ethnographic-linguistic group or geographic region, they take on a multilingual identity through the attendees. Individuals bring their languages with them to every interaction, sometimes in the lingua franca, sometimes in a language they speak at home, sometimes in yet another language, but always as members of multilingual society."
         var multiFoodTrucksStory = "Across the globe, food is deeply connected to language, and in diaspora communities, culinary traditions often outlast linguistic ones. Yet mealtimes often provide an opportunity for speakers to meaningfully use a language. In this setting, we see that though workers may not always speak the language associated with the food they are serving, consumers don’t always speak it either. Though individuals bring their languages with them everywhere, an onlooker may never know without talking to them."
@@ -1238,7 +1270,8 @@
         var arabicDescription = "Though only 1% of New Yorkers speak Arabic at home, there has been a 30% increase in speakers from 2010-2015. Most of these speakers are settling in Brooklyn, particularly in and around the Bay Ridge area (over half of all Arabic speakers live in Brooklyn). There are a variety of different types of Arabic united by both Modern Standard Arabic and the Arabic writing system. Though most Arabic speakers can speak and understand Modern Standard Arabic, most people use a particular variety such as Masri (Egyptian Arabic) or North Levantine (spoken in Lebanon, Syria, and Palestine) for daily communication."
         var englishDescription = "English is spoken by almost everyone in the building as either a first, second, or additional language. Just under half of all households in New York City are English monolingual, and English speakers accounted only for 32% of all new arrivals to New York City from 2010-2015. Though there is no 'official' language in New York, or the United States, it is clear that English is New York's lingua franca."
         var chineseDescription = "Chinese is the 3rd most commonly spoken language in New York City, and over 10% of Queens households speak Chinese, though there are many different varieties of “Chinese.” The variety spoken in this building is Mandarin, which is spoken by many newer immigrants. However, there are also significant Fujianese and Wu speaking communities in NYC, many of whom arrived at least a generation ago. Though popular imagination thinks of Chinese as being centered around ethnic enclaves, the reality is that those enclaves (to the extent they exist) contain a wealth of linguistic and cultural diversity."
-        var polishDescription = "In this building, similar to many buildings in New York City, the majority of Polish speakers are related to each other through familial or social networks. In this case, the Super moved in first and his family members slowly followed. This type of pattern is replicated in cities, neighborhoods, and buildings across the country and the world. So, while the majority of Polish speakers in New York City are spread across Queens and Brooklyn, and represent only 1% of the city’s population overall, most speakers are concentrated in Ridgewood, Greenpoint, and Maspeth (though there are speakers in every borough)."
+        var polishDescription = "In this building, similar to many buildings in New York City, the majority of Polish speakers are related to each other through familial or social networks. So, while the majority of Polish speakers in New York City are spread across Queens and Brooklyn, and represent only 1% of the city’s population overall, most speakers are concentrated in Ridgewood, Greenpoint, and Maspeth (though there are speakers in every borough)."
+        var polishMultiDescription = "In this building, similar to many buildings in New York City, the majority of Polish speakers are related to each other through familial or social networks. In this case, the Super moved in first and his family members slowly followed. This type of pattern is replicated in cities, neighborhoods, and buildings across the country and the world. So, while the majority of Polish speakers in New York City are spread across Queens and Brooklyn, and represent only 1% of the city’s population overall, most speakers are concentrated in Ridgewood, Greenpoint, and Maspeth (though there are speakers in every borough)."
         var patoisDescription = "This variety of Patois originates in Jamaica, though it is found throughout New York City and is sometimes referred to as ‘Jamaican Creole.’ Though it is distinct from Trinidadian Patois, government records tend to lump them all together as ‘Creoles.’ Like the Polish speakers and Russian speakers, the Patois speakers are related, and one moved in after the other was already settled in the building. Patois speakers tend to be concentrated in Brooklyn, particularly in Flatbush and the surrounding neighborhoods. Like speakers of many other languages, Patois speakers can be found in all five boroughs."
         var russianDescription = "Over 2% of New Yorkers speak Russian at home, and 65% of those speakers are located in Brooklyn. There are significant enclaves of Russian speakers in Sheepshead Bay, Coney Island, Dyker Heights, and more area, though Russian speakers live in every borough. Though Russian speakers have lived in New York since the 1800's, there was an influx of Russian Jews in the 1970's, and ethnic Russians after the collapse of the Soviet Union in 1991. Many Russian speakers may speak another language such as Tatar (Siberia), Uzbek (Uzbekistan),   Hebrew, or Yiddish."
         var wolofDescription = "Estimates show that there are approximately 20,000 Wolof speakers in New York City, the majority of whom arrived between the 1980's and 2001. Historically centered around 'Little Senegal' on 116th street in Harlem, rising rents of both storefronts and apartments have pushed many speakers to spread across the city. Through many Wolof speakers also speak French and English, Wolof is still actively used in religious services in Harlem and Brooklyn."
