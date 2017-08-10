@@ -125,12 +125,12 @@
 
       <!-- MAIN CONTENT -->
       <div class="col-2-4" id="bodyPanel">
-
+		<p class="extraInfo"> </p>
     	<div id="vis"></div>
 
         <div id="basicText"> 
           <p id="basicText"></p>
-          <p class="extraInfo"> </p>
+          
         </div>
 
       </div> <!-- body panel ends -->
@@ -1249,9 +1249,17 @@
       } //end of function
 
       function addOverlay(){
+        d3.selectAll('div#visLibrary')
+          .on('mouseover', function () {
+            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visSmallMultiStreetFair') 
+              .style("opacity", 0.2)
+            d3.selectAll('div#visSmallMultiStreetFair') 
+              .style("opacity", 1)
+          })
+
         d3.selectAll('div#visSmallMultiStreetFair')
           .on('mouseover', function () {
-            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks') 
+            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visLibrary') 
               .style("opacity", 0.2)
             d3.selectAll('div#visSmallMulti') 
               .style("opacity", 1)
@@ -1259,7 +1267,7 @@
 
         d3.selectAll('div#visSmallMultiFoodTrucks')
           .on('mouseover', function () {
-            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair') 
+            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visLibrary') 
               .style("opacity", 0.2)
             d3.selectAll('div#visSmallMulti') 
               .style("opacity", 1)
@@ -1267,7 +1275,7 @@
 
         d3.selectAll('div#visSmallMultiBuilding')
           .on('mouseover', function () {
-            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks') 
+            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks, div#visLibrary') 
               .style("opacity", 0.2)
             d3.selectAll('div#visSmallMulti') 
               .style("opacity", 1)
@@ -1275,7 +1283,7 @@
 
         d3.selectAll('div#visSmallMono')
           .on('mouseover', function () {
-            d3.selectAll('div#visSmallMultiStreetFair, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks') 
+            d3.selectAll('div#visSmallMultiStreetFair, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visLibrary') 
               .style("opacity", 0.2)
             d3.selectAll('div#visSmallMono') 
               .style("opacity", 1)
@@ -1283,16 +1291,16 @@
 
         d3.selectAll('div#visSmallBi')
           .on('mouseover', function () {
-            d3.selectAll('div#visSmallMono, div#visSmallMultiStreetFair, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks') 
+            d3.selectAll('div#visSmallMono, div#visSmallMultiStreetFair, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visLibrary') 
               .style("opacity", 0.2)
             d3.selectAll('div#visSmallBi') 
               .style("opacity", 1)
           })
           
 
-        d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks')
+        d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks, div#visLibrary')
           .on('mouseout', function () {
-            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks')
+            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks, div#visLibrary')
               .style("opacity", 0.85)
           })
 
