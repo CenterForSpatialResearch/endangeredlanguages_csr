@@ -261,7 +261,7 @@
         d3.select(this).classed("thumbnailSelected", true);
         window.scrollTo(0, 0);
 
-        d3.xml("../svg/library-01.svg").mimeType("image/svg+xml").get(function(error, xml) {
+        d3.xml("../svg/library_vis.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
           d3.select("div#vis")
             .each(function() {
@@ -784,7 +784,7 @@
             .attr("class","basicText")
            .text(libraryStory) 
         
-         d3.xml("../svg/lowrisebuilding_language.svg").mimeType("image/svg+xml").get(function(error, xml) {
+         d3.xml("../svg/library_language.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
           d3.select("div#barChart")
             .each(function() {
@@ -1197,7 +1197,7 @@
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("gg#YiddishTop, g#YiddishBottom")
+          d3.selectAll("g#YiddishTop, g#YiddishBottom")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
