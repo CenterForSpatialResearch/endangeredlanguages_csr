@@ -35,6 +35,14 @@
     </h1>
     <ul class="thumbnailIntroPage">
           <li>
+            <p id="introText">
+              New York City is one of the most linguistically diverse places in the world; estimates show anywhere from 200-800 different languages represented across the five boroughs. Nowhere is this more apparent than in Queens, where many of these languages are spoken in schools, restaurants, community centers, and homes across the area.
+              <br><br>
+              We often think of language in a city the size of New York as centered around “ethnic enclaves,” neighborhoods where minority language speakers tend to cluster. While that model may contain some degree of truth, it obscures how deeply integrated multilingualism is into the fabric of New York City. Through these models, we invite you to explore some of the ways language is organized in daily life. Both in the home, and on the street, the linguistic diversity of New York City is more than a population count, and tangibly affects city life. Though the models are based on real places and events, the details have been altered to protect individual’s privacy. 
+            </p>
+          </li>
+
+          <li>
             <div id="visSmallMultiBuilding">
               <img src="img/midrisebuilding.png">
             </div>
@@ -69,14 +77,6 @@
               <img src="img/library.png">
             </div>  
           </li> 
-
-          <li>
-            <p id="introText">
-              New York City is one of the most linguistically diverse places in the world; estimates show anywhere from 200-800 different languages represented across the five boroughs. Nowhere is this more apparent than in Queens, where many of these languages are spoken in schools, restaurants, community centers, and homes across the area.
-              <br><br>
-              We often think of language in a city the size of New York as centered around “ethnic enclaves,” neighborhoods where minority language speakers tend to cluster. While that model may contain some degree of truth, it obscures how deeply integrated multilingualism is into the fabric of New York City. Through these models, we invite you to explore some of the ways language is organized in daily life. Both in the home, and on the street, the linguistic diversity of New York City is more than a population count, and tangibly affects city life. Though the models are based on real places and events, the details have been altered to protect individual’s privacy. 
-            </p>
-          </li>
         </ul>
     <div class="grid">
           
@@ -126,20 +126,14 @@
       <!-- MAIN CONTENT -->
       <div class="col-2-4" id="bodyPanel">
 
-    		<div id="vis"></div>
+    	<div id="vis"></div>
 
-        <hr/>
         <div id="basicText"> 
           <p id="basicText"></p>
+          <p class="extraInfo"> </p>
         </div>
 
       </div> <!-- body panel ends -->
-
-      <!-- RIGHT SIDE PANEL -->
-      <div class="col-1-4" id="rightPanel">
-        <p class="extraInfo"> </p>
-        <div id="barChart"></div>
-      </div> <!-- right side panel ends  -->
 
     </div> <!-- entire thing  -->
 
@@ -274,7 +268,7 @@
        });
 
       function importMultilingual () {
-         d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
+         d3.selectAll('div#leftPanel, div#basicText, hr')
           .style("visibility", "")
          d3.selectAll('text.basicText, ul.thumbnailIntroPage, text.illustrationTitle').remove();
          d3.selectAll('p#basicText')
@@ -285,13 +279,6 @@
           	.append("text")
           	  .attr("class", "illustrationTitle")
           	 .text(multiBuildingTitle)
-
-         d3.xml("svg/midrisebuilding_bar.svg").mimeType("image/svg+xml").get(function(error, xml) {
-          var importedNode = document.importNode(xml.documentElement, true);
-          d3.select("div#barChart")
-            .each(function() {
-              this.appendChild(importedNode);
-            })
 
           //CLICK EVENTS 
             d3.selectAll('image#building, g#underlay')
@@ -438,12 +425,10 @@
                     .text(chineseDescription + "  " + spanishDescription + "  " + englishDescription)
                 })
 
-          }) //end of import 
-
       }; //end of function
 
       function importMultilingualStreetFair() {
-         d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
+         d3.selectAll('div#leftPanel, div#basicText, hr')
           .style("visibility", "")        
          d3.selectAll('text.basicText, ul.thumbnailIntroPage, text.illustrationTitle').remove();
          d3.selectAll('p#basicText')
@@ -455,13 +440,6 @@
           	  .attr("class", "illustrationTitle")
           	 .text(multiStreetFairTitle)
 
-         d3.xml("svg/streetfair_language.svg").mimeType("image/svg+xml").get(function(error, xml) {
-          var importedNode = document.importNode(xml.documentElement, true);
-          d3.select("div#barChart")
-            .each(function() {
-              this.appendChild(importedNode);
-            })
-        
          d3.selectAll('image#underlay')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
@@ -557,11 +535,10 @@
                   .text(greekDescription)
               })
 
-        })
-      }; //end of import
+      }; //end of function
 
       function importMultilingualFoodTrucks() {
-         d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
+         d3.selectAll('div#leftPanel, div#basicText, hr')
           .style("visibility", "")
          d3.selectAll('text.basicText, ul.thumbnailIntroPage, text.illustrationTitle').remove();
 
@@ -573,13 +550,6 @@
           	.append("text")
           	  .attr("class", "illustrationTitle")
           	 .text(multiFoodTrucksTitle)
-
-         d3.xml("svg/foodtrucks_language.svg").mimeType("image/svg+xml").get(function(error, xml) {
-          var importedNode = document.importNode(xml.documentElement, true);
-          d3.select("div#barChart")
-            .each(function() {
-              this.appendChild(importedNode);
-            })
 
          d3.selectAll('image#underlay')
             .on('click', function() {
@@ -679,11 +649,10 @@
                   .text(englishDescription)
               })
 
-        })
-      }; //end of import
+      }; //end of function
      
       function importBilingual () {
-         d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
+         d3.selectAll('div#leftPanel, div#basicText, hr')
           .style("visibility", "")
          d3.selectAll('text.basicText, ul.thumbnailIntroPage, text.illustrationTitle').remove();
          d3.selectAll('p#basicText')
@@ -694,13 +663,6 @@
           	.append("text")
           	  .attr("class", "illustrationTitle")
           	 .text(biBuildingTitle)
-
-         d3.xml("svg/highrisebuilding_bar.svg").mimeType("image/svg+xml").get(function(error, xml) {
-          var importedNode = document.importNode(xml.documentElement, true);
-          d3.select("div#barChart")
-            .each(function() {
-              this.appendChild(importedNode);
-            })
           
           //CLICK EVENTS 
             d3.selectAll('image, g#building, g#underlay')
@@ -753,13 +715,12 @@
                   .text(polishDescription)
               })       
 
-          }); //end of import 
+          }; //end of function
 
-      } //end of function 
 
       
       function importMonolingual() {
-         d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
+         d3.selectAll('div#leftPanel, div#basicText, hr')
           .style("visibility", "")
          d3.selectAll('text.basicText,ul.thumbnailIntroPage, text.illustrationTitle').remove();
          d3.selectAll('p#basicText')
@@ -796,7 +757,7 @@
       }; //end of import
 
       function importLibrary() {
-         d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
+         d3.selectAll('div#leftPanel, div#basicText, hr')
           .style("visibility", "")
          d3.selectAll('text.basicText,ul.thumbnailIntroPage, text.illustrationTitle').remove();
          d3.selectAll('p#basicText')
@@ -1283,7 +1244,7 @@
       } //end of function 
 
       function removeExtra(){
-        d3.selectAll('div#leftPanel, div#basicText, div#rightPanel, hr')
+        d3.selectAll('div#leftPanel, div#basicText, hr')
           .style("visibility", "hidden")
       } //end of function
 
