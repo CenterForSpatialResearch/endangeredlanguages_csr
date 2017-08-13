@@ -95,6 +95,9 @@
         <div id="visMultiBuilding">
           <p class="extraInfo" id="extraInfoMultiBuilding"> </p>
         </div>
+        <p id = "basicText">
+          Many buildings in New York City can be thought of as a type of miniature United Nations, where speakers of a multitude of different and unrelated languages live next door to each other. In this building, some apartments are connected through family relationships where one family moved in and then relatives began to follow (i.e., Polish, Patois, and Russian speakers). But many are not, instead connected only through the walls they share and the lingua franca they use to bridge the communicative and cultural divide.
+        </p>
 
         <h1 class="titleMono">
           Monolingual Building
@@ -102,6 +105,9 @@
         <div id="visMono">
           <p class="extraInfo" id="extraInfoMono"> </p>
         </div>
+        <p id="basicText">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
 
         <h1 class="titleMultiStreetFair">
           Street Festival
@@ -109,6 +115,9 @@
         <div id="visMultiStreetFair">
           <p class="extraInfo" id="extraInfoMultiStreetFair"> </p>
         </div>
+        <p id="basicText">
+          Almost every weekend in the summer, a street festival can be found in the city. Though many of these events are centered around one ethnographic-linguistic group or geographic region, they take on a multilingual identity through the attendees. Individuals bring their languages with them to every interaction, sometimes in the lingua franca, sometimes in a language they speak at home, sometimes in yet another language, but always as members of multilingual society.
+        </p>
 
         <h1 class="titleMultiFoodTrucks">
           Food Trucks
@@ -116,6 +125,9 @@
         <div id="visMultiFoodTrucks">
           <p class="extraInfo" id="extraInfoMultiFoodTrucks"> </p>
         </div>
+        <p id="basicText">
+          Across the globe, food is deeply connected to language, and in diaspora communities, culinary traditions often outlast linguistic ones. Yet mealtimes often provide an opportunity for speakers to meaningfully use a language. In this setting, we see that though workers may not always speak the language associated with the food they are serving, consumers don’t always speak it either. Though individuals bring their languages with them everywhere, an onlooker may never know without talking to them.
+        </p>
 
         <h1 class="titleBi">
           Bilingual Building
@@ -123,6 +135,9 @@
         <div id="visBi">
           <p class="extraInfo" id="extraInfoBi"> </p>
         </div>
+        <p id="basicText">
+          Though this building on its own would never register as an enclave in the Census, for the residents, it is an oasis. In a quickly changing and gentrifying city, buildings such as this one form micro-communities that have the power to sustain familial, linguistic, and social ties. Most of the Polish speaking residents are related by blood, marriage, or friendship, and all have at least one connection to family or friends in Poland.
+        </p>
 
         <h1 class="titleLibrary">
           Queens Library Collection
@@ -130,10 +145,9 @@
         <div id="visLib">
           <p class="extraInfo" id="extraInfoLibrary"> </p>
         </div>
-
-        <div id="basicText"> 
-          <p id="basicText"></p>
-        </div>
+        <p id = "basicText">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
 
       </div> <!-- body panel ends -->
 
@@ -256,12 +270,6 @@
        });
 
       function importMultilingual () {
-         // d3.selectAll('text.basicText, ul.thumbnailIntroPage, text.illustrationTitle').remove();
-         d3.selectAll('p#basicText')
-          .append('text')
-            .attr("class","basicText")
-           .text(multiBuildingStory) 
-
           //CLICK EVENTS 
             d3.selectAll('image#building, g#underlay')
               .on('click', function() {
@@ -410,12 +418,6 @@
       }; //end of function
 
       function importMultilingualStreetFair() {
-         // d3.selectAll('text.basicText, ul.thumbnailIntroPage, text.illustrationTitle').remove();
-         d3.selectAll('p#basicText')
-          .append('text')
-            .attr("class","basicText")
-           .text(multiStreetFairStory) 
-
          d3.selectAll('image#underlay')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
@@ -514,13 +516,6 @@
       }; //end of function
 
       function importMultilingualFoodTrucks() {
-         // d3.selectAll('text.basicText, ul.thumbnailIntroPage, text.illustrationTitle').remove();
-
-         d3.selectAll('p#basicText')
-          .append('text')
-            .attr("class","basicText")
-           .text(multiFoodTrucksStory) 
-
          d3.selectAll('image#underlay')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
@@ -622,12 +617,6 @@
       }; //end of function
      
       function importBilingual () {
-         // d3.selectAll('text.basicText, ul.thumbnailIntroPage, text.illustrationTitle').remove();
-         d3.selectAll('p#basicText')
-          .append('text')
-            .attr("class","basicText")
-           .text(biBuildingStory) 
-          
           //CLICK EVENTS 
             d3.selectAll('image, g#building, g#underlay')
               .on('click', function() {
@@ -679,17 +668,9 @@
                   .text(polishDescription)
               })       
 
-          }; //end of function
-
-
+      }; //end of function
       
       function importMonolingual() {
-         // d3.selectAll('text.basicText,ul.thumbnailIntroPage, text.illustrationTitle').remove();
-         d3.selectAll('p#basicText')
-          .append('text')
-            .attr("class","basicText")
-           .text(monoBuildingStory) 
-
          d3.selectAll('image#underlay')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
@@ -707,12 +688,6 @@
       }; //end of function
 
       function importLibrary() {
-         // d3.selectAll('text.basicText,ul.thumbnailIntroPage, text.illustrationTitle').remove();
-         d3.selectAll('p#basicText')
-          .append('text')
-            .attr("class","basicText")
-           .text(libraryStory) 
-
          d3.selectAll('#underlay, #bookshelf')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
@@ -1139,18 +1114,11 @@
             .style('stroke-opacity', 1)
          });//end of click function
 
-      } //end of function
+      }; //end of function
 
 
 
-      //SORTING OUT TEXT 
-        var multiBuildingStory = "Many buildings in New York City can be thought of as a type of miniature United Nations, were speakers of a multitude of different and unrelated languages live next door to each other. In this building, some apartments are connected through family relationships where one family moved in and then relatives began to follow (i.e., Polish, Patois, and Russian speakers). But many are not, instead connected only through the walls they share and the lingua franca they use to bridge the communicative and cultural divide."
-        var multiStreetFairStory = "Almost every weekend in the summer, a street festival can be found in the city. Though many of these events are centered around one ethnographic-linguistic group or geographic region, they take on a multilingual identity through the attendees. Individuals bring their languages with them to every interaction, sometimes in the lingua franca, sometimes in a language they speak at home, sometimes in yet another language, but always as members of multilingual society."
-        var multiFoodTrucksStory = "Across the globe, food is deeply connected to language, and in diaspora communities, culinary traditions often outlast linguistic ones. Yet mealtimes often provide an opportunity for speakers to meaningfully use a language. In this setting, we see that though workers may not always speak the language associated with the food they are serving, consumers don’t always speak it either. Though individuals bring their languages with them everywhere, an onlooker may never know without talking to them."
-        var biBuildingStory = "Though this building on its own would never register as an enclave in the Census, for the residents, it is an oasis. In a quickly changing and gentrifying city, buildings such as this one form micro-communities that have the power to sustain familial, linguistic, and social ties. Most of the Polish speaking residents are related by blood, marriage, or friendship, and all have at least one connection to family or friends in Poland."
-        var monoBuildingStory = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        var libraryStory = " anything above 1% gets a place on the shelf (That's 21 languages, or 22 categories). Total languages (link to a list). Top 5 omitted for clarity (link to a list with % of total non-English collection). Next 21 represented on shelf. Next 30 classified as other but on the shelf. Remaining 170ish do not appear, except in master list."
-        
+      //SORTING OUT TEXT         
         var greekDescription = "As of today, only 1% of New York City's population speaks Greek at home. That number has been consistently falling over the past 20 years, and from 2010-2015, there are 10% fewer Greek speakers in New York. More than 2/3 of NYC Greek speakers live in Queens, primarily in Astoria/Steinway, but also in the outer neighborhoods such as Whitestone and Auburndale."
         var italianDescription = "Italian speakers have settled in New York City since 1820, and historically, along with German, formed the largest non-English speaking group in the city at that time. Since then, Italian is being lost, with a nearly 20% decline in speakers since 2007. Yet, many ethnic Italians send their children to Italian classes in an attempt to resurrect the language before it disappears from the city altogether. "
         var turkishDescription = "Though there is little data on exactly how many people speak Turkish in New York City, Turkish people have been settling in the city since 1820, and there is a large and thriving community across the five boroughs. The Turkish Community Center offers Turkish language courses, culture nights, film screenings, and helps organize the annual Turkish Day Parade in Manhattan. Many families send their children to Turkish language classes in an attempt to maintain, and even resurrect the language in the city."
