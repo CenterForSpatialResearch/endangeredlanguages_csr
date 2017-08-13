@@ -60,18 +60,16 @@ a{
 		    text-align: left;
 		    margin: 10px;
 		}
-		h1.title {
+		h1.titleMultiBuilding, h1.titleMono, h1.titleBi, h1.titleLibrary, h1.titleMultiStreetFair, h1.titleMultiFoodTrucks {
 		    font-size: 18px;
 		    text-transform: capitalize;
 		    background-color: rgba(0,0,0,0.7);
 		    color: white;
 		    padding: 10px;
-		    text-align: right;
-		    float: right;
 		    margin: 10px;
-		    width: 90%;
 		}
 		.illustrationTitle{
+			
 		}
 		#basicText, p#basicText {
 			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
