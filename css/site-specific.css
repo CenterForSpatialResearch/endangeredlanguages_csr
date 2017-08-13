@@ -12,15 +12,16 @@ body{
 	[class*='col-'] {
 	  float: left;
 	}
-	.col-1-4 {
-	  width: 10%;
-	  bottom: 0;
-	}
 	#leftPanel.col-1-4 {
 	  padding-left: 10px;
+	  width: 10%;
+	  position: fixed;
+	  top: 50%;
+      transform: translateY(-50%);
 	}
 	#bodyPanel.col-2-4{
-	  width: 90%;
+	  width: 100%;
+	  padding-left: 10%;
 	}
 	/*The parent element will collapse to zero height since it has only floated children. Let's fix that by clearing it.*/
 	.grid:after {

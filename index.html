@@ -93,33 +93,43 @@
         </h1>
 
         <div id="visMultiBuilding">
-          <p class="extraInfo"> </p>
+          <p class="extraInfo" id="extraInfoMultiBuilding"> </p>
         </div>
 
         <h1 class="titleMono">
           Monolingual Building
         </h1>
-        <div id="visMono"></div>
+        <div id="visMono">
+          <p class="extraInfo" id="extraInfoMono"> </p>
+        </div>
 
         <h1 class="titleMultiStreetFair">
           Street Festival
         </h1>
-        <div id="visMultiStreetFair"></div>
+        <div id="visMultiStreetFair">
+          <p class="extraInfo" id="extraInfoMultiStreetFair"> </p>
+        </div>
 
         <h1 class="titleMultiFoodTrucks">
           Food Trucks
         </h1>
-        <div id="visMultiFoodTrucks"></div>
+        <div id="visMultiFoodTrucks">
+          <p class="extraInfo" id="extraInfoMultiFoodTrucks"> </p>
+        </div>
 
         <h1 class="titleBi">
           Bilingual Building
         </h1>
-        <div id="visBi"></div>
+        <div id="visBi">
+          <p class="extraInfo" id="extraInfoBi"> </p>
+        </div>
 
         <h1 class="titleLibrary">
           Queens Library Collection
         </h1>
-        <div id="vis"></div>
+        <div id="visLib">
+          <p class="extraInfo" id="extraInfoLibrary"> </p>
+        </div>
 
         <div id="basicText"> 
           <p id="basicText"></p>
@@ -137,14 +147,9 @@
  	<script type="text/javascript">
 
     //BUILDING VIS
-     //Extract the width and height that was computed by CSS.
-      var chartDiv = document.getElementById("vis");
-      var width = chartDiv.clientWidth;
-      var height = chartDiv.clientHeight;
 
       addOverlay()
       importVisualizations()
-      // removeExtra()
 
       function importVisualizations () {
         d3.xml("svg/midrisebuilding_building.svg").mimeType("image/svg+xml").get(function(error, xml) {
@@ -194,7 +199,7 @@
 
         d3.xml("svg/library_vis.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
-          d3.select("div#vis")
+          d3.select("div#visLib")
             .each(function() {
               this.appendChild(importedNode);
             })
@@ -206,7 +211,6 @@
       //SWITCHING BTW IMGS   
       d3.selectAll("#visSmallMultiBuilding").on("click", function(){
         
-        d3.selectAll("svg").remove();
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
         window.scrollTo(0, 0);
@@ -215,7 +219,6 @@
 
       d3.selectAll("#visSmallMultiFoodTrucks").on("click", function(){
         
-        d3.selectAll("svg").remove();
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
         window.scrollTo(0, 0);
@@ -224,16 +227,13 @@
 
       d3.selectAll("#visSmallMultiStreetFair").on("click", function(){
         
-        d3.selectAll("svg").remove();
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
         window.scrollTo(0, 0);
 
-
        });
 
       d3.selectAll("#visSmallBi").on("click", function(){ 
-        d3.selectAll("svg").remove();
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
         window.scrollTo(0, 0);
@@ -241,7 +241,6 @@
        });
 
       d3.selectAll("#visSmallMono").on("click", function(){       
-        d3.selectAll("svg").remove();
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
         window.scrollTo(0, 0);
@@ -250,7 +249,6 @@
 
       d3.selectAll("#visLibrary").on("click", function(){
         
-        d3.selectAll("svg").remove();
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
         window.scrollTo(0, 0);
@@ -271,7 +269,7 @@
                     .style('fill-opacity', 1)
                     .style('stroke-opacity', 1)
                   d3.selectAll('text.extraInfo').remove()
-                  })
+                })
 
             d3.selectAll('#Polish, rect#polish, text#polish')
               .on('click', function() {
@@ -282,7 +280,7 @@
                 d3.selectAll('#Polish, rect#polish, text#polish') 
                   .style('fill-opacity', 1)
                   .style('stroke-opacity', 1)
-                d3.select('p.extraInfo')
+                d3.select('p#extraInfoMultiBuilding')
                    .append('text')
                     .attr("class","extraInfo")
                     .text(polishMultiDescription)
@@ -297,7 +295,7 @@
                 d3.selectAll('#Arabic, rect#arabic, text#arabic') 
                   .style('fill-opacity', 1)
                   .style('stroke-opacity', 1)
-                d3.select('p.extraInfo')
+                d3.select('p#extraInfoMultiBuilding')
                    .append('text')
                     .attr("class","extraInfo")
                     .text(arabicDescription)
@@ -312,7 +310,7 @@
                 d3.selectAll('#Chinese_Spanish_English, #Spanish, rect#spanish, text#spanish') 
                   .style('fill-opacity', 1)
                   .style('stroke-opacity', 1)
-                d3.select('p.extraInfo')
+                d3.select('p#extraInfoMultiBuilding')
                    .append('text')
                     .attr("class","extraInfo")
                     .text(spanishDescription)
@@ -327,7 +325,7 @@
                 d3.selectAll('#Chinese_English, #Chinese_Spanish_English, rect#chinese, text#chinese') 
                   .style('fill-opacity', 1)
                   .style('stroke-opacity', 1)
-                d3.select('p.extraInfo')
+                d3.select('p#extraInfoMultiBuilding')
                    .append('text')
                     .attr("class","extraInfo")
                     .text(chineseDescription)
@@ -342,7 +340,7 @@
                   d3.selectAll('#Chinese_English, #Chinese_Spanish_English, #English, rect#english, text#english') 
                     .style('fill-opacity', 1)
                     .style('stroke-opacity', 1)
-                  d3.select('p.extraInfo')
+                  d3.select('p#extraInfoMultiBuilding')
                      .append('text')
                       .attr("class","extraInfo")
                       .text(englishDescription)
@@ -357,7 +355,7 @@
                   d3.selectAll('#Patois , rect#patois, text#patois') 
                     .style('fill-opacity', 1)
                     .style('stroke-opacity', 1)
-                  d3.select('p.extraInfo')
+                  d3.select('p#extraInfoMultiBuilding')
                      .append('text')
                       .attr("class","extraInfo")
                       .text(patoisDescription)
@@ -372,7 +370,7 @@
                   d3.selectAll('#Russian, rect#russian, text#russian') 
                     .style('fill-opacity', 1)
                     .style('stroke-opacity', 1)
-                  d3.select('p.extraInfo')
+                  d3.select('p#extraInfoMultiBuilding')
                      .append('text')
                       .attr("class","extraInfo")
                       .text(russianDescription)              
@@ -388,7 +386,7 @@
                 d3.selectAll('#Chinese_Spanish_English, #Chinese_English, #Spanish, #English, rect#spanish, rect#chinese, rect#english, text#spanish, text#chinese, text#english') 
                   .style('fill-opacity', 1)
                   .style('stroke-opacity', 1)
-                d3.select('p.extraInfo')
+                d3.select('p#extraInfoMultiBuilding')
                    .append('text')
                     .attr("class","extraInfo")
                     .text(chineseDescription + "  " + spanishDescription)
@@ -403,7 +401,7 @@
                 d3.selectAll('#Chinese_English, rect#chinese, rect#english, text#chinese, text#english') 
                   .style('fill-opacity', 1)
                   .style('stroke-opacity', 1)
-                d3.select('p.extraInfo')
+                d3.select('p#extraInfoMultiBuilding')
                    .append('text')
                     .attr("class","extraInfo")
                     .text(chineseDescription + "  " + spanishDescription + "  " + englishDescription)
@@ -435,7 +433,7 @@
               d3.selectAll('#Italian, #Italian-greek, rect#italian, text#italian') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
-              d3.select('p.extraInfo')
+              d3.select('p#extraInfoMultiStreetFair')
                  .append('text')
                   .attr("class","extraInfo")
                   .text(italianDescription)
@@ -450,7 +448,7 @@
               d3.selectAll('#Spanish, #Spanish-greek, rect#spanish, text#spanish') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
-              d3.select('p.extraInfo')
+              d3.select('p#extraInfoMultiStreetFair')
                  .append('text')
                   .attr("class","extraInfo")
                   .text(spanishDescription)
@@ -465,7 +463,7 @@
               d3.selectAll('#Albanian, #Albanian-greek, rect#albanian, text#albanian') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
-              d3.select('p.extraInfo')
+              d3.select('p#extraInfoMultiStreetFair')
                  .append('text')
                   .attr("class","extraInfo")
                   .text(albanianDescription)
@@ -479,7 +477,7 @@
               d3.selectAll('#English, #Albanian-greek, #Spanish-greek, #Italian-greek, rect#english, text#english') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
-              d3.select('p.extraInfo')
+              d3.select('p#extraInfoMultiStreetFair')
                  .append('text')
                   .attr("class","extraInfo")
                   .text(englishDescription)
@@ -493,7 +491,7 @@
               d3.selectAll('#Turkish, rect#turkish, text#turkish') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
-              d3.select('p.extraInfo')
+              d3.select('p#extraInfoMultiStreetFair')
                  .append('text')
                   .attr("class","extraInfo")
                   .text(turkishDescription)
@@ -507,7 +505,7 @@
               d3.selectAll('#Greek, #Albanian-greek, #Spanish-greek, #Italian-greek, rect#greek, text#greek') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
-              d3.select('p.extraInfo')
+              d3.select('p#extraInfoMultiStreetFair')
                  .append('text')
                   .attr("class","extraInfo")
                   .text(greekDescription)
@@ -540,7 +538,7 @@
               d3.selectAll('#Spanish-english, #Spanish-french, #Spanish-wolof, #Spanish, text#spanish, rect#spanish') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
-              d3.select('p.extraInfo')
+              d3.select('p#extraInfoMultiFoodTrucks')
                  .append('text')
                   .attr("class","extraInfo")
                   .text(spanishDescription)
@@ -555,7 +553,7 @@
               d3.selectAll('#French-arabic, #French, text#french, rect#french') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
-              d3.select('p.extraInfo')
+              d3.select('p#extraInfoMultiFoodTrucks')
                  .append('text')
                   .attr("class","extraInfo")
                   .text(frenchDescription)
@@ -570,7 +568,7 @@
               d3.selectAll('#Urdu, text#urdu, rect#urdu') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
-              d3.select('p.extraInfo')
+              d3.select('p#extraInfoMultiFoodTrucks')
                  .append('text')
                   .attr("class","extraInfo")
                   .text(urduDescription)
@@ -585,7 +583,7 @@
               d3.selectAll('#Arabic, #French-arabic, text#arabic, rect#arabic') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
-              d3.select('p.extraInfo')
+              d3.select('p#extraInfoMultiFoodTrucks')
                  .append('text')
                   .attr("class","extraInfo")
                   .text(arabicDescription)
@@ -600,7 +598,7 @@
               d3.selectAll('#Wolof, #Spanish-wolof, text#wolof, rect#wolof') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
-              d3.select('p.extraInfo')
+              d3.select('p#extraInfoMultiFoodTrucks')
                  .append('text')
                   .attr("class","extraInfo")
                   .text(wolofDescription)
@@ -615,7 +613,7 @@
               d3.selectAll('#Spanish-english, #English, text#english, rect#english') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
-              d3.select('p.extraInfo')
+              d3.select('p#extraInfoMultiFoodTrucks')
                  .append('text')
                   .attr("class","extraInfo")
                   .text(englishDescription)
@@ -645,7 +643,7 @@
               d3.selectAll('rect#polish, text#polish, rect#english, text#english, #Polish, #English, #Polish_English') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
-              d3.select('p.extraInfo')
+              d3.select('p#extraInfoBi')
                  .append('text')
                   .attr("class","extraInfo")
                   .text(polishDescription + englishDescription)
@@ -660,7 +658,7 @@
               d3.selectAll('rect#english, text#english, #English, #Polish_English') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
-              d3.select('p.extraInfo')
+              d3.select('p#extraInfoBi')
                  .append('text')
                   .attr("class","extraInfo")
                   .text(englishDescription)
@@ -675,7 +673,7 @@
               d3.selectAll('rect#polish, text#polish, #Polish, #Polish_English') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)            
-              d3.select('p.extraInfo')
+              d3.select('p#extraInfoBi')
                  .append('text')
                   .attr("class","extraInfo")
                   .text(polishDescription)
@@ -692,13 +690,6 @@
             .attr("class","basicText")
            .text(monoBuildingStory) 
 
-         d3.xml("svg/lowrisebuilding_language.svg").mimeType("image/svg+xml").get(function(error, xml) {
-          var importedNode = document.importNode(xml.documentElement, true);
-          d3.select("div#barChart")
-            .each(function() {
-              this.appendChild(importedNode);
-            })
-
          d3.selectAll('image#underlay')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
@@ -707,14 +698,13 @@
          d3.selectAll('#Italian, text#italian, rect#italian')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.select('p.extraInfo')
+              d3.select('p#extraInfoMono')
                .append('text')
                 .attr("class","extraInfo")
                 .text(monoBuildingStory)
             })
           
-        }) //end of function 
-      }; //end of import
+      }; //end of function
 
       function importLibrary() {
          // d3.selectAll('text.basicText,ul.thumbnailIntroPage, text.illustrationTitle').remove();
@@ -722,13 +712,6 @@
           .append('text')
             .attr("class","basicText")
            .text(libraryStory) 
-
-         d3.xml("svg/library_language.svg").mimeType("image/svg+xml").get(function(error, xml) {
-          var importedNode = document.importNode(xml.documentElement, true);
-          d3.select("div#barChart")
-            .each(function() {
-              this.appendChild(importedNode);
-            })
 
          d3.selectAll('#underlay, #bookshelf')
             .on('click', function() {
@@ -1156,8 +1139,7 @@
             .style('stroke-opacity', 1)
          });//end of click function
 
-        }) //end of function 
-      }; //end of import
+      } //end of function
 
 
 
