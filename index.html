@@ -211,7 +211,7 @@
           importMonolingual()
         });
 
-        d3.xml("svg/library_vis.svg").mimeType("image/svg+xml").get(function(error, xml) {
+        d3.xml("svg/library.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
           d3.select("div#visLib")
             .each(function() {
@@ -691,27 +691,23 @@
          d3.selectAll('#underlay, #bookshelf')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('g.otherLanguages, g#Arabic, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Gujarati, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#Yiddish, g#front, g#side, g#top, #interior')
+              d3.selectAll('g.otherLanguages, g#Arabic_LIB, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Gujarati_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Japanese_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#Yiddish_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
             })
 
-         d3.selectAll('#Languages')
-            .on('click', function() {
-              d3.selectAll('text.extraInfo').remove()
-              d3.select('p.extraInfo')
-               .append('text')
-                .attr("class","extraInfo")
-                .text(libraryStory)
-            })
-
-         d3.selectAll("g#Albanian, g#Armenian, g#Belarusian, g#Bosnian, g#Bulgarian, g#Danish, g#Dutch, g#Estonian, g#Finnish, g#Georgian, g#Indonesian, g#Kurdish, g#Marathi, g#Mongolian, g#Nepali, g#Slovak, g#Slovenian, g#Swahili, g#Tamil, g#Telugu, g#Tibetan, g#Zulu")
+         d3.selectAll("g#Albanian_LIB, g#Armenian_LIB, g#Belarusian_LIB, g#Bosnian_LIB, g#Bulgarian_LIB, g#Danish_LIB, g#Dutch_LIB, g#Estonian_LIB, g#Finnish_LIB, g#Georgian_LIB, g#Indonesian_LIB, g#Kurdish_LIB, g#Marathi_LIB, g#Mongolian_LIB, g#Nepali_LIB, g#Slovak_LIB, g#Slovenian_LIB, g#Swahili_LIB, g#Tamil_LIB, g#Telugu_LIB, g#Tibetan_LIB, g#Zulu_LIB")
             .attr("class", "otherLanguages")
           
          d3.selectAll("g.otherLanguages").on("click", function(){
-          d3.selectAll('g#Arabic, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Gujarati, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(otherLanguagesDescription)
+          d3.selectAll('g#Arabic_LIB, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Gujarati_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Japanese_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
@@ -723,13 +719,18 @@
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#Arabic").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Gujarati, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#Arabic_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(arabicDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Gujarati_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Japanese_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Arabic")
+          d3.selectAll("g#Arabic_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
@@ -737,377 +738,522 @@
          });//end of click function
 
 
-         d3.selectAll("g#BengaliTop, g#BengaliMid, g#BengaliBottom").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#Arabic, g#Croatian, g#Czech,  g#Gujarati, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(bengaliDescription)
+          d3.selectAll('g.otherLanguages, g#Arabic_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Gujarati_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Japanese_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#BengaliTop, g#BengaliMid, g#BengaliBottom")
+          d3.selectAll("g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#Croatian").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Arabic, g#Czech,  g#Gujarati, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#Croatian_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(croatianDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Arabic_LIB, g#Czech_LIB,  g#Gujarati_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Japanese_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Croatian")
+          d3.selectAll("g#Croatian_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#Czech").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Arabic,  g#Gujarati, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#Czech_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(czechDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Arabic_LIB,  g#Gujarati_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Japanese_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Czech")
+          d3.selectAll("g#Czech_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function    
 
-         d3.selectAll("g#Gujarati").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#Gujarati_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(gujaratiDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Japanese_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Gujarati")
+          d3.selectAll("g#Gujarati_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#HaitianTop, g#HaitianBottom").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#Gujarati, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#HaitianTop_LIB, g#HaitianBottom_LIB, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(haitianDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#Gujarati_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Japanese_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#HaitianTop, g#HaitianBottom")
+          d3.selectAll("g#HaitianTop_LIB, g#HaitianBottom_LIB, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#HebrewTop, g#HebrewBottom").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#Gujarati, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#HebrewTop_LIB, g#HebrewBottom_LIB, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(hebrewDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#Gujarati_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Japanese_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#HebrewTop, g#HebrewBottom")
+          d3.selectAll("g#HebrewTop_LIB, g#HebrewBottom_LIB, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#HindiTop, g#HindiBottom").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#Gujarati, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#HindiTop_LIB, g#HindiBottom_LIB rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(hindiDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#Gujarati_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Japanese_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#HindiTop, g#HindiBottom")
+          d3.selectAll("g#HindiTop_LIB, g#HindiBottom_LIB, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#Hungarian").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Gujarati, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#Hungarian_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(hungarianDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Gujarati_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Japanese_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Hungarian")
+          d3.selectAll("g#Hungarian_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#Indonesian").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Gujarati, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#Indonesian_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(indonesianDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Gujarati_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Japanese_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Indonesian")
+          d3.selectAll("g#Indonesian_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#ItalianTop, g#ItalianMid, g#ItalianBottom").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#Gujarati, g#Japanese, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(italianDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#Gujarati_LIB, g#Japanese_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#ItalianTop, g#ItalianMid, g#ItalianBottom")
+          d3.selectAll("g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, rect#ItalianTop_LIBrect, rect#ItalianBottom_LIBrect")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#Japanese").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#Japanese_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(japaneseDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Japanese")
+          d3.selectAll("g#Japanese_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#Latvian").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Japanese, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#Latvian_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(latvianDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Japanese_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Latvian")
+          d3.selectAll("g#Latvian_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#Lithuanian").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Japanese, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#Lithuanian_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(lithuanianDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Japanese_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Lithuanian")
+          d3.selectAll("g#Lithuanian_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#Malayalam").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Japanese, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#Malayalam_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(malayalamDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Japanese_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Malayalam")
+          d3.selectAll("g#Malayalam_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#Norwegian").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Japanese, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#Norwegian_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(norwegianDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Japanese_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Norwegian")
+          d3.selectAll("g#Norwegian_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#Punjabi").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Japanese, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#Punjabi_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(punjabiDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Japanese_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Punjabi")
+          d3.selectAll("g#Punjabi_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#Persian").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Japanese, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#Persian_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(persianDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Japanese_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Persian")
+          d3.selectAll("g#Persian_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#PolishTop, g#PolishBottom").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#Japanese, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#PolishTop_LIB, g#PolishBottom_LIB, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(polishDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#Japanese_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#PolishTop, g#PolishBottom")
+          d3.selectAll("g#PolishTop_LIB, g#PolishBottom_LIB, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#PortugueseTop, g#PortugueseBottom").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#Japanese, g#Romanian, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#PortugueseTop_LIB, g#PortugueseBottom_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(portugueseDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#Japanese_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#PortugueseTop, g#PortugueseBottom")
+          d3.selectAll("g#PortugueseTop_LIB, g#PortugueseBottom_LIB, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#Romanian").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Japanese, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#Romanian_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(romanianDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Romanian")
+          d3.selectAll("g#Romanian_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#Serbian").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Romanian, g#Japanese, g#Swedish, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#Serbian_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(serbianDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Japanese_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Serbian")
+          d3.selectAll("g#Serbian_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#Swedish").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Japanese, g#Serbian, g#Romanian, g#Tagalog, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#Swedish_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(swedishDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Romanian_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Swedish")
+          d3.selectAll("g#Swedish_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#Tagalog").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Japanese, g#Serbian, g#Swedish, g#Romanian, g#Thai, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#Tagalog_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(tagalogDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Romanian_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Tagalog")
+          d3.selectAll("g#Tagalog_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#Thai").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Japanese, g#Serbian, g#Swedish, g#Tagalog, g#Romanian, g#Turkish, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#Thai_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(thaiDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Romanian_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Thai")
+          d3.selectAll("g#Thai_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#Turkish").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Japanese, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Romanian, g#Ukranian, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#Turkish_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(turkishDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Romanian_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Romanian")
+          d3.selectAll("g#Romanian_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#Ukranian").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Japanese, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Romanian, g#Turkish, g#Urdu, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#Ukranian_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(ukranianDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Romanian_LIB, g#Turkish_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Ukranian")
+          d3.selectAll("g#Ukranian_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#Urdu").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Japanese, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Romanian, g#Ukranian, g#Turkish, g#Vietnamese, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#Urdu_LIB").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(urduDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Romanian_LIB, g#Ukranian_LIB, g#Turkish_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Romanian")
+          d3.selectAll("g#Urdu_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#YiddishTop, g#YiddishBottom").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Japanese, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Romanian, g#Ukranian, g#Urdu, g#Vietnamese, g#Turkish, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#YiddishTop_LIB, g#YiddishBottom_LIB, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(yiddishDescription)
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Romanian_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#Turkish_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#YiddishTop, g#YiddishBottom")
+          d3.selectAll("g#YiddishTop_LIB, g#YiddishBottom_LIB, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#Vietnamese").on("click", function(){
-          d3.selectAll('g.otherLanguages, g#BengaliTop, g#BengaliMid, g#BengaliBottom, g#Croatian, g#Czech,  g#Arabic, g#HaitianTop, g#HaitianBottom, g#HebrewTop, g#HebrewBottom, g#HindiTop, g#HindiBottom, g#Hungarian, g#Indonesian, g#ItalianTop, g#ItalianMid, g#ItalianBottom, g#Gujarati, g#Latvian, g#Lithuanian, g#Malayalam, g#Norwegian, g#Punjabi, g#Persian, g#PolishTop, g#PolishBottom, g#PortugueseTop, g#PortugueseBottom, g#Japanese, g#Serbian, g#Swedish, g#Tagalog, g#Thai, g#Romanian, g#Ukranian, g#Urdu, g#Turkish, g#YiddishTop, g#YiddishBottom, g#front, g#side, g#top, #interior')
+         d3.selectAll("g#Vietnamese_LIB, rect#Vietnamese_LIBrect").on("click", function(){
+          d3.selectAll('text.extraInfo').remove()
+          d3.select('p#extraInfoLibrary')
+           .append('text')
+            .attr("class","extraInfo")
+            .text(vietnameseDescription)          
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Romanian_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Turkish_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Vietnamese")
+          d3.selectAll("g#Vietnamese_LIB, rect#Vietnamese_LIBrect")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
