@@ -34,17 +34,6 @@
       <a href="index.html">  microcosms of language </a>
     </h1>
 
-<!--     <ul class="thumbnailIntroPage">
-          <li>
-            <p id="introText">
-              New York City is one of the most linguistically diverse places in the world; estimates show anywhere from 200-800 different languages represented across the five boroughs. Nowhere is this more apparent than in Queens, where many of these languages are spoken in schools, restaurants, community centers, and homes across the area.
-              <br><br>
-              We often think of language in a city the size of New York as centered around “ethnic enclaves,” neighborhoods where minority language speakers tend to cluster. While that model may contain some degree of truth, it obscures how deeply integrated multilingualism is into the fabric of New York City. Through these models, we invite you to explore some of the ways language is organized in daily life. Both in the home, and on the street, the linguistic diversity of New York City is more than a population count, and tangibly affects city life. Though the models are based on real places and events, the details have been altered to protect individual’s privacy. 
-            </p>
-          </li>
-        </ul>
-    <div class="grid"> -->
-          
       <!-- LEFT SIDE PANEL -->
       <div class="col-1-4" id="leftPanel"> 
         <ul class="thumbnail">
@@ -90,7 +79,15 @@
 
       <!-- MAIN CONTENT -->
       <div class="col-2-4" id="bodyPanel">
-    		
+    	 
+       <div class = "introTextBox"> 
+        <p id="introText">
+          New York City is one of the most linguistically diverse places in the world; estimates show anywhere from 200-800 different languages represented across the five boroughs. Nowhere is this more apparent than in Queens, where many of these languages are spoken in schools, restaurants, community centers, and homes across the area.
+          <br><br>
+          We often think of language in a city the size of New York as centered around “ethnic enclaves,” neighborhoods where minority language speakers tend to cluster. While that model may contain some degree of truth, it obscures how deeply integrated multilingualism is into the fabric of New York City. Through these models, we invite you to explore some of the ways language is organized in daily life. Both in the home, and on the street, the linguistic diversity of New York City is more than a population count, and tangibly affects city life. Though the models are based on real places and events, the details have been altered to protect individual’s privacy. 
+        </p>
+       </div> 
+
         <p class="extraInfo"> </p>
         
         <h1 class="titleMultiBuilding">
@@ -1191,11 +1188,6 @@
       function removeTxt(){
         d3.selectAll('text.overlayText, p#introText, text.extraInfo').remove();
       } //end of function 
-
-      // function removeExtra(){
-      //   d3.selectAll('div#leftPanel, div#basicText, hr')
-      //     .style("visibility", "hidden")
-      // } //end of function
 
       function addOverlay(){
         d3.selectAll('div#visLibrary')
