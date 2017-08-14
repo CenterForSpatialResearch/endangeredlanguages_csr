@@ -387,28 +387,45 @@
 	    }; //end of function
 
         function importMultilingualStreetFair() {
+      	 d3.selectAll("g#Turkish_SFtxt, g#Arabic_SFtxt, g#Spanish_SFtxt, g#Greek_SFtxt, g#Albanian_SFtxt, g#Italian_SFtxt")
+      		.attr("opacity", 0)
          d3.selectAll('g#underlay, image#underlay')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Turkish_SF, #Arabic_SF, #Spanish_SF, #Albanian_SF, #Greek_SF, #English_SF, rect#Turkish_SFrect, rect#Arabic_SFrect, rect#Spanish_SFrect, rect#Albanian_SFrect, rect#Greek_SFrect, rect#English_SFrect, g#Turkish_SFtxt, g#Arabic_SFtxt, g#Spanish_SFtxt, g#Russian_SF_SFtxt, g#Spanish_SFtxt, g#English, g#Greek, g#Albanian_SFtxt,  #Italian-greek_SF, rect#Italian_SFrect, g#Italian_SFtxt, #Albanian-greek_SF, #Spanish-greek_SF, #Italian-greek_SF') 
+              d3.selectAll('#Turkish_SF, #Arabic_SF, #Spanish_SF, #Albanian_SF, #Greek_SF, #English_SF, rect#Turkish_SFrect, rect#Arabic_SFrect, rect#Spanish_SFrect, rect#Albanian_SFrect, rect#Greek_SFrect, rect#English_SFrect,  #Italian-greek_SF, rect#Italian_SFrect,  #Albanian-greek_SF, #Spanish-greek_SF, #Italian-greek_SF') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
-              })
+              d3.selectAll("g#Turkish_SFtxt, g#Arabic_SFtxt, g#Spanish_SFtxt, g#Greek_SFtxt, g#Albanian_SFtxt, g#Italian_SFtxt")
+      		    .classed("barTextClicked", false)
+      		    .classed("barTextHovered", false) 
+            })
 
          d3.selectAll('#Italian_SF, #Italian-greek_SF, rect#Italian_SFrect, g#Italian_SFtxt')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Turkish_SF, #Arabic_SF, #Spanish_SF, #Albanian_SF, #Greek_SF, #English_SF, rect#Turkish_SFrect, rect#Arabic_SFrect, rect#Spanish_SFrect, rect#Albanian_SFrect, rect#Greek_SFrect, rect#English_SFrect, g#Turkish_SFtxt, g#Arabic_SFtxt, g#Spanish_SFtxt, g#Russian_SFtxt, g#Spanish_SFtxt, g#English_SFtxt, g#Greek_SFtxt, g#Albanian_SFtxt, #Albanian-greek_SF, #Spanish-greek_SF') 
+              d3.selectAll('#Turkish_SF, #Arabic_SF, #Spanish_SF, #Albanian_SF, #Greek_SF, #English_SF, rect#Turkish_SFrect, rect#Arabic_SFrect, rect#Spanish_SFrect, rect#Albanian_SFrect, rect#Greek_SFrect, rect#English_SFrect, #Albanian-greek_SF, #Spanish-greek_SF') 
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('#Italian_SF, #Italian-greek_SF, rect#Italian_SFrect, g#Italian_SFtxt') 
+              d3.selectAll('#Italian_SF, #Italian-greek_SF, rect#Italian_SFrect') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoMultiStreetFair')
                  .append('text')
                   .attr("class","extraInfo")
                   .text(italianDescription)
-              })
+              d3.selectAll("g#Italian_SFtxt")
+              	.classed("barTextClicked", true)
+              d3.selectAll("g#Turkish_SFtxt, g#Arabic_SFtxt, g#Greek_SFtxt, g#Spanish_SFtxt, g#English_SFtxt, g#Greek_SFtxt, g#Albanian_SFtxt")
+              	.classed("barTextClicked", false)
+            })
+            .on('mouseover', function() { 
+			  d3.selectAll("g#Italian_SFtxt")
+              	.classed("barTextHovered", true)
+            })
+            .on('mouseout', function() {
+			  d3.selectAll("g#Italian_SFtxt")
+              	.classed("barTextHovered", false)
+            })
 
          d3.selectAll('#Spanish_SF, #Spanish-greek_SF, rect#Spanish_SFrect, g#Spanish_SFtxt')
             .on('click', function() {
@@ -470,7 +487,7 @@
          d3.selectAll('#Greek_SF, #Albanian-greek_SF, #Spanish-greek_SF, #Italian-greek_SF, rect#Greek_SFrect, g#Greek_SFtxt')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Turkish_SF, #Arabic_SF, #Spanish_SF, #Italian_SF, #Albanian_SF, #English_SF, rect#Turkish_SFrect, rect#Arabic_SFrect, rect#Spanish_SFrect, rect#Italian_SFrect, rect#Albanian_SFrect, rect#English_SFrect, g#Turkish_SFtxt, g#Arabic_SFtxt, g#Spanish_SFtxt, g#Italian_SFtxt, g#Greek_SFtxt, g#English_SFtxt') 
+              d3.selectAll('#Turkish_SF, #Arabic_SF, #Spanish_SF, #Italian_SF, #Albanian_SF, #English_SF, rect#Turkish_SFrect, rect#Arabic_SFrect, rect#Spanish_SFrect, rect#Italian_SFrect, rect#Albanian_SFrect, rect#English_SFrect, g#Turkish_SFtxt, g#Arabic_SFtxt, g#Spanish_SFtxt, g#Albanian_SFtxt, g#Italian_SFtxt, g#Greek_SFtxt, g#English_SFtxt') 
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
               d3.selectAll('#Greek_SF, #Albanian-greek_SF, #Spanish-greek_SF, #Italian-greek_SF, rect#Greek_SFrect, g#Greek_SFtxt') 
