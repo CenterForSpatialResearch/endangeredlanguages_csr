@@ -175,7 +175,7 @@
           importMultilingual()
         });
 
-        d3.xml("svg/foodtrucks_trucks.svg").mimeType("image/svg+xml").get(function(error, xml) {
+        d3.xml("svg/foodtrucks.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
           d3.select("div#visMultiFoodTrucks")
             .each(function() {
@@ -184,7 +184,7 @@
           importMultilingualFoodTrucks()
         });
 
-        d3.xml("svg/highrisebuilding_building.svg").mimeType("image/svg+xml").get(function(error, xml) {
+        d3.xml("svg/bilingualbuilding.svg").mimeType("image/svg+xml").get(function(error, xml) {
         var importedNode = document.importNode(xml.documentElement, true);
           d3.select("div#visBi")
             .each(function() {
@@ -273,19 +273,19 @@
           //CLICK EVENTS 
             d3.selectAll('image#building, g#underlay')
               .on('click', function() {
-                  d3.selectAll('#Polish, #Arabic, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect#russian, rect#patois, rect#polish, rect#arabic, rect#spanish, rect#chinese, rect#English, g#patois, g#polish, g#arabic, g#spanish, g#chinese, g#russian, g#English') 
+                  d3.selectAll('#Polish, #Arabic, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect#Russian, rect#Patois, rect#Polish, rect#Arabic, rect#Spanish, rect#Chinese, rect#English, g#Patois, g#Polish, g#Arabic, g#Spanish, g#Chinese, g#Russian, g#English') 
                     .style('fill-opacity', 1)
                     .style('stroke-opacity', 1)
                   d3.selectAll('text.extraInfo').remove()
                 })
 
-            d3.selectAll('#Polish, rect#polish, g#polish')
+            d3.selectAll('#Polish, rect#Polish, g#Polish')
               .on('click', function() {
                 d3.selectAll('text.extraInfo').remove()
-                d3.selectAll('#Arabic, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect#russian, rect#patois, rect#arabic, rect#spanish, rect#chinese, rect#English, g#patois, g#russian, g#arabic, g#spanish, g#chinese, g#English') 
+                d3.selectAll('#Arabic, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect#Russian, rect#Patois, rect#Arabic, rect#Spanish, rect#Chinese, rect#English, g#Patois, g#Russian, g#Arabic, g#Spanish, g#Chinese, g#English') 
                   .style('fill-opacity', 0.1)
                   .style('stroke-opacity', 0.3)
-                d3.selectAll('#Polish, rect#polish, g#polish') 
+                d3.selectAll('#Polish, rect#Polish, g#Polish') 
                   .style('fill-opacity', 1)
                   .style('stroke-opacity', 1)
                 d3.select('p#extraInfoMultiBuilding')
@@ -294,13 +294,13 @@
                     .text(polishMultiDescription)
                 })
 
-            d3.selectAll('#Arabic, rect#arabic, g#arabic')
+            d3.selectAll('#Arabic, rect#Arabic, g#Arabic')
               .on('click', function() {
                 d3.selectAll('text.extraInfo').remove()
-                d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect#russian, rect#patois, rect#polish, rect#spanish, rect#chinese, rect#English, g#patois, g#polish, g#russian, g#spanish, g#chinese, g#English') 
+                d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect#Russian, rect#Patois, rect#Polish, rect#Spanish, rect#Chinese, rect#English, g#Patois, g#Polish, g#Russian, g#Spanish, g#Chinese, g#English') 
                   .style('fill-opacity', 0.1)
                   .style('stroke-opacity', 0.3)
-                d3.selectAll('#Arabic, rect#arabic, g#arabic') 
+                d3.selectAll('#Arabic, rect#Arabic, g#Arabic') 
                   .style('fill-opacity', 1)
                   .style('stroke-opacity', 1)
                 d3.select('p#extraInfoMultiBuilding')
@@ -309,13 +309,13 @@
                     .text(arabicDescription)
                 })
 
-              d3.selectAll('#Spanish, rect#spanish, g#spanish')
+              d3.selectAll('#Spanish, rect#Spanish, g#Spanish')
               .on('click', function() {
                 d3.selectAll('text.extraInfo').remove()
-                d3.selectAll('#Polish, g#Arabic, #Chinese_English, #English, #Patois, #Russian, rect#russian, rect#patois, rect#polish, rect#arabic, rect#chinese, rect#English, g#patois, g#polish, g#arabic, g#russian, g#chinese, g#English') 
+                d3.selectAll('#Polish, g#Arabic, #Chinese_English, #English, #Patois, #Russian, rect#Russian, rect#Patois, rect#Polish, rect#Arabic, rect#Chinese, rect#English, g#Patois, g#Polish, g#Arabic, g#Russian, g#Chinese, g#English') 
                   .style('fill-opacity', 0.1)
                   .style('stroke-opacity', 0.3)
-                d3.selectAll('#Chinese_Spanish_English, #Spanish, rect#spanish, g#spanish') 
+                d3.selectAll('#Chinese_Spanish_English, #Spanish, rect#Spanish, g#Spanish') 
                   .style('fill-opacity', 1)
                   .style('stroke-opacity', 1)
                 d3.select('p#extraInfoMultiBuilding')
@@ -324,13 +324,13 @@
                     .text(spanishDescription)
                 })
 
-              d3.selectAll('rect#chinese, g#chinese')
+              d3.selectAll('rect#Chinese, g#Chinese')
               .on('click', function() {
                 d3.selectAll('text.extraInfo').remove()
-                d3.selectAll('#Polish, #Arabic, #Spanish, #English, #Patois, #Russian, rect#russian, rect#patois, rect#polish, rect#arabic, rect#spanish, rect#English, g#patois, g#polish, g#arabic, g#spanish, g#russian, g#English') 
+                d3.selectAll('#Polish, #Arabic, #Spanish, #English, #Patois, #Russian, rect#Russian, rect#Patois, rect#Polish, rect#Arabic, rect#Spanish, rect#English, g#Patois, g#Polish, g#Arabic, g#Spanish, g#Russian, g#English') 
                   .style('fill-opacity', 0.1)
                   .style('stroke-opacity', 0.3)
-                d3.selectAll('#Chinese_English, #Chinese_Spanish_English, rect#chinese, g#chinese') 
+                d3.selectAll('#Chinese_English, #Chinese_Spanish_English, rect#Chinese, g#Chinese') 
                   .style('fill-opacity', 1)
                   .style('stroke-opacity', 1)
                 d3.select('p#extraInfoMultiBuilding')
@@ -342,7 +342,7 @@
               d3.selectAll('#English, rect#English, g#English')
                 .on('click', function() {
                   d3.selectAll('text.extraInfo').remove()
-                  d3.selectAll('#Polish, #Arabic, #Spanish, #Patois, #Russian, rect#russian, rect#patois, rect#polish, rect#arabic, rect#spanish, rect#chinese, g#patois, g#polish, g#arabic, g#spanish, g#chinese, g#russian') 
+                  d3.selectAll('#Polish, #Arabic, #Spanish, #Patois, #Russian, rect#Russian, rect#Patois, rect#Polish, rect#Arabic, rect#Spanish, rect#Chinese, g#Patois, g#Polish, g#Arabic, g#Spanish, g#Chinese, g#Russian') 
                     .style('fill-opacity', 0.1)
                     .style('stroke-opacity', 0.3)
                   d3.selectAll('#Chinese_English, #Chinese_Spanish_English, #English, rect#English, g#English') 
@@ -354,13 +354,13 @@
                       .text(englishDescription)
                 })
 
-              d3.selectAll('#Patois, rect#patois, g#patois')
+              d3.selectAll('#Patois, rect#Patois, g#Patois')
                 .on('click', function() {
                   d3.selectAll('text.extraInfo').remove()
-                  d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Arabic, #Russian, rect#russian, rect#patois, rect#polish, rect#arabic, rect#spanish, rect#chinese, rect#English, g#russian, g#polish, g#arabic, g#spanish, g#chinese, g#English') 
+                  d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Arabic, #Russian, rect#Russian, rect#Patois, rect#Polish, rect#Arabic, rect#Spanish, rect#Chinese, rect#English, g#Russian, g#Polish, g#Arabic, g#Spanish, g#Chinese, g#English') 
                     .style('fill-opacity', 0.1)
                     .style('stroke-opacity', 0.3)
-                  d3.selectAll('#Patois , rect#patois, g#patois') 
+                  d3.selectAll('#Patois , rect#Patois, g#Patois') 
                     .style('fill-opacity', 1)
                     .style('stroke-opacity', 1)
                   d3.select('p#extraInfoMultiBuilding')
@@ -369,13 +369,13 @@
                       .text(patoisDescription)
                 })
 
-              d3.selectAll('#Russian, rect#russian, g#russian')
+              d3.selectAll('#Russian, rect#Russian, g#Russian')
                 .on('click', function() {
                   d3.selectAll('text.extraInfo').remove()
-                  d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Arabic, #Patois, rect#patois, rect#polish, rect#arabic, rect#spanish, rect#chinese, rect#English, g#patois, g#polish, g#arabic, g#spanish, g#chinese, g#English') 
+                  d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Arabic, #Patois, rect#Patois, rect#Polish, rect#Arabic, rect#Spanish, rect#Chinese, rect#English, g#Patois, g#Polish, g#Arabic, g#Spanish, g#Chinese, g#English') 
                     .style('fill-opacity', 0.1)
                     .style('stroke-opacity', 0.3)
-                  d3.selectAll('#Russian, rect#russian, g#russian') 
+                  d3.selectAll('#Russian, rect#Russian, g#Russian') 
                     .style('fill-opacity', 1)
                     .style('stroke-opacity', 1)
                   d3.select('p#extraInfoMultiBuilding')
@@ -388,10 +388,10 @@
               d3.selectAll('#Chinese_Spanish_English')
               .on('click', function() {
                 d3.selectAll('text.extraInfo').remove()
-                d3.selectAll('#Polish, #Arabic, #Patois, #Russian, rect#russian, rect#patois, rect#polish, rect#arabic, g#patois, g#polish, g#arabic, g#russian') 
+                d3.selectAll('#Polish, #Arabic, #Patois, #Russian, rect#Russian, rect#Patois, rect#Polish, rect#Arabic, g#Patois, g#Polish, g#Arabic, g#Russian') 
                   .style('fill-opacity', 0.1)
                   .style('stroke-opacity', 0.3)
-                d3.selectAll('#Chinese_Spanish_English, #Chinese_English, #Spanish, #English, rect#spanish, rect#chinese, rect#English, g#spanish, g#chinese, g#English') 
+                d3.selectAll('#Chinese_Spanish_English, #Chinese_English, #Spanish, #English, rect#Spanish, rect#Chinese, rect#English, g#Spanish, g#Chinese, g#English') 
                   .style('fill-opacity', 1)
                   .style('stroke-opacity', 1)
                 d3.select('p#extraInfoMultiBuilding')
@@ -403,10 +403,10 @@
               d3.selectAll('#Chinese_English')
               .on('click', function() {
                 d3.selectAll('text.extraInfo').remove()
-                d3.selectAll('#Polish, #Arabic, #Spanish, #Patois, #Russian, rect#russian, rect#patois, rect#polish, rect#arabic, rect#chinese, rect#spanish, g#patois, g#polish, g#arabic, g#russian, g#spanish') 
+                d3.selectAll('#Polish, #Arabic, #Spanish, #Patois, #Russian, rect#Russian, rect#Patois, rect#Polish, rect#Arabic, rect#Chinese, rect#Spanish, g#Patois, g#Polish, g#Arabic, g#Russian, g#Spanish') 
                   .style('fill-opacity', 0.1)
                   .style('stroke-opacity', 0.3)
-                d3.selectAll('#Chinese_English, rect#chinese, rect#English, g#chinese, g#English') 
+                d3.selectAll('#Chinese_English, rect#Chinese, rect#English, g#Chinese, g#English') 
                   .style('fill-opacity', 1)
                   .style('stroke-opacity', 1)
                 d3.select('p#extraInfoMultiBuilding')
@@ -421,7 +421,7 @@
          d3.selectAll('g#underlay, image#underlay')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Turkish_SF, #Arabic_SF, #Spanish_SF, #Albanian_SF, #Greek_SF, #English_SF, rect#Turkish_SFrect, rect#Arabic_SFrect, rect#Spanish_SFrect, rect#Albanian_SFrect, rect#Greek_SFrect, rect#English_SFrect, g#Turkish_SFtxt, g#Arabic_SFtxt, g#Spanish_SFtxt, g#russian_SF_SFtxt, g#Spanish_SFtxt, g#English, g#Greek, g#Albanian_SFtxt,  #Italian-greek_SF, rect#Italian_SFrect, g#Italian_SFtxt, #Albanian-greek_SF, #Spanish-greek_SF, #Italian-greek_SF') 
+              d3.selectAll('#Turkish_SF, #Arabic_SF, #Spanish_SF, #Albanian_SF, #Greek_SF, #English_SF, rect#Turkish_SFrect, rect#Arabic_SFrect, rect#Spanish_SFrect, rect#Albanian_SFrect, rect#Greek_SFrect, rect#English_SFrect, g#Turkish_SFtxt, g#Arabic_SFtxt, g#Spanish_SFtxt, g#Russian_SF_SFtxt, g#Spanish_SFtxt, g#English, g#Greek, g#Albanian_SFtxt,  #Italian-greek_SF, rect#Italian_SFrect, g#Italian_SFtxt, #Albanian-greek_SF, #Spanish-greek_SF, #Italian-greek_SF') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               })
@@ -429,7 +429,7 @@
          d3.selectAll('#Italian_SF, #Italian-greek_SF, rect#Italian_SFrect, g#Italian_SFtxt')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Turkish_SF, #Arabic_SF, #Spanish_SF, #Albanian_SF, #Greek_SF, #English_SF, rect#Turkish_SFrect, rect#Arabic_SFrect, rect#Spanish_SFrect, rect#Albanian_SFrect, rect#Greek_SFrect, rect#English_SFrect, g#Turkish_SFtxt, g#Arabic_SFtxt, g#Spanish_SFtxt, g#russian_SFtxt, g#Spanish_SFtxt, g#English_SFtxt, g#Greek_SFtxt, g#Albanian_SFtxt, #Albanian-greek_SF, #Spanish-greek_SF') 
+              d3.selectAll('#Turkish_SF, #Arabic_SF, #Spanish_SF, #Albanian_SF, #Greek_SF, #English_SF, rect#Turkish_SFrect, rect#Arabic_SFrect, rect#Spanish_SFrect, rect#Albanian_SFrect, rect#Greek_SFrect, rect#English_SFrect, g#Turkish_SFtxt, g#Arabic_SFtxt, g#Spanish_SFtxt, g#Russian_SFtxt, g#Spanish_SFtxt, g#English_SFtxt, g#Greek_SFtxt, g#Albanian_SFtxt, #Albanian-greek_SF, #Spanish-greek_SF') 
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
               d3.selectAll('#Italian_SF, #Italian-greek_SF, rect#Italian_SFrect, g#Italian_SFtxt') 
@@ -516,21 +516,21 @@
       }; //end of function
 
       function importMultilingualFoodTrucks() {
-         d3.selectAll('image#underlay')
+         d3.selectAll('image, underlay#FT')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Spanish-french, #Spanish-wolof, #Spanish-english, #French-arabic, #French, #Urdu, #Arabic, #Spanish, #English, #Wolof, g#french, g#urdu, g#arabic, g#spanish, g#English, g#wolof, rect#spanish, rect#french, rect#urdu, rect#arabic, rect#spanish, rect#wolof') 
+              d3.selectAll('#Spanish-french_FT, #Spanish-wolof_FT, #Spanish-english_FT, #French-arabic_FT, #French_FT, #Urdu_FT, #Arabic_FT, #Spanish_FT, #English_FT, #Wolof_FT, g#French_FTtxt, g#Urdu_FTtxt, g#Arabic_FTtxt, g#Spanish_FTtxt, g#English_FTtxt, g#Wolof_FTtxt, rect#Spanish_FTrect, rect#French_FTrect, rect#Urdu_FTrect, rect#Arabic_FTrect, rect#Spanish_FTrect, rect#Wolof_FTrect, rect#English_FTrect') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               })
 
-         d3.selectAll('#Spanish-english, #Spanish-french, #Spanish-wolof, #Spanish, g#spanish, rect#spanish')
+         d3.selectAll('#Spanish-english_FT, #Spanish-french_FT, #Spanish-wolof_FT, #Spanish_FT, g#Spanish_FTtxt, rect#Spanish_FTrect')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#French-arabic, #French, #Urdu, #Arabic, #English, #Wolof, g#french, g#urdu, g#arabic, g#English, g#wolof,  rect#french, rect#urdu, rect#arabic, rect#spanish, rect#wolof') 
+              d3.selectAll('#French-arabic_FT, #French_FT, #Urdu_FT, #Arabic_FT, #English_FT, #Wolof_FT, g#French_FTtxt, g#Urdu_FTtxt, g#Arabic_FTtxt, g#English_FTtxt, g#Wolof_FTtxt, rect#French_FTrect, rect#Urdu_FTrect, rect#Arabic_FTrect, rect#Spanish_FTrect, rect#Wolof_FTrect, rect#English_FTrect') 
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('#Spanish-english, #Spanish-french, #Spanish-wolof, #Spanish, g#spanish, rect#spanish') 
+              d3.selectAll('#Spanish-english_FT, #Spanish-french_FT, #Spanish-wolof_FT, #Spanish_FT, g#Spanish_FTtxt, rect#Spanish_FTrect') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoMultiFoodTrucks')
@@ -539,13 +539,13 @@
                   .text(spanishDescription)
               })
 
-         d3.selectAll('#French-arabic, #Spanish-french, #French, g#french, rect#french')
+         d3.selectAll('#French-arabic_FT, #Spanish-french_FT, #French_FT, g#French_FTtxt, rect#French_FTrect')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Spanish-wolof, #Spanish-english, #Urdu, #Arabic, #Spanish, #English, #Wolof, g#urdu, g#arabic, g#spanish, g#English, g#wolof, rect#spanish, rect#urdu, rect#arabic, rect#spanish, rect#wolof') 
+              d3.selectAll('#Spanish-wolof_FT, #Spanish-english_FT, #Urdu_FT, #Arabic_FT, #Spanish_FT, #English_FT, #Wolof_FT, g#Urdu_FTtxt, g#Arabic_FTtxt, g#Spanish_FTtxt, g#English_FTtxt, g#Wolof_FTtxt, rect#Spanish_FTrect, rect#Urdu_FTrect, rect#Arabic_FTrect, rect#Wolof_FTrect, rect#English_FTrect') 
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('#French-arabic, #French, g#french, rect#french') 
+              d3.selectAll('#French-arabic_FT, #Spanish-french_FT, #French_FT, g#French_FTtxt, rect#French_FTrect') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoMultiFoodTrucks')
@@ -554,13 +554,13 @@
                   .text(frenchDescription)
               })
 
-         d3.selectAll('#Urdu, g#urdu, rect#urdu')
+         d3.selectAll('#Urdu_FT, g#Urdu_FTtxt, rect#Urdu_FTrect')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Spanish-french, #Spanish-wolof, #Spanish-english, #French-arabic, #French, #Arabic, #Spanish, #English, #Wolof, g#french, g#arabic, g#spanish, g#English, g#wolof, rect#spanish, rect#french, rect#arabic, rect#spanish, rect#wolof') 
+              d3.selectAll('#Spanish-french_FT, #Spanish-wolof_FT, #Spanish-english_FT, #French-arabic_FT, #French_FT, #Arabic_FT, #Spanish_FT, #English_FT, #Wolof_FT, g#French_FTtxt, g#Arabic_FTtxt, g#Spanish_FTtxt, g#English_FTtxt, g#Wolof_FTtxt, rect#Spanish_FTrect, rect#French_FTrect, rect#Arabic_FTrect, rect#Spanish_FTrect, rect#Wolof_FTrect, rect#English_FTrect') 
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('#Urdu, g#urdu, rect#urdu') 
+              d3.selectAll('#Urdu_FT, g#Urdu_FTtxt, rect#Urdu_FTrect') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoMultiFoodTrucks')
@@ -569,13 +569,13 @@
                   .text(urduDescription)
               })
 
-         d3.selectAll('#Arabic, #French-arabic, g#arabic, rect#arabic')
+         d3.selectAll('#Arabic_FT, #French-arabic_FT, g#Arabic_FTtxt, rect#Arabic_FTrect')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Spanish-french, #Spanish-wolof, #Spanish-english, #French, #Urdu, #Spanish, #English, #Wolof, g#french, g#urdu, g#spanish, g#English, g#wolof, rect#spanish, rect#french, rect#urdu, rect#spanish, rect#wolof') 
+              d3.selectAll('#Spanish-french_FT, #Spanish-wolof_FT, #Spanish-english_FT, #French_FT, #Urdu_FT, #Spanish_FT, #English_FT, #Wolof_FT, g#French_FTtxt, g#Urdu_FTtxt, g#Spanish_FTtxt, g#English_FTtxt, g#Wolof_FTtxt, rect#Spanish_FTrect, rect#French_FTrect, rect#Urdu_FTrect, rect#Spanish_FTrect, rect#Wolof_FTrect, rect#English_FTrect') 
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('#Arabic, #French-arabic, g#arabic, rect#arabic') 
+              d3.selectAll('#Arabic_FT, #French-arabic_FT, g#Arabic_FTtxt, rect#Arabic_FTrect') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoMultiFoodTrucks')
@@ -584,13 +584,13 @@
                   .text(arabicDescription)
               })
 
-         d3.selectAll('#Wolof, #Spanish-wolof, g#wolof, rect#wolof')
+         d3.selectAll('#Wolof_FT, #Spanish-wolof_FT, g#Wolof_FTtxt, rect#Wolof_FTrect')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Spanish-french, #Spanish-english, #French-arabic, #French, #Urdu, #Arabic, #Spanish, #English, g#french, g#urdu, g#arabic, g#spanish, g#English, rect#spanish, rect#french, rect#urdu, rect#arabic, rect#spanish') 
+              d3.selectAll('#Spanish-french_FT, #Spanish-english_FT, #French-arabic_FT, #French_FT, #Urdu_FT, #Arabic_FT, #Spanish_FT, #English_FT, g#French_FTtxt, g#Urdu_FTtxt, g#Arabic_FTtxt, g#Spanish_FTtxt, g#English_FTtxt, rect#Spanish_FTrect, rect#French_FTrect, rect#Urdu_FTrect, rect#Arabic_FTrect, rect#Spanish_FTrect, rect#English_FTrect') 
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('#Wolof, #Spanish-wolof, g#wolof, rect#wolof') 
+              d3.selectAll('#Wolof_FT, #Spanish-wolof_FT, g#Wolof_FTtxt, rect#Wolof_FTrect') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoMultiFoodTrucks')
@@ -599,13 +599,13 @@
                   .text(wolofDescription)
               })
 
-         d3.selectAll('#Spanish-english, #English, g#English, rect#English')
+         d3.selectAll('#Spanish-english_FT, #English_FT, g#English_FTtxt, rect#English_FTrect')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Spanish-french, #Spanish-wolof, #French-arabic, #French, #Urdu, #Arabic, #Spanish, #Wolof, g#french, g#urdu, g#arabic, g#spanish, g#wolof, rect#french, rect#urdu, rect#arabic, rect#spanish, rect#wolof') 
+              d3.selectAll('#Spanish-french, #Spanish-wolof, #French-arabic_FT, #French_FT, #Urdu_FT, #Arabic_FT, #Spanish_FT, #Wolof_FT, g#French_FTtxt, g#Urdu_FTtxt, g#Arabic_FTtxt, g#Spanish_FTtxt, g#Wolof_FTtxt, rect#French_FTrect, rect#Urdu_FTrect, rect#Arabic_FTrect, rect#Spanish_FTrect, rect#Wolof_FTrect') 
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('#Spanish-english, #English, g#English, rect#English') 
+              d3.selectAll('#Spanish-english_FT, #English_FT, g#English_FTtxt, rect#English_FTrect') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoMultiFoodTrucks')
@@ -618,18 +618,18 @@
      
       function importBilingual () {
           //CLICK EVENTS 
-            d3.selectAll('image, g#building, g#underlay')
+            d3.selectAll('image, g#building, g#underlay_BI')
               .on('click', function() {
-                d3.selectAll('#Polish, #Polish_English, #English, rect#polish, rect#English,  g#polish, g#English') 
+                d3.selectAll('#Polish_BI, #Polish_English_BI, #English_BI, rect#Polish_BIrect, rect#English_BIrect,  g#Polish_BItxt, g#English_BItxt') 
                   .style('fill-opacity', 1)
                   .style('stroke-opacity', 1)
                   .style("visibility", "")
                 })
 
-            d3.selectAll('#Polish_English, rect#polish, rect#English, g#polish, g#English')
+            d3.selectAll('#Polish_English_BI, rect#Polish_BIrect, rect#English_BIrect, g#Polish_BItxt, g#English_BItxt')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('rect#polish, g#polish, rect#English, g#English, #Polish, #English, #Polish_English') 
+              d3.selectAll('rect#Polish_BIrect, g#Polish_BItxt, rect#English_BIrect, g#English_BItxt, #Polish_BI, #English_BI, #Polish_English_BI') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoBi')
@@ -638,13 +638,13 @@
                   .text(polishDescription + englishDescription)
               })
           
-            d3.selectAll('#English, rect#English, g#English')
+            d3.selectAll('#English_BI, rect#English_BIrect, g#English_BItxt')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('rect#polish, g#polish, #Polish') 
+              d3.selectAll('rect#Polish_BIrect, g#Polish_BItxt, #Polish_BI') 
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('rect#English, g#English, #English, #Polish_English') 
+              d3.selectAll('rect#English_BIrect, g#English_BItxt, #English_BI, #Polish_English_BI') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoBi')
@@ -653,13 +653,13 @@
                   .text(englishDescription)
               })
 
-            d3.selectAll('#Polish, rect#polish, g#polish')
+            d3.selectAll('#Polish_BI, rect#Polish_BIrect, g#Polish_BItxt')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('rect#English, g#English, #English') 
+              d3.selectAll('rect#English_BIrect, g#English_BItxt, #English_BI') 
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('rect#polish, g#polish, #Polish, #Polish_English') 
+              d3.selectAll('rect#Polish_BIrect, g#Polish_BItxt, #Polish_BI, #Polish_English_BI') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)            
               d3.select('p#extraInfoBi')
