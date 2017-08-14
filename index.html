@@ -700,8 +700,11 @@
 
          d3.selectAll("g#Albanian_LIB, g#Armenian_LIB, g#Belarusian_LIB, g#Bosnian_LIB, g#Bulgarian_LIB, g#Danish_LIB, g#Dutch_LIB, g#Estonian_LIB, g#Finnish_LIB, g#Georgian_LIB, g#Indonesian_LIB, g#Kurdish_LIB, g#Marathi_LIB, g#Mongolian_LIB, g#Nepali_LIB, g#Slovak_LIB, g#Slovenian_LIB, g#Swahili_LIB, g#Tamil_LIB, g#Telugu_LIB, g#Tibetan_LIB, g#Zulu_LIB")
             .attr("class", "otherLanguages")
-          
-         d3.selectAll("g.otherLanguages").on("click", function(){
+ 
+         d3.selectAll("g#Albanian_LIBrect, g#Armenian_LIBrect, g#Belarusian_LIBrect, g#Bosnian_LIBrect, g#Bulgarian_LIBrect, g#Danish_LIBrect, g#Dutch_LIBrect, g#Estonian_LIBrect, g#Finnish_LIBrect, g#Georgian_LIBrect, g#Indonesian_LIBrect, g#Kurdish_LIBrect, g#Marathi_LIBrect, g#Mongolian_LIBrect, g#Nepali_LIBrect, g#Slovak_LIBrect, g#Slovenian_LIBrect, g#Swahili_LIBrect, g#Tamil_LIBrect, g#Telugu_LIBrect, g#Tibetan_LIBrect, g#Zulu_LIBrect")
+            .attr("class", "otherLanguagesRect")
+
+         d3.selectAll("g.otherLanguages, .otherLanguagesRect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
@@ -712,14 +715,17 @@
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g.otherLanguages")
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
+          d3.selectAll("g.otherLanguages, .otherLanguagesRect")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
          });//end of click function
 
-         d3.selectAll("g#Arabic_LIB").on("click", function(){
+         d3.selectAll("g#Arabic_LIB, rect#Arabic_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
@@ -730,11 +736,17 @@
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
+          d3.selectAll("rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
           d3.selectAll("g#Arabic_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#Arabic_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
 
@@ -749,14 +761,20 @@
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect")
+          d3.selectAll("rect#Arabic_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
+          d3.selectAll("g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
-         d3.selectAll("g#Croatian_LIB").on("click", function(){
+         d3.selectAll("g#Croatian_LIB, rect#Croatian_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
@@ -767,14 +785,20 @@
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect,  rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
           d3.selectAll("g#Croatian_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#Croatian_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
-         d3.selectAll("g#Czech_LIB").on("click", function(){
+         d3.selectAll("g#Czech_LIB, rect#Czech_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
@@ -785,14 +809,20 @@
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
           d3.selectAll("g#Czech_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#Czech_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function    
 
-         d3.selectAll("g#Gujarati_LIB").on("click", function(){
+         d3.selectAll("g#Gujarati_LIB, rect#Gujarati_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
@@ -803,11 +833,17 @@
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
           d3.selectAll("g#Gujarati_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#Gujarati_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
          d3.selectAll("g#HaitianTop_LIB, g#HaitianBottom_LIB, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect").on("click", function(){
@@ -821,11 +857,17 @@
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#HaitianTop_LIB, g#HaitianBottom_LIB, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect")
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
+          d3.selectAll("g#HaitianTop_LIB, g#HaitianBottom_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
          d3.selectAll("g#HebrewTop_LIB, g#HebrewBottom_LIB, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect").on("click", function(){
@@ -839,11 +881,17 @@
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#HebrewTop_LIB, g#HebrewBottom_LIB, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect")
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
+          d3.selectAll("g#HebrewTop_LIB, g#HebrewBottom_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
          d3.selectAll("g#HindiTop_LIB, g#HindiBottom_LIB rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect").on("click", function(){
@@ -857,14 +905,20 @@
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#HindiTop_LIB, g#HindiBottom_LIB, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect")
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
+          d3.selectAll("g#HindiTop_LIB, g#HindiBottom_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
-         d3.selectAll("g#Hungarian_LIB").on("click", function(){
+         d3.selectAll("g#Hungarian_LIB, rect#Hungarian_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
@@ -875,14 +929,20 @@
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
           d3.selectAll("g#Hungarian_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#Hungarian_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
-         d3.selectAll("g#Indonesian_LIB").on("click", function(){
+         d3.selectAll("g#Indonesian_LIB, rect#Indonesian_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
@@ -893,14 +953,20 @@
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
           d3.selectAll("g#Indonesian_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#Indonesian_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
-         d3.selectAll("g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB").on("click", function(){
+         d3.selectAll("g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
@@ -911,14 +977,20 @@
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, rect#ItalianTop_LIBrect, rect#ItalianBottom_LIBrect")
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
+          d3.selectAll("g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#ItalianTop_LIBrect,rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
-         d3.selectAll("g#Japanese_LIB").on("click", function(){
+         d3.selectAll("g#Japanese_LIB, rect#Japanese_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
@@ -929,14 +1001,20 @@
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
           d3.selectAll("g#Japanese_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#Japanese_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
-         d3.selectAll("g#Latvian_LIB").on("click", function(){
+         d3.selectAll("g#Latvian_LIB, rect#Latvian_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
@@ -947,14 +1025,20 @@
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
           d3.selectAll("g#Latvian_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#Latvian_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
-         d3.selectAll("g#Lithuanian_LIB").on("click", function(){
+         d3.selectAll("g#Lithuanian_LIB, rect#Lithuanian_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
@@ -965,14 +1049,20 @@
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
           d3.selectAll("g#Lithuanian_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#Lithuanian_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
-         d3.selectAll("g#Malayalam_LIB").on("click", function(){
+         d3.selectAll("g#Malayalam_LIB, rect#Malayalam_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
@@ -983,65 +1073,89 @@
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
           d3.selectAll("g#Malayalam_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#Malayalam_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
-         d3.selectAll("g#Norwegian_LIB").on("click", function(){
+         d3.selectAll("g#Norwegian_LIB, rect#Norwegian_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
             .attr("class","extraInfo")
             .text(norwegianDescription)
-          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Japanese_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Japanese_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior, .otherLanguagesRect')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
           d3.selectAll("g#Norwegian_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#Norwegian_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
-         d3.selectAll("g#Punjabi_LIB").on("click", function(){
+         d3.selectAll("g#Punjabi_LIB, rect#Punjabi_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
             .attr("class","extraInfo")
             .text(punjabiDescription)
-          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Japanese_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Japanese_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior, .otherLanguagesRect')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
           d3.selectAll("g#Punjabi_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#Punjabi_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
-         d3.selectAll("g#Persian_LIB").on("click", function(){
+         d3.selectAll("g#Persian_LIB, rect#Persian_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
             .attr("class","extraInfo")
             .text(persianDescription)
-          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Japanese_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Japanese_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior, .otherLanguagesRect')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect,  rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
           d3.selectAll("g#Persian_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#Persian_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
          d3.selectAll("g#PolishTop_LIB, g#PolishBottom_LIB, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect").on("click", function(){
@@ -1050,142 +1164,190 @@
            .append('text')
             .attr("class","extraInfo")
             .text(polishDescription)
-          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#Japanese_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#Japanese_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior, .otherLanguagesRect')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#PolishTop_LIB, g#PolishBottom_LIB, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect")
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
+          d3.selectAll("g#PolishTop_LIB, g#PolishBottom_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
-         d3.selectAll("g#PortugueseTop_LIB, g#PortugueseBottom_LIB").on("click", function(){
+         d3.selectAll("g#PortugueseTop_LIB, g#PortugueseBottom_LIB, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
             .attr("class","extraInfo")
             .text(portugueseDescription)
-          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#Japanese_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#Japanese_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior, .otherLanguagesRect')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#PortugueseTop_LIB, g#PortugueseBottom_LIB, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect")
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
+          d3.selectAll("g#PortugueseTop_LIB, g#PortugueseBottom_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
-         d3.selectAll("g#Romanian_LIB").on("click", function(){
+         d3.selectAll("g#Romanian_LIB, rect#Romanian_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
             .attr("class","extraInfo")
             .text(romanianDescription)
-          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior, .otherLanguagesRect')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
           d3.selectAll("g#Romanian_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#Romanian_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
-         d3.selectAll("g#Serbian_LIB").on("click", function(){
+         d3.selectAll("g#Serbian_LIB, rect#Serbian_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
             .attr("class","extraInfo")
             .text(serbianDescription)
-          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Japanese_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Japanese_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior, .otherLanguagesRect')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
           d3.selectAll("g#Serbian_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#Serbian_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
-         d3.selectAll("g#Swedish_LIB").on("click", function(){
+         d3.selectAll("g#Swedish_LIB, rect#Swedish_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
             .attr("class","extraInfo")
             .text(swedishDescription)
-          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Romanian_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Romanian_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior, .otherLanguagesRect')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
           d3.selectAll("g#Swedish_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#Swedish_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
-         d3.selectAll("g#Tagalog_LIB").on("click", function(){
+         d3.selectAll("g#Tagalog_LIB, rect#Tagalog_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
             .attr("class","extraInfo")
             .text(tagalogDescription)
-          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Romanian_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Romanian_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior, .otherLanguagesRect')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect,  rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
           d3.selectAll("g#Tagalog_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("Tagalog_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
-         d3.selectAll("g#Thai_LIB").on("click", function(){
+         d3.selectAll("g#Thai_LIB, rect#Thai_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
             .attr("class","extraInfo")
             .text(thaiDescription)
-          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Romanian_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Romanian_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior, .otherLanguagesRect')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)            
           d3.selectAll("g#Thai_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#Thai_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
-         d3.selectAll("g#Turkish_LIB").on("click", function(){
+         d3.selectAll("g#Turkish_LIB, rect#Turkish_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
             .attr("class","extraInfo")
             .text(turkishDescription)
-          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Romanian_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Romanian_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior, .otherLanguagesRect')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#Romanian_LIB")
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
+          d3.selectAll("g#Turkish_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#Vietnamese_LIBrect, rect#Turkish_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
          d3.selectAll("g#Ukranian_LIB").on("click", function(){
@@ -1194,34 +1356,46 @@
            .append('text')
             .attr("class","extraInfo")
             .text(ukranianDescription)
-          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Romanian_LIB, g#Turkish_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Romanian_LIB, g#Turkish_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior, .otherLanguagesRect')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
           d3.selectAll("g#Ukranian_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#Ukranian_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
-         d3.selectAll("g#Urdu_LIB").on("click", function(){
+         d3.selectAll("g#Urdu_LIB, rect#Urdu_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
           d3.select('p#extraInfoLibrary')
            .append('text')
             .attr("class","extraInfo")
             .text(urduDescription)
-          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Romanian_LIB, g#Ukranian_LIB, g#Turkish_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Romanian_LIB, g#Ukranian_LIB, g#Turkish_LIB, g#Vietnamese_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior, .otherLanguagesRect')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Vietnamese_LIBrect, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
           d3.selectAll("g#Urdu_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#Urdu_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
          d3.selectAll("g#YiddishTop_LIB, g#YiddishBottom_LIB, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect").on("click", function(){
@@ -1230,16 +1404,22 @@
            .append('text')
             .attr("class","extraInfo")
             .text(yiddishDescription)
-          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Romanian_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#Turkish_LIB, g#front, g#side, g#top, #interior')
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Romanian_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#Turkish_LIB, g#front, g#side, g#top, #interior, .otherLanguagesRect')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
-          d3.selectAll("g#YiddishTop_LIB, g#YiddishBottom_LIB, rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect")
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
+          d3.selectAll("g#YiddishTop_LIB, g#YiddishBottom_LIB")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll(" rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1) 
          });//end of click function
 
          d3.selectAll("g#Vietnamese_LIB, rect#Vietnamese_LIBrect").on("click", function(){
@@ -1248,16 +1428,22 @@
            .append('text')
             .attr("class","extraInfo")
             .text(vietnameseDescription)          
-          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Romanian_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Turkish_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior')
+          d3.selectAll('g.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Romanian_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Turkish_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB, g#front, g#side, g#top, #interior, .otherLanguagesRect')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 0.1)
             .style('stroke-opacity', 0.1)
+          d3.selectAll("rect#Arabic_LIBrect, rect#BengaliTop_LIBrect, rect#BengaliMid_LIBrect, rect#BengaliBottom_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#HaitianTop_LIBrect, rect#HaitianBottom_LIBrect, rect#HebrewTop_LIBrect, rect#HebrewBottom_LIBrect, rect#HindiTop_LIBrect, rect#HindiBottom_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#ItalianTop_LIBrect, rect#ItalianMid_LIBrect, rect#ItalianBottom_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#PolishTop_LIBrect, rect#PolishBottom_LIBrect, rect#PortugueseTop_LIBrect, rect#PortugueseBottom_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect,  rect#YiddishTop_LIBrect, rect#YiddishBottom_LIBrect, .otherLanguagesRect")
+              .style('fill-opacity', 0.1)
+              .style('stroke-opacity', 0.1)
           d3.selectAll("g#Vietnamese_LIB, rect#Vietnamese_LIBrect")
               .classed("bookSelected", true)
               .classed("bookNotSelected", false)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
+          d3.selectAll("rect#Vietnamese_LIBrect")
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)            
          });//end of click function
 
       }; //end of function
@@ -1280,6 +1466,31 @@
         var wolofDescription = "Estimates show that there are approximately 20,000 Wolof speakers in New York City, the majority of whom arrived between the 1980's and 2001. Historically centered around 'Little Senegal' on 116th street in Harlem, rising rents of both storefronts and apartments have pushed many speakers to spread across the city. Through many Wolof speakers also speak French and English, Wolof is still actively used in religious services in Harlem and Brooklyn."
         var urduDescription = "Just under 1% of New York City's population speaks Urdu, though that number has fluctuated dramatically, since 2007, the number of Urdu speakers has increased by 11%, though is still lower than the number of speakers in the late 1990's. The majority of these speakers are centered around Jackson Heights, Queens, but in reality, as many speakers live in Brooklyn (especially around Coney Island Avenue) as in Queens."
         var frenchDescription = "Approximately 1% of all New Yorkers speak French, though 2% of Manhattanites do. Though this obscures greater linguistic diversity as even though French is the 3rd most common language in the EU, the majority of French speakers in the world live in West Africa. As a result, many French speakers in New York City are highly multilingual, speaking not only French and English, but African Languages as well."
+        var otherLanguagesDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var bengaliDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var croatianDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var czechDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var gujaratiDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var hebrewDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var hindiDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var hungarianDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var indonesianDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var japaneseDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var latvianDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var lithuanianDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var malayalamDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var norwegianDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var punjabiDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var persianDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var portugueseDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var romanianDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var serbianDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var swedishDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var tagalogDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var thaiDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var ukranianDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var yiddishDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        var vietnameseDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
       function removeTxt(){
         d3.selectAll('text.overlayText, p#introText, text.extraInfo').remove();
