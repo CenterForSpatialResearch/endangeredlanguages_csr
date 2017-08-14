@@ -37,6 +37,13 @@
       <!-- LEFT SIDE PANEL -->
       <div class="col-1-4" id="leftPanel"> 
         <ul class="thumbnail">
+
+          <li>
+            <div id="visLibrary">    
+              <img src="img/library.png">
+            </div>  
+          </li> 
+
           <li>
             <div id="visSmallMultiBuilding">
               <img src="img/midrisebuilding.png">
@@ -50,16 +57,16 @@
           </li>
 
           <li>
-            <div id="visSmallBi">
-              <img src="img/highrisebuilding.png">
-            </div>
-          </li> 
-
-          <li>
             <div id="visSmallMultiFoodTrucks">
               <img src="img/foodtrucks.png">
             </div>
           </li>
+
+          <li>
+            <div id="visSmallBi">
+              <img src="img/highrisebuilding.png">
+            </div>
+          </li> 
 
           <li>
             <div id="visSmallMono">    
@@ -67,11 +74,6 @@
             </div>  
           </li> 
 
-          <li>
-            <div id="visLibrary">    
-              <img src="img/library.png">
-            </div>  
-          </li> 
 
         </ul>
 
@@ -87,26 +89,25 @@
             We often think of language in a city the size of New York as centered around “ethnic enclaves,” neighborhoods where minority language speakers tend to cluster. While that model may contain some degree of truth, it obscures how deeply integrated multilingualism is into the fabric of New York City. Through these models, we invite you to explore some of the ways language is organized in daily life. Both in the home, and on the street, the linguistic diversity of New York City is more than a population count, and tangibly affects city life. Though the models are based on real places and events, the details have been altered to protect individual’s privacy. 
           </p>
         </div> 
-        
+
+        <h1 class="titleLibrary">
+          Queens Library Collection
+        </h1>
+        <div id="visLib">
+          <p class="extraInfo" id="extraInfoLibrary"> </p>
+        </div>
+        <p id = "basicText">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
         <h1 class="titleMultiBuilding">
           Multilingual (UN) Building
         </h1>
-
         <div id="visMultiBuilding">
           <p class="extraInfo" id="extraInfoMultiBuilding"> </p>
         </div>
         <p id = "basicText">
           Many buildings in New York City can be thought of as a type of miniature United Nations, where speakers of a multitude of different and unrelated languages live next door to each other. In this building, some apartments are connected through family relationships where one family moved in and then relatives began to follow (i.e., Polish, Patois, and Russian speakers). But many are not, instead connected only through the walls they share and the lingua franca they use to bridge the communicative and cultural divide.
-        </p>
-
-        <h1 class="titleMono">
-          Monolingual Building
-        </h1>
-        <div id="visMono">
-          <p class="extraInfo" id="extraInfoMono"> </p>
-        </div>
-        <p id="basicText">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
 
         <h1 class="titleMultiStreetFair">
@@ -139,13 +140,13 @@
           Though this building on its own would never register as an enclave in the Census, for the residents, it is an oasis. In a quickly changing and gentrifying city, buildings such as this one form micro-communities that have the power to sustain familial, linguistic, and social ties. Most of the Polish speaking residents are related by blood, marriage, or friendship, and all have at least one connection to family or friends in Poland.
         </p>
 
-        <h1 class="titleLibrary">
-          Queens Library Collection
+        <h1 class="titleMono">
+          Monolingual Building
         </h1>
-        <div id="visLib">
-          <p class="extraInfo" id="extraInfoLibrary"> </p>
+        <div id="visMono">
+          <p class="extraInfo" id="extraInfoMono"> </p>
         </div>
-        <p id = "basicText">
+        <p id="basicText">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
 
@@ -166,7 +167,7 @@
       importVisualizations()
 
       function importVisualizations () {
-        d3.xml("svg/midrisebuilding_building.svg").mimeType("image/svg+xml").get(function(error, xml) {
+        d3.xml("svg/multilingualbuilding.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
           d3.select("div#visMultiBuilding")
             .each(function() {
@@ -271,21 +272,21 @@
 
       function importMultilingual () {
           //CLICK EVENTS 
-            d3.selectAll('image#building, g#underlay')
+            d3.selectAll('image#building, g#underlay_MultiBDG')
               .on('click', function() {
-                  d3.selectAll('#Polish, #Arabic, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect#Russian, rect#Patois, rect#Polish, rect#Arabic, rect#Spanish, rect#Chinese, rect#English, g#Patois, g#Polish, g#Arabic, g#Spanish, g#Chinese, g#Russian, g#English') 
+                  d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#Russian_MultiBDGtxt, g#English_MultiBDGtxt') 
                     .style('fill-opacity', 1)
                     .style('stroke-opacity', 1)
                   d3.selectAll('text.extraInfo').remove()
                 })
 
-            d3.selectAll('#Polish, rect#Polish, g#Polish')
+            d3.selectAll('#Polish_MultiBDG, rect#Polish_MultiBDGrect, g#Polish_MultiBDGtxt')
               .on('click', function() {
                 d3.selectAll('text.extraInfo').remove()
-                d3.selectAll('#Arabic, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect#Russian, rect#Patois, rect#Arabic, rect#Spanish, rect#Chinese, rect#English, g#Patois, g#Russian, g#Arabic, g#Spanish, g#Chinese, g#English') 
+                d3.selectAll('#Arabic_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Patois_MultiBDGtxt, g#Russian_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt') 
                   .style('fill-opacity', 0.1)
                   .style('stroke-opacity', 0.3)
-                d3.selectAll('#Polish, rect#Polish, g#Polish') 
+                d3.selectAll('#Polish_MultiBDG, rect#Polish_MultiBDGrect, g#Polish_MultiBDGtxt') 
                   .style('fill-opacity', 1)
                   .style('stroke-opacity', 1)
                 d3.select('p#extraInfoMultiBuilding')
@@ -294,13 +295,13 @@
                     .text(polishMultiDescription)
                 })
 
-            d3.selectAll('#Arabic, rect#Arabic, g#Arabic')
+            d3.selectAll('#Arabic_MultiBDG, rect#Arabic_MultiBDGrect, g#Arabic_MultiBDGtxt')
               .on('click', function() {
                 d3.selectAll('text.extraInfo').remove()
-                d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Patois, #Russian, rect#Russian, rect#Patois, rect#Polish, rect#Spanish, rect#Chinese, rect#English, g#Patois, g#Polish, g#Russian, g#Spanish, g#Chinese, g#English') 
+                d3.selectAll('#Polish_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Russian_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt') 
                   .style('fill-opacity', 0.1)
                   .style('stroke-opacity', 0.3)
-                d3.selectAll('#Arabic, rect#Arabic, g#Arabic') 
+                d3.selectAll('#Arabic_MultiBDG, rect#Arabic_MultiBDGrect, g#Arabic_MultiBDGtxt') 
                   .style('fill-opacity', 1)
                   .style('stroke-opacity', 1)
                 d3.select('p#extraInfoMultiBuilding')
@@ -309,13 +310,13 @@
                     .text(arabicDescription)
                 })
 
-              d3.selectAll('#Spanish, rect#Spanish, g#Spanish')
+              d3.selectAll('#Spanish_MultiBDG, rect#Spanish_MultiBDGrect, g#Spanish_MultiBDGtxt')
               .on('click', function() {
                 d3.selectAll('text.extraInfo').remove()
-                d3.selectAll('#Polish, g#Arabic, #Chinese_English, #English, #Patois, #Russian, rect#Russian, rect#Patois, rect#Polish, rect#Arabic, rect#Chinese, rect#English, g#Patois, g#Polish, g#Arabic, g#Russian, g#Chinese, g#English') 
+                d3.selectAll('#Arabic_MultiBDG, #Polish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Russian_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt') 
                   .style('fill-opacity', 0.1)
                   .style('stroke-opacity', 0.3)
-                d3.selectAll('#Chinese_Spanish_English, #Spanish, rect#Spanish, g#Spanish') 
+                d3.selectAll('#Chinese_Spanish_English_MultiBDG, #Spanish_MultiBDG, rect#Spanish_MultiBDGrect, g#Spanish_MultiBDGtxt') 
                   .style('fill-opacity', 1)
                   .style('stroke-opacity', 1)
                 d3.select('p#extraInfoMultiBuilding')
@@ -324,13 +325,13 @@
                     .text(spanishDescription)
                 })
 
-              d3.selectAll('rect#Chinese, g#Chinese')
+              d3.selectAll('rect#Chinese_MultiBDGrect, g#Chinese_MultiBDGtxt')
               .on('click', function() {
                 d3.selectAll('text.extraInfo').remove()
-                d3.selectAll('#Polish, #Arabic, #Spanish, #English, #Patois, #Russian, rect#Russian, rect#Patois, rect#Polish, rect#Arabic, rect#Spanish, rect#English, g#Patois, g#Polish, g#Arabic, g#Spanish, g#Russian, g#English') 
+                d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Spanish_MultiBDG, #English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian, rect#Patois, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#English_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Russian_MultiBDGtxt, g#English_MultiBDGtxt') 
                   .style('fill-opacity', 0.1)
                   .style('stroke-opacity', 0.3)
-                d3.selectAll('#Chinese_English, #Chinese_Spanish_English, rect#Chinese, g#Chinese') 
+                d3.selectAll('#Chinese_English_MultiBDG, #Chinese_Spanish_English_MultiBDG, rect#Chinese_MultiBDGrect, g#Chinese_MultiBDGtxt') 
                   .style('fill-opacity', 1)
                   .style('stroke-opacity', 1)
                 d3.select('p#extraInfoMultiBuilding')
@@ -339,13 +340,13 @@
                     .text(chineseDescription)
                 })
 
-              d3.selectAll('#English, rect#English, g#English')
+              d3.selectAll('#English_MultiBDG, rect#English_MultiBDGrect, g#English_MultiBDGtxt')
                 .on('click', function() {
                   d3.selectAll('text.extraInfo').remove()
-                  d3.selectAll('#Polish, #Arabic, #Spanish, #Patois, #Russian, rect#Russian, rect#Patois, rect#Polish, rect#Arabic, rect#Spanish, rect#Chinese, g#Patois, g#Polish, g#Arabic, g#Spanish, g#Chinese, g#Russian') 
+                  d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Spanish_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#Russian_MultiBDGtxt') 
                     .style('fill-opacity', 0.1)
                     .style('stroke-opacity', 0.3)
-                  d3.selectAll('#Chinese_English, #Chinese_Spanish_English, #English, rect#English, g#English') 
+                  d3.selectAll('#Chinese_English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #English_MultiBDG, rect#English_MultiBDGrect, g#English_MultiBDGtxt') 
                     .style('fill-opacity', 1)
                     .style('stroke-opacity', 1)
                   d3.select('p#extraInfoMultiBuilding')
@@ -354,13 +355,13 @@
                       .text(englishDescription)
                 })
 
-              d3.selectAll('#Patois, rect#Patois, g#Patois')
+              d3.selectAll('#Patois_MultiBDG, rect#Patois_MultiBDGrect, g#Patois_MultiBDGtxt')
                 .on('click', function() {
                   d3.selectAll('text.extraInfo').remove()
-                  d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Arabic, #Russian, rect#Russian, rect#Patois, rect#Polish, rect#Arabic, rect#Spanish, rect#Chinese, rect#English, g#Russian, g#Polish, g#Arabic, g#Spanish, g#Chinese, g#English') 
+                  d3.selectAll('#Polish_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Arabic_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Russian_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt') 
                     .style('fill-opacity', 0.1)
                     .style('stroke-opacity', 0.3)
-                  d3.selectAll('#Patois , rect#Patois, g#Patois') 
+                  d3.selectAll('#Patois_MultiBDG, rect#Patois_MultiBDGrect, g#Patois_MultiBDGtxt') 
                     .style('fill-opacity', 1)
                     .style('stroke-opacity', 1)
                   d3.select('p#extraInfoMultiBuilding')
@@ -369,13 +370,13 @@
                       .text(patoisDescription)
                 })
 
-              d3.selectAll('#Russian, rect#Russian, g#Russian')
+              d3.selectAll('#Russian_MultiBDG, rect#Russian_MultiBDGrect, g#Russian_MultiBDGtxt')
                 .on('click', function() {
                   d3.selectAll('text.extraInfo').remove()
-                  d3.selectAll('#Polish, #Spanish, #Chinese_English, #English, #Chinese_Spanish_English, #Arabic, #Patois, rect#Patois, rect#Polish, rect#Arabic, rect#Spanish, rect#Chinese, rect#English, g#Patois, g#Polish, g#Arabic, g#Spanish, g#Chinese, g#English') 
+                  d3.selectAll('#Polish_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Arabic_MultiBDG, #Patois_MultiBDG, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt') 
                     .style('fill-opacity', 0.1)
                     .style('stroke-opacity', 0.3)
-                  d3.selectAll('#Russian, rect#Russian, g#Russian') 
+                  d3.selectAll('#Russian_MultiBDG, rect#Russian_MultiBDGrect, g#Russian_MultiBDGtxt') 
                     .style('fill-opacity', 1)
                     .style('stroke-opacity', 1)
                   d3.select('p#extraInfoMultiBuilding')
@@ -385,13 +386,13 @@
                 })
 
 
-              d3.selectAll('#Chinese_Spanish_English')
+              d3.selectAll('#Chinese_Spanish_English_MultiBDG')
               .on('click', function() {
                 d3.selectAll('text.extraInfo').remove()
-                d3.selectAll('#Polish, #Arabic, #Patois, #Russian, rect#Russian, rect#Patois, rect#Polish, rect#Arabic, g#Patois, g#Polish, g#Arabic, g#Russian') 
+                d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Russian_MultiBDGtxt') 
                   .style('fill-opacity', 0.1)
                   .style('stroke-opacity', 0.3)
-                d3.selectAll('#Chinese_Spanish_English, #Chinese_English, #Spanish, #English, rect#Spanish, rect#Chinese, rect#English, g#Spanish, g#Chinese, g#English') 
+                d3.selectAll('#Chinese_Spanish_English_MultiBDG, #Chinese_English_MultiBDG, #Spanish_MultiBDG, #English_MultiBDG, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt') 
                   .style('fill-opacity', 1)
                   .style('stroke-opacity', 1)
                 d3.select('p#extraInfoMultiBuilding')
@@ -400,13 +401,13 @@
                     .text(chineseDescription + "  " + spanishDescription)
                 })
 
-              d3.selectAll('#Chinese_English')
+              d3.selectAll('#Chinese_English_MultiBDG')
               .on('click', function() {
                 d3.selectAll('text.extraInfo').remove()
-                d3.selectAll('#Polish, #Arabic, #Spanish, #Patois, #Russian, rect#Russian, rect#Patois, rect#Polish, rect#Arabic, rect#Chinese, rect#Spanish, g#Patois, g#Polish, g#Arabic, g#Russian, g#Spanish') 
+                d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Spanish_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#Spanish_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Russian_MultiBDGtxt, g#Spanish_MultiBDGtxt') 
                   .style('fill-opacity', 0.1)
                   .style('stroke-opacity', 0.3)
-                d3.selectAll('#Chinese_English, rect#Chinese, rect#English, g#Chinese, g#English') 
+                d3.selectAll('#Chinese_English_MultiBDG, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt') 
                   .style('fill-opacity', 1)
                   .style('stroke-opacity', 1)
                 d3.select('p#extraInfoMultiBuilding')
@@ -1492,10 +1493,6 @@
         var ukranianDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         var yiddishDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         var vietnameseDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-
-      function removeTxt(){
-        d3.selectAll('text.overlayText, p#introText, text.extraInfo').remove();
-      } //end of function 
 
       function addOverlay(){
         d3.selectAll('div#visLibrary')

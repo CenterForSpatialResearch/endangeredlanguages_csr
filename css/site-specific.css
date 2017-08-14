@@ -179,9 +179,9 @@ a{
 	/*body*/
 		.bookSelected{
 		    transform: translate(-20px, 40px); /*x,y*/
-		    transition: .5s linear;
+		    transition: .25s linear;
 		}
 		.bookNotSelected{
 		    transform: translate(20px, -40px); /*x,y*/
-		    transition: .5s linear;
+		    transition: .25s linear;
 		}
