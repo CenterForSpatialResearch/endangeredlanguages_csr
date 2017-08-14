@@ -183,5 +183,5 @@ a{
 		}
 		.bookNotSelected{
 		    /*transform: translate(10px, -30px); */
-		    /*transition: .35s linear;*/
+		    transition: .35s linear;
 		}

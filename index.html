@@ -46,7 +46,7 @@
 
           <li>
             <div id="visSmallMultiBuilding">
-              <img src="img/midrisebuilding.png">
+              <img src="img/multilingualbuilding.png">
             </div>
           </li>
 
@@ -64,7 +64,7 @@
 
           <li>
             <div id="visSmallBi">
-              <img src="img/highrisebuilding.png">
+              <img src="img/bilingualbuilding.png">
             </div>
           </li> 
 
@@ -146,247 +146,247 @@
 
     //BUILDING VIS
 
-      addOverlay()
-      importVisualizations()
+	    addOverlay()
+	    importVisualizations()
 
-      function importVisualizations () {
-        d3.xml("svg/multilingualbuilding.svg").mimeType("image/svg+xml").get(function(error, xml) {
-          var importedNode = document.importNode(xml.documentElement, true);
-          d3.select("div#visMultiBuilding")
-            .each(function() {
-              this.appendChild(importedNode);
-            })
-          importMultilingual()
-        });
+	    function importVisualizations () {
+	        d3.xml("svg/multilingualbuilding.svg").mimeType("image/svg+xml").get(function(error, xml) {
+	          var importedNode = document.importNode(xml.documentElement, true);
+	          d3.select("div#visMultiBuilding")
+	            .each(function() {
+	              this.appendChild(importedNode);
+	            })
+	          importMultilingual()
+	        });
 
-        d3.xml("svg/foodtrucks.svg").mimeType("image/svg+xml").get(function(error, xml) {
-          var importedNode = document.importNode(xml.documentElement, true);
-          d3.select("div#visMultiFoodTrucks")
-            .each(function() {
-              this.appendChild(importedNode);
-            })
-          importMultilingualFoodTrucks()
-        });
+	        d3.xml("svg/foodtrucks.svg").mimeType("image/svg+xml").get(function(error, xml) {
+	          var importedNode = document.importNode(xml.documentElement, true);
+	          d3.select("div#visMultiFoodTrucks")
+	            .each(function() {
+	              this.appendChild(importedNode);
+	            })
+	          importMultilingualFoodTrucks()
+	        });
 
-        d3.xml("svg/bilingualbuilding.svg").mimeType("image/svg+xml").get(function(error, xml) {
-        var importedNode = document.importNode(xml.documentElement, true);
-          d3.select("div#visBi")
-            .each(function() {
-              this.appendChild(importedNode);
-            })
-          importBilingual()
-        });
+	        d3.xml("svg/bilingualbuilding.svg").mimeType("image/svg+xml").get(function(error, xml) {
+	        var importedNode = document.importNode(xml.documentElement, true);
+	          d3.select("div#visBi")
+	            .each(function() {
+	              this.appendChild(importedNode);
+	            })
+	          importBilingual()
+	        });
 
-        d3.xml("svg/streetfair.svg").mimeType("image/svg+xml").get(function(error, xml) {
-          var importedNode = document.importNode(xml.documentElement, true);
-          d3.select("div#visMultiStreetFair")
-            .each(function() {
-              this.appendChild(importedNode);
-            })
-          importMultilingualStreetFair()
-        });
-
-
-        d3.xml("svg/library.svg").mimeType("image/svg+xml").get(function(error, xml) {
-          var importedNode = document.importNode(xml.documentElement, true);
-          d3.select("div#visLib")
-            .each(function() {
-              this.appendChild(importedNode);
-            })
-          importLibrary()
-        });
-                        
-      }
-
-      //SWITCHING BTW IMGS   
-      d3.selectAll("#visSmallMultiBuilding").on("click", function(){
-        
-        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
-        d3.select(this).classed("thumbnailSelected", true);
-        $('html, body').animate({ scrollTop: $('#titleMultiBuilding').offset().top }, 'slow');
-
-       });
-
-      d3.selectAll("#visSmallMultiFoodTrucks").on("click", function(){
-        
-        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
-        d3.select(this).classed("thumbnailSelected", true);
-        $('html, body').animate({ scrollTop: $('#titleMultiFoodTrucks').offset().top }, 'slow');
-
-       });
-
-      d3.selectAll("#visSmallMultiStreetFair").on("click", function(){
-        
-        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
-        d3.select(this).classed("thumbnailSelected", true);
-        $('html, body').animate({ scrollTop: $('#titleMultiStreetFair').offset().top }, 'slow');
-
-       });
-
-      d3.selectAll("#visSmallBi").on("click", function(){ 
-        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
-        d3.select(this).classed("thumbnailSelected", true);
-        $('html, body').animate({ scrollTop: $('#titleBi').offset().top }, 'slow');
-
-       });
-
-      d3.selectAll("#visLibrary").on("click", function(){
-        
-        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
-        d3.select(this).classed("thumbnailSelected", true);
-        $('html, body').animate({ scrollTop: $('#titleLib').offset().top }, 'slow');
-
-       });
-
-      function importMultilingual () {
-          //CLICK EVENTS 
-            d3.selectAll('image#building, g#underlay_MultiBDG')
-              .on('click', function() {
-                  d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#Russian_MultiBDGtxt, g#English_MultiBDGtxt') 
-                    .style('fill-opacity', 1)
-                    .style('stroke-opacity', 1)
-                  d3.selectAll('text.extraInfo').remove()
-                })
-
-            d3.selectAll('#Polish_MultiBDG, rect#Polish_MultiBDGrect, g#Polish_MultiBDGtxt')
-              .on('click', function() {
-                d3.selectAll('text.extraInfo').remove()
-                d3.selectAll('#Arabic_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Patois_MultiBDGtxt, g#Russian_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt') 
-                  .style('fill-opacity', 0.1)
-                  .style('stroke-opacity', 0.3)
-                d3.selectAll('#Polish_MultiBDG, rect#Polish_MultiBDGrect, g#Polish_MultiBDGtxt') 
-                  .style('fill-opacity', 1)
-                  .style('stroke-opacity', 1)
-                d3.select('p#extraInfoMultiBuilding')
-                   .append('text')
-                    .attr("class","extraInfo")
-                    .text(polishMultiDescription)
-                })
-
-            d3.selectAll('#Arabic_MultiBDG, rect#Arabic_MultiBDGrect, g#Arabic_MultiBDGtxt')
-              .on('click', function() {
-                d3.selectAll('text.extraInfo').remove()
-                d3.selectAll('#Polish_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Russian_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt') 
-                  .style('fill-opacity', 0.1)
-                  .style('stroke-opacity', 0.3)
-                d3.selectAll('#Arabic_MultiBDG, rect#Arabic_MultiBDGrect, g#Arabic_MultiBDGtxt') 
-                  .style('fill-opacity', 1)
-                  .style('stroke-opacity', 1)
-                d3.select('p#extraInfoMultiBuilding')
-                   .append('text')
-                    .attr("class","extraInfo")
-                    .text(arabicDescription)
-                })
-
-              d3.selectAll('#Spanish_MultiBDG, rect#Spanish_MultiBDGrect, g#Spanish_MultiBDGtxt')
-              .on('click', function() {
-                d3.selectAll('text.extraInfo').remove()
-                d3.selectAll('#Arabic_MultiBDG, #Polish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Russian_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt') 
-                  .style('fill-opacity', 0.1)
-                  .style('stroke-opacity', 0.3)
-                d3.selectAll('#Chinese_Spanish_English_MultiBDG, #Spanish_MultiBDG, rect#Spanish_MultiBDGrect, g#Spanish_MultiBDGtxt') 
-                  .style('fill-opacity', 1)
-                  .style('stroke-opacity', 1)
-                d3.select('p#extraInfoMultiBuilding')
-                   .append('text')
-                    .attr("class","extraInfo")
-                    .text(spanishDescription)
-                })
-
-              d3.selectAll('rect#Chinese_MultiBDGrect, g#Chinese_MultiBDGtxt')
-              .on('click', function() {
-                d3.selectAll('text.extraInfo').remove()
-                d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Spanish_MultiBDG, #English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian, rect#Patois, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#English_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Russian_MultiBDGtxt, g#English_MultiBDGtxt') 
-                  .style('fill-opacity', 0.1)
-                  .style('stroke-opacity', 0.3)
-                d3.selectAll('#Chinese_English_MultiBDG, #Chinese_Spanish_English_MultiBDG, rect#Chinese_MultiBDGrect, g#Chinese_MultiBDGtxt') 
-                  .style('fill-opacity', 1)
-                  .style('stroke-opacity', 1)
-                d3.select('p#extraInfoMultiBuilding')
-                   .append('text')
-                    .attr("class","extraInfo")
-                    .text(chineseDescription)
-                })
-
-              d3.selectAll('#English_MultiBDG, rect#English_MultiBDGrect, g#English_MultiBDGtxt')
-                .on('click', function() {
-                  d3.selectAll('text.extraInfo').remove()
-                  d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Spanish_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#Russian_MultiBDGtxt') 
-                    .style('fill-opacity', 0.1)
-                    .style('stroke-opacity', 0.3)
-                  d3.selectAll('#Chinese_English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #English_MultiBDG, rect#English_MultiBDGrect, g#English_MultiBDGtxt') 
-                    .style('fill-opacity', 1)
-                    .style('stroke-opacity', 1)
-                  d3.select('p#extraInfoMultiBuilding')
-                     .append('text')
-                      .attr("class","extraInfo")
-                      .text(englishDescription)
-                })
-
-              d3.selectAll('#Patois_MultiBDG, rect#Patois_MultiBDGrect, g#Patois_MultiBDGtxt')
-                .on('click', function() {
-                  d3.selectAll('text.extraInfo').remove()
-                  d3.selectAll('#Polish_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Arabic_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Russian_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt') 
-                    .style('fill-opacity', 0.1)
-                    .style('stroke-opacity', 0.3)
-                  d3.selectAll('#Patois_MultiBDG, rect#Patois_MultiBDGrect, g#Patois_MultiBDGtxt') 
-                    .style('fill-opacity', 1)
-                    .style('stroke-opacity', 1)
-                  d3.select('p#extraInfoMultiBuilding')
-                     .append('text')
-                      .attr("class","extraInfo")
-                      .text(patoisDescription)
-                })
-
-              d3.selectAll('#Russian_MultiBDG, rect#Russian_MultiBDGrect, g#Russian_MultiBDGtxt')
-                .on('click', function() {
-                  d3.selectAll('text.extraInfo').remove()
-                  d3.selectAll('#Polish_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Arabic_MultiBDG, #Patois_MultiBDG, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt') 
-                    .style('fill-opacity', 0.1)
-                    .style('stroke-opacity', 0.3)
-                  d3.selectAll('#Russian_MultiBDG, rect#Russian_MultiBDGrect, g#Russian_MultiBDGtxt') 
-                    .style('fill-opacity', 1)
-                    .style('stroke-opacity', 1)
-                  d3.select('p#extraInfoMultiBuilding')
-                     .append('text')
-                      .attr("class","extraInfo")
-                      .text(russianDescription)              
-                })
+	        d3.xml("svg/streetfair.svg").mimeType("image/svg+xml").get(function(error, xml) {
+	          var importedNode = document.importNode(xml.documentElement, true);
+	          d3.select("div#visMultiStreetFair")
+	            .each(function() {
+	              this.appendChild(importedNode);
+	            })
+	          importMultilingualStreetFair()
+	        });
 
 
-              d3.selectAll('#Chinese_Spanish_English_MultiBDG')
-              .on('click', function() {
-                d3.selectAll('text.extraInfo').remove()
-                d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Russian_MultiBDGtxt') 
-                  .style('fill-opacity', 0.1)
-                  .style('stroke-opacity', 0.3)
-                d3.selectAll('#Chinese_Spanish_English_MultiBDG, #Chinese_English_MultiBDG, #Spanish_MultiBDG, #English_MultiBDG, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt') 
-                  .style('fill-opacity', 1)
-                  .style('stroke-opacity', 1)
-                d3.select('p#extraInfoMultiBuilding')
-                   .append('text')
-                    .attr("class","extraInfo")
-                    .text(chineseDescription + "  " + spanishDescription)
-                })
+	        d3.xml("svg/library.svg").mimeType("image/svg+xml").get(function(error, xml) {
+	          var importedNode = document.importNode(xml.documentElement, true);
+	          d3.select("div#visLib")
+	            .each(function() {
+	              this.appendChild(importedNode);
+	            })
+	          importLibrary()
+	        });
+	                        
+	      }
 
-              d3.selectAll('#Chinese_English_MultiBDG')
-              .on('click', function() {
-                d3.selectAll('text.extraInfo').remove()
-                d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Spanish_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#Spanish_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Russian_MultiBDGtxt, g#Spanish_MultiBDGtxt') 
-                  .style('fill-opacity', 0.1)
-                  .style('stroke-opacity', 0.3)
-                d3.selectAll('#Chinese_English_MultiBDG, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt') 
-                  .style('fill-opacity', 1)
-                  .style('stroke-opacity', 1)
-                d3.select('p#extraInfoMultiBuilding')
-                   .append('text')
-                    .attr("class","extraInfo")
-                    .text(chineseDescription + "  " + spanishDescription + "  " + englishDescription)
-                })
+	    //SWITCHING BTW IMGS   
+	      d3.selectAll("#visSmallMultiBuilding").on("click", function(){
+	        
+	        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
+	        d3.select(this).classed("thumbnailSelected", true);
+	        $('html, body').animate({ scrollTop: $('h1.titleMultiBuilding').offset().top }, 'slow');
 
-      }; //end of function
+	       });
 
-      function importMultilingualStreetFair() {
+	      d3.selectAll("#visSmallMultiFoodTrucks").on("click", function(){
+	        
+	        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
+	        d3.select(this).classed("thumbnailSelected", true);
+	        $('html, body').animate({ scrollTop: $('h1.titleMultiFoodTrucks').offset().top }, 'slow');
+
+	       });
+
+	      d3.selectAll("#visSmallMultiStreetFair").on("click", function(){
+	        
+	        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
+	        d3.select(this).classed("thumbnailSelected", true);
+	        $('html, body').animate({ scrollTop: $('h1.titleMultiStreetFair').offset().top }, 'slow');
+
+	       });
+
+	      d3.selectAll("#visSmallBi").on("click", function(){ 
+	        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
+	        d3.select(this).classed("thumbnailSelected", true);
+	        $('html, body').animate({ scrollTop: $('h1.titleBi').offset().top }, 'slow');
+
+	       });
+
+	      d3.selectAll("#visLibrary").on("click", function(){
+	        
+	        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
+	        d3.select(this).classed("thumbnailSelected", true);
+	        $('html, body').animate({ scrollTop: $('h1.titleLibrary').offset().top }, 'slow');
+
+	       });
+
+	    function importMultilingual () {
+	      //CLICK EVENTS 
+	        d3.selectAll('image#building, g#underlay_MultiBDG')
+	          .on('click', function() {
+	              d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#Russian_MultiBDGtxt, g#English_MultiBDGtxt') 
+	                .style('fill-opacity', 1)
+	                .style('stroke-opacity', 1)
+	              d3.selectAll('text.extraInfo').remove()
+	            })
+
+	        d3.selectAll('#Polish_MultiBDG, rect#Polish_MultiBDGrect, g#Polish_MultiBDGtxt')
+	          .on('click', function() {
+	            d3.selectAll('text.extraInfo').remove()
+	            d3.selectAll('#Arabic_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Patois_MultiBDGtxt, g#Russian_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt') 
+	              .style('fill-opacity', 0.1)
+	              .style('stroke-opacity', 0.3)
+	            d3.selectAll('#Polish_MultiBDG, rect#Polish_MultiBDGrect, g#Polish_MultiBDGtxt') 
+	              .style('fill-opacity', 1)
+	              .style('stroke-opacity', 1)
+	            d3.select('p#extraInfoMultiBuilding')
+	               .append('text')
+	                .attr("class","extraInfo")
+	                .text(polishMultiDescription)
+	            })
+
+	        d3.selectAll('#Arabic_MultiBDG, rect#Arabic_MultiBDGrect, g#Arabic_MultiBDGtxt')
+	          .on('click', function() {
+	            d3.selectAll('text.extraInfo').remove()
+	            d3.selectAll('#Polish_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Russian_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt') 
+	              .style('fill-opacity', 0.1)
+	              .style('stroke-opacity', 0.3)
+	            d3.selectAll('#Arabic_MultiBDG, rect#Arabic_MultiBDGrect, g#Arabic_MultiBDGtxt') 
+	              .style('fill-opacity', 1)
+	              .style('stroke-opacity', 1)
+	            d3.select('p#extraInfoMultiBuilding')
+	               .append('text')
+	                .attr("class","extraInfo")
+	                .text(arabicDescription)
+	            })
+
+	          d3.selectAll('#Spanish_MultiBDG, rect#Spanish_MultiBDGrect, g#Spanish_MultiBDGtxt')
+	          .on('click', function() {
+	            d3.selectAll('text.extraInfo').remove()
+	            d3.selectAll('#Arabic_MultiBDG, #Polish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Russian_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt') 
+	              .style('fill-opacity', 0.1)
+	              .style('stroke-opacity', 0.3)
+	            d3.selectAll('#Chinese_Spanish_English_MultiBDG, #Spanish_MultiBDG, rect#Spanish_MultiBDGrect, g#Spanish_MultiBDGtxt') 
+	              .style('fill-opacity', 1)
+	              .style('stroke-opacity', 1)
+	            d3.select('p#extraInfoMultiBuilding')
+	               .append('text')
+	                .attr("class","extraInfo")
+	                .text(spanishDescription)
+	            })
+
+	          d3.selectAll('rect#Chinese_MultiBDGrect, g#Chinese_MultiBDGtxt')
+	          .on('click', function() {
+	            d3.selectAll('text.extraInfo').remove()
+	            d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Spanish_MultiBDG, #English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian, rect#Patois, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#English_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Russian_MultiBDGtxt, g#English_MultiBDGtxt') 
+	              .style('fill-opacity', 0.1)
+	              .style('stroke-opacity', 0.3)
+	            d3.selectAll('#Chinese_English_MultiBDG, #Chinese_Spanish_English_MultiBDG, rect#Chinese_MultiBDGrect, g#Chinese_MultiBDGtxt') 
+	              .style('fill-opacity', 1)
+	              .style('stroke-opacity', 1)
+	            d3.select('p#extraInfoMultiBuilding')
+	               .append('text')
+	                .attr("class","extraInfo")
+	                .text(chineseDescription)
+	            })
+
+	          d3.selectAll('#English_MultiBDG, rect#English_MultiBDGrect, g#English_MultiBDGtxt')
+	            .on('click', function() {
+	              d3.selectAll('text.extraInfo').remove()
+	              d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Spanish_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#Russian_MultiBDGtxt') 
+	                .style('fill-opacity', 0.1)
+	                .style('stroke-opacity', 0.3)
+	              d3.selectAll('#Chinese_English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #English_MultiBDG, rect#English_MultiBDGrect, g#English_MultiBDGtxt') 
+	                .style('fill-opacity', 1)
+	                .style('stroke-opacity', 1)
+	              d3.select('p#extraInfoMultiBuilding')
+	                 .append('text')
+	                  .attr("class","extraInfo")
+	                  .text(englishDescription)
+	            })
+
+	          d3.selectAll('#Patois_MultiBDG, rect#Patois_MultiBDGrect, g#Patois_MultiBDGtxt')
+	            .on('click', function() {
+	              d3.selectAll('text.extraInfo').remove()
+	              d3.selectAll('#Polish_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Arabic_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Russian_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt') 
+	                .style('fill-opacity', 0.1)
+	                .style('stroke-opacity', 0.3)
+	              d3.selectAll('#Patois_MultiBDG, rect#Patois_MultiBDGrect, g#Patois_MultiBDGtxt') 
+	                .style('fill-opacity', 1)
+	                .style('stroke-opacity', 1)
+	              d3.select('p#extraInfoMultiBuilding')
+	                 .append('text')
+	                  .attr("class","extraInfo")
+	                  .text(patoisDescription)
+	            })
+
+	          d3.selectAll('#Russian_MultiBDG, rect#Russian_MultiBDGrect, g#Russian_MultiBDGtxt')
+	            .on('click', function() {
+	              d3.selectAll('text.extraInfo').remove()
+	              d3.selectAll('#Polish_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Arabic_MultiBDG, #Patois_MultiBDG, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt') 
+	                .style('fill-opacity', 0.1)
+	                .style('stroke-opacity', 0.3)
+	              d3.selectAll('#Russian_MultiBDG, rect#Russian_MultiBDGrect, g#Russian_MultiBDGtxt') 
+	                .style('fill-opacity', 1)
+	                .style('stroke-opacity', 1)
+	              d3.select('p#extraInfoMultiBuilding')
+	                 .append('text')
+	                  .attr("class","extraInfo")
+	                  .text(russianDescription)              
+	            })
+
+
+	          d3.selectAll('#Chinese_Spanish_English_MultiBDG')
+	          .on('click', function() {
+	            d3.selectAll('text.extraInfo').remove()
+	            d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Russian_MultiBDGtxt') 
+	              .style('fill-opacity', 0.1)
+	              .style('stroke-opacity', 0.3)
+	            d3.selectAll('#Chinese_Spanish_English_MultiBDG, #Chinese_English_MultiBDG, #Spanish_MultiBDG, #English_MultiBDG, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt') 
+	              .style('fill-opacity', 1)
+	              .style('stroke-opacity', 1)
+	            d3.select('p#extraInfoMultiBuilding')
+	               .append('text')
+	                .attr("class","extraInfo")
+	                .text(chineseDescription + "  " + spanishDescription)
+	            })
+
+	          d3.selectAll('#Chinese_English_MultiBDG')
+	          .on('click', function() {
+	            d3.selectAll('text.extraInfo').remove()
+	            d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Spanish_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#Spanish_MultiBDGrect, g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Russian_MultiBDGtxt, g#Spanish_MultiBDGtxt') 
+	              .style('fill-opacity', 0.1)
+	              .style('stroke-opacity', 0.3)
+	            d3.selectAll('#Chinese_English_MultiBDG, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt') 
+	              .style('fill-opacity', 1)
+	              .style('stroke-opacity', 1)
+	            d3.select('p#extraInfoMultiBuilding')
+	               .append('text')
+	                .attr("class","extraInfo")
+	                .text(chineseDescription + "  " + spanishDescription + "  " + englishDescription)
+	            })
+
+	    }; //end of function
+
+        function importMultilingualStreetFair() {
          d3.selectAll('g#underlay, image#underlay')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
@@ -482,9 +482,9 @@
                   .text(greekDescription)
               })
 
-      }; //end of function
+        }; //end of function
 
-      function importMultilingualFoodTrucks() {
+        function importMultilingualFoodTrucks() {
          d3.selectAll('image, underlay#FT')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
@@ -583,9 +583,9 @@
                   .text(englishDescription)
               })
 
-      }; //end of function
+        }; //end of function
      
-      function importBilingual () {
+        function importBilingual () {
           //CLICK EVENTS 
             d3.selectAll('image, g#building, g#underlay_BI')
               .on('click', function() {
@@ -637,9 +637,9 @@
                   .text(polishDescription)
               })       
 
-      }; //end of function
+        }; //end of function
 
-      function importLibrary() {
+        function importLibrary() {
 
          d3.selectAll("g#Albanian_LIB, g#Armenian_LIB, g#Belarusian_LIB, g#Bosnian_LIB, g#Bulgarian_LIB, g#Danish_LIB, g#Dutch_LIB, g#Estonian_LIB, g#Finnish_LIB, g#Georgian_LIB, g#Indonesian_LIB, g#Kurdish_LIB, g#Marathi_LIB, g#Mongolian_LIB, g#Nepali_LIB, g#Slovak_LIB, g#Slovenian_LIB, g#Swahili_LIB, g#Tamil_LIB, g#Telugu_LIB, g#Tibetan_LIB, g#Zulu_LIB")
             .attr("class", "otherLanguages")
@@ -1402,11 +1402,11 @@
             .style('stroke-opacity', 1)            
          });//end of click function
 
-      }; //end of function
+        }; //end of function
 
 
 
-      //SORTING OUT TEXT         
+        //SORTING OUT TEXT         
         var greekDescription = "As of today, only 1% of New York City's population speaks Greek at home. That number has been consistently falling over the past 20 years, and from 2010-2015, there are 10% fewer Greek speakers in New York. More than 2/3 of NYC Greek speakers live in Queens, primarily in Astoria/Steinway, but also in the outer neighborhoods such as Whitestone and Auburndale."
         var italianDescription = "Italian speakers have settled in New York City since 1820, and historically, along with German, formed the largest non-English speaking group in the city at that time. Since then, Italian is being lost, with a nearly 20% decline in speakers since 2007. Yet, many ethnic Italians send their children to Italian classes in an attempt to resurrect the language before it disappears from the city altogether."
         var turkishDescription = "Though there is little data on exactly how many people speak Turkish in New York City, Turkish people have been settling in the city since 1820, and there is a large and thriving community across the five boroughs. The Turkish Community Center offers Turkish language courses, culture nights, film screenings, and helps organize the annual Turkish Day Parade in Manhattan. Many families send their children to Turkish language classes in an attempt to maintain, and even resurrect the language in the city."
@@ -1449,55 +1449,55 @@
         var yiddishDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         var vietnameseDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-      function addOverlay(){
-        d3.selectAll('div#visLibrary')
-          .on('mouseover', function () {
-            d3.selectAll('div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visSmallMultiStreetFair') 
-              .style("opacity", 0.2)
-            d3.selectAll('div#visLibrary') 
-              .style("opacity", 1)
-          })
+	    function addOverlay(){
+	        d3.selectAll('div#visLibrary')
+	          .on('mouseover', function () {
+	            d3.selectAll('div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visSmallMultiStreetFair') 
+	              .style("opacity", 0.2)
+	            d3.selectAll('div#visLibrary') 
+	              .style("opacity", 1)
+	          })
 
-        d3.selectAll('div#visSmallMultiStreetFair')
-          .on('mouseover', function () {
-            d3.selectAll('div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visLibrary') 
-              .style("opacity", 0.2)
-            d3.selectAll('div#visSmallMulti') 
-              .style("opacity", 1)
-          })
+	        d3.selectAll('div#visSmallMultiStreetFair')
+	          .on('mouseover', function () {
+	            d3.selectAll('div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visLibrary') 
+	              .style("opacity", 0.2)
+	            d3.selectAll('div#visSmallMulti') 
+	              .style("opacity", 1)
+	          })
 
-        d3.selectAll('div#visSmallMultiFoodTrucks')
-          .on('mouseover', function () {
-            d3.selectAll('div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visLibrary') 
-              .style("opacity", 0.2)
-            d3.selectAll('div#visSmallMulti') 
-              .style("opacity", 1)
-          })
+	        d3.selectAll('div#visSmallMultiFoodTrucks')
+	          .on('mouseover', function () {
+	            d3.selectAll('div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visLibrary') 
+	              .style("opacity", 0.2)
+	            d3.selectAll('div#visSmallMulti') 
+	              .style("opacity", 1)
+	          })
 
-        d3.selectAll('div#visSmallMultiBuilding')
-          .on('mouseover', function () {
-            d3.selectAll('div#visSmallBi, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks, div#visLibrary') 
-              .style("opacity", 0.2)
-            d3.selectAll('div#visSmallMulti') 
-              .style("opacity", 1)
-          })
+	        d3.selectAll('div#visSmallMultiBuilding')
+	          .on('mouseover', function () {
+	            d3.selectAll('div#visSmallBi, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks, div#visLibrary') 
+	              .style("opacity", 0.2)
+	            d3.selectAll('div#visSmallMulti') 
+	              .style("opacity", 1)
+	          })
 
-        d3.selectAll('div#visSmallBi')
-          .on('mouseover', function () {
-            d3.selectAll('div#visSmallMultiStreetFair, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visLibrary') 
-              .style("opacity", 0.2)
-            d3.selectAll('div#visSmallBi') 
-              .style("opacity", 1)
-          })
-          
+	        d3.selectAll('div#visSmallBi')
+	          .on('mouseover', function () {
+	            d3.selectAll('div#visSmallMultiStreetFair, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visLibrary') 
+	              .style("opacity", 0.2)
+	            d3.selectAll('div#visSmallBi') 
+	              .style("opacity", 1)
+	          })
+	          
 
-        d3.selectAll('div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks, div#visLibrary')
-          .on('mouseout', function () {
-            d3.selectAll('div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks, div#visLibrary')
-              .style("opacity", 0.85)
-          })
+	        d3.selectAll('div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks, div#visLibrary')
+	          .on('mouseout', function () {
+	            d3.selectAll('div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks, div#visLibrary')
+	              .style("opacity", 0.85)
+	          })
 
-       }; //end of function
+	       }; //end of function
 
 
     </script>
