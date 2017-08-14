@@ -74,9 +74,6 @@ a{
 		    padding: 10px;
 		    margin: 10px;
 		}
-		.barText {
-			opacity: 0;
-		}
 		.barTextClicked, .barTextHovered, .barText:hover {
 			opacity: 1;
 		}
