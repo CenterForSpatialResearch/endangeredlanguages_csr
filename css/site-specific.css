@@ -21,8 +21,8 @@ body{
       /* two lines above center vertically but its kinda wonky now*/
 	}
 	#bodyPanel.col-2-4{
-	  width: 100%;
-	  padding-left: 10%;
+	  width: 85%;
+	  float: right;
 	}
 	/*The parent element will collapse to zero height since it has only floated children. Let's fix that by clearing it.*/
 	.grid:after {
@@ -178,10 +178,10 @@ a{
 
 	/*body*/
 		.bookSelected{
-		    transform: translate(-20px, 40px); /*x,y*/
-		    transition: .5s linear;
+		    transform: translate(-10px, 30px); /*x,y*/
+		    transition: .35s linear;
 		}
 		.bookNotSelected{
-		    transform: translate(20px, -40px); /*x,y*/
-		    transition: .5s linear;
+		    /*transform: translate(10px, -30px); */
+		    /*transition: .35s linear;*/
 		}
