@@ -68,13 +68,6 @@
             </div>
           </li> 
 
-          <li>
-            <div id="visSmallMono">    
-              <img src="img/lowrisebuilding.png">
-            </div>  
-          </li> 
-
-
         </ul>
 
       </div> <!-- left side panel ends-->
@@ -140,16 +133,6 @@
           Though this building on its own would never register as an enclave in the Census, for the residents, it is an oasis. In a quickly changing and gentrifying city, buildings such as this one form micro-communities that have the power to sustain familial, linguistic, and social ties. Most of the Polish speaking residents are related by blood, marriage, or friendship, and all have at least one connection to family or friends in Poland.
         </p>
 
-        <h1 class="titleMono">
-          Monolingual Building
-        </h1>
-        <div id="visMono">
-          <p class="extraInfo" id="extraInfoMono"> </p>
-        </div>
-        <p id="basicText">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-
       </div> <!-- body panel ends -->
 
     </div> <!-- entire thing  -->
@@ -203,14 +186,6 @@
           importMultilingualStreetFair()
         });
 
-        d3.xml("svg/monolingualbuilding.svg").mimeType("image/svg+xml").get(function(error, xml) {
-        var importedNode = document.importNode(xml.documentElement, true);
-          d3.select("div#visMono")
-            .each(function() {
-              this.appendChild(importedNode);
-            })
-          importMonolingual()
-        });
 
         d3.xml("svg/library.svg").mimeType("image/svg+xml").get(function(error, xml) {
           var importedNode = document.importNode(xml.documentElement, true);
@@ -252,13 +227,6 @@
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
         $('html, body').animate({ scrollTop: $('#titleBi').offset().top }, 'slow');
-
-       });
-
-      d3.selectAll("#visSmallMono").on("click", function(){       
-        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
-        d3.select(this).classed("thumbnailSelected", true);
-        $('html, body').animate({ scrollTop: $('#titleMono').offset().top }, 'slow');
 
        });
 
@@ -669,23 +637,6 @@
                   .text(polishDescription)
               })       
 
-      }; //end of function
-      
-      function importMonolingual() {
-         d3.selectAll('image#underlay_MONO')
-            .on('click', function() {
-              d3.selectAll('text.extraInfo').remove()
-            })
-
-         d3.selectAll('#Italian_MONO, g#italian_MONOtxt, rect#Italian_MONOrect')
-            .on('click', function() {
-              d3.selectAll('text.extraInfo').remove()
-              d3.select('p#extraInfoMono')
-               .append('text')
-                .attr("class","extraInfo")
-                .text(monoBuildingStory)
-            })
-          
       }; //end of function
 
       function importLibrary() {
@@ -1501,15 +1452,15 @@
       function addOverlay(){
         d3.selectAll('div#visLibrary')
           .on('mouseover', function () {
-            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visSmallMultiStreetFair') 
+            d3.selectAll('div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visSmallMultiStreetFair') 
               .style("opacity", 0.2)
-            d3.selectAll('div#visSmallMultiStreetFair') 
+            d3.selectAll('div#visLibrary') 
               .style("opacity", 1)
           })
 
         d3.selectAll('div#visSmallMultiStreetFair')
           .on('mouseover', function () {
-            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visLibrary') 
+            d3.selectAll('div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visLibrary') 
               .style("opacity", 0.2)
             d3.selectAll('div#visSmallMulti') 
               .style("opacity", 1)
@@ -1517,7 +1468,7 @@
 
         d3.selectAll('div#visSmallMultiFoodTrucks')
           .on('mouseover', function () {
-            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visLibrary') 
+            d3.selectAll('div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visLibrary') 
               .style("opacity", 0.2)
             d3.selectAll('div#visSmallMulti') 
               .style("opacity", 1)
@@ -1525,32 +1476,24 @@
 
         d3.selectAll('div#visSmallMultiBuilding')
           .on('mouseover', function () {
-            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks, div#visLibrary') 
+            d3.selectAll('div#visSmallBi, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks, div#visLibrary') 
               .style("opacity", 0.2)
             d3.selectAll('div#visSmallMulti') 
               .style("opacity", 1)
           })
 
-        d3.selectAll('div#visSmallMono')
-          .on('mouseover', function () {
-            d3.selectAll('div#visSmallMultiStreetFair, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visLibrary') 
-              .style("opacity", 0.2)
-            d3.selectAll('div#visSmallMono') 
-              .style("opacity", 1)
-          })
-
         d3.selectAll('div#visSmallBi')
           .on('mouseover', function () {
-            d3.selectAll('div#visSmallMono, div#visSmallMultiStreetFair, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visLibrary') 
+            d3.selectAll('div#visSmallMultiStreetFair, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visLibrary') 
               .style("opacity", 0.2)
             d3.selectAll('div#visSmallBi') 
               .style("opacity", 1)
           })
           
 
-        d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks, div#visLibrary')
+        d3.selectAll('div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks, div#visLibrary')
           .on('mouseout', function () {
-            d3.selectAll('div#visSmallMono, div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks, div#visLibrary')
+            d3.selectAll('div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks, div#visLibrary')
               .style("opacity", 0.85)
           })
 
