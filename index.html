@@ -202,7 +202,7 @@
           importMultilingualStreetFair()
         });
 
-        d3.xml("svg/lowrisebuilding_building.svg").mimeType("image/svg+xml").get(function(error, xml) {
+        d3.xml("svg/monolingualbuilding.svg").mimeType("image/svg+xml").get(function(error, xml) {
         var importedNode = document.importNode(xml.documentElement, true);
           d3.select("div#visMono")
             .each(function() {
@@ -671,12 +671,12 @@
       }; //end of function
       
       function importMonolingual() {
-         d3.selectAll('image#underlay')
+         d3.selectAll('image#underlay_MONO')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
             })
 
-         d3.selectAll('#Italian, g#italian, rect#italian')
+         d3.selectAll('#Italian_MONO, g#italian_MONOtxt, rect#Italian_MONOtxt')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
               d3.select('p#extraInfoMono')
