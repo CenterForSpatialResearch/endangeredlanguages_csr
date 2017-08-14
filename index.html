@@ -3,7 +3,7 @@
 	<head>
 	 	<meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	  <title>microcosms of language</title>
+	  <title>Beyond the Enclave</title>
 	  <link rel="stylesheet" type="text/css" href="css/site-specific.css">
 	  <link href="https://fonts.googleapis.com/css?family=Cousine" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -31,7 +31,7 @@
 	<body>
     
     <h1 class="titleTotal">
-      <a href="index.html">  microcosms of language </a>
+      <a href="index.html"> Beyond the Enclave </a>
     </h1>
 
       <!-- LEFT SIDE PANEL -->
@@ -228,7 +228,7 @@
         
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
-        $('html, body').animate({ scrollTop: $('#visMultiBuilding').offset().top }, 'slow');
+        $('html, body').animate({ scrollTop: $('#titleMultiBuilding').offset().top }, 'slow');
 
        });
 
@@ -236,7 +236,7 @@
         
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
-        $('html, body').animate({ scrollTop: $('#visMultiFoodTrucks').offset().top }, 'slow');
+        $('html, body').animate({ scrollTop: $('#titleMultiFoodTrucks').offset().top }, 'slow');
 
        });
 
@@ -244,21 +244,21 @@
         
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
-        $('html, body').animate({ scrollTop: $('#visMultiStreetFair').offset().top }, 'slow');
+        $('html, body').animate({ scrollTop: $('#titleMultiStreetFair').offset().top }, 'slow');
 
        });
 
       d3.selectAll("#visSmallBi").on("click", function(){ 
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
-        $('html, body').animate({ scrollTop: $('#visBi').offset().top }, 'slow');
+        $('html, body').animate({ scrollTop: $('#titleBi').offset().top }, 'slow');
 
        });
 
       d3.selectAll("#visSmallMono").on("click", function(){       
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
-        $('html, body').animate({ scrollTop: $('#visMono').offset().top }, 'slow');
+        $('html, body').animate({ scrollTop: $('#titleMono').offset().top }, 'slow');
 
        });
 
@@ -266,7 +266,7 @@
         
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
-        $('html, body').animate({ scrollTop: $('#visLib').offset().top }, 'slow');
+        $('html, body').animate({ scrollTop: $('#titleLib').offset().top }, 'slow');
 
        });
 
@@ -677,7 +677,7 @@
               d3.selectAll('text.extraInfo').remove()
             })
 
-         d3.selectAll('#Italian_MONO, g#italian_MONOtxt, rect#Italian_MONOtxt')
+         d3.selectAll('#Italian_MONO, g#italian_MONOtxt, rect#Italian_MONOrect')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
               d3.select('p#extraInfoMono')
@@ -689,18 +689,22 @@
       }; //end of function
 
       function importLibrary() {
+
+         d3.selectAll("g#Albanian_LIB, g#Armenian_LIB, g#Belarusian_LIB, g#Bosnian_LIB, g#Bulgarian_LIB, g#Danish_LIB, g#Dutch_LIB, g#Estonian_LIB, g#Finnish_LIB, g#Georgian_LIB, g#Indonesian_LIB, g#Kurdish_LIB, g#Marathi_LIB, g#Mongolian_LIB, g#Nepali_LIB, g#Slovak_LIB, g#Slovenian_LIB, g#Swahili_LIB, g#Tamil_LIB, g#Telugu_LIB, g#Tibetan_LIB, g#Zulu_LIB")
+            .attr("class", "otherLanguages")
+
          d3.selectAll('#underlay, #bookshelf')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('.otherLanguages, g#Arabic_LIB, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Gujarati_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Japanese_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#Yiddish_LIB, g#front, g#side, g#top, #interior, rect#Arabic_LIBrect, rect#Bengali_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#Haitian_LIBrect, rect#Hebrew_LIBrect, rect#Hindi_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#Italian_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#Polish_LIBrect, rect#Portuguese_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#Yiddish_LIBrect,  rect#Other_LIBrect')
+              d3.selectAll('.otherLanguages, g#Arabic_LIB, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Gujarati_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#Indonesian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Japanese_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Romanian_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Turkish_LIB, g#Ukranian_LIB, g#Urdu_LIB, g#Vietnamese_LIB, g#Yiddish_LIB, g#front, g#side, g#top, #interior')
               .classed("bookSelected", false)
               .classed("bookNotSelected", true)
             .style('fill-opacity', 1)
             .style('stroke-opacity', 1)
-            })
-
-         d3.selectAll("g#Albanian_LIB, g#Armenian_LIB, g#Belarusian_LIB, g#Bosnian_LIB, g#Bulgarian_LIB, g#Danish_LIB, g#Dutch_LIB, g#Estonian_LIB, g#Finnish_LIB, g#Georgian_LIB, g#Indonesian_LIB, g#Kurdish_LIB, g#Marathi_LIB, g#Mongolian_LIB, g#Nepali_LIB, g#Slovak_LIB, g#Slovenian_LIB, g#Swahili_LIB, g#Tamil_LIB, g#Telugu_LIB, g#Tibetan_LIB, g#Zulu_LIB")
-            .attr("class", "otherLanguages")
+			  d3.selectAll('rect#Arabic_LIBrect, rect#Bengali_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#Haitian_LIBrect, rect#Hebrew_LIBrect, rect#Hindi_LIBrect, rect#Hungarian_LIBrect, rect#Indonesian_LIBrect, rect#Italian_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#Polish_LIBrect, rect#Portuguese_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Thai_LIBrect, rect#Turkish_LIBrect, rect#Ukranian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#Yiddish_LIBrect,  rect#Other_LIBrect')
+            .style('fill-opacity', 1)
+            .style('stroke-opacity', 1)
+           })
 
          d3.selectAll(".otherLanguages, rect#Other_LIBrect").on("click", function(){
           d3.selectAll('text.extraInfo').remove()
@@ -1453,7 +1457,7 @@
 
       //SORTING OUT TEXT         
         var greekDescription = "As of today, only 1% of New York City's population speaks Greek at home. That number has been consistently falling over the past 20 years, and from 2010-2015, there are 10% fewer Greek speakers in New York. More than 2/3 of NYC Greek speakers live in Queens, primarily in Astoria/Steinway, but also in the outer neighborhoods such as Whitestone and Auburndale."
-        var italianDescription = "Italian speakers have settled in New York City since 1820, and historically, along with German, formed the largest non-English speaking group in the city at that time. Since then, Italian is being lost, with a nearly 20% decline in speakers since 2007. Yet, many ethnic Italians send their children to Italian classes in an attempt to resurrect the language before it disappears from the city altogether. "
+        var italianDescription = "Italian speakers have settled in New York City since 1820, and historically, along with German, formed the largest non-English speaking group in the city at that time. Since then, Italian is being lost, with a nearly 20% decline in speakers since 2007. Yet, many ethnic Italians send their children to Italian classes in an attempt to resurrect the language before it disappears from the city altogether."
         var turkishDescription = "Though there is little data on exactly how many people speak Turkish in New York City, Turkish people have been settling in the city since 1820, and there is a large and thriving community across the five boroughs. The Turkish Community Center offers Turkish language courses, culture nights, film screenings, and helps organize the annual Turkish Day Parade in Manhattan. Many families send their children to Turkish language classes in an attempt to maintain, and even resurrect the language in the city."
         var albanianDescription = "After World War II, many Albanian speakers came to New York City after passing through Italy first. These multilingual refugees found their home in the Bronx and Staten Island (both with large Italian speaking populations at the time). Since then, Albanians have laid down roots, now owning 1/3 of the homes around Pelham Parkway, and maintaining the use of Albanian in churches and community centers across the city."
         var spanishDescription = "Spanish is the most commonly spoken language after English in New York City, and over 25% of NYC households speak Spanish at home. Of course, Spanish speakers are not evenly spread across the city, while 47% of Bronx households speak Spanish, only 10% of Staten Island ones do. Additionally, many Spanish speakers also speak a smaller, regional language such as Mixtec (Mexico), K’iche (Guatemala), or Garifuna (Honduras & Belize). Since there are few records as to how many people speak Spanish as a second language, and English as a third, the number of Spanish speakers may obscure the true diversity of languages spoken in New York City."
