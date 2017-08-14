@@ -227,7 +227,7 @@
         
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
-        window.scrollTo(0, 0);
+        $('html, body').animate({ scrollTop: $('#visMultiBuilding').offset().top }, 'slow');
 
        });
 
@@ -235,7 +235,7 @@
         
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
-        window.scrollTo(0, 0);
+        $('html, body').animate({ scrollTop: $('#visMultiFoodTrucks').offset().top }, 'slow');
 
        });
 
@@ -243,21 +243,21 @@
         
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
-        window.scrollTo(0, 0);
+        $('html, body').animate({ scrollTop: $('#visMultiStreetFair').offset().top }, 'slow');
 
        });
 
       d3.selectAll("#visSmallBi").on("click", function(){ 
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
-        window.scrollTo(0, 0);
+        $('html, body').animate({ scrollTop: $('#visBi').offset().top }, 'slow');
 
        });
 
       d3.selectAll("#visSmallMono").on("click", function(){       
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
-        window.scrollTo(0, 0);
+        $('html, body').animate({ scrollTop: $('#visMono').offset().top }, 'slow');
 
        });
 
@@ -265,7 +265,7 @@
         
         d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
         d3.select(this).classed("thumbnailSelected", true);
-        window.scrollTo(0, 0);
+        $('html, body').animate({ scrollTop: $('#visLib').offset().top }, 'slow');
 
        });
 
