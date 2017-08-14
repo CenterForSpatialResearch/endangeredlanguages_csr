@@ -587,55 +587,79 @@
      
         function importBilingual () {
           //CLICK EVENTS 
+          	d3.selectAll("g#Polish_BItxt, g#English_BItxt")
+          		.attr("class", "barText")
             d3.selectAll('image, g#building, g#underlay_BI')
               .on('click', function() {
-                d3.selectAll('#Polish_BI, #Polish_English_BI, #English_BI, rect#Polish_BIrect, rect#English_BIrect,  g#Polish_BItxt, g#English_BItxt') 
+                d3.selectAll('#Polish_BI, #Polish_English_BI, #English_BI, rect#Polish_BIrect, rect#English_BIrect') 
                   .style('fill-opacity', 1)
                   .style('stroke-opacity', 1)
-                  .style("visibility", "")
-                })
+                d3.selectAll("g#Polish_BItxt, g#English_BItxt")
+          		  .classed("barTextClicked", false)
+          		  .classed("barTextHovered", false)
+              })
 
             d3.selectAll('#Polish_English_BI, rect#Polish_BIrect, rect#English_BIrect, g#Polish_BItxt, g#English_BItxt')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('rect#Polish_BIrect, g#Polish_BItxt, rect#English_BIrect, g#English_BItxt, #Polish_BI, #English_BI, #Polish_English_BI') 
+              d3.selectAll('rect#Polish_BIrect, rect#English_BIrect, #Polish_BI, #English_BI, #Polish_English_BI') 
                 .style('fill-opacity', 1)
-                .style('stroke-opacity', 1)
+                .style('stroke-opacity', 1)                
               d3.select('p#extraInfoBi')
                  .append('text')
                   .attr("class","extraInfo")
                   .text(polishDescription + englishDescription)
-              })
-          
+              d3.selectAll("g#Polish_BItxt, g#English_BItxt")
+              	.classed("barTextClicked", true)
+            })
+
             d3.selectAll('#English_BI, rect#English_BIrect, g#English_BItxt')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('rect#Polish_BIrect, g#Polish_BItxt, #Polish_BI') 
+              d3.selectAll('rect#Polish_BIrect, #Polish_BI') 
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('rect#English_BIrect, g#English_BItxt, #English_BI, #Polish_English_BI') 
+              d3.selectAll('rect#English_BIrect, #English_BI, #Polish_English_BI') 
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoBi')
                  .append('text')
                   .attr("class","extraInfo")
                   .text(englishDescription)
-              })
+              d3.selectAll("g#English_BItxt")
+              	.classed("barTextClicked", true)
+              d3.selectAll("g#Polish_BItxt")
+              	.classed("barTextClicked", false)
+            })
+            .on('mouseover', function(){
+			  d3.selectAll("g#English_BItxt")
+              	.classed("barTextHovered", true)
+            })
+            .on('mouseout', function(){
+			  d3.selectAll("g#English_BItxt")
+              	.classed("barTextHovered", false)
+            })
+
 
             d3.selectAll('#Polish_BI, rect#Polish_BIrect, g#Polish_BItxt')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('rect#English_BIrect, g#English_BItxt, #English_BI') 
+              d3.selectAll('rect#English_BIrect, #English_BI') 
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('rect#Polish_BIrect, g#Polish_BItxt, #Polish_BI, #Polish_English_BI') 
+              d3.selectAll('rect#Polish_BIrect, #Polish_BI, #Polish_English_BI') 
                 .style('fill-opacity', 1)
-                .style('stroke-opacity', 1)            
+                .style('stroke-opacity', 1)                           
               d3.select('p#extraInfoBi')
                  .append('text')
                   .attr("class","extraInfo")
                   .text(polishDescription)
-              })       
+              d3.selectAll("g#Polish_BItxt")
+              	.classed("barTextClicked", true)   
+              d3.selectAll("g#English_BItxt")
+              	.classed("barTextClicked", false)              
+            })  
+
 
         }; //end of function
 
