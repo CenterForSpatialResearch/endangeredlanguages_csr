@@ -239,12 +239,15 @@ a{
     h2.subtitleLibrary {
         width: 50%;
     }
-  
+  	p#introText, p#basicText{
+    	width: 95%;
+    }
 }
 @media only screen and (min-width: 940px) and (max-width: 1200px) {
    
     h2.subtitleLibrary {
         width: 25%;
+        padding: 10px;
     }
-  
+  	
 }
