@@ -42,10 +42,10 @@ body{
 	  padding-right: 0;
 	}
 
-#visMono, #visBi, #VisLib, #visMultiBuilding, #visMultiFoodTrucks, #visMultiStreetFair, #barChart, .thumbnail {
+#visMono, #visBi, #VisLib, #VisLib_top5, #visMultiBuilding, #visMultiFoodTrucks, #visMultiStreetFair, #barChart, .thumbnail {
   	cursor: pointer;
 }
-#visMono, #visBi, #VisLib, #visMultiBuilding, #visMultiFoodTrucks, #visMultiStreetFair{
+#visMono, #visBi, #VisLib, #VisLib_top5, #visMultiBuilding, #visMultiFoodTrucks, #visMultiStreetFair{
   	margin-left: 10px;
   	margin-right: 10px;
 }

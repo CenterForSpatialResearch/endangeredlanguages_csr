@@ -89,6 +89,9 @@
         <div id="visLib">
           <p class="extraInfo" id="extraInfoLibrary"> </p>
         </div>
+        <div id="visLib_top5">
+          <p class="extraInfo" id="extraInfoLibrary_TOP5"> </p>
+        </div>
         <p id = "basicText">
           The Queens Public Library collection contains materials in over 200 languages. Though the holdings in each library reflect the makeup of the neighborhood, patrons have access to all of it. The diversity of the collection is best understood by looking at the books in the middle. The 5 largest collections (Chinese, Spanish, Korean, Russian, and French) have been removed to illustrate the true diversity of languages available, and what we find is a collection that connects the world.
         </p>
@@ -195,7 +198,16 @@
 	            })
 	          importLibrary()
 	        });
-	                        
+
+	        d3.xml("svg/library_top5.svg").mimeType("image/svg+xml").get(function(error, xml) {
+	          var importedNode = document.importNode(xml.documentElement, true);
+	          d3.select("div#visLib_top5")
+	            .each(function() {
+	              this.appendChild(importedNode);
+	            })
+	          importLibrary_top5()
+	        });
+
 	      }
 
 	    //SWITCHING BTW IMGS   
@@ -502,7 +514,6 @@
 			  	  d3.selectAll("g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt")
               		.classed("barTextHovered", false)
             	})
-
 
 	    }; //end of function
 
@@ -1810,10 +1821,11 @@
               	.classed("barTextClicked", false)              
 	        })  
 
-
         }; //end of function
 
+        function importLibrary_top5 (){
 
+        }; //end of function
 
         //SORTING OUT TEXT         
         var greekDescription = "As of today, only 1% of New York City's population speaks Greek at home. That number has been consistently falling over the past 20 years, and from 2010-2015, there are 10% fewer Greek speakers in New York. More than 2/3 of NYC Greek speakers live in Queens, primarily in Astoria/Steinway, but also in the outer neighborhoods such as Whitestone and Auburndale."
