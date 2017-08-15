@@ -84,18 +84,19 @@ a{
 		    color: white;
 		    padding: 10px;
 		    margin: 10px;
-		    width: 15%;
+		    width: 18%;
 		}
-
 		p#introText{
 			font-size: 1em;
 			vertical-align: top;
 			display: inline-block;
 			margin: auto;
-			/*border: 1px solid #ebebeb;*/
-			/*padding: 20px;*/
 			width: 75%;
-/*			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);*/			
+			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+			padding: 20px;			
+			border: 1px solid #ebebeb;
+			margin-left: 10px;
+   			margin-right: 10px;
 		}
 
 		text#basicText, p#basicText {
@@ -106,17 +107,18 @@ a{
 			margin-top: 0;
 			margin-right: 10px;
 			margin-left: 10px;
+			width: 75%;
 		}
 
-		.introTextBox {
+/*		.introTextBox {
 			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 			padding: 20px;			
 			border: 1px solid #ebebeb;
 			margin-left: 10px;
    			margin-right: 10px;
-		}
+		}*/
 
-		text.extraInfo{
+		text.extraInfo {
 			margin: auto;
 		    width: 50%;
 		    font-size: .75em;
@@ -124,9 +126,10 @@ a{
 		    position: absolute;
 		    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 		    padding: 15px;
+		    background-color: white;
 		}
 
-		.barText{
+		.barText {
 			opacity: 0;
 		}
 		.barTextClicked, .barTextHovered, .barText:hover {
@@ -190,8 +193,6 @@ a{
 	/*side*/
 		#barChart{
 			overflow-x: hidden;
-			/*padding: 0 20% 20% 20%;*/
-			/*width: 80%;*/
 			top: 200px !important;
 		}
 
@@ -204,3 +205,46 @@ a{
 		    /*transform: translate(10px, -30px); */
 		    transition: .35s linear;
 		}
+
+@media only screen and (max-width: 480px) {
+    h1.titleTotal , h1.titleTotal a{
+        font-size: 1em;
+    }
+    h2.subtitleLibrary {
+        font-size: .5em;
+        width: 35%;
+    }
+    p#introText, p#basicText{
+    	width: 95%;
+    	font-size: .5em;
+    	padding: 10px;
+    }
+    p.extraInfo, text.extraInfo {
+    	font-size: 6px;
+    	width: 80%;
+    	padding: 5px;
+    }
+    g#text text, g#txt text{
+    	font-size: .85em;
+    }
+	[class*='col-'] {
+    	padding-right: 0 !important;
+    }
+	h1.titleMultiBuilding, h1.titleMono, h1.titleBi, h1.titleLibrary, h1.titleMultiStreetFair, h1.titleMultiFoodTrucks {
+	    font-size: .85em;
+	}    
+}
+@media only screen and (min-width: 480px) and (max-width: 939px) {
+   
+    h2.subtitleLibrary {
+        width: 50%;
+    }
+  
+}
+@media only screen and (min-width: 940px) and (max-width: 1200px) {
+   
+    h2.subtitleLibrary {
+        width: 25%;
+    }
+  
+}
