@@ -210,7 +210,7 @@
 	          importLibrary()
 	        });
 
-	        d3.xml("svg/library_top5.svg").mimeType("image/svg+xml").get(function(error, xml) {
+	        d3.xml("svg/library_Top5.svg").mimeType("image/svg+xml").get(function(error, xml) {
 	          var importedNode = document.importNode(xml.documentElement, true);
 	          d3.select("div#visLib_top5")
 	            .each(function() {
