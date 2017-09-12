@@ -8,7 +8,7 @@
 	    <link rel="stylesheet" type="text/css" href="css/site-specific.css">
 	    <link href="https://fonts.googleapis.com/css?family=Cousine" rel="stylesheet">
     	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    	<link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/c28915cb-7a1f-477c-9084-e9e755ede452.css">
+    	<link type="text/css" rel="stylesheet" href="https://fast.fonts.net/cssapi/c28915cb-7a1f-477c-9084-e9e755ede452.css">
 	</head>
 
   <style type="text/css">
@@ -31,20 +31,20 @@
   </style>
 
 	<body>
-    
+
 	    <h1 class="titleTotal">
 	      <a href="index.html"> Beyond the Enclave: Languages of New York </a>
 	    </h1>
 
 	    <!-- LEFT SIDE PANEL -->
-	    <div class="col-1-4" id="leftPanel"> 
+	    <div class="col-1-4" id="leftPanel">
 	        <ul class="thumbnail">
 
 	          <li>
-	            <div id="visLibrary">    
+	            <div id="visLibrary">
 	              <img src="img/library.png">
-	            </div>  
-	          </li> 
+	            </div>
+	          </li>
 
 	          <li>
 	            <div id="visSmallMultiBuilding">
@@ -68,7 +68,7 @@
 	            <div id="visSmallBi">
 	              <img src="img/bilingualbuilding.png">
 	            </div>
-	          </li> 
+	          </li>
 
 	        </ul>
 
@@ -76,14 +76,14 @@
 
 	    <!-- MAIN CONTENT -->
 	    <div class="col-2-4" id="bodyPanel">
-	    	 
-	        <div class = "introTextBox"> 
+
+	        <div class = "introTextBox">
 	          <p id="introText">
-	            New York City is one of the most linguistically diverse places in the world; linguists estimate that more than 800 different languages are spoken in the five boroughs. 
+	            New York City is one of the most linguistically diverse places in the world; linguists estimate that more than 800 different languages are spoken in the five boroughs.
 	            <br><br>
 	            And yet, we often think of language in a city like of New York as centered around “ethnic enclaves,” neighborhoods where minority language speakers cluster. While that model may hold some truth, it obscures how deeply integrated multilingualism is into the fabric of city life. This project offers a snapshot into some of the ways language is organized in the city - beyond the enclave.
 	          </p>
-	        </div> 
+	        </div>
 
 	        <h1 class="titleLibrary">
 	          Queens Library Collection
@@ -94,7 +94,7 @@
 	        </h2>
 	        <div id="visLib_top5">
 	          <p class="extraInfo" id="extraInfoLibrary_top5"> </p>
-	        </div>  
+	        </div>
 
 	        <h2 class="subtitleLibrary">
 	        	Next Fifty Languages
@@ -104,7 +104,7 @@
 	        </div>
 
 	        <p id = "basicText">
-	          The Queens Public Library collection contains materials in over 200 languages. Though the holdings in each library reflect the makeup of the neighborhood, patrons have access to all of it. The diversity of the collection is best understood by looking at the books in the middle. The 5 largest (Chinese, Spanish, Korean, Russian, and French) and the 150 smallest collections have been removed to illustrate the true diversity of languages available, and what we find is a collection that connects the world. 
+	          The Queens Public Library collection contains materials in over 200 languages. Though the holdings in each library reflect the makeup of the neighborhood, patrons have access to all of it. The diversity of the collection is best understood by looking at the books in the middle. The 5 largest (Chinese, Spanish, Korean, Russian, and French) and the 150 smallest collections have been removed to illustrate the true diversity of languages available, and what we find is a collection that connects the world.
 	        </p>
 
 	        <h1 class="titleMultiBuilding">
@@ -134,7 +134,7 @@
 	          <p class="extraInfo" id="extraInfoMultiFoodTrucks"> </p>
 	        </div>
 	        <p id="basicText">
-	          Across the globe, food is associated with language, and in diasporic communities, culinary traditions often outlast linguistic ones. In a city such as New York, food trucks gather on corners, in business districts, and near schools. And even though customers  may not always speak the language of the food they eat, workers don’t always speak it either. 
+	          Across the globe, food is associated with language, and in diasporic communities, culinary traditions often outlast linguistic ones. In a city such as New York, food trucks gather on corners, in business districts, and near schools. And even though customers  may not always speak the language of the food they eat, workers don’t always speak it either.
 	        </p>
 
 	        <h1 class="titleBi">
@@ -144,7 +144,7 @@
 	          <p class="extraInfo" id="extraInfoBi"> </p>
 	        </div>
 	        <p id="basicText">
-	          Though a building might not be an ethnic enclave against the backdrop of the city, but for the residents, it can be an oasis. Buildings such as this one form micro-communities that have the power to sustain familial, linguistic, and social ties. Most of the Polish speaking residents are related by blood, marriage, or friendship, and all have at least one connection to Poland. 
+	          Though a building might not be an ethnic enclave against the backdrop of the city, but for the residents, it can be an oasis. Buildings such as this one form micro-communities that have the power to sustain familial, linguistic, and social ties. Most of the Polish speaking residents are related by blood, marriage, or friendship, and all have at least one connection to Poland.
 	        </p>
 
 	    </div> <!-- body panel ends -->
@@ -154,7 +154,7 @@
 	</body>
 
 
-	<script src="http://d3js.org/d3.v4.min.js"></script>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
 
  	<script type="text/javascript">
 
@@ -221,9 +221,9 @@
 
 	      }
 
-	    //SWITCHING BTW IMGS   
+	    //SWITCHING BTW IMGS
 	      d3.selectAll("#visSmallMultiBuilding").on("click", function(){
-	        
+
 	        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
 	        d3.select(this).classed("thumbnailSelected", true);
 	        $('html, body').animate({ scrollTop: $('h1.titleMultiBuilding').offset().top }, 'slow');
@@ -231,7 +231,7 @@
 	       });
 
 	      d3.selectAll("#visSmallMultiFoodTrucks").on("click", function(){
-	        
+
 	        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
 	        d3.select(this).classed("thumbnailSelected", true);
 	        $('html, body').animate({ scrollTop: $('h1.titleMultiFoodTrucks').offset().top }, 'slow');
@@ -239,14 +239,14 @@
 	       });
 
 	      d3.selectAll("#visSmallMultiStreetFair").on("click", function(){
-	        
+
 	        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
 	        d3.select(this).classed("thumbnailSelected", true);
 	        $('html, body').animate({ scrollTop: $('h1.titleMultiStreetFair').offset().top }, 'slow');
 
 	       });
 
-	      d3.selectAll("#visSmallBi").on("click", function(){ 
+	      d3.selectAll("#visSmallBi").on("click", function(){
 	        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
 	        d3.select(this).classed("thumbnailSelected", true);
 	        $('html, body').animate({ scrollTop: $('h1.titleBi').offset().top }, 'slow');
@@ -254,7 +254,7 @@
 	       });
 
 	      d3.selectAll("#visLibrary").on("click", function(){
-	        
+
 	        d3.selectAll("img.thumbnail, .thumbnailSelected").classed("thumbnailSelected", false);
 	        d3.select(this).classed("thumbnailSelected", true);
 	        $('html, body').animate({ scrollTop: $('h1.titleLibrary').offset().top }, 'slow');
@@ -262,27 +262,27 @@
 	       });
 
 	    function importMultilingual () {
-	      //CLICK EVENTS 
+	      //CLICK EVENTS
 	        d3.selectAll('g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#Russian_MultiBDGtxt, g#English_MultiBDGtxt')
 	        	.attr("class", "barText")
 	        d3.selectAll('image#building, g#underlay_MultiBDG')
 	          .on('click', function() {
-	              d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect') 
+	              d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect')
 	                .style('fill-opacity', 1)
 	                .style('stroke-opacity', 1)
 	        	  d3.selectAll('g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#Russian_MultiBDGtxt, g#English_MultiBDGtxt')
 	        		.classed("barTextClicked", false)
-      		    	.classed("barTextHovered", false)              
+      		    	.classed("barTextHovered", false)
 	              d3.selectAll('text.extraInfo').remove()
 	           })
 
 	        d3.selectAll('#Polish_MultiBDG, rect#Polish_MultiBDGrect, g#Polish_MultiBDGtxt')
 	          .on('click', function() {
 	            d3.selectAll('text.extraInfo').remove()
-	            d3.selectAll('#Arabic_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect') 
+	            d3.selectAll('#Arabic_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect')
 	              .style('fill-opacity', 0.1)
 	              .style('stroke-opacity', 0.3)
-	            d3.selectAll('#Polish_MultiBDG, rect#Polish_MultiBDGrect, g#Polish_MultiBDGtxt') 
+	            d3.selectAll('#Polish_MultiBDG, rect#Polish_MultiBDGrect, g#Polish_MultiBDGtxt')
 	              .style('fill-opacity', 1)
 	              .style('stroke-opacity', 1)
 	            d3.select('p#extraInfoMultiBuilding')
@@ -293,8 +293,8 @@
               		.classed("barTextClicked", true)
                 d3.selectAll("g#Patois_MultiBDGtxt, g#Russian_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt")
               		.classed("barTextClicked", false)
-            	})	
-            	.on('mouseover', function() { 
+            	})
+            	.on('mouseover', function() {
 			  	  d3.selectAll("g#Polish_MultiBDGtxt")
               		.classed("barTextHovered", true)
             	})
@@ -307,10 +307,10 @@
 	        d3.selectAll('#Arabic_MultiBDG, rect#Arabic_MultiBDGrect, g#Arabic_MultiBDGtxt')
 	          .on('click', function() {
 	            d3.selectAll('text.extraInfo').remove()
-	            d3.selectAll('#Polish_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect') 
+	            d3.selectAll('#Polish_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect')
 	              .style('fill-opacity', 0.1)
 	              .style('stroke-opacity', 0.3)
-	            d3.selectAll('#Arabic_MultiBDG, rect#Arabic_MultiBDGrect') 
+	            d3.selectAll('#Arabic_MultiBDG, rect#Arabic_MultiBDGrect')
 	              .style('fill-opacity', 1)
 	              .style('stroke-opacity', 1)
 	            d3.select('p#extraInfoMultiBuilding')
@@ -321,8 +321,8 @@
               		.classed("barTextClicked", true)
                 d3.selectAll("g#Patois_MultiBDGtxt, g#Russian_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt")
               		.classed("barTextClicked", false)
-            	})	
-            	.on('mouseover', function() { 
+            	})
+            	.on('mouseover', function() {
 			  	  d3.selectAll("g#Arabic_MultiBDGtxt")
               		.classed("barTextHovered", true)
             	})
@@ -334,10 +334,10 @@
 	          d3.selectAll('#Spanish_MultiBDG, rect#Spanish_MultiBDGrect, g#Spanish_MultiBDGtxt')
 	          .on('click', function() {
 	            d3.selectAll('text.extraInfo').remove()
-	            d3.selectAll('#Arabic_MultiBDG, #Polish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect') 
+	            d3.selectAll('#Arabic_MultiBDG, #Polish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect')
 	              .style('fill-opacity', 0.1)
 	              .style('stroke-opacity', 0.3)
-	            d3.selectAll('#Chinese_Spanish_English_MultiBDG, #Spanish_MultiBDG, rect#Spanish_MultiBDGrect, g#Spanish_MultiBDGtxt') 
+	            d3.selectAll('#Chinese_Spanish_English_MultiBDG, #Spanish_MultiBDG, rect#Spanish_MultiBDGrect, g#Spanish_MultiBDGtxt')
 	              .style('fill-opacity', 1)
 	              .style('stroke-opacity', 1)
 	            d3.select('p#extraInfoMultiBuilding')
@@ -348,8 +348,8 @@
               		.classed("barTextClicked", true)
                 d3.selectAll("g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Russian_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt")
               		.classed("barTextClicked", false)
-            	})	
-            	.on('mouseover', function() { 
+            	})
+            	.on('mouseover', function() {
 			  	  d3.selectAll("g#Spanish_MultiBDGtxt")
               		.classed("barTextHovered", true)
             	})
@@ -362,10 +362,10 @@
 	          d3.selectAll('rect#Chinese_MultiBDGrect, g#Chinese_MultiBDGtxt')
 	          .on('click', function() {
 	            d3.selectAll('text.extraInfo').remove()
-	            d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Spanish_MultiBDG, #English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian, rect#Patois, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#English_MultiBDGrect') 
+	            d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Spanish_MultiBDG, #English_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian, rect#Patois, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#English_MultiBDGrect')
 	              .style('fill-opacity', 0.1)
 	              .style('stroke-opacity', 0.3)
-	            d3.selectAll('#Chinese_English_MultiBDG, #Chinese_Spanish_English_MultiBDG, rect#Chinese_MultiBDGrect, g#Chinese_MultiBDGtxt') 
+	            d3.selectAll('#Chinese_English_MultiBDG, #Chinese_Spanish_English_MultiBDG, rect#Chinese_MultiBDGrect, g#Chinese_MultiBDGtxt')
 	              .style('fill-opacity', 1)
 	              .style('stroke-opacity', 1)
 	            d3.select('p#extraInfoMultiBuilding')
@@ -376,8 +376,8 @@
               		.classed("barTextClicked", true)
                 d3.selectAll("g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Russian_MultiBDGtxt, g#English_MultiBDGtxt")
               		.classed("barTextClicked", false)
-            	})	
-            	.on('mouseover', function() { 
+            	})
+            	.on('mouseover', function() {
 			  	  d3.selectAll("g#Chinese_MultiBDGtxt")
               		.classed("barTextHovered", true)
             	})
@@ -390,10 +390,10 @@
 	          d3.selectAll('#English_MultiBDG, rect#English_MultiBDGrect, g#English_MultiBDGtxt')
 	            .on('click', function() {
 	              d3.selectAll('text.extraInfo').remove()
-	              d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Spanish_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect') 
+	              d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Spanish_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect')
 	                .style('fill-opacity', 0.1)
 	                .style('stroke-opacity', 0.3)
-	              d3.selectAll('#Chinese_English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #English_MultiBDG, rect#English_MultiBDGrect') 
+	              d3.selectAll('#Chinese_English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #English_MultiBDG, rect#English_MultiBDGrect')
 	                .style('fill-opacity', 1)
 	                .style('stroke-opacity', 1)
 	              d3.select('p#extraInfoMultiBuilding')
@@ -404,8 +404,8 @@
               		.classed("barTextClicked", true)
                 d3.selectAll("g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#Russian_MultiBDGtxt")
               		.classed("barTextClicked", false)
-            	})	
-            	.on('mouseover', function() { 
+            	})
+            	.on('mouseover', function() {
 			  	  d3.selectAll("g#English_MultiBDGtxt")
               		.classed("barTextHovered", true)
             	})
@@ -418,10 +418,10 @@
 	          d3.selectAll('#Patois_MultiBDG, rect#Patois_MultiBDGrect, g#Patois_MultiBDGtxt')
 	            .on('click', function() {
 	              d3.selectAll('text.extraInfo').remove()
-	              d3.selectAll('#Polish_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Arabic_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect') 
+	              d3.selectAll('#Polish_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Arabic_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect')
 	                .style('fill-opacity', 0.1)
 	                .style('stroke-opacity', 0.3)
-	              d3.selectAll('#Patois_MultiBDG, rect#Patois_MultiBDGrect, g#Patois_MultiBDGtxt') 
+	              d3.selectAll('#Patois_MultiBDG, rect#Patois_MultiBDGrect, g#Patois_MultiBDGtxt')
 	                .style('fill-opacity', 1)
 	                .style('stroke-opacity', 1)
 	              d3.select('p#extraInfoMultiBuilding')
@@ -432,8 +432,8 @@
               		.classed("barTextClicked", true)
                 d3.selectAll("g#Polish_MultiBDGtxt, g#Russian_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt")
               		.classed("barTextClicked", false)
-            	})	
-            	.on('mouseover', function() { 
+            	})
+            	.on('mouseover', function() {
 			  	  d3.selectAll("g#Patois_MultiBDGtxt")
               		.classed("barTextHovered", true)
             	})
@@ -446,22 +446,22 @@
 	          d3.selectAll('#Russian_MultiBDG, rect#Russian_MultiBDGrect, g#Russian_MultiBDGtxt')
 	            .on('click', function() {
 	              d3.selectAll('text.extraInfo').remove()
-	              d3.selectAll('#Polish_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Arabic_MultiBDG, #Patois_MultiBDG, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect') 
+	              d3.selectAll('#Polish_MultiBDG, #Spanish_MultiBDG, #Chinese_English_MultiBDG, #English_MultiBDG, #Chinese_Spanish_English_MultiBDG, #Arabic_MultiBDG, #Patois_MultiBDG, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect')
 	                .style('fill-opacity', 0.1)
 	                .style('stroke-opacity', 0.3)
-	              d3.selectAll('#Russian_MultiBDG, rect#Russian_MultiBDGrect, g#Russian_MultiBDGtxt') 
+	              d3.selectAll('#Russian_MultiBDG, rect#Russian_MultiBDGrect, g#Russian_MultiBDGtxt')
 	                .style('fill-opacity', 1)
 	                .style('stroke-opacity', 1)
 	              d3.select('p#extraInfoMultiBuilding')
 	                 .append('text')
 	                  .attr("class","extraInfo")
-	                  .text(russianDescription)              
+	                  .text(russianDescription)
               	d3.selectAll("g#Russian_MultiBDGtxt")
               		.classed("barTextClicked", true)
                 d3.selectAll("g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt")
               		.classed("barTextClicked", false)
-            	})	
-            	.on('mouseover', function() { 
+            	})
+            	.on('mouseover', function() {
 			  	  d3.selectAll("g#Russian_MultiBDGtxt")
               		.classed("barTextHovered", true)
             	})
@@ -474,10 +474,10 @@
 	          d3.selectAll('#Chinese_Spanish_English_MultiBDG')
 	          .on('click', function() {
 	            d3.selectAll('text.extraInfo').remove()
-	            d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect') 
+	            d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect')
 	              .style('fill-opacity', 0.1)
 	              .style('stroke-opacity', 0.3)
-	            d3.selectAll('#Chinese_Spanish_English_MultiBDG, #Chinese_English_MultiBDG, #Spanish_MultiBDG, #English_MultiBDG, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect') 
+	            d3.selectAll('#Chinese_Spanish_English_MultiBDG, #Chinese_English_MultiBDG, #Spanish_MultiBDG, #English_MultiBDG, rect#Spanish_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect')
 	              .style('fill-opacity', 1)
 	              .style('stroke-opacity', 1)
 	            d3.select('p#extraInfoMultiBuilding')
@@ -488,8 +488,8 @@
               		.classed("barTextClicked", true)
                 d3.selectAll("g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Russian_MultiBDGtxt")
               		.classed("barTextClicked", false)
-            	})	
-            	.on('mouseover', function() { 
+            	})
+            	.on('mouseover', function() {
 			  	  d3.selectAll("g#Spanish_MultiBDGtxt, g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt")
               		.classed("barTextHovered", true)
             	})
@@ -502,10 +502,10 @@
 	          d3.selectAll('#Chinese_English_MultiBDG')
 	          .on('click', function() {
 	            d3.selectAll('text.extraInfo').remove()
-	            d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Spanish_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#Spanish_MultiBDGrect') 
+	            d3.selectAll('#Polish_MultiBDG, #Arabic_MultiBDG, #Spanish_MultiBDG, #Patois_MultiBDG, #Russian_MultiBDG, rect#Russian_MultiBDGrect, rect#Patois_MultiBDGrect, rect#Polish_MultiBDGrect, rect#Arabic_MultiBDGrect, rect#Chinese_MultiBDGrect, rect#Spanish_MultiBDGrect')
 	              .style('fill-opacity', 0.1)
 	              .style('stroke-opacity', 0.3)
-	            d3.selectAll('#Chinese_English_MultiBDG, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect') 
+	            d3.selectAll('#Chinese_English_MultiBDG, rect#Chinese_MultiBDGrect, rect#English_MultiBDGrect')
 	              .style('fill-opacity', 1)
 	              .style('stroke-opacity', 1)
 	            d3.select('p#extraInfoMultiBuilding')
@@ -516,8 +516,8 @@
               		.classed("barTextClicked", true)
                 d3.selectAll("g#Patois_MultiBDGtxt, g#Polish_MultiBDGtxt, g#Arabic_MultiBDGtxt, g#Russian_MultiBDGtxt, g#Spanish_MultiBDGtxt")
               		.classed("barTextClicked", false)
-            	})	
-            	.on('mouseover', function() { 
+            	})
+            	.on('mouseover', function() {
 			  	  d3.selectAll("g#Chinese_MultiBDGtxt, g#English_MultiBDGtxt")
               		.classed("barTextHovered", true)
             	})
@@ -534,21 +534,21 @@
          d3.selectAll('g#underlay, image#underlay')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Turkish_SF, #English_SF, #Italian_SF, #Spanish_SF, #Albanian_SF, #Greek_SF, #Italian-greek_SF, #Albanian-greek_SF, #Spanish-greek_SF, #Italian-greek_SF, rect#Turkish_SFrect, rect#English_SFrect, rect#Spanish_SFrect, rect#Albanian_SFrect, rect#Greek_SFrect, rect#English_SFrect, rect#Italian_SFrect') 
+              d3.selectAll('#Turkish_SF, #English_SF, #Italian_SF, #Spanish_SF, #Albanian_SF, #Greek_SF, #Italian-greek_SF, #Albanian-greek_SF, #Spanish-greek_SF, #Italian-greek_SF, rect#Turkish_SFrect, rect#English_SFrect, rect#Spanish_SFrect, rect#Albanian_SFrect, rect#Greek_SFrect, rect#English_SFrect, rect#Italian_SFrect')
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.selectAll("g#Turkish_SFtxt, g#English_SFtxt, g#Spanish_SFtxt, g#Greek_SFtxt, g#Albanian_SFtxt, g#Italian_SFtxt")
       		    .classed("barTextClicked", false)
-      		    .classed("barTextHovered", false) 
+      		    .classed("barTextHovered", false)
             })
 
          d3.selectAll('#Italian_SF, #Italian-greek_SF, rect#Italian_SFrect, g#Italian_SFtxt')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Turkish_SF, #Spanish_SF, #Albanian_SF, #Greek_SF, #English_SF, rect#Turkish_SFrect, rect#English_SFrect, rect#Spanish_SFrect, rect#Albanian_SFrect, rect#Greek_SFrect, rect#English_SFrect, #Albanian-greek_SF, #Spanish-greek_SF') 
+              d3.selectAll('#Turkish_SF, #Spanish_SF, #Albanian_SF, #Greek_SF, #English_SF, rect#Turkish_SFrect, rect#English_SFrect, rect#Spanish_SFrect, rect#Albanian_SFrect, rect#Greek_SFrect, rect#English_SFrect, #Albanian-greek_SF, #Spanish-greek_SF')
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('#Italian_SF, #Italian-greek_SF, rect#Italian_SFrect') 
+              d3.selectAll('#Italian_SF, #Italian-greek_SF, rect#Italian_SFrect')
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoMultiStreetFair')
@@ -560,7 +560,7 @@
               d3.selectAll("g#Turkish_SFtxt, g#Spanish_SFtxt, g#English_SFtxt, g#Greek_SFtxt, g#Albanian_SFtxt")
               	.classed("barTextClicked", false)
             })
-            .on('mouseover', function() { 
+            .on('mouseover', function() {
 			  d3.selectAll("g#Italian_SFtxt")
               	.classed("barTextHovered", true)
             })
@@ -572,10 +572,10 @@
          d3.selectAll('#Spanish_SF, #Spanish-greek_SF, rect#Spanish_SFrect, g#Spanish_SFtxt')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Turkish_SF, #English_SF, #Italian_SF, #Albanian_SF, #Greek_SF, rect#Turkish_SFrect, rect#English_SFrect, rect#Italian_SFrect, rect#Albanian_SFrect, rect#Greek_SFrect, rect#English_SFrect, #Albanian-greek_SF,  #Italian-greek_SF') 
+              d3.selectAll('#Turkish_SF, #English_SF, #Italian_SF, #Albanian_SF, #Greek_SF, rect#Turkish_SFrect, rect#English_SFrect, rect#Italian_SFrect, rect#Albanian_SFrect, rect#Greek_SFrect, rect#English_SFrect, #Albanian-greek_SF,  #Italian-greek_SF')
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('#Spanish_SF, #Spanish-greek_SF, rect#Spanish_SFrect') 
+              d3.selectAll('#Spanish_SF, #Spanish-greek_SF, rect#Spanish_SFrect')
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoMultiStreetFair')
@@ -587,7 +587,7 @@
               d3.selectAll("g#Turkish_SFtxt, g#Italian_SFtxt, g#Albanian_SFtxt, g#Greek_SFtxt, g#English_SFtxt")
               	.classed("barTextClicked", false)
             })
-            .on('mouseover', function() { 
+            .on('mouseover', function() {
 			  d3.selectAll("g#Spanish_SFtxt")
               	.classed("barTextHovered", true)
             })
@@ -599,10 +599,10 @@
          d3.selectAll('#Albanian_SF, #Albanian-greek_SF, rect#Albanian_SFrect, g#Albanian_SFtxt')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Turkish_SF, #English_SF, #Spanish_SF, #Italian_SF, #Greek_SF, rect#Turkish_SFrect, rect#English_SFrect, rect#Spanish_SFrect, rect#Italian_SFrect, rect#Greek_SFrect, rect#English_SFrect, #Spanish-greek_SF, #Italian-greek_SF') 
+              d3.selectAll('#Turkish_SF, #English_SF, #Spanish_SF, #Italian_SF, #Greek_SF, rect#Turkish_SFrect, rect#English_SFrect, rect#Spanish_SFrect, rect#Italian_SFrect, rect#Greek_SFrect, rect#English_SFrect, #Spanish-greek_SF, #Italian-greek_SF')
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('#Albanian_SF, #Albanian-greek_SF, rect#Albanian_SFrect') 
+              d3.selectAll('#Albanian_SF, #Albanian-greek_SF, rect#Albanian_SFrect')
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoMultiStreetFair')
@@ -614,7 +614,7 @@
               d3.selectAll("g#Turkish_SFtxt, g#English_SFtxt, g#Spanish_SFtxt, g#Italian_SFtxt, g#Greek_SFtxt")
               	.classed("barTextClicked", false)
             })
-            .on('mouseover', function() { 
+            .on('mouseover', function() {
 			  d3.selectAll("g#Albanian_SFtxt")
               	.classed("barTextHovered", true)
             })
@@ -626,10 +626,10 @@
          d3.selectAll('#English_SF, #Albanian-greek_SF, #Spanish-greek_SF, #Italian-greek_SF, rect#English_SFrect, g#English_SFtxt')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Turkish_SF, #Spanish_SF, #Italian_SF, #Greek_SF, #Albanian_SF, rect#Turkish_SFrect, rect#English_SFrect, rect#Spanish_SFrect, rect#Italian_SFrect, rect#Greek_SFrect, rect#Albanian_SFrect') 
+              d3.selectAll('#Turkish_SF, #Spanish_SF, #Italian_SF, #Greek_SF, #Albanian_SF, rect#Turkish_SFrect, rect#English_SFrect, rect#Spanish_SFrect, rect#Italian_SFrect, rect#Greek_SFrect, rect#Albanian_SFrect')
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('#English_SF, #Albanian-greek_SF, #Spanish-greek_SF, #Italian-greek_SF, rect#English_SFrect') 
+              d3.selectAll('#English_SF, #Albanian-greek_SF, #Spanish-greek_SF, #Italian-greek_SF, rect#English_SFrect')
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoMultiStreetFair')
@@ -641,7 +641,7 @@
               d3.selectAll("g#Turkish_SFtxt, g#Spanish_SFtxt, g#Italian_SFtxt, g#Greek_SFtxt, g#Albanian_SFtxt")
               	.classed("barTextClicked", false)
             })
-            .on('mouseover', function() { 
+            .on('mouseover', function() {
 			  d3.selectAll("g#English_SFtxt")
               	.classed("barTextHovered", true)
             })
@@ -653,10 +653,10 @@
          d3.selectAll('#Turkish_SF, rect#Turkish_SFrect, g#Turkish_SFtxt')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Albanian_SF, #Spanish_SF, #Italian_SF, #Greek_SF, #English_SF, rect#Albanian_SFrect, rect#English_SFrect, rect#Spanish_SFrect, rect#Italian_SFrect, rect#Greek_SFrect, rect#English_SFrect, #Spanish-greek_SF, #Italian-greek_SF') 
+              d3.selectAll('#Albanian_SF, #Spanish_SF, #Italian_SF, #Greek_SF, #English_SF, rect#Albanian_SFrect, rect#English_SFrect, rect#Spanish_SFrect, rect#Italian_SFrect, rect#Greek_SFrect, rect#English_SFrect, #Spanish-greek_SF, #Italian-greek_SF')
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('#Turkish_SF, rect#Turkish_SFrect') 
+              d3.selectAll('#Turkish_SF, rect#Turkish_SFrect')
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoMultiStreetFair')
@@ -668,7 +668,7 @@
               d3.selectAll("g#Albanian_SFtxt, g#Spanish_SFtxt, g#Italian_SFtxt, g#Greek_SFtxt, g#English_SFtxt")
               	.classed("barTextClicked", false)
             })
-            .on('mouseover', function() { 
+            .on('mouseover', function() {
 			  d3.selectAll("g#Turkish_SFtxt")
               	.classed("barTextHovered", true)
             })
@@ -680,10 +680,10 @@
          d3.selectAll('#Greek_SF, #Albanian-greek_SF, #Spanish-greek_SF, #Italian-greek_SF, rect#Greek_SFrect, g#Greek_SFtxt')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Turkish_SF, #Spanish_SF, #Italian_SF, #Albanian_SF, #English_SF, rect#Turkish_SFrect, rect#English_SFrect, rect#Spanish_SFrect, rect#Italian_SFrect, rect#Albanian_SFrect, rect#English_SFrect') 
+              d3.selectAll('#Turkish_SF, #Spanish_SF, #Italian_SF, #Albanian_SF, #English_SF, rect#Turkish_SFrect, rect#English_SFrect, rect#Spanish_SFrect, rect#Italian_SFrect, rect#Albanian_SFrect, rect#English_SFrect')
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('#Greek_SF, #Albanian-greek_SF, #Spanish-greek_SF, #Italian-greek_SF, rect#Greek_SFrect') 
+              d3.selectAll('#Greek_SF, #Albanian-greek_SF, #Spanish-greek_SF, #Italian-greek_SF, rect#Greek_SFrect')
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoMultiStreetFair')
@@ -695,7 +695,7 @@
               d3.selectAll("g#Turkish_SFtxt, g#Spanish_SFtxt, g#Albanian_SFtxt, g#Italian_SFtxt, g#English_SFtxt")
               	.classed("barTextClicked", false)
             })
-            .on('mouseover', function() { 
+            .on('mouseover', function() {
 			  d3.selectAll("g#Greek_SFtxt")
               	.classed("barTextHovered", true)
             })
@@ -712,21 +712,21 @@
          d3.selectAll('image, #underlay_FT')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Spanish-french_FT, #Spanish-wolof_FT, #Spanish-english_FT, #French-arabic_FT, #French_FT, #Urdu_FT, #Arabic_FT, #Spanish_FT, #English_FT, #Wolof_FT, rect#Spanish_FTrect, rect#French_FTrect, rect#Urdu_FTrect, rect#Arabic_FTrect, rect#Spanish_FTrect, rect#Wolof_FTrect, rect#English_FTrect') 
+              d3.selectAll('#Spanish-french_FT, #Spanish-wolof_FT, #Spanish-english_FT, #French-arabic_FT, #French_FT, #Urdu_FT, #Arabic_FT, #Spanish_FT, #English_FT, #Wolof_FT, rect#Spanish_FTrect, rect#French_FTrect, rect#Urdu_FTrect, rect#Arabic_FTrect, rect#Spanish_FTrect, rect#Wolof_FTrect, rect#English_FTrect')
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.selectAll("g#French_FTtxt, g#Urdu_FTtxt, g#Arabic_FTtxt, g#Spanish_FTtxt, g#English_FTtxt, g#Wolof_FTtxt")
       		    .classed("barTextClicked", false)
-      		    .classed("barTextHovered", false)                
+      		    .classed("barTextHovered", false)
             })
 
          d3.selectAll('#Spanish-english_FT, #Spanish-french_FT, #Spanish-wolof_FT, #Spanish_FT, g#Spanish_FTtxt, rect#Spanish_FTrect')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#French-arabic_FT, #French_FT, #Urdu_FT, #Arabic_FT, #English_FT, #Wolof_FT, rect#French_FTrect, rect#Urdu_FTrect, rect#Arabic_FTrect, rect#Spanish_FTrect, rect#Wolof_FTrect, rect#English_FTrect') 
+              d3.selectAll('#French-arabic_FT, #French_FT, #Urdu_FT, #Arabic_FT, #English_FT, #Wolof_FT, rect#French_FTrect, rect#Urdu_FTrect, rect#Arabic_FTrect, rect#Spanish_FTrect, rect#Wolof_FTrect, rect#English_FTrect')
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('#Spanish-english_FT, #Spanish-french_FT, #Spanish-wolof_FT, #Spanish_FT, rect#Spanish_FTrect') 
+              d3.selectAll('#Spanish-english_FT, #Spanish-french_FT, #Spanish-wolof_FT, #Spanish_FT, rect#Spanish_FTrect')
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoMultiFoodTrucks')
@@ -738,7 +738,7 @@
               d3.selectAll("g#French_FTtxt, g#Urdu_FTtxt, g#Arabic_FTtxt, g#English_FTtxt, g#Wolof_FTtxt")
               	.classed("barTextClicked", false)
             })
-            .on('mouseover', function() { 
+            .on('mouseover', function() {
 			  d3.selectAll("g#Spanish_FTtxt")
               	.classed("barTextHovered", true)
             })
@@ -750,10 +750,10 @@
          d3.selectAll('#French-arabic_FT, #Spanish-french_FT, #French_FT, g#French_FTtxt, rect#French_FTrect')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Spanish-wolof_FT, #Spanish-english_FT, #Urdu_FT, #Arabic_FT, #Spanish_FT, #English_FT, #Wolof_FT, rect#Spanish_FTrect, rect#Urdu_FTrect, rect#Arabic_FTrect, rect#Wolof_FTrect, rect#English_FTrect') 
+              d3.selectAll('#Spanish-wolof_FT, #Spanish-english_FT, #Urdu_FT, #Arabic_FT, #Spanish_FT, #English_FT, #Wolof_FT, rect#Spanish_FTrect, rect#Urdu_FTrect, rect#Arabic_FTrect, rect#Wolof_FTrect, rect#English_FTrect')
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('#French-arabic_FT, #Spanish-french_FT, #French_FT, rect#French_FTrect') 
+              d3.selectAll('#French-arabic_FT, #Spanish-french_FT, #French_FT, rect#French_FTrect')
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoMultiFoodTrucks')
@@ -777,10 +777,10 @@
          d3.selectAll('#Urdu_FT, g#Urdu_FTtxt, rect#Urdu_FTrect')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Spanish-french_FT, #Spanish-wolof_FT, #Spanish-english_FT, #French-arabic_FT, #French_FT, #Arabic_FT, #Spanish_FT, #English_FT, #Wolof_FT, rect#Spanish_FTrect, rect#French_FTrect, rect#Arabic_FTrect, rect#Spanish_FTrect, rect#Wolof_FTrect, rect#English_FTrect') 
+              d3.selectAll('#Spanish-french_FT, #Spanish-wolof_FT, #Spanish-english_FT, #French-arabic_FT, #French_FT, #Arabic_FT, #Spanish_FT, #English_FT, #Wolof_FT, rect#Spanish_FTrect, rect#French_FTrect, rect#Arabic_FTrect, rect#Spanish_FTrect, rect#Wolof_FTrect, rect#English_FTrect')
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('#Urdu_FT, rect#Urdu_FTrect') 
+              d3.selectAll('#Urdu_FT, rect#Urdu_FTrect')
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoMultiFoodTrucks')
@@ -804,10 +804,10 @@
          d3.selectAll('#Arabic_FT, #French-arabic_FT, g#Arabic_FTtxt, rect#Arabic_FTrect')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Spanish-french_FT, #Spanish-wolof_FT, #Spanish-english_FT, #French_FT, #Urdu_FT, #Spanish_FT, #English_FT, #Wolof_FT, rect#Spanish_FTrect, rect#French_FTrect, rect#Urdu_FTrect, rect#Spanish_FTrect, rect#Wolof_FTrect, rect#English_FTrect') 
+              d3.selectAll('#Spanish-french_FT, #Spanish-wolof_FT, #Spanish-english_FT, #French_FT, #Urdu_FT, #Spanish_FT, #English_FT, #Wolof_FT, rect#Spanish_FTrect, rect#French_FTrect, rect#Urdu_FTrect, rect#Spanish_FTrect, rect#Wolof_FTrect, rect#English_FTrect')
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('#Arabic_FT, #French-arabic_FT, rect#Arabic_FTrect') 
+              d3.selectAll('#Arabic_FT, #French-arabic_FT, rect#Arabic_FTrect')
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoMultiFoodTrucks')
@@ -831,10 +831,10 @@
          d3.selectAll('#Wolof_FT, #Spanish-wolof_FT, g#Wolof_FTtxt, rect#Wolof_FTrect')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Spanish-french_FT, #Spanish-english_FT, #French-arabic_FT, #French_FT, #Urdu_FT, #Arabic_FT, #Spanish_FT, #English_FT,  rect#Spanish_FTrect, rect#French_FTrect, rect#Urdu_FTrect, rect#Arabic_FTrect, rect#Spanish_FTrect, rect#English_FTrect') 
+              d3.selectAll('#Spanish-french_FT, #Spanish-english_FT, #French-arabic_FT, #French_FT, #Urdu_FT, #Arabic_FT, #Spanish_FT, #English_FT,  rect#Spanish_FTrect, rect#French_FTrect, rect#Urdu_FTrect, rect#Arabic_FTrect, rect#Spanish_FTrect, rect#English_FTrect')
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('#Wolof_FT, #Spanish-wolof_FT, rect#Wolof_FTrect') 
+              d3.selectAll('#Wolof_FT, #Spanish-wolof_FT, rect#Wolof_FTrect')
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoMultiFoodTrucks')
@@ -858,10 +858,10 @@
          d3.selectAll('#Spanish-english_FT, #English_FT, g#English_FTtxt, rect#English_FTrect')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('#Spanish-french, #Spanish-wolof, #French-arabic_FT, #French_FT, #Urdu_FT, #Arabic_FT, #Spanish_FT, #Wolof_FT, rect#French_FTrect, rect#Urdu_FTrect, rect#Arabic_FTrect, rect#Spanish_FTrect, rect#Wolof_FTrect') 
+              d3.selectAll('#Spanish-french, #Spanish-wolof, #French-arabic_FT, #French_FT, #Urdu_FT, #Arabic_FT, #Spanish_FT, #Wolof_FT, rect#French_FTrect, rect#Urdu_FTrect, rect#Arabic_FTrect, rect#Spanish_FTrect, rect#Wolof_FTrect')
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('#Spanish-english_FT, #English_FT, rect#English_FTrect') 
+              d3.selectAll('#Spanish-english_FT, #English_FT, rect#English_FTrect')
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoMultiFoodTrucks')
@@ -883,14 +883,14 @@
             })
 
         }; //end of function
-     
+
         function importBilingual () {
-          //CLICK EVENTS 
+          //CLICK EVENTS
           	d3.selectAll("g#Polish_BItxt, g#English_BItxt")
           		.attr("class", 'barText')
             d3.selectAll('image, g#building, g#underlay_BI')
               .on('click', function() {
-                d3.selectAll('#Polish_BI, #Polish_English_BI, #English_BI, rect#Polish_BIrect, rect#English_BIrect') 
+                d3.selectAll('#Polish_BI, #Polish_English_BI, #English_BI, rect#Polish_BIrect, rect#English_BIrect')
                   .style('fill-opacity', 1)
                   .style('stroke-opacity', 1)
                 d3.selectAll("g#Polish_BItxt, g#English_BItxt")
@@ -901,9 +901,9 @@
             d3.selectAll('#Polish_English_BI, rect#Polish_BIrect, rect#English_BIrect, g#Polish_BItxt, g#English_BItxt')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('rect#Polish_BIrect, rect#English_BIrect, #Polish_BI, #English_BI, #Polish_English_BI') 
+              d3.selectAll('rect#Polish_BIrect, rect#English_BIrect, #Polish_BI, #English_BI, #Polish_English_BI')
                 .style('fill-opacity', 1)
-                .style('stroke-opacity', 1)                
+                .style('stroke-opacity', 1)
               d3.select('p#extraInfoBi')
                  .append('text')
                   .attr("class","extraInfo")
@@ -915,10 +915,10 @@
             d3.selectAll('#English_BI, rect#English_BIrect, g#English_BItxt')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('rect#Polish_BIrect, #Polish_BI') 
+              d3.selectAll('rect#Polish_BIrect, #Polish_BI')
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('rect#English_BIrect, #English_BI, #Polish_English_BI') 
+              d3.selectAll('rect#English_BIrect, #English_BI, #Polish_English_BI')
                 .style('fill-opacity', 1)
                 .style('stroke-opacity', 1)
               d3.select('p#extraInfoBi')
@@ -943,21 +943,21 @@
             d3.selectAll('#Polish_BI, rect#Polish_BIrect, g#Polish_BItxt')
             .on('click', function() {
               d3.selectAll('text.extraInfo').remove()
-              d3.selectAll('rect#English_BIrect, #English_BI') 
+              d3.selectAll('rect#English_BIrect, #English_BI')
                 .style('fill-opacity', 0.1)
                 .style('stroke-opacity', 0.1)
-              d3.selectAll('rect#Polish_BIrect, #Polish_BI, #Polish_English_BI') 
+              d3.selectAll('rect#Polish_BIrect, #Polish_BI, #Polish_English_BI')
                 .style('fill-opacity', 1)
-                .style('stroke-opacity', 1)                           
+                .style('stroke-opacity', 1)
               d3.select('p#extraInfoBi')
                  .append('text')
                   .attr("class","extraInfo")
                   .text(polishDescription)
               d3.selectAll("g#Polish_BItxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#English_BItxt")
-              	.classed("barTextClicked", false)              
-            })  
+              	.classed("barTextClicked", false)
+            })
             .on('mouseover', function(){
 			  d3.selectAll("g#Polish_BItxt")
               	.classed("barTextHovered", true)
@@ -989,7 +989,7 @@
 	            .style('stroke-opacity', 1)
 		          d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Bengali_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Romanian_LIBtxt, g#Serbian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
 		      		 .classed("barTextClicked", false)
-	          		 .classed("barTextHovered", false)           
+	          		 .classed("barTextHovered", false)
 	           })
 
 	        d3.selectAll(".otherLanguages, rect#Other_LIBrect").on("click", function(){
@@ -1015,10 +1015,10 @@
 	            .style('fill-opacity', 1)
 	            .style('stroke-opacity', 1)
               d3.selectAll("g#Other_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Arabic_LIBtxt, g#Bengali_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Romanian_LIBtxt, g#Serbian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#Arabic_LIB, rect#Arabic_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1041,12 +1041,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Arabic_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Arabic_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Bengali_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Romanian_LIBtxt, g#Serbian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, rect#Bengali_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1069,12 +1069,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Bengali_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Bengali_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Romanian_LIBtxt, g#Serbian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#Croatian_LIB, rect#Croatian_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1097,12 +1097,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Croatian_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Croatian_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Bengali_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Romanian_LIBtxt, g#Serbian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#Czech_LIB, rect#Czech_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1125,12 +1125,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Czech_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Czech_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Bengali_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Romanian_LIBtxt, g#Serbian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#Gujarati_LIB, rect#Gujarati_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1153,12 +1153,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Gujarati_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Gujarati_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Bengali_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Romanian_LIBtxt, g#Serbian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#HaitianTop_LIB, g#HaitianBottom_LIB, rect#Haitian_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1181,12 +1181,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Haitian_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Haitian_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Bengali_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Romanian_LIBtxt, g#Serbian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#HebrewTop_LIB, g#HebrewBottom_LIB, rect#Hebrew_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1209,12 +1209,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Hebrew_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Hebrew_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Bengali_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Romanian_LIBtxt, g#Serbian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#HindiTop_LIB, g#HindiBottom_LIB, rect#Hindi_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1237,12 +1237,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Hindi_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Hindi_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Bengali_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Romanian_LIBtxt, g#Serbian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#Hungarian_LIB, rect#Hungarian_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1265,12 +1265,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Hungarian_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Hungarian_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Bengali_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Romanian_LIBtxt, g#Serbian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, rect#Italian_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1293,12 +1293,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Italian_LIBrect,rect#ItalianMid_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Italian_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Bengali_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Romanian_LIBtxt, g#Serbian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#Japanese_LIB, rect#Japanese_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1321,12 +1321,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Japanese_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Japanese_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Bengali_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Romanian_LIBtxt, g#Serbian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#Latvian_LIB, rect#Latvian_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1349,12 +1349,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Latvian_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Latvian_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Bengali_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Romanian_LIBtxt, g#Serbian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#Lithuanian_LIB, rect#Lithuanian_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1377,12 +1377,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Lithuanian_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Lithuanian_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Bengali_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Romanian_LIBtxt, g#Serbian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#Malayalam_LIB, rect#Malayalam_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1405,12 +1405,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Malayalam_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Malayalam_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Bengali_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Romanian_LIBtxt, g#Serbian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#Norwegian_LIB, rect#Norwegian_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1433,12 +1433,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Norwegian_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Norwegian_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Bengali_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Romanian_LIBtxt, g#Serbian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#Punjabi_LIB, rect#Punjabi_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1461,12 +1461,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Punjabi_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Punjabi_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Bengali_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Romanian_LIBtxt, g#Serbian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#Persian_LIB, rect#Persian_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1489,12 +1489,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Persian_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Persian_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Bengali_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Romanian_LIBtxt, g#Serbian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#PolishTop_LIB, g#PolishBottom_LIB, rect#Polish_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1517,12 +1517,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Polish_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Polish_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Bengali_LIBtxt, g#Portuguese_LIBtxt, g#Romanian_LIBtxt, g#Serbian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#PortugueseTop_LIB, g#PortugueseBottom_LIB, rect#Portuguese_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1545,12 +1545,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Portuguese_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Portuguese_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Bengali_LIBtxt, g#Romanian_LIBtxt, g#Serbian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#Romanian_LIB, rect#Romanian_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1573,12 +1573,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Romanian_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Romanian_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Bengali_LIBtxt, g#Serbian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#Serbian_LIB, rect#Serbian_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1601,12 +1601,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Serbian_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Serbian_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Bengali_LIBtxt, g#Romanian_LIBtxt, g#Swedish_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#Swedish_LIB, rect#Swedish_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1629,12 +1629,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Swedish_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Swedish_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Bengali_LIBtxt, g#Serbian_LIBtxt, g#Romanian_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#Tagalog_LIB, rect#Tagalog_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1657,12 +1657,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Tagalog_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Tagalog_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Bengali_LIBtxt, g#Serbian_LIBtxt, g#Romanian_LIBtxt, g#Swedish_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#Thai_LIB, rect#Thai_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1677,7 +1677,7 @@
 	            .style('stroke-opacity', 0.1)
 	          d3.selectAll("rect#Arabic_LIBrect, rect#Bengali_LIBrect, rect#Croatian_LIBrect, rect#Czech_LIBrect,  rect#Gujarati_LIBrect, rect#Haitian_LIBrect, rect#Hebrew_LIBrect, rect#Hindi_LIBrect, rect#Hungarian_LIBrect, rect#Italian_LIBrect, rect#Japanese_LIBrect, rect#Latvian_LIBrect, rect#Lithuanian_LIBrect, rect#Malayalam_LIBrect, rect#Norwegian_LIBrect, rect#Punjabi_LIBrect, rect#Persian_LIBrect, rect#Polish_LIBrect, rect#Portuguese_LIBrect, rect#Romanian_LIBrect, rect#Serbian_LIBrect, rect#Swedish_LIBrect, rect#Tagalog_LIBrect, rect#Turkish_LIBrect, rect#Ukrainian_LIBrect, rect#Urdu_LIBrect, rect#Vietnamese_LIBrect, rect#Yiddish_LIBrect,  rect#Other_LIBrect, g#front, g#side, g#top, g#interior")
 	              .style('fill-opacity', 0.1)
-	              .style('stroke-opacity', 0.1)            
+	              .style('stroke-opacity', 0.1)
 	          d3.selectAll("g#Thai_LIB")
 	              .classed("bookSelected", true)
 	              .classed("bookNotSelected", false)
@@ -1685,12 +1685,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Thai_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Thai_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Bengali_LIBtxt, g#Serbian_LIBtxt, g#Romanian_LIBtxt, g#Tagalog_LIBtxt, g#Swedish_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#Turkish_LIB, rect#Turkish_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1713,12 +1713,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Turkish_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Turkish_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Bengali_LIBtxt, g#Serbian_LIBtxt, g#Romanian_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Swedish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#Ukrainian_LIB, rect#Ukrainian_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1741,12 +1741,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Ukrainian_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Ukrainian_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Bengali_LIBtxt, g#Serbian_LIBtxt, g#Romanian_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Swedish_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#Urdu_LIB, rect#Urdu_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1769,19 +1769,19 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Urdu_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Urdu_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Bengali_LIBtxt, g#Serbian_LIBtxt, g#Romanian_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Swedish_LIBtxt, g#Vietnamese_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#Vietnamese_LIB, rect#Vietnamese_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
 	          d3.select('p#extraInfoLibrary')
 	           .append('text')
 	            .attr("class","extraInfo")
-	            .text(vietnameseDescription)          
+	            .text(vietnameseDescription)
 	          d3.selectAll('.otherLanguages, g#BengaliTop_LIB, g#BengaliMid_LIB, g#BengaliBottom_LIB, g#Croatian_LIB, g#Czech_LIB,  g#Arabic_LIB, g#HaitianTop_LIB, g#HaitianBottom_LIB, g#HebrewTop_LIB, g#HebrewBottom_LIB, g#HindiTop_LIB, g#HindiBottom_LIB, g#Hungarian_LIB, g#ItalianTop_LIB, g#ItalianMid_LIB, g#ItalianBottom_LIB, g#Gujarati_LIB, g#Latvian_LIB, g#Lithuanian_LIB, g#Malayalam_LIB, g#Norwegian_LIB, g#Punjabi_LIB, g#Persian_LIB, g#PolishTop_LIB, g#PolishBottom_LIB, g#PortugueseTop_LIB, g#PortugueseBottom_LIB, g#Japanese_LIB, g#Serbian_LIB, g#Swedish_LIB, g#Tagalog_LIB, g#Thai_LIB, g#Romanian_LIB, g#Ukrainian_LIB, g#Urdu_LIB, g#Turkish_LIB, g#YiddishTop_LIB, g#YiddishBottom_LIB')
 	              .classed("bookSelected", false)
 	              .classed("bookNotSelected", true)
@@ -1797,12 +1797,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Vietnamese_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1)            
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Vietnamese_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Bengali_LIBtxt, g#Serbian_LIBtxt, g#Romanian_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Swedish_LIBtxt, g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll("g#YiddishTop_LIB, g#YiddishBottom_LIB, rect#Yiddish_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1825,12 +1825,12 @@
 	            .style('stroke-opacity', 1)
 	          d3.selectAll("rect#Yiddish_LIBrect")
 	            .style('fill-opacity', 1)
-	            .style('stroke-opacity', 1) 
+	            .style('stroke-opacity', 1)
               d3.selectAll("g#Yiddish_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Other_LIBtxt, g#Arabic_LIBtxt, g#Croatian_LIBtxt, g#Czech_LIBtxt,  g#Gujarati_LIBtxt, g#Haitian_LIBtxt,  g#Hebrew_LIBtxt, g#Hindi_LIBtxt, g#Hungarian_LIBtxt, g#Italian_LIBtxt, g#Japanese_LIBtxt, g#Latvian_LIBtxt, g#Lithuanian_LIBtxt, g#Malayalam_LIBtxt, g#Norwegian_LIBtxt, g#Punjabi_LIBtxt, g#Persian_LIBtxt, g#Polish_LIBtxt, g#Portuguese_LIBtxt, g#Bengali_LIBtxt, g#Serbian_LIBtxt, g#Romanian_LIBtxt, g#Tagalog_LIBtxt, g#Thai_LIBtxt, g#Turkish_LIBtxt, g#Ukrainian_LIBtxt, g#Urdu_LIBtxt, g#Vietnamese_LIBtxt, g#Swedish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
         }; //end of function
 
@@ -1839,7 +1839,7 @@
 	      		.attr('opacity', 0)
 	      		// .attr('class', 'barText')
 
-	      	//renaming books into simpler classes 	
+	      	//renaming books into simpler classes
 	      	d3.selectAll("g#ChineseTop_LIB, g#ChineseMid1_LIB, g#ChineseMid2_LIB, g#ChineseMid3_LIB, g#ChineseMid4_LIB, g#ChineseBottom_LIB")
 	      		.attr("class", "Chinese_LIB")
 	      	d3.selectAll("g#FrenchTop_LIB, g#FrenchBottom_LIB")
@@ -1864,7 +1864,7 @@
 	            .style('stroke-opacity', 1)
 		          d3.selectAll("g#Chinese_LIBtxt, g#French_LIBtxt, g#Korean_LIBtxt, g#Russian_LIBtxt, g#Spanish_LIBtxt")
 		      		 .classed("barTextClicked", false)
-	          		 .classed("barTextHovered", false)           
+	          		 .classed("barTextHovered", false)
 	           })
 
 	        d3.selectAll(".Chinese_LIB, g#Chinese_LIBtxt, rect#Chinese_LIBrect").on("click", function(){
@@ -1890,10 +1890,10 @@
 	            .style('fill-opacity', 1)
 	            .style('stroke-opacity', 1)
               d3.selectAll("g#Chinese_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#French_LIBtxt, g#Korean_LIBtxt, g#Russian_LIBtxt, g#Spanish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll(".Korean_LIB, g#Korean_LIBtxt, rect#Korean_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1918,10 +1918,10 @@
 	            .style('fill-opacity', 1)
 	            .style('stroke-opacity', 1)
               d3.selectAll("g#Korean_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#French_LIBtxt, g#Chinese_LIBtxt, g#Russian_LIBtxt, g#Spanish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll(".French_LIB, g#French_LIBtxt, rect#French_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1946,10 +1946,10 @@
 	            .style('fill-opacity', 1)
 	            .style('stroke-opacity', 1)
               d3.selectAll("g#French_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#Chinese_LIBtxt, g#Korean_LIBtxt, g#Russian_LIBtxt, g#Spanish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll(".Russian_LIB, g#Russian_LIBtxt, rect#Russian_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -1974,10 +1974,10 @@
 	            .style('fill-opacity', 1)
 	            .style('stroke-opacity', 1)
               d3.selectAll("g#Russian_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#French_LIBtxt, g#Korean_LIBtxt, g#Chinese_LIBtxt, g#Spanish_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
+              	.classed("barTextClicked", false)
+	        })
 
 	        d3.selectAll(".Spanish_LIB, g#Spanish_LIBtxt, rect#Spanish_LIBrect").on("click", function(){
 	          d3.selectAll('text.extraInfo').remove()
@@ -2002,14 +2002,14 @@
 	            .style('fill-opacity', 1)
 	            .style('stroke-opacity', 1)
               d3.selectAll("g#Spanish_LIBtxt")
-              	.classed("barTextClicked", true)   
+              	.classed("barTextClicked", true)
               d3.selectAll("g#French_LIBtxt, g#Korean_LIBtxt, g#Russian_LIBtxt, g#Chinese_LIBtxt")
-              	.classed("barTextClicked", false)              
-	        })  
-	        	        	        
+              	.classed("barTextClicked", false)
+	        })
+
         }; //end of function
 
-        //SORTING OUT TEXT         
+        //SORTING OUT TEXT
         var greekDescription = "Only 1% of New Yorkers speak Greek at home. That number has been falling over the past 20 years, and from 2010-2015, there are 10% fewer Greek speakers in New York. More than 2/3 live in Queens, primarily in Astoria/Steinway, but also in the outer neighborhoods such as Whitestone and Auburndale."
         var italianDescription = "Italian speakers have settled in New York City since 1820, and historically, along with German, formed the largest non-English speaking group in the city at that time. Since then, Italian is being lost, with a nearly 20% decline in speakers since 2007. Yet, many ethnic Italians send their children to Italian classes in an attempt to resurrect the language before it disappears from the city altogether."
         var turkishDescription = "Though there is little data on exactly how many people speak Turkish in New York City, Turkish people have been settling in the city since 1820, and there is a large and thriving community across the five boroughs. The Turkish Community Center offers Turkish language courses, culture nights, film screenings, and helps organize the annual Turkish Day Parade in Manhattan. Many families send their children to Turkish language classes in an attempt to maintain, and even resurrect the language in the city."
@@ -2058,44 +2058,44 @@
 	    function addOverlay(){
 	        d3.selectAll('div#visLibrary')
 	          .on('mouseover', function () {
-	            d3.selectAll('div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visSmallMultiStreetFair') 
+	            d3.selectAll('div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visSmallMultiStreetFair')
 	              .style("opacity", 0.2)
-	            d3.selectAll('div#visLibrary') 
+	            d3.selectAll('div#visLibrary')
 	              .style("opacity", 1)
 	          })
 
 	        d3.selectAll('div#visSmallMultiStreetFair')
 	          .on('mouseover', function () {
-	            d3.selectAll('div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visLibrary') 
+	            d3.selectAll('div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visLibrary')
 	              .style("opacity", 0.2)
-	            d3.selectAll('div#visSmallMulti') 
+	            d3.selectAll('div#visSmallMulti')
 	              .style("opacity", 1)
 	          })
 
 	        d3.selectAll('div#visSmallMultiFoodTrucks')
 	          .on('mouseover', function () {
-	            d3.selectAll('div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visLibrary') 
+	            d3.selectAll('div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visLibrary')
 	              .style("opacity", 0.2)
-	            d3.selectAll('div#visSmallMulti') 
+	            d3.selectAll('div#visSmallMulti')
 	              .style("opacity", 1)
 	          })
 
 	        d3.selectAll('div#visSmallMultiBuilding')
 	          .on('mouseover', function () {
-	            d3.selectAll('div#visSmallBi, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks, div#visLibrary') 
+	            d3.selectAll('div#visSmallBi, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks, div#visLibrary')
 	              .style("opacity", 0.2)
-	            d3.selectAll('div#visSmallMulti') 
+	            d3.selectAll('div#visSmallMulti')
 	              .style("opacity", 1)
 	          })
 
 	        d3.selectAll('div#visSmallBi')
 	          .on('mouseover', function () {
-	            d3.selectAll('div#visSmallMultiStreetFair, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visLibrary') 
+	            d3.selectAll('div#visSmallMultiStreetFair, div#visSmallMultiBuilding, div#visSmallMultiFoodTrucks, div#visLibrary')
 	              .style("opacity", 0.2)
-	            d3.selectAll('div#visSmallBi') 
+	            d3.selectAll('div#visSmallBi')
 	              .style("opacity", 1)
 	          })
-	          
+
 
 	        d3.selectAll('div#visSmallBi, div#visSmallMultiBuilding, div#visSmallMultiStreetFair, div#visSmallMultiFoodTrucks, div#visLibrary')
 	          .on('mouseout', function () {
